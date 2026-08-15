@@ -6,25 +6,57 @@ echo "=========================================="
 echo "⚡ [Git Post-Commit Hook] Running post-commit workflows..."
 echo "=========================================="
 
-# 1. Update Graphify Codebase Graph (if python3 & graphify are available)
-PYTHON_BIN="python3"
-if ! command -v python3 >/dev/null 2>&1; then
-    PYTHON_BIN="python"
+# Auto-rebuilds the knowledge graph after each commit (code files only, no LLM needed).
+CHANGED=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || git diff --name-only HEAD 2>/dev/null)
+if [ -z "$CHANGED" ]; then
+    echo "✅ [Git Post-Commit Hook] No changes detected."
+    exit 0
 fi
 
-if command -v "$PYTHON_BIN" >/dev/null 2>&1; then
-    if "$PYTHON_BIN" -c "import graphify" >/dev/null 2>&1 || command -v graphify >/dev/null 2>&1; then
-        echo "📊 Updating Graphify AST graph (graphify-out/graph.json)..."
-        if command -v graphify >/dev/null 2>&1; then
-            graphify . || echo "⚠️ Graphify update skipped or returned non-zero."
-        else
-            "$PYTHON_BIN" -m graphify . || echo "⚠️ Graphify module execution skipped."
-        fi
-    else
-        echo "ℹ️ Graphify not installed. Install with 'pip install graphify-code' for AST dependency graph generation."
+# Detect the correct Python interpreter (handles pipx, venv, system installs)
+GRAPHIFY_BIN=$(command -v graphify 2>/dev/null)
+if [ -n "$GRAPHIFY_BIN" ]; then
+    _SHEBANG=$(head -1 "$GRAPHIFY_BIN" | sed 's/^#![[:space:]]*//')
+    case "$_SHEBANG" in
+        */env\ *) GRAPHIFY_PYTHON="${_SHEBANG#*/env }" ;;
+        *)         GRAPHIFY_PYTHON="$_SHEBANG" ;;
+    esac
+    case "$GRAPHIFY_PYTHON" in
+        *[!a-zA-Z0-9/_.-]*) GRAPHIFY_PYTHON="python3" ;;
+    esac
+    if ! "$GRAPHIFY_PYTHON" -c "import graphify" 2>/dev/null; then
+        GRAPHIFY_PYTHON="python3"
     fi
 else
-    echo "ℹ️ Python environment not found. Graphify post-commit step skipped."
+    GRAPHIFY_PYTHON="python3"
 fi
+
+export GRAPHIFY_CHANGED="$CHANGED"
+$GRAPHIFY_PYTHON -c "
+import os, sys
+from pathlib import Path
+
+CODE_EXTS = {
+    '.py', '.tsx', '.ts', '.js', '.jsx', '.go', '.rs', '.java', '.cpp', '.c', '.rb', '.swift',
+    '.kt', '.cs', '.scala', '.php', '.cc', '.cxx', '.hpp', '.h', '.kts',
+}
+
+changed_raw = os.environ.get('GRAPHIFY_CHANGED', '')
+changed = [Path(f.strip()) for f in changed_raw.strip().splitlines() if f.strip()]
+code_changed = [f for f in changed if f.suffix.lower() in CODE_EXTS and f.exists()]
+
+if not code_changed:
+    print('[graphify hook] No code files modified in commit.')
+    sys.exit(0)
+
+print(f'[graphify hook] {len(code_changed)} code file(s) changed - rebuilding graph...')
+
+try:
+    from graphify.watch import _rebuild_code
+    _rebuild_code(Path('.'))
+    print('[graphify hook] Graph rebuilt successfully!')
+except Exception as exc:
+    print(f'[graphify hook] Rebuild failed: {exc}')
+" 2>/dev/null || echo "ℹ️ Graphify python environment skipped."
 
 echo "✅ [Git Post-Commit Hook] Completed successfully."
