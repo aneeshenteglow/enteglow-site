@@ -1,12 +1,9 @@
 import React from 'react';
 import { HeroSection } from '@/components/sections/HeroSection';
-import { PlatformStorytelling } from '@/components/sections/PlatformStorytelling';
-import { ProductEcosystem } from '@/components/sections/ProductEcosystem';
+import { SolutionsSection } from './solutions/components/SolutionsSection';
 import { InteractiveServices } from './services/components/InteractiveServices';
-import { AIAgentShowcase } from '@/components/sections/AIAgentShowcase';
-import { IoTDataFlow } from '@/components/sections/IoTDataFlow';
-import { TechSpectrum } from './technologies/components/TechSpectrum';
 import { CaseStudyShowcase } from './projects/components/CaseStudyShowcase';
+import { TechSpectrum } from './technologies/components/TechSpectrum';
 import { InteractiveProcess } from './process/components/InteractiveProcess';
 import { IndustriesGrid } from './industries/components/IndustriesGrid';
 import { WhyEntelgowSection } from '@/components/sections/WhyEntelgowSection';
@@ -14,15 +11,12 @@ import { CinematicCTA } from '@/components/sections/CinematicCTA';
 
 export default function Home() {
   return (
-    <div className="space-y-0">
+    <div className="space-y-0 overflow-x-hidden">
       <HeroSection />
-      <PlatformStorytelling />
-      <ProductEcosystem />
+      <SolutionsSection />
       <InteractiveServices />
-      <AIAgentShowcase />
-      <IoTDataFlow />
-      <TechSpectrum />
       <CaseStudyShowcase />
+      <TechSpectrum />
       <InteractiveProcess />
       <IndustriesGrid />
       <WhyEntelgowSection />
@@ -30,3 +24,4 @@ export default function Home() {
     </div>
   );
 }
+

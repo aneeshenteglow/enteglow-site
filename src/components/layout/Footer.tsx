@@ -1,17 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
-import { Layers, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Layers, Mail, Phone, MapPin, ArrowUpRight, ShieldCheck, Cpu } from 'lucide-react';
 import { companyData } from '@/data/company';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-navy-950 text-slate-300 border-t border-navy-800 pt-16 pb-12">
+    <footer className="bg-navy-950 text-slate-300 border-t border-navy-900 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gold-500 flex items-center justify-center text-white font-bold">
-                <Layers size={20} />
+              <div className="w-10 h-10 rounded-xl bg-gold-500 flex items-center justify-center text-slate-950 font-bold">
+                <Layers size={22} />
               </div>
               <span className="font-extrabold text-xl text-white tracking-tight">
                 Entelgow
@@ -19,68 +19,49 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              {companyData.description}
+              Entelgow architects, engineers, and scales custom software products for forward-thinking enterprises—unifying Web SaaS, Mobile Applications, Desktop Workstations, Agentic AI, and IoT Systems.
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href={companyData.socials.github}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-xl bg-navy-900 border border-navy-800 text-slate-400 hover:text-white hover:border-gold-500 flex items-center justify-center transition-all text-xs font-mono font-bold"
-                aria-label="GitHub"
-              >
-                GH
-              </a>
-              <a
-                href={companyData.socials.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-xl bg-navy-900 border border-navy-800 text-slate-400 hover:text-white hover:border-gold-500 flex items-center justify-center transition-all text-xs font-mono font-bold"
-                aria-label="LinkedIn"
-              >
-                IN
-              </a>
-              <a
-                href={companyData.socials.twitter}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-xl bg-navy-900 border border-navy-800 text-slate-400 hover:text-white hover:border-gold-500 flex items-center justify-center transition-all text-xs font-mono font-bold"
-                aria-label="Twitter"
-              >
-                X
-              </a>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="px-3 py-1.5 rounded-lg bg-navy-900 border border-slate-800 text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
+                <ShieldCheck size={13} />
+                <span>SOC 2 Type II Ready</span>
+              </div>
+              <div className="px-3 py-1.5 rounded-lg bg-navy-900 border border-slate-800 text-[11px] font-mono text-cyan-400 flex items-center gap-1.5">
+                <Cpu size={13} />
+                <span>Zero-Trust Architecture</span>
+              </div>
             </div>
           </div>
 
           <div className="space-y-3">
             <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
-              Product Disciplines
+              Product Engineering
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/services#desktop-applications" className="hover:text-gold-400 transition-colors">
-                  Desktop Applications
+                <Link href="/services#custom-software" className="hover:text-gold-400 transition-colors">
+                  Custom Software Development
                 </Link>
               </li>
               <li>
-                <Link href="/services#mobile-applications" className="hover:text-gold-400 transition-colors">
-                  Mobile Products
+                <Link href="/services#web-saas" className="hover:text-gold-400 transition-colors">
+                  Web SaaS Engineering
                 </Link>
               </li>
               <li>
-                <Link href="/services#web-applications" className="hover:text-gold-400 transition-colors">
-                  Web SaaS Portals
+                <Link href="/services#mobile-apps" className="hover:text-gold-400 transition-colors">
+                  Mobile Field Applications
                 </Link>
               </li>
               <li>
-                <Link href="/services#ai-agents" className="hover:text-gold-400 transition-colors">
-                  AI Agents & RAG
+                <Link href="/services#desktop-workstations" className="hover:text-gold-400 transition-colors">
+                  Native Workstations (Rust/Tauri)
                 </Link>
               </li>
               <li>
-                <Link href="/services#iot-solutions" className="hover:text-gold-400 transition-colors">
-                  IoT Hardware Telemetry
+                <Link href="/services#agentic-ai" className="hover:text-gold-400 transition-colors">
+                  Agentic AI & Workflow Automation
                 </Link>
               </li>
             </ul>
@@ -88,32 +69,32 @@ export const Footer: React.FC = () => {
 
           <div className="space-y-3">
             <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
-              Navigation
+              Solutions & Industries
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/solutions" className="hover:text-gold-400 transition-colors">
-                  Business Solutions
+                <Link href="/solutions#automate-operations" className="hover:text-gold-400 transition-colors">
+                  Operations Automation
                 </Link>
               </li>
               <li>
-                <Link href="/technologies" className="hover:text-gold-400 transition-colors">
-                  Tech Spectrum
+                <Link href="/solutions#legacy-modernization" className="hover:text-gold-400 transition-colors">
+                  Legacy Modernization
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries#manufacturing" className="hover:text-gold-400 transition-colors">
+                  Manufacturing & Supply Chain
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries#healthcare" className="hover:text-gold-400 transition-colors">
+                  Healthcare & MedTech
                 </Link>
               </li>
               <li>
                 <Link href="/projects" className="hover:text-gold-400 transition-colors">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="/process" className="hover:text-gold-400 transition-colors">
-                  7-Stage SDLC
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries" className="hover:text-gold-400 transition-colors">
-                  Domain Industries
+                  Case Studies & Metrics
                 </Link>
               </li>
             </ul>
@@ -145,10 +126,10 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-navy-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Entelgow. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Entelgow Software Engineering. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="/about#engineering-philosophy" className="hover:text-slate-300 transition-colors flex items-center gap-1">
-              <span>Engineering Craftsmanship Guarantee</span>
+            <Link href="/about" className="hover:text-slate-300 transition-colors flex items-center gap-1">
+              <span>Production Quality Guarantee</span>
               <ArrowUpRight size={12} />
             </Link>
           </div>
@@ -157,3 +138,4 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+

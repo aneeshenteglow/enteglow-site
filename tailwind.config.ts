@@ -10,7 +10,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // HelpPlus Primary Palette (Golden Amber & Tech Navy & Royal Blue)
         gold: {
           50: '#FFFBEB',
           100: '#FEF3C7',
@@ -35,6 +34,7 @@ const config: Config = {
           800: '#1E293B',
           900: '#0F172A', // Deep Tech Navy
           950: '#0B0F19', // Darkest topbar/footer
+          990: '#060911',
         },
         techBlue: {
           50: '#EFF6FF',
@@ -46,33 +46,52 @@ const config: Config = {
           600: '#2563EB', // Secondary Royal Blue
           700: '#1D4ED8',
         },
+        cyan: {
+          400: '#38BDF8',
+          500: '#06B6D4',
+          600: '#0891B2',
+        },
+        emerald: {
+          400: '#34D399',
+          500: '#10B981',
+          600: '#059669',
+        },
         brand: {
           50: '#FFFBEB',
           100: '#FEF3C7',
-          500: '#F59E0B', // Default brand primary = Golden Amber
+          500: '#F59E0B',
           600: '#D97706',
           700: '#B45309',
         }
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['var(--font-jetbrains-mono)', 'monospace'],
+        sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['var(--font-jetbrains-mono)', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       boxShadow: {
         'help': '0 10px 30px -5px rgba(15, 23, 42, 0.08)',
         'help-hover': '0 20px 40px -10px rgba(15, 23, 42, 0.15)',
-        'glow-gold': '0 0 25px -5px rgba(245, 158, 11, 0.35)',
-        'glow-blue': '0 0 25px -5px rgba(37, 99, 235, 0.35)',
+        'glow-gold': '0 0 30px -5px rgba(245, 158, 11, 0.4)',
+        'glow-blue': '0 0 30px -5px rgba(37, 99, 235, 0.4)',
+        'glow-cyan': '0 0 30px -5px rgba(6, 182, 212, 0.4)',
+        'glass-dark': '0 20px 50px rgba(0, 0, 0, 0.4)',
+        'glass-light': '0 20px 40px -15px rgba(15, 23, 42, 0.07)',
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
         'float-slow': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin 20s linear infinite',
+        'glow-pulse': 'glowPulse 3s ease-in-out infinite alternate',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-8px)' },
+        },
+        glowPulse: {
+          '0%': { opacity: '0.4', filter: 'blur(20px)' },
+          '100%': { opacity: '0.8', filter: 'blur(30px)' },
         }
       }
     },
@@ -80,3 +99,4 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+
