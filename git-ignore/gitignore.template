@@ -1,0 +1,15 @@
+# React Consolidated Git Ignore Template
+node_modules/
+.next/
+out/
+build/
+dist/
+.env.local
+.env.development.local
+.env.production.local
+.graphify/
+graphify-out/cache/
+!graphify-out/graph.json
+.idea/
+.vscode/
+.DS_Store

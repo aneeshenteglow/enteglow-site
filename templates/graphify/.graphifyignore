@@ -1,0 +1,14 @@
+# React Graphify Ignore Patterns
+.git/
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+.idea/
+.vscode/
+.gemini/
+.claude/
+.antigravity/
+graphify-out/cache/
