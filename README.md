@@ -1,342 +1,229 @@
-# React / Next.js Production Project Guide & Setup Manual
+# Enteglow Enterprise AI & IoT Platform — Official Repository Guide
 
-This document provides a step-by-step guide to initializing, configuring, developing, testing, containerizing, and deploying a new **production-ready React / Next.js application** using this foundation template.
-
-> 💡 **Looking for AI Agent Instructions?**  
-> If you are working with AI agents (Claude, Gemini, Codex, Antigravity), see [`AGENT_USAGE.md`](AGENT_USAGE.md) for detailed guidelines on leveraging specialist agents, skills, and graph-based analysis. This `README.md` is strictly dedicated to human developers building and deploying projects.
+Welcome to the official repository for **Enteglow**, the next-generation Enterprise AI, Edge Computing, and Industrial IoT platform web application built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, and modern visual engineering practices.
 
 ---
 
-## 1. Feature-Based App Router Architecture Standard
+## 📌 Table of Contents
 
-This project foundation enforces a **feature-based architecture directly inside `src/app/`**. Each feature directory under `src/app/<feature>/` is the single home for feature-specific page implementations, components, services, state, hooks, types, routes, and tests.
+1. [Why Post-Commit Hooks Don't Work By Default & Fix](#1-why-post-commit-hooks-dont-work-by-default--fix)
+2. [Platform Features & Components](#2-platform-features--components)
+3. [Feature-Based App Router Architecture](#3-feature-based-app-router-architecture)
+4. [Multi-Agent AI Development System](#4-multi-agent-ai-development-system)
+5. [Git Hooks & Graphify AST Analysis](#5-git-hooks--graphify-ast-analysis)
+6. [Getting Started & Development Scripts](#6-getting-started--development-scripts)
+7. [SEO, Performance & Deployment](#7-seo-performance--deployment)
+
+---
+
+## 1. Why Post-Commit Hooks Don't Work By Default & Fix
+
+### ❓ Why `post-commit` didn't work previously:
+1. **Local-Only Scope of `.git/hooks/`**: Git hooks live inside the local `.git/hooks/` directory, which is **never committed to remote Git repositories** (like GitHub). When a project is freshly initialized or cloned, Git only generates `.sample` files.
+2. **Missing Executable Permissions**: Git hooks require explicit execution permissions (`chmod +x .git/hooks/post-commit`).
+3. **Unconfigured Hook Paths**: By default, Git looks inside `.git/hooks/`. Unless `git config core.hooksPath .githooks` or local scripts are run, Git completely skips post-commit tasks.
+
+### 🛠️ The Fix Implemented:
+We have established a version-controlled `.githooks/` directory containing:
+* **`.githooks/post-commit`**: Automatically regenerates the [Graphify AST Graph](graphify-out/graph.json) after every commit.
+* **`.githooks/pre-commit`**: Automatically runs `npx tsc --noEmit` to verify zero TypeScript errors before committing.
+* **`automation/setup-hooks.sh`**: Automated installer script.
+
+### ⚡ Quick Enable Command:
+To activate hooks on any machine or setup, simply run:
+```bash
+npm run setup:hooks
+# or
+bash automation/setup-hooks.sh
+```
+
+---
+
+## 2. Platform Features & Components
+
+The **Enteglow** platform web app showcases cutting-edge enterprise AI, edge computing, real-time IoT telemetry, and digital transformation solutions:
+
+### 🌌 1. Interactive Hero Section (`/`)
+* **Dynamic Visual Engine**: Custom CSS particle animations, glassmorphism overlays, and neon gradient titles.
+* **Real-time Enterprise Metrics**: Live counting indicators for active IoT sensors, AI inference speeds, and enterprise uptime.
+* **Action Triggers**: Quick action CTAs linking directly to solutions and interactive product demos.
+
+### 🤖 2. Autonomous AI Agent Showcase (`/components/sections/AIAgentShowcase.tsx`)
+* **Agent Simulator**: Live interactive demonstration of autonomous AI agents executing tasks in parallel.
+* **Execution Status Tracker**: Real-time status indicators (`Initializing`, `Processing`, `Completed`) with simulated log feeds.
+* **Interactive AI Chat & Workflow**: Visual tab navigation showing code generation, data processing, and predictive maintenance agents.
+
+### 📡 3. Real-Time IoT & Edge Telemetry Flow (`/components/sections/IoTDataFlow.tsx`)
+* **Sensor Node Simulator**: Interactive node diagram illustrating data stream flow: `Edge Devices` ➡️ `Industrial Gateway` ➡️ `AI Processing Unit` ➡️ `Cloud Analytics`.
+* **Telemetry Data Inspector**: Real-time payload monitor inspecting latency, CPU load, and sensor temperature metrics.
+
+### 🚀 4. Product Ecosystem & Platform Storytelling (`/components/sections/`)
+* **Product Ecosystem Grid**: Comprehensive layout showcasing Entelgow Edge OS, Entelgow AI Hub, and Entelgow Cloud Core.
+* **Architectural Storytelling**: Interactive architectural blueprints showing high-frequency data pipelines, multi-layer encryption, and zero-trust security.
+
+### 💡 5. Interactive Services Engine (`/services`)
+* **Custom AI & ML Fine-Tuning**: Bespoke LLM deployment, computer vision, and neural network optimization.
+* **Industrial IoT Infrastructure**: Edge hardware provisioning, MQTT/OPC-UA protocol integration, and real-time telemetry.
+* **Cloud Architecture & DevOps**: High-availability cloud infrastructure, Kubernetes orchestration, and serverless pipelines.
+* **Embedded Systems Engineering**: Low-level firmware development, microcontroller programming, and FPGA synthesis.
+
+### 🏗️ 6. Technology Spectrum (`/technologies`)
+* **Filterable Tech Stack Matrix**: Categorized exploration across:
+  * **Frontend**: Next.js, React, TypeScript, Tailwind CSS, WebGL.
+  * **Backend**: Node.js, Go, Rust, Python, GraphQL, gRPC.
+  * **AI & Machine Learning**: PyTorch, TensorFlow, TensorRT, ONNX, LangChain.
+  * **Cloud & Edge Computing**: AWS, GCP, Azure, Docker, Kubernetes, WebAssembly.
+  * **IoT & Protocols**: MQTT, OPC-UA, Modbus, ROS2, LoRaWAN.
+
+### 🏭 7. Industry Solutions Grid (`/industries`)
+* Tailored digital transformation solutions for:
+  * **Smart Manufacturing**: Predictive maintenance, automated QA, and digital twin simulation.
+  * **Healthcare & Life Sciences**: AI diagnostics, HIPAA-compliant data pipelines, and medical IoT.
+  * **Automotive & Mobility**: Connected vehicle telemetry, fleet management, and autonomous systems.
+  * **Energy & Utilities**: Grid load forecasting, renewable energy tracking, and smart metering.
+  * **Smart Logistics**: Automated warehouse routing, RFID asset tracking, and supply chain AI.
+
+### 🔄 8. 5-Step Engineering Process (`/process`)
+* Interactive workflow breakdown:
+  1. **Discovery & Auditing**: Requirements mapping & legacy system analysis.
+  2. **Architectural Blueprinting**: System topology, edge-cloud boundaries & security design.
+  3. **Rapid Prototyping**: Proof-of-concept building and hardware-in-the-loop testing.
+  4. **Enterprise Deployment**: Production rollout, CI/CD setup & zero-downtime integration.
+  5. **Continuous AI Optimization**: Model retraining, latency reduction & 24/7 telemetry monitoring.
+
+### 💼 9. Filterable Case Studies Showcase (`/projects` & `/projects/[id]`)
+* **Dynamic Filtering**: Filter projects by domain (AI, IoT, Cloud, Edge).
+* **Quantified ROI**: Hard impact statistics for each case study (e.g., 99.4% precision, 40% energy reduction).
+* **Dynamic Route Pages**: Dedicated deep-dive pages for every case study with architecture diagrams and technical outcomes.
+
+### 🏢 10. Corporate Vision & Leadership (`/about`)
+* Mission statement, company vision, technological milestones, core value pillars, and leadership team overview.
+
+### 📩 11. Interactive Contact & Consultation Hub (`/contact`)
+* Interactive consultation scheduler form, office location maps, direct communication channels, and strict input validation.
+
+---
+
+## 3. Feature-Based App Router Architecture
+
+This project strictly enforces a **feature-based architecture** under `src/app/`:
 
 ```text
 src/
 ├── app/
 │   ├── page.tsx                    # Home page implementation
-│   ├── layout.tsx                  # Root layout
+│   ├── layout.tsx                  # Root layout & global metadata
+│   ├── globals.css                 # Global CSS design system & Tailwind styles
+│   ├── sitemap.ts                  # Dynamic SEO Sitemap generator
+│   ├── robots.ts                   # Search engine crawler directive
 │   │
-│   ├── customer/
-│   │   ├── page.tsx                # Customer page implementation
-│   │   ├── components/             # Customer-specific components (CustomerTable, CustomerForm)
-│   │   ├── services/               # Customer-specific API endpoints (customerApi.ts)
-│   │   ├── store/                  # Customer-specific state (customerSlice.ts)
-│   │   ├── hooks/                  # Customer-specific hooks (useCustomers.ts)
-│   │   ├── types/                  # Customer-specific TS types (customer.ts)
-│   │   ├── routes/                 # Customer-specific route definitions (customerRoutes.ts)
-│   │   ├── tests/                  # Customer-specific tests
-│   │   └── index.ts                # Public feature export
+│   ├── about/                      # About feature module
+│   ├── contact/                    # Contact & Consultation module
+│   ├── industries/                 # Industry solutions module
+│   │   ├── page.tsx
+│   │   ├── components/             # Feature-specific components
+│   │   ├── services/               # Feature-specific data providers
+│   │   └── types/                  # Feature-specific TS interfaces
 │   │
-│   ├── order/
-│   │   ├── page.tsx                # Order page implementation
-│   │   ├── components/
-│   │   ├── services/
-│   │   ├── store/
-│   │   ├── hooks/
-│   │   ├── types/
-│   │   └── index.ts
-│   │
-│   └── ...
+│   ├── process/                    # 5-Step Engineering Process module
+│   ├── projects/                   # Case studies & dynamic routing module
+│   ├── services/                   # Core Services matrix module
+│   ├── solutions/                  # Solution architectures module
+│   └── technologies/               # Technology spectrum module
 │
 ├── components/
-│   ├── common/                     # Globally reusable UI components (Button, Badge, Card, Modal)
-│   ├── layout/                     # Header, Footer, Navigation
-│   └── sections/                   # Reusable page sections
+│   ├── common/                     # Reusable UI primitives (Button, Badge, Card, DynamicIcon)
+│   ├── layout/                     # Header, Footer, MobileNav
+│   └── sections/                   # Home page sections (HeroSection, AIAgentShowcase, IoTDataFlow)
 │
-├── services/                       # Global API clients & HTTP fetchers (base client, auth client)
-├── hooks/                          # Shared React hooks (useDebounce, useTheme)
-├── utils/                          # Shared helper utilities & formatters
-└── types/                          # Core global TypeScript type declarations
-```
-
-> **Principle**: Feature folders inside `src/app/<feature>/` serve as the feature boundary. Do not create a separate `src/modules/` layer. Global `src/components/`, `src/services/`, `src/hooks/`, `src/utils/`, and `src/types/` are reserved for code genuinely shared across multiple features.
-
----
-
-## 2. Core vs. Optional Components
-
-This template provides a modular React foundation supporting both Next.js Server Components (RSC) and Client-side React SPA architectures:
-
-```text
-react/
-├── Core Foundation (Always Included)
-│   ├── Module-Based Architecture    # Feature modules in src/modules/<feature>/
-│   ├── React Component Foundation   # Common UI primitives in src/components/common/
-│   ├── Custom Hooks State Manager   # Resilient state management & custom hooks
-│   ├── Form Security & Anti-XSS     # Input validation, honeypots & sanitization standards
-│   └── Testing & Quality Standards  # Vitest, React Testing Library & tsc typechecking
-│
-└── Optional Modular Features
-    ├── Next.js App Router (RSC)      # React Server Components & Server Actions architecture
-    ├── Resilient API Client         # Data fetching, caching, revalidation & SWR/TanStack Query
-    ├── Docker Containerization      # Next.js standalone Node.js server container
-    └── React Graphify               # AST structural graph analysis for React TSX files
-```
-
-
----
-
-## 2. Production-Grade Architecture Flow
-
-### Runtime Application Architecture (Next.js App Router)
-
-```text
-Client Browser Application
-            │
-            ▼
-Next.js App Router (Server Node.js Runtime / Edge)
-            │
-   ┌────────┴────────┐
-   ▼                 ▼
-Server Component  Client Component ('use client')
-(RSC Data Fetch)  (Interactive State / Custom Hooks)
-   │                 │
-   │                 ▼
-   │          Server Actions / REST API Interceptor
-   │                 │
-   └────────┬────────┘
-            ▼
-  Backend Database / Microservices API
-```
-
-### Production CI/CD & Standalone Docker Container Pipeline
-
-```text
-Git Repository (Commit / Push)
-              │
-              ▼
-   CI Pipeline (GitHub Actions / Vercel CI)
-              │
-    ┌─────────┴─────────┐
-    ▼                   ▼
-TypeScript Check    Unit & Component Tests
-(npx tsc --noEmit)  (npm run test)
-    │                   │
-    └─────────┬─────────┘
-              ▼
-    Next.js Production Build
-    (npm run build -> .next/standalone)
-              │
-              ▼
-  Multi-Stage Docker Image Packaging
-              │
-              ▼
- Container Registry (GHCR / AWS ECR)
-              │
-              ▼
- Production Deployment (Vercel / AWS ECS / Kubernetes)
+├── data/                           # Global static data declarations
+└── types/                          # Core TypeScript declarations
 ```
 
 ---
 
-## 3. Step-by-Step New Project Setup
+## 4. Multi-Agent AI Development System
 
-Follow these 16 steps to initialize a new React / Next.js application from scratch.
+This codebase contains an integrated **React Multi-Agent Framework** designed for AI pair-programming and automated code quality governance:
 
-### Step 1 — Copy / Initialize Template
-Run the root project bootstrapper script:
-
-```bash
-# Linux / macOS
-./automation/linux/setup-project.sh --framework react --target-dir ../my-react-app --git-hooks basic
-
-# Windows PowerShell
-.\automation\windows\setup-project.ps1 -Framework react -TargetDir ..\my-react-app
-```
-
-### Step 2 — Select the Framework
-Confirm that the framework target directory contains React / Next.js assets (`package.json`, `src/`, `next.config.js` or `vite.config.ts`).
-
-### Step 3 — Create / Initialize Project
-Navigate to your project directory and install packages:
-
-```bash
-cd ../my-react-app
-npm install
-```
-
-### Step 4 — Configure Project Name & Metadata
-Update `package.json` name, version, and set SEO metadata / title in `src/app/layout.tsx`.
-
-### Step 5 — Configure Environment Variables
-Create local environment files:
-
-```bash
-cp .env.example .env.local
-cp .env.example .env.production
-```
-
-### Step 6 — Select Optional Features
-Toggle optional integrations (Next.js Server Actions, Client SPA state, Form Security honeypots) in component boundaries.
-
-### Step 7 — Install Dependencies
-Fetch dependencies:
-
-```bash
-npm install
-```
-
-### Step 8 — Configure API Connection / Server Actions
-Set public API URL environment variable:
-
-```env
-NEXT_PUBLIC_API_URL=https://api.mycompany.com/v1
-```
-
-### Step 9 — Configure Authentication & Session Storage
-Initialize authentication providers (NextAuth / JWT session cookies) in layout wrappers.
-
-### Step 10 — Configure Docker (Optional)
-Ensure `output: 'standalone'` is set in `next.config.js` for lightweight production Docker images.
-
-### Step 11 — Configure Git & Hooks
-Initialize Git repository and enable TypeScript verification pre-commit hooks:
-
-```bash
-git init
-./automation/linux/install-hooks.sh --mode basic
-```
-
-### Step 12 — Configure Graphify (Optional Codebase Analysis)
-Enable React AST graph analysis:
-
-```bash
-bash automation/scripts/graphify-setup.sh
-```
-
-### Step 13 — Run Initial Type Checks
-Validate TypeScript types:
-
-```bash
-npx tsc --noEmit
-```
-
-### Step 14 — Run Test Suite
-Execute unit and component tests:
-
-```bash
-npm run test
-```
-
-### Step 15 — Start Local Development Server
-Launch Next.js development server:
-
-```bash
-npm run dev
-```
-
-### Step 16 — Prepare Production Build
-Build optimized production bundle:
-
-```bash
-npm run build
-```
+| Agent | Specification File | Role |
+|---|---|---|
+| 🧠 **Planner** | [`agents/planner.agent.md`](agents/planner.agent.md) | Analyzes requirements, component hierarchy, and Server vs Client boundaries. |
+| 🎼 **Orchestrator** | [`agents/orchestrator.agent.md`](agents/orchestrator.agent.md) | Sequences tasks across specialist agents. |
+| 💻 **Implementer** | [`agents/implementer.agent.md`](agents/implementer.agent.md) | Writes TSX components, custom hooks, and pages following feature rules. |
+| 🧪 **Tester** | [`agents/tester.agent.md`](agents/tester.agent.md) | Runs `npx tsc --noEmit`, linters, and verification builds. |
+| 🔍 **Reviewer** | [`agents/reviewer.agent.md`](agents/reviewer.agent.md) | Audits code for performance, accessibility, security, and design adherence. |
 
 ---
 
-## 4. Environment Configuration
+## 5. Git Hooks & Graphify AST Analysis
 
-### Safe Environment Template (`.env.local`)
+### 📊 Graphify Codebase Graph Generation
+Graphify parses the TSX/TS codebase into a structural Abstract Syntax Tree (AST) graph (`graphify-out/graph.json`), mapping imports, component relationships, and Server/Client boundaries.
 
-```env
-# Next.js Environment Variables
-NEXT_PUBLIC_APP_NAME=My Production React App
-NEXT_PUBLIC_API_URL=https://api.example.com/v1
-
-# Server-Side Only Credentials (Never exposed to browser)
-DATABASE_URL=postgresql://user:<your-password>@localhost:5432/mydb
-AUTH_SECRET=<your-random-32-character-auth-secret>
-```
-
-> ⚠️ **Security Warning**: Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser bundle. Keep database passwords and private API keys strictly server-side.
+* **Manual Rebuild**:
+  ```bash
+  python3 -m graphify .
+  ```
+* **Automated Rebuild**: Configured via `.githooks/post-commit` to execute automatically every time `git commit` succeeds!
 
 ---
 
-## 5. Local Development Workflow
+## 6. Getting Started & Development Scripts
 
-```bash
-# 1. Install dependencies
-npm install
+### Prerequisites
+* **Node.js**: v18.0.0 or higher
+* **npm**: v9.0.0 or higher
+* **Python**: 3.8+ (optional, for Graphify AST analysis)
 
-# 2. Run TypeScript compiler check
-npx tsc --noEmit
+### Installation & Setup
 
-# 3. Run Vitest component tests
-npm run test
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/aneeshenteglow/enteglow-site.git
+   cd enteglow-site
+   ```
 
-# 4. Start Next.js HMR development server
-npm run dev
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-# 5. Build production bundle (.next/standalone)
-npm run build
-```
+3. **Enable Git Hooks**:
+   ```bash
+   npm run setup:hooks
+   ```
 
----
+4. **Start Development Server**:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 6. Docker Operations
+### Development Scripts Summary
 
-### Production Multi-Stage Standalone Next.js Dockerfile
-
-```bash
-# Build standalone production image
-docker build -t my-react-app:latest -f Dockerfile .
-
-# Run standalone Next.js server container
-docker run -d -p 3000:3000 -e NEXT_PUBLIC_API_URL=https://api.example.com my-react-app:latest
-```
-
----
-
-## 7. Git Workflow & Automation
-
-```bash
-# Initialize repo and pre-commit checks
-git init
-./automation/linux/install-hooks.sh --mode basic
-
-# Commit initial React app setup
-git add .
-git commit -m "feat: initialize React / Next.js app from production template"
-```
-
-For full automation details, see [`automation/README.md`](../automation/README.md).
+| Command | Action |
+|---|---|
+| `npm run dev` | Starts Next.js development server with Hot Module Replacement |
+| `npm run build` | Builds optimized production bundle |
+| `npm run start` | Runs built production application |
+| `npm run typecheck` | Validates TypeScript types (`tsc --noEmit`) |
+| `npm run lint` | Runs Next.js ESLint verification |
+| `npm run setup:hooks` | Installs and configures Git pre-commit & post-commit hooks |
 
 ---
 
-## 8. Graphify Codebase Analysis
+## 7. SEO, Performance & Deployment
 
-* **AST Analysis**: Parses TSX components, custom hooks, and Server Actions.
-* **Update Graph**: Run `python skills/react-graphify/graphify.py` to regenerate structural graph index.
+### Search Engine Optimization (SEO)
+* **Metadata API**: Comprehensive Open Graph, Twitter Cards, and canonical URL settings in `src/app/layout.tsx`.
+* **Dynamic Sitemap**: Automatically generated at `/sitemap.xml` via `src/app/sitemap.ts`.
+* **Robots Directive**: Configured via `src/app/robots.ts`.
 
----
-
-## 9. Production Deployment
-
-### Production Options
-
-1. **Vercel / Cloud Deployment**: Connect Git repository for automatic edge deployments.
-2. **Docker / Kubernetes Deployment**: Build Next.js standalone container image and deploy to Node.js application cluster.
+### Deployment Options
+* **Vercel (Recommended)**: Push to `main` for automatic edge deployments.
+* **Node.js / Docker**: Build standalone bundle (`npm run build`) and run via `npm run start` or Docker container.
 
 ---
 
-## 10. Project Setup Checklist
-
-- [ ] Project directory created and template populated
-- [ ] Node dependencies installed (`npm install`)
-- [ ] Environment variables configured in `.env.local`
-- [ ] Server Component vs Client Component boundaries established
-- [ ] Form security and input validation implemented
-- [ ] `npx tsc --noEmit` passing with zero compilation errors
-- [ ] Unit & component test suite passing (`npm run test`)
-- [ ] Git repository initialized with pre-commit hooks
-- [ ] Production build verified (`npm run build`)
-
----
-
-## 11. Cross-References & Additional Documentation
-
-* **AI Agent Instructions**: [`AGENT_USAGE.md`](AGENT_USAGE.md)
-* **Agent Team & Roles**: [`AGENTS.md`](AGENTS.md)
-* **Architecture Plans**: [`architecture_plans/`](architecture_plans/)
-* **Project Instantiation Guide**: [`../PROJECT_SETUP.md`](../PROJECT_SETUP.md)
+*© Enteglow. Enterprise AI & Edge Intelligence Systems.*

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Git post-commit hook for Enteglow Site
+# Automatically updates Graphify AST graph after each commit
+
+echo "=========================================="
+echo "⚡ [Git Post-Commit Hook] Running post-commit workflows..."
+echo "=========================================="
+
+# 1. Update Graphify Codebase Graph (if python3 & graphify are available)
+PYTHON_BIN="python3"
+if ! command -v python3 >/dev/null 2>&1; then
+    PYTHON_BIN="python"
+fi
+
+if command -v "$PYTHON_BIN" >/dev/null 2>&1; then
+    if "$PYTHON_BIN" -c "import graphify" >/dev/null 2>&1 || command -v graphify >/dev/null 2>&1; then
+        echo "📊 Updating Graphify AST graph (graphify-out/graph.json)..."
+        if command -v graphify >/dev/null 2>&1; then
+            graphify . || echo "⚠️ Graphify update skipped or returned non-zero."
+        else
+            "$PYTHON_BIN" -m graphify . || echo "⚠️ Graphify module execution skipped."
+        fi
+    else
+        echo "ℹ️ Graphify not installed. Install with 'pip install graphify-code' for AST dependency graph generation."
+    fi
+else
+    echo "ℹ️ Python environment not found. Graphify post-commit step skipped."
+fi
+
+echo "✅ [Git Post-Commit Hook] Completed successfully."

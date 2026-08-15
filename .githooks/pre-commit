@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Git pre-commit hook for Enteglow Site
+# Validates TypeScript compilation before allowing commits
+
+echo "=========================================="
+echo "🔍 [Git Pre-Commit Hook] Validating TypeScript compilation..."
+echo "=========================================="
+
+if command -v npx >/dev/null 2>&1; then
+    npx tsc --noEmit
+    if [ $? -ne 0 ]; then
+        echo "❌ [Git Pre-Commit Hook] TypeScript compilation failed! Fix type errors before committing."
+        exit 1
+    fi
+    echo "✅ [Git Pre-Commit Hook] TypeScript check passed."
+else
+    echo "⚠️ npx not found, skipping pre-commit type check."
+fi
