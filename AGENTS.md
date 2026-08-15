@@ -69,7 +69,7 @@ src/
 |---|---|
 | [`react-graphify`](skills/react-graphify/SKILL.md) | Structural AST graph analysis of React TSX components, custom hooks, and Server Actions. |
 | [`react-docker`](skills/react-docker/SKILL.md) | Docker container management for Next.js SSR and static React builds. |
-| [`react-git-hooks`](skills/react-git-hooks/SKILL.md) | Optional post-commit Graphify graph updates and pre-commit TypeScript checks. |
+| [`react-git-hooks`](skills/react-git-hooks/SKILL.md) | Mandatory pre-commit TypeScript compilation checks (`npx tsc --noEmit`) and post-commit Graphify graph updates (`graphify-out/graph.json`). |
 | [`react-server-components`](skills/react-server-components/SKILL.md) | Next.js Server vs Client Component boundaries. |
 | [`react-hooks-state`](skills/react-hooks-state/SKILL.md) | Custom hooks, state management, and side effects. |
 | [`react-form-security`](skills/react-form-security/SKILL.md) | Form validation, honeypots, and anti-XSS standards. |

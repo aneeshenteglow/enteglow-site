@@ -18,3 +18,5 @@ framework: react
 3. **🚨 Git Safety**: Never run `git commit`, `git push`, `git merge`, or `git checkout -b`.
 4. **TypeScript Strictness**: `npx tsc --noEmit` must pass cleanly without type suppressions (`@ts-ignore`).
 5. **Build Verification**: `npm run build` must succeed before declaring completion.
+6. **Mandatory Git Hooks & Graphify Updates**: Automated pre-commit (`npx tsc --noEmit`) and post-commit Graphify AST graph updates (`graphify-out/graph.json`) MUST be configured and active across Linux and Windows.
+7. **Mandatory README Currency**: Update project `README.md` whenever new features, routes, or API endpoints are added.
