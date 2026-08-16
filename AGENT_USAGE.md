@@ -43,8 +43,8 @@ Check relevant architecture plans, implement Zod validation and honeypot protect
 Use this approach when you already know which specific agent you want to invoke:
 
 ```text
-@react/agents/implementer.agent.md
-@react/skills/react-server-components/SKILL.md
+@agents/implementer.agent.md
+@skills/react-server-components/SKILL.md
 
 Create a new Next.js Server Component page for displaying user dashboard analytics.
 ```
@@ -58,8 +58,8 @@ For complex features, step through the 4-stage agent pipeline:
 ### Step 1: Planning (Planner Agent — No Code Changes)
 
 ```text
-@react/agents/planner.agent.md
-@react/skills/react-implementation-planning/SKILL.md
+@agents/planner.agent.md
+@skills/react-implementation-planning/SKILL.md
 
 Analyze this requirement: [Insert task description]
 Inspect existing components, hooks, and App Router pages.
@@ -69,19 +69,19 @@ Determine Server vs Client Component boundaries and create an implementation pla
 ### Step 2: Implementation (Implementer Agent)
 
 ```text
-@react/agents/implementer.agent.md
-@react/skills/react-server-components/SKILL.md
-@react/skills/react-hooks-state/SKILL.md
+@agents/implementer.agent.md
+@skills/react-server-components/SKILL.md
+@skills/react-hooks-state/SKILL.md
 
 Implement the approved plan for: [Insert task name]
-Follow coding standards in @react/skills/react-code-standards/SKILL.md.
+Follow coding standards in @skills/react-code-standards/SKILL.md.
 ```
 
 ### Step 3: Testing (Tester Agent)
 
 ```text
-@react/agents/tester.agent.md
-@react/skills/react-testing/SKILL.md
+@agents/tester.agent.md
+@skills/react-testing/SKILL.md
 
 Run npx tsc --noEmit, Vitest, and npm run build.
 Fix any compilation errors or broken tests.
@@ -90,8 +90,8 @@ Fix any compilation errors or broken tests.
 ### Step 4: Review (Reviewer Agent)
 
 ```text
-@react/agents/reviewer.agent.md
-@react/skills/react-code-standards/SKILL.md
+@agents/reviewer.agent.md
+@skills/react-code-standards/SKILL.md
 
 Review recent TSX changes for accessibility, hook dependency arrays, and bundle size.
 ```
@@ -105,7 +105,7 @@ Review recent TSX changes for accessibility, hook dependency arrays, and bundle 
 - **Automatic Selection**: Type your task prompt directly; Antigravity reads `AGENTS.md` and loads matching skills automatically.
 - **Explicit Selection**: Use `@` mentions in chat:
   ```text
-  @react/agents/planner.agent.md
+  @agents/planner.agent.md
   Analyze the authentication modal state requirements and create an implementation plan.
   ```
 
@@ -113,7 +113,7 @@ Review recent TSX changes for accessibility, hook dependency arrays, and bundle 
 
 - **Explicit Selection**: Reference agent/skill files using `@`:
   ```text
-  @react/agents/implementer.agent.md @react/skills/react-hooks-state/SKILL.md
+  @agents/implementer.agent.md @skills/react-hooks-state/SKILL.md
   Create a custom useDebouncedSearch hook for live input filtering.
   ```
 
@@ -121,13 +121,13 @@ Review recent TSX changes for accessibility, hook dependency arrays, and bundle 
 
 - **Usage**: Mention file paths directly in prompt text:
   ```text
-  Read react/agents/implementer.agent.md and react/skills/react-server-components/SKILL.md.
+  Read agents/implementer.agent.md and skills/react-server-components/SKILL.md.
   Refactor page.tsx into a Server Component.
   ```
 
 ### Codex CLI
 
-- **Usage**: Reference `react/AGENTS.md` inside `.codex/instructions.md` or mention file paths:
+- **Usage**: Reference `AGENTS.md` inside `.codex/instructions.md` or mention file paths:
   ```text
-  Follow react/agents/tester.agent.md to run npx tsc --noEmit and npm run build.
+  Follow agents/tester.agent.md to run npx tsc --noEmit and npm run build.
   ```

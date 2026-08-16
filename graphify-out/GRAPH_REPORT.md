@@ -1,11 +1,11 @@
 # Graph Report - .  (2026-08-15)
 
 ## Corpus Check
-- 56 files · ~24,681 words
+- 59 files · ~28,496 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 62 nodes · 92 edges · 12 communities detected
+- 68 nodes · 101 edges · 13 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
@@ -17,31 +17,31 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.18
-Nodes (0): 
-
-### Community 1 - "Community 1"
 Cohesion: 0.17
 Nodes (0): 
 
+### Community 1 - "Community 1"
+Cohesion: 0.22
+Nodes (0): 
+
 ### Community 2 - "Community 2"
-Cohesion: 0.25
+Cohesion: 0.24
 Nodes (0): 
 
 ### Community 3 - "Community 3"
-Cohesion: 0.25
+Cohesion: 0.29
 Nodes (0): 
 
 ### Community 4 - "Community 4"
-Cohesion: 0.33
+Cohesion: 0.25
 Nodes (0): 
 
 ### Community 5 - "Community 5"
-Cohesion: 0.5
+Cohesion: 0.33
 Nodes (0): 
 
 ### Community 6 - "Community 6"
-Cohesion: 1.0
+Cohesion: 0.6
 Nodes (0): 
 
 ### Community 7 - "Community 7"
@@ -64,18 +64,22 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 12 - "Community 12"
+Cohesion: 1.0
+Nodes (0): 
+
 ## Knowledge Gaps
-- **Thin community `Community 6`** (2 nodes): `robots.ts`, `robots()`
+- **Thin community `Community 7`** (2 nodes): `robots.ts`, `robots()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 7`** (1 nodes): `next-env.d.ts`
+- **Thin community `Community 8`** (1 nodes): `next-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 8`** (1 nodes): `tailwind.config.ts`
+- **Thin community `Community 9`** (1 nodes): `tailwind.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 9`** (1 nodes): `index.ts`
+- **Thin community `Community 10`** (1 nodes): `index.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 10`** (1 nodes): `post-commit.ps1`
+- **Thin community `Community 11`** (1 nodes): `post-commit.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 11`** (1 nodes): `pre-commit.ps1`
+- **Thin community `Community 12`** (1 nodes): `pre-commit.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

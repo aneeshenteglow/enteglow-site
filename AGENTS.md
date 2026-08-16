@@ -91,6 +91,12 @@ src/
 
 ---
 
+## Foundation Code (Optional Template)
+
+The `foundation/` directory contains **optional starter/template code** for initializing new React / Next.js projects. It is NOT mandatory agent infrastructure. When working on an existing project, agents should inspect and work with the project's actual codebase.
+
+---
+
 ## Tool Integration Instructions
 
 To adopt this React agent environment in a project:

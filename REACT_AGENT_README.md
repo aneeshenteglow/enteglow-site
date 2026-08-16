@@ -21,10 +21,10 @@ Use the framework-isolated `update-agent` scripts in `react/automation/` to appl
 #### Linux / macOS Bash Command
 ```bash
 # From template repository root:
-bash react/automation/update-agent.sh /home/aneesh/Documents/react/enteglow-site
+bash react/automation/update-agent.sh /path/to/your/react-project
 
 # Or from inside react/automation:
-./update-agent.sh --target-dir /home/aneesh/Documents/react/enteglow-site
+./update-agent.sh --target-dir /path/to/your/react-project
 ```
 
 #### Windows PowerShell Command
@@ -352,7 +352,7 @@ git add .
 git commit -m "feat: initialize React / Next.js app from production template"
 ```
 
-For full automation details, see [`automation/README.md`](../automation/README.md).
+For automation details, see the `automation/` directory within this package.
 
 ---
 
@@ -391,4 +391,4 @@ For full automation details, see [`automation/README.md`](../automation/README.m
 * **AI Agent Instructions**: [`AGENT_USAGE.md`](AGENT_USAGE.md)
 * **Agent Team & Roles**: [`AGENTS.md`](AGENTS.md)
 * **Architecture Plans**: [`architecture_plans/`](architecture_plans/)
-* **Project Instantiation Guide**: [`../PROJECT_SETUP.md`](../PROJECT_SETUP.md)
+* **Project Setup**: See Step-by-Step instructions in this README (Section 3)
