@@ -1,11 +1,11 @@
 # Graph Report - .  (2026-08-17)
 
 ## Corpus Check
-- 63 files · ~41,150 words
+- 66 files · ~42,076 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 76 nodes · 89 edges · 19 communities detected
+- 82 nodes · 97 edges · 19 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
@@ -17,31 +17,31 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.15
+Cohesion: 0.12
 Nodes (0): 
 
 ### Community 1 - "Community 1"
-Cohesion: 0.17
+Cohesion: 0.19
 Nodes (0): 
 
 ### Community 2 - "Community 2"
-Cohesion: 0.24
+Cohesion: 0.15
 Nodes (0): 
 
 ### Community 3 - "Community 3"
-Cohesion: 0.38
+Cohesion: 0.32
 Nodes (0): 
 
 ### Community 4 - "Community 4"
-Cohesion: 0.4
+Cohesion: 0.29
 Nodes (0): 
 
 ### Community 5 - "Community 5"
-Cohesion: 0.4
+Cohesion: 1.0
 Nodes (0): 
 
 ### Community 6 - "Community 6"
-Cohesion: 0.5
+Cohesion: 1.0
 Nodes (0): 
 
 ### Community 7 - "Community 7"
@@ -93,19 +93,23 @@ Cohesion: 1.0
 Nodes (0): 
 
 ## Knowledge Gaps
-- **Thin community `Community 7`** (2 nodes): `ArchitectsAboutSection.tsx`, `ArchitectsAboutSection()`
+- **Thin community `Community 5`** (2 nodes): `industriesData.ts`, `industry.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 8`** (2 nodes): `industriesData.ts`, `industry.ts`
+- **Thin community `Community 6`** (2 nodes): `ServicesBentoSection.tsx`, `ServicesBentoSection()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 9`** (2 nodes): `technologiesData.ts`, `technology.ts`
+- **Thin community `Community 7`** (2 nodes): `technologiesData.ts`, `technology.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 10`** (2 nodes): `ServicesBentoSection.tsx`, `ServicesBentoSection()`
+- **Thin community `Community 8`** (2 nodes): `ContactForm.tsx`, `handleSubmit()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 11`** (2 nodes): `solution.ts`, `solutionsData.ts`
+- **Thin community `Community 9`** (2 nodes): `ArchitectsAboutSection.tsx`, `ArchitectsAboutSection()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 12`** (2 nodes): `robots.ts`, `robots()`
+- **Thin community `Community 10`** (2 nodes): `solution.ts`, `solutionsData.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 13`** (2 nodes): `process.ts`, `processData.ts`
+- **Thin community `Community 11`** (2 nodes): `robots.ts`, `robots()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 12`** (2 nodes): `process.ts`, `processData.ts`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 13`** (2 nodes): `ThreeEcosystemCanvas.tsx`, `ThreeEcosystemCanvas()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 14`** (1 nodes): `next-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -119,4 +123,7 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
-_Not enough signal to generate questions. This usually means the corpus has no AMBIGUOUS edges, no bridge nodes, no INFERRED relationships, and all communities are tightly cohesive. Add more files or run with --mode deep to extract richer edges._
+_Questions this graph is uniquely positioned to answer:_
+
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
