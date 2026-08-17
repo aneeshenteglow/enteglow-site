@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { ProjectPlannerProvider } from '@/context/ProjectPlannerContext';
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +23,10 @@ export const metadata: Metadata = {
   authors: [{ name: 'Enteglow Team' }],
   creator: 'Enteglow',
   publisher: 'Enteglow',
-  metadataBase: new URL('https://entelgow.com'),
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -51,11 +55,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light scroll-smooth">
-      <body className="bg-background text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col font-sans selection:bg-electric-blue selection:text-white">
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+    <html lang="en" className="dark scroll-smooth">
+      <body className="bg-background text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col font-sans selection:bg-primary-container selection:text-on-primary-container">
+        <ProjectPlannerProvider>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </ProjectPlannerProvider>
       </body>
     </html>
   );

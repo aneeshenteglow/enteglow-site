@@ -1,5 +1,64 @@
 import React from 'react';
-import * as Icons from 'lucide-react';
+import {
+  Factory,
+  Truck,
+  ShoppingBag,
+  HeartPulse,
+  Zap,
+  Sprout,
+  Building,
+  GraduationCap,
+  Landmark,
+  ShieldCheck,
+  Cpu,
+  Globe,
+  Smartphone,
+  Server,
+  Cloud,
+  Database,
+  Code,
+  Brain,
+  Bot,
+  BarChart,
+  Layers,
+  Settings,
+  Radio,
+  TrendingUp,
+  FileCode,
+  CheckCircle2,
+  Lock,
+  LucideIcon,
+} from 'lucide-react';
+
+const ICON_MAP: Record<string, LucideIcon> = {
+  Factory,
+  Truck,
+  ShoppingBag,
+  HeartPulse,
+  Zap,
+  Sprout,
+  Building,
+  GraduationCap,
+  Landmark,
+  ShieldCheck,
+  Cpu,
+  Globe,
+  Smartphone,
+  Server,
+  Cloud,
+  Database,
+  Code,
+  Brain,
+  Bot,
+  BarChart,
+  Layers,
+  Settings,
+  Radio,
+  TrendingUp,
+  FileCode,
+  CheckCircle2,
+  Lock,
+};
 
 interface DynamicIconProps {
   name: string;
@@ -12,8 +71,6 @@ export const DynamicIcon: React.FC<DynamicIconProps> = ({
   className = '',
   size = 24,
 }) => {
-  const iconMap = Icons as unknown as Record<string, React.ComponentType<{ className?: string; size?: number }>>;
-  const IconComponent = iconMap[name] || Icons.Code;
-
+  const IconComponent = ICON_MAP[name] || Code;
   return <IconComponent className={className} size={size} />;
 };

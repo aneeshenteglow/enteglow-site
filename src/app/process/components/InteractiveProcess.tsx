@@ -14,7 +14,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
-import { ProjectPlannerModal } from '@/components/common/ProjectPlannerModal';
+import { useProjectPlanner } from '@/context/ProjectPlannerContext';
 
 interface ProcessStage {
   step: string;
@@ -92,124 +92,120 @@ const STAGES: ProcessStage[] = [
 
 export const InteractiveProcess: React.FC = () => {
   const [activeStage, setActiveStage] = useState<ProcessStage>(STAGES[0]);
-  const [plannerOpen, setPlannerOpen] = useState(false);
+  const { openPlanner } = useProjectPlanner();
 
   return (
-    <>
-      <section className="py-section-padding-lg bg-surface border-t border-b border-glass-border relative">
-        <div className="max-w-container-max mx-auto px-gutter space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <Badge className="mb-2">Agile Engineering Journey</Badge>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
-              A 6-Stage Process Built for Quality &amp; Transparency
-            </h2>
-            <p className="font-body-lg text-on-surface-variant">
-              Our software engineering lifecycle replaces guesswork with predictable milestone delivery, automated quality gates, and 100% IP code ownership.
-            </p>
-          </div>
+    <section className="py-section-padding-lg bg-surface border-t border-b border-glass-border relative">
+      <div className="max-w-container-max mx-auto px-gutter space-y-12">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <Badge className="mb-2">Agile Engineering Journey</Badge>
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+            A 6-Stage Process Built for Quality &amp; Transparency
+          </h2>
+          <p className="font-body-lg text-on-surface-variant">
+            Our software engineering lifecycle replaces guesswork with predictable milestone delivery, automated quality gates, and 100% IP code ownership.
+          </p>
+        </div>
 
-          {/* Connected Stage Navigator Bar */}
-          <div className="p-3 rounded-xl glass-panel border border-glass-border">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-              {STAGES.map((st) => {
-                const isActive = activeStage.step === st.step;
-                return (
-                  <button
-                    key={st.step}
-                    onClick={() => setActiveStage(st)}
-                    className={`p-3 rounded transition-all text-left border ${
-                      isActive
-                        ? 'bg-primary-container text-on-primary-container border-primary shadow-[0_0_15px_rgba(227,30,36,0.3)]'
-                        : 'glass-panel text-on-surface-variant hover:text-on-surface border-glass-border'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className={`text-[10px] font-label-sm font-bold ${isActive ? 'text-on-primary-container' : 'text-on-surface-variant'}`}>
-                        STAGE {st.step}
-                      </span>
-                      {isActive && <span className="w-2 h-2 rounded-full bg-on-primary-container animate-ping" />}
-                    </div>
-                    <div className="text-sm font-bold mt-1 font-headline-md truncate">{st.name}</div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Active Stage Detailed Card */}
-          <div className="p-6 sm:p-8 rounded-xl glass-panel border border-glass-border grid grid-cols-1 lg:grid-cols-12 gap-8 items-start glow-hover">
-            <div className="lg:col-span-6 space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="p-3 rounded bg-primary-container/10 border border-primary/20 text-primary">
-                  {activeStage.icon}
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-label-sm text-xs font-bold text-primary uppercase">
-                      STAGE {activeStage.step} • {activeStage.subtitle}
-                    </span>
-                  </div>
-                  <h3 className="font-headline-md text-2xl text-on-surface mt-0.5">{activeStage.name} Phase</h3>
-                </div>
-              </div>
-
-              <p className="font-body-lg text-on-surface-variant text-sm sm:text-base leading-relaxed font-normal">
-                {activeStage.description}
-              </p>
-
-              <div className="p-4 rounded bg-surface-container border border-glass-border space-y-2">
-                <div className="flex items-center gap-2 text-on-surface font-label-sm text-xs font-bold uppercase">
-                  <Clock size={14} className="text-primary" />
-                  <span>Estimated Timeframe: {activeStage.duration}</span>
-                </div>
-                <p className="text-xs text-on-surface-variant font-medium">
-                  Direct communication via dedicated Slack/Teams channel and weekly video engineering standups.
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-6 space-y-6">
-              {/* Key Deliverables Artifacts */}
-              <div className="p-5 rounded bg-surface-deep text-on-surface border border-glass-border space-y-3">
-                <span className="font-label-sm text-xs text-primary font-bold uppercase tracking-wider block">
-                  Concrete Deliverables &amp; Artifacts:
-                </span>
-                <div className="space-y-2 text-xs">
-                  {activeStage.keyOutputs.map((out, i) => (
-                    <div key={i} className="flex items-center gap-2 text-on-surface-variant">
-                      <CheckCircle2 size={14} className="text-primary shrink-0" />
-                      <span className="font-label-sm text-[11px]">{out}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Quality Gate */}
-              <div className="p-5 rounded bg-primary-container/10 border border-primary/30 space-y-1.5">
-                <div className="flex items-center gap-2 text-primary font-label-sm text-xs font-bold uppercase">
-                  <ShieldCheck size={16} className="text-primary" />
-                  <span>Quality Assurance Gate:</span>
-                </div>
-                <p className="text-xs text-on-surface font-semibold leading-relaxed">
-                  {activeStage.qualityGate}
-                </p>
-              </div>
-
-              <div className="pt-2 flex justify-end">
+        {/* Connected Stage Navigator Bar */}
+        <div className="p-3 rounded-xl glass-panel border border-glass-border">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            {STAGES.map((st) => {
+              const isActive = activeStage.step === st.step;
+              return (
                 <button
-                  onClick={() => setPlannerOpen(true)}
-                  className="bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-6 py-3 rounded font-bold hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all flex items-center gap-2"
+                  key={st.step}
+                  onClick={() => setActiveStage(st)}
+                  className={`p-3 rounded transition-all text-left border ${
+                    isActive
+                      ? 'bg-primary-container text-on-primary-container border-primary shadow-[0_0_15px_rgba(227,30,36,0.3)]'
+                      : 'glass-panel text-on-surface-variant hover:text-on-surface border-glass-border'
+                  }`}
                 >
-                  <span>Start Project Discovery</span>
-                  <ArrowRight size={14} />
+                  <div className="flex items-center justify-between">
+                    <span className={`text-[10px] font-label-sm font-bold ${isActive ? 'text-on-primary-container' : 'text-on-surface-variant'}`}>
+                      STAGE {st.step}
+                    </span>
+                    {isActive && <span className="w-2 h-2 rounded-full bg-on-primary-container animate-ping" />}
+                  </div>
+                  <div className="text-sm font-bold mt-1 font-headline-md truncate">{st.name}</div>
                 </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Active Stage Detailed Card */}
+        <div className="p-6 sm:p-8 rounded-xl glass-panel border border-glass-border grid grid-cols-1 lg:grid-cols-12 gap-8 items-start glow-hover">
+          <div className="lg:col-span-6 space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="p-3 rounded bg-primary-container/10 border border-primary/20 text-primary">
+                {activeStage.icon}
               </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-label-sm text-xs font-bold text-primary uppercase">
+                    STAGE {activeStage.step} • {activeStage.subtitle}
+                  </span>
+                </div>
+                <h3 className="font-headline-md text-2xl text-on-surface mt-0.5">{activeStage.name} Phase</h3>
+              </div>
+            </div>
+
+            <p className="font-body-lg text-on-surface-variant text-sm sm:text-base leading-relaxed font-normal">
+              {activeStage.description}
+            </p>
+
+            <div className="p-4 rounded bg-surface-container border border-glass-border space-y-2">
+              <div className="flex items-center gap-2 text-on-surface font-label-sm text-xs font-bold uppercase">
+                <Clock size={14} className="text-primary" />
+                <span>Estimated Timeframe: {activeStage.duration}</span>
+              </div>
+              <p className="text-xs text-on-surface-variant font-medium">
+                Direct communication via dedicated Slack/Teams channel and weekly video engineering standups.
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6 space-y-6">
+            {/* Key Deliverables Artifacts */}
+            <div className="p-5 rounded bg-surface-deep text-on-surface border border-glass-border space-y-3">
+              <span className="font-label-sm text-xs text-primary font-bold uppercase tracking-wider block">
+                Concrete Deliverables &amp; Artifacts:
+              </span>
+              <div className="space-y-2 text-xs">
+                {activeStage.keyOutputs.map((out, i) => (
+                  <div key={i} className="flex items-center gap-2 text-on-surface-variant">
+                    <CheckCircle2 size={14} className="text-primary shrink-0" />
+                    <span className="font-label-sm text-[11px]">{out}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Quality Gate */}
+            <div className="p-5 rounded bg-primary-container/10 border border-primary/30 space-y-1.5">
+              <div className="flex items-center gap-2 text-primary font-label-sm text-xs font-bold uppercase">
+                <ShieldCheck size={16} className="text-primary" />
+                <span>Quality Assurance Gate:</span>
+              </div>
+              <p className="text-xs text-on-surface font-semibold leading-relaxed">
+                {activeStage.qualityGate}
+              </p>
+            </div>
+
+            <div className="pt-2 flex justify-end">
+              <button
+                onClick={openPlanner}
+                className="bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-6 py-3 rounded font-bold hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all flex items-center gap-2"
+              >
+                <span>Start Project Discovery</span>
+                <ArrowRight size={14} />
+              </button>
             </div>
           </div>
         </div>
-      </section>
-
-      <ProjectPlannerModal isOpen={plannerOpen} onClose={() => setPlannerOpen(false)} />
-    </>
+      </div>
+    </section>
   );
 };

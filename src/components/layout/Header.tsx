@@ -4,10 +4,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MobileNav } from './MobileNav';
-import { ProjectPlannerModal } from '@/components/common/ProjectPlannerModal';
+import { useProjectPlanner } from '@/context/ProjectPlannerContext';
 
-const ENTEGLOW_LOGO_URL =
-  'https://lh3.googleusercontent.com/aida/AP1WRLuw0xLnjBYNiRdgRTHg_Xnx7s3668S0IvyT8RVwnv7bXUGX9qYOzX9JXqb8HC0okibDP_r453hJUXl3_P4K_hPtCSPagq2aqXWKkZWW0aolMCtBMJ8uv2lXXEJsDezt7tN5bqgFtS_KSXCvxa6nrmMXb746kBzBscfff4zsH2vxN2mVg1BIKIcGBVFqD6G-ZWnypuFnKFbVNPbD0_PkURah0NeLbptJuN3sMm_o79oAjN091oxZ6ijSQnXw';
+const LOCAL_LOGO_URL = '/logo.png';
 
 const navLinks = [
   { href: '/services', label: 'Services' },
@@ -19,7 +18,7 @@ const navLinks = [
 
 export const Header: React.FC = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [plannerOpen, setPlannerOpen] = useState(false);
+  const { openPlanner } = useProjectPlanner();
   const pathname = usePathname();
 
   return (
@@ -27,12 +26,17 @@ export const Header: React.FC = () => {
       <header className="bg-background/80 backdrop-blur-xl border-b border-glass-border fixed top-0 w-full z-50">
         <div className="flex justify-between items-center max-w-container-max mx-auto px-gutter py-4">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" prefetch={true} className="flex items-center gap-3 group">
             <img
-              src={ENTEGLOW_LOGO_URL}
+              src={LOCAL_LOGO_URL}
               alt="Enteglow Logo"
+              width={32}
+              height={32}
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
+            <span className="font-headline-md text-xl tracking-wider font-bold text-on-surface">
+              ENTE<span className="text-primary">GLOW</span>
+            </span>
           </Link>
 
           {/* Navigation Links */}
@@ -43,6 +47,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
+                  prefetch={true}
                   className={`font-label-sm text-label-sm uppercase transition-colors duration-300 ${
                     isActive
                       ? 'text-primary font-bold border-b-2 border-primary pb-1'
@@ -59,7 +64,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-4">
             <button
               type="button"
-              onClick={() => setPlannerOpen(true)}
+              onClick={openPlanner}
               className="bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase px-6 py-2 rounded font-bold hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all transform hover:-translate-y-px active:scale-95 flex items-center gap-2 cursor-pointer"
             >
               Book a Meeting
@@ -83,11 +88,8 @@ export const Header: React.FC = () => {
         isOpen={mobileNavOpen}
         onClose={() => setMobileNavOpen(false)}
         navLinks={navLinks}
-        onOpenPlanner={() => setPlannerOpen(true)}
+        onOpenPlanner={openPlanner}
       />
-
-      {/* Project Scope & Planner Modal */}
-      <ProjectPlannerModal isOpen={plannerOpen} onClose={() => setPlannerOpen(false)} />
     </>
   );
 };
