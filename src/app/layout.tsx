@@ -5,40 +5,39 @@ import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Entelgow — Software Product Engineering (Desktop, Mobile, Web, AI, IoT)',
-    template: '%s | Entelgow Software Engineering',
+    default: 'Enteglow | We Build Software That Moves Your Business Forward',
+    template: '%s | Enteglow Technology Consultancy',
   },
   description:
-    'From idea to production — Entelgow designs, architects, and engineers software products across Desktop, Mobile, Web, AI Agents, and IoT for forward-thinking enterprises.',
+    'Elevating business concepts to robust digital realities with cutting-edge technology. We engineer scalable, high-performance software solutions for the modern enterprise.',
   keywords: [
-    'Software Development Company',
-    'Desktop Application Development',
-    'Mobile Application Development',
-    'Web Application Engineering',
-    'AI Agent Development',
-    'IoT Telemetry Solutions',
+    'Enteglow Technology Consultancy',
+    'AI Application Development',
+    'Web App Development',
+    'Website Development',
+    'Web Maintenance and Cloud Hosting',
     'Custom Software Engineering',
-    'Next.js Enterprise Development',
+    'Enterprise Architecture',
   ],
-  authors: [{ name: 'Entelgow Engineering Team' }],
-  creator: 'Entelgow',
-  publisher: 'Entelgow',
+  authors: [{ name: 'Enteglow Team' }],
+  creator: 'Enteglow',
+  publisher: 'Enteglow',
   metadataBase: new URL('https://entelgow.com'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://entelgow.com',
-    title: 'Entelgow — Software Product Engineering across Desktop, Mobile, Web, AI & IoT',
+    title: 'Enteglow | We Build Software That Moves Your Business Forward',
     description:
-      'Entelgow builds complete digital software products for business operations. Desktop, Mobile, Web, AI Agents, and IoT Platforms.',
-    siteName: 'Entelgow',
+      'Elevating business concepts to robust digital realities with cutting-edge technology.',
+    siteName: 'Enteglow',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Entelgow — Software Product Engineering',
+    title: 'Enteglow | Software That Moves Your Business Forward',
     description:
-      'Complete digital software products across desktop, mobile, web, AI, and IoT.',
-    creator: '@entelgow',
+      'Scalable, high-performance software solutions for the modern enterprise.',
+    creator: '@enteglow',
   },
   robots: {
     index: true,
@@ -53,9 +52,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="light scroll-smooth">
-      <body className="bg-white text-navy-900 min-h-screen flex flex-col font-sans selection:bg-gold-500 selection:text-white">
+      <body className="bg-background text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col font-sans selection:bg-electric-blue selection:text-white">
         <Header />
-        <main className="flex-grow pt-[104px]">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

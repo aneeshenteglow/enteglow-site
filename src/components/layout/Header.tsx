@@ -1,155 +1,94 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Layers, ArrowRight, Mail, Phone, Sparkles } from 'lucide-react';
-import { Button } from '@/components/common/Button';
 import { MobileNav } from './MobileNav';
 import { ProjectPlannerModal } from '@/components/common/ProjectPlannerModal';
-import { companyData } from '@/data/company';
 
+const ENTEGLOW_LOGO_URL =
+  'https://lh3.googleusercontent.com/aida/AP1WRLuSl1wksfHbxl-SjNQycyf8pz9gS_hPn8Me6Vdo-7ySZBvIY_3If95ZpVbhdyCLF30fVMjHycV3V99zXHdOxNz2pcp8WKM6l6iscFcodw0NFh0IbJ7I1ZxKWAWBbIRXGsLao_NgjkQEBzklSBoK4htPoZPWkZFsnBJef9fPF6tZ2X1xg7-CIjvf0Gd5PFy3VLBtlmrL1exA7-hIqfqfTdy-VqIfgUp6KHgq7o8ZvZ0se1cE-MBK3B4M6pka';
 
 const navLinks = [
+  { href: '/about', label: 'Company' },
   { href: '/services', label: 'Services' },
-  { href: '/solutions', label: 'Solutions' },
-  { href: '/technologies', label: 'Technologies' },
-  { href: '/projects', label: 'Case Studies' },
-  { href: '/process', label: 'Process' },
   { href: '/industries', label: 'Industries' },
-  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Case Studies' },
+  { href: '/process', label: 'Resources' },
 ];
 
 export const Header: React.FC = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [plannerOpen, setPlannerOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40">
-        <div className="bg-navy-950 text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-navy-900 hidden md:block">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-6">
-              <a
-                href={`mailto:${companyData.contact.email}`}
-                className="flex items-center gap-1.5 hover:text-gold-400 transition-colors"
-              >
-                <Mail size={13} className="text-gold-500" />
-                <span>{companyData.contact.email}</span>
-              </a>
-              <a
-                href={`tel:${companyData.contact.phone}`}
-                className="flex items-center gap-1.5 hover:text-gold-400 transition-colors"
-              >
-                <Phone size={13} className="text-gold-500" />
-                <span>{companyData.contact.phone}</span>
-              </a>
-            </div>
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-container-max rounded-full border border-glass-stroke bg-surface/80 backdrop-blur-xl shadow-2xl z-50 flex justify-between items-center px-8 py-4">
+        {/* Brand Logo & Wordmark */}
+        <Link href="/" className="flex items-center gap-4 group">
+          <img
+            src={ENTEGLOW_LOGO_URL}
+            alt="Enteglow Logo"
+            className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+          <span className="font-headline font-bold text-headline-md text-primary tracking-tight">
+            Enteglow
+          </span>
+        </Link>
 
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2 text-emerald-400 font-mono text-[11px]">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Available for Q3/Q4 Projects</span>
-              </div>
-              <button
-                onClick={() => setPlannerOpen(true)}
-                className="font-semibold text-gold-400 hover:text-gold-300 transition-colors flex items-center gap-1.5"
+        {/* Navigation Links */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-label-md text-label-md transition-all duration-300 hover:scale-105 ${
+                  isActive
+                    ? 'text-electric-blue font-bold border-b-2 border-electric-blue pb-1'
+                    : 'text-on-surface font-medium hover:text-electric-blue'
+                }`}
               >
-                <Sparkles size={13} />
-                <span>Request Scope & Quote</span>
-                <ArrowRight size={12} />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={`transition-all duration-300 ${
-            scrolled
-              ? 'bg-white/95 backdrop-blur-md shadow-lg py-3 border-b border-slate-200'
-              : 'bg-white py-4 border-b border-slate-100'
-          }`}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl bg-gold-500 group-hover:bg-gold-600 transition-colors flex items-center justify-center text-slate-950 font-bold shadow-md shadow-gold-500/20">
-                  <Layers size={22} />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-extrabold text-xl text-navy-900 tracking-tight leading-none group-hover:text-gold-600 transition-colors">
-                    Entelgow
-                  </span>
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-slate-500 mt-0.5 font-semibold">
-                    Product Engineering
-                  </span>
-                </div>
+                {link.label}
               </Link>
+            );
+          })}
+        </nav>
 
-              <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-                {navLinks.map((link) => {
-                  const isActive = pathname === link.href;
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-all ${
-                        isActive
-                          ? 'text-gold-700 bg-gold-100/70 font-bold'
-                          : 'text-navy-700 hover:text-navy-950 hover:bg-slate-100'
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                })}
-              </nav>
-
-              <div className="hidden lg:flex items-center gap-3">
-                <Button
-                  onClick={() => setPlannerOpen(true)}
-                  variant="primary"
-                  size="sm"
-                  icon={<ArrowRight size={16} />}
-                  className="shadow-md shadow-gold-500/25"
-                >
-                  Start a Project
-                </Button>
-              </div>
-
-              <div className="flex items-center lg:hidden gap-2">
-                <button
-                  onClick={() => setMobileNavOpen(true)}
-                  className="p-2 rounded-xl text-navy-800 hover:text-navy-950 hover:bg-slate-100 transition-colors"
-                  aria-label="Open menu"
-                >
-                  <Menu size={24} />
-                </button>
-              </div>
-            </div>
-          </div>
+        {/* CTA Button */}
+        <div className="hidden md:flex items-center">
+          <button
+            type="button"
+            onClick={() => setPlannerOpen(true)}
+            className="btn-primary font-label-md text-label-md px-6 py-3 uppercase tracking-wider font-semibold cursor-pointer active:scale-95 transition-all"
+          >
+            Book a Meeting
+          </button>
         </div>
 
-        <MobileNav
-          isOpen={mobileNavOpen}
-          onClose={() => setMobileNavOpen(false)}
-          navLinks={navLinks}
-        />
+        {/* Mobile Hamburger Button */}
+        <button
+          type="button"
+          onClick={() => setMobileNavOpen(true)}
+          className="md:hidden text-primary flex items-center justify-center"
+          aria-label="Open navigation menu"
+        >
+          <span className="material-symbols-outlined text-3xl">menu</span>
+        </button>
       </header>
 
-      {/* Global Interactive Project Scope Planner Modal */}
+      {/* Mobile Navigation Drawer */}
+      <MobileNav
+        isOpen={mobileNavOpen}
+        onClose={() => setMobileNavOpen(false)}
+        navLinks={navLinks}
+        onOpenPlanner={() => setPlannerOpen(true)}
+      />
+
+      {/* Interactive Scope & Meeting Planner Modal */}
       <ProjectPlannerModal isOpen={plannerOpen} onClose={() => setPlannerOpen(false)} />
     </>
   );
 };
-

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enteglow | We Build Software That Moves Your Business Forward</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Oswald:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#006492",
+                        "outline-variant": "#bdc8d2",
+                        "vibrant-purple": "#8B5CF6",
+                        "secondary-fixed": "#e9ddff",
+                        "soft-pink": "#FFA4FB",
+                        "on-surface": "#191c1e",
+                        "on-tertiary": "#ffffff",
+                        "electric-blue": "#00B2FF",
+                        "tertiary-container": "#ef9206",
+                        "deep-slate": "#0F172A",
+                        "on-secondary-container": "#fffbff",
+                        "primary-fixed-dim": "#8bceff",
+                        "tertiary-fixed-dim": "#ffb86b",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdcbc",
+                        "on-error-container": "#93000a",
+                        "glass-stroke": "rgba(255, 255, 255, 0.4)",
+                        "on-surface-variant": "#3e4851",
+                        "primary-container": "#00b2ff",
+                        "tertiary": "#895100",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#8bceff",
+                        "inverse-surface": "#2d3133",
+                        "surface-tint": "#006492",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-container": "#004161",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "secondary-container": "#8455ef",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed-variant": "#004b6f",
+                        "on-secondary-fixed": "#23005c",
+                        "on-primary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-container": "#5a3400",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "outline": "#6e7882",
+                        "background": "#f7f9fb",
+                        "primary-fixed": "#c9e6ff",
+                        "secondary": "#6b38d4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-primary-fixed": "#001e2f",
+                        "surface-variant": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#683d00",
+                        "on-tertiary-fixed": "#2c1700",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "section-padding-desktop": "120px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "section-padding-mobile": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Oswald"],
+                        "headline-lg": ["Oswald"],
+                        "headline-md": ["Oswald"],
+                        "display-lg": ["Oswald"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00B2FF, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 178, 255, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00B2FF, #8B5CF6);
+            color: #ffffff;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 10px 20px rgba(0, 178, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00B2FF;
+            border: 2px solid #00B2FF;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 178, 255, 0.05);
+            box-shadow: 0 10px 20px rgba(0, 178, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Subtle grid background for structural feel */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 178, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 178, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-container-max rounded-full border border-glass-stroke bg-surface/15 dark:bg-surface/15 backdrop-blur-xl shadow-2xl z-50 flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-4">
+<img alt="Enteglow Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLuSl1wksfHbxl-SjNQycyf8pz9gS_hPn8Me6Vdo-7ySZBvIY_3If95ZpVbhdyCLF30fVMjHycV3V99zXHdOxNz2pcp8WKM6l6iscFcodw0NFh0IbJ7I1ZxKWAWBbIRXGsLao_NgjkQEBzklSBoK4htPoZPWkZFsnBJef9fPF6tZ2X1xg7-CIjvf0Gd5PFy3VLBtlmrL1exA7-hIqfqfTdy-VqIfgUp6KHgq7o8ZvZ0se1cE-MBK3B4M6pka"/>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">Enteglow</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-electric-blue font-bold border-b-2 border-electric-blue pb-1 hover:scale-105 transition-transform duration-300" href="#">Company</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed font-medium hover:text-electric-blue transition-colors hover:scale-105 duration-300" href="#">Services</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed font-medium hover:text-electric-blue transition-colors hover:scale-105 duration-300" href="#">Industries</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed font-medium hover:text-electric-blue transition-colors hover:scale-105 duration-300" href="#">Case Studies</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed font-medium hover:text-electric-blue transition-colors hover:scale-105 duration-300" href="#">Resources</a>
+</nav>
+<div class="hidden md:flex items-center">
+<button class="btn-primary font-label-md text-label-md px-6 py-3 uppercase tracking-wider font-semibold cursor-pointer active:scale-95 transition-all">Book a Meeting</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-32 pb-section-padding-desktop overflow-hidden bg-surface-container-lowest">
+<!-- Interactive WebGL Shader Background mapped to light theme colors -->
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-multiply">
+
+</div>
+<div class="absolute inset-0 z-0 bg-grid opacity-50"></div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-8 md:col-start-3 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 border-electric-blue/30 text-electric-blue font-label-md text-label-md uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-vibrant-purple animate-pulse"></span>
+                    Innovation Driven
+                </div>
+<h1 class="font-display-lg text-display-lg md:text-[84px] leading-tight text-on-surface mb-8 font-bold tracking-tight">
+                    We Build Software That <br/>
+<span class="gradient-text">Moves Your Business Forward</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Elevating business concepts to robust digital realities with cutting-edge technology. We engineer scalable, high-performance solutions for the modern enterprise.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="btn-primary font-label-md text-label-md px-8 py-4 uppercase tracking-wider font-semibold w-full sm:w-auto">Explore Solutions</button>
+<button class="btn-secondary font-label-md text-label-md px-8 py-4 uppercase tracking-wider font-semibold w-full sm:w-auto">Consult With Us</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid Section -->
+<section class="py-section-padding-desktop bg-background relative overflow-hidden">
+<div class="absolute -right-64 top-0 w-96 h-96 bg-electric-blue/10 rounded-full blur-3xl"></div>
+<div class="absolute -left-64 bottom-0 w-96 h-96 bg-vibrant-purple/10 rounded-full blur-3xl"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="mb-16 md:mb-24 max-w-3xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Our Expertise</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Comprehensive engineering capabilities designed to accelerate digital transformation and operational excellence.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
+<!-- Bento Card 1: AI Apps (Large) -->
+<div class="md:col-span-2 glass-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-48 h-48 bg-gradient-to-br from-electric-blue/20 to-vibrant-purple/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+<div>
+<div class="w-16 h-16 rounded-xl bg-surface-container-low flex items-center justify-center mb-6 text-electric-blue">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">smart_toy</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">AI Application Development</h3>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-6">Integrating machine learning and advanced AI models into operational workflows to drive intelligent automation and predictive insights.</p>
+<a class="font-label-md text-label-md text-electric-blue uppercase flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Learn More <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Bento Card 2: Web Apps -->
+<div class="glass-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-vibrant-purple/10 rounded-full blur-xl z-0 transition-transform group-hover:scale-150"></div>
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center mb-6 text-vibrant-purple">
+<span class="material-symbols-outlined text-3xl" data-weight="fill">developer_mode</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Web App Development</h3>
+</div>
+<a class="font-label-md text-label-md text-vibrant-purple uppercase flex items-center gap-2 relative z-10" href="#">
+                        Explore <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+</div>
+<!-- Bento Card 3: Website Dev -->
+<div class="glass-card rounded-2xl p-8 flex flex-col justify-between">
+<div>
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center mb-6 text-electric-blue">
+<span class="material-symbols-outlined text-3xl" data-weight="fill">web</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Website Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">High-performance, scalable corporate platforms built on modern web architectures for optimal speed and SEO.</p>
+</div>
+</div>
+<!-- Bento Card 4: Maintenance -->
+<div class="md:col-span-2 glass-card rounded-2xl p-8 flex flex-row items-center justify-between overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container-low opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 max-w-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl" data-weight="fill">settings_suggest</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Web Maintenance &amp; Hosting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Secure, 99.9% uptime cloud hosting and continuous maintenance protocols to ensure your digital assets remain performant and protected.</p>
+</div>
+<div class="hidden md:flex relative z-10 items-center justify-center w-32 h-32 rounded-full border border-dashed border-outline-variant animate-[spin_20s_linear_infinite]">
+<span class="material-symbols-outlined text-outline-variant absolute">cloud_sync</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section with Asymmetric Layout -->
+<section class="py-section-padding-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 order-2 lg:order-1">
+<div class="mb-6 inline-block">
+<span class="font-label-md text-label-md uppercase tracking-widest text-outline">Who We Are</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Architects of the Digital Enterprise</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        We are a collective of senior engineers, product designers, and strategic thinkers. We approach technology not just as code, but as a critical lever for business growth.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">
+                        Our methodology is rooted in rigorous technical standards and agile delivery, ensuring that complex challenges are met with elegant, sustainable solutions.
+                    </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-electric-blue mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Enterprise-grade architecture design.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-electric-blue mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Agile, transparent development cycles.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-electric-blue mt-1" data-weight="fill">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Post-deployment scaling and optimization.</span>
+</li>
+</ul>
+<button class="btn-primary font-label-md text-label-md px-8 py-4 uppercase tracking-wider font-semibold">Meet The Team</button>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 relative">
+<!-- Layered Image Composition -->
+<div class="relative w-full aspect-[4/3] max-w-2xl mx-auto lg:ml-auto">
+<!-- Background Image -->
+<div class="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
+<img alt="Team working in modern office" class="w-full h-full object-cover grayscale-[20%]" src="https://lh3.googleusercontent.com/aida/AP1WRLsflLpDiAR4CXjEHXOkGIEdFoiv1NLejryUBM7vQy_xdgBXOD5J1zr74BgFsF2o-R_83969ZxsajiA0bnXvKbTnE7R8-9kXgT7qT31M--NKADNCkqcr6ukSoyuvYyUl4I0LYhniCyUY94vXRg1CIsRMC69oecTamqJovWa2a1KRdVafyUO7U9-ZvGSpHkbvU3n4axCdierBJTaldzZjOw-bye1uwOksSiHK5Pz5TmDkqLj7pPzHb4RnCCKl"/>
+</div>
+<!-- Foreground Offset Image -->
+<div class="absolute -bottom-12 -left-12 w-64 h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-surface-container-lowest hidden md:block">
+<img alt="Developer coding" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtHciTK-a0abNyRuN6fYU7J_D6VcTVfuqcv0KZqLGmJJMgEIq4BBvHgfcN592xATmWhBkA7fwPLJwh5ZMRvO9TBHGr920JY1Za7u7_JksfeGyg31AQVJiVEdplfpgdDSRdFIiNk7H_wFFGqFiK3jhpJfmex0J95MfKiGsN2Pkq3WXDNAMSJO1exqUVdMzPIq6LIaA4Y8YAFMb13XNpOq41K9GFgx1Juf17eaFDU672w5uF-xYG0W-hhCBU"/>
+</div>
+<!-- Floating Stat Card -->
+<div class="absolute top-12 -right-8 glass-panel rounded-xl p-6 shadow-2xl animate-[bounce_4s_infinite]">
+<div class="font-display-lg text-display-lg text-electric-blue leading-none mb-2">15+</div>
+<div class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Years Experience</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trusted Brands / Testimonials Grid -->
+<section class="py-section-padding-desktop bg-background">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Trusted by Industry Leaders</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Delivering high-impact technology solutions that drive measurable business outcomes.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="glass-card p-8 rounded-2xl relative">
+<span class="material-symbols-outlined text-4xl text-outline-variant/30 absolute top-8 right-8" data-weight="fill">format_quote</span>
+<div class="flex items-center gap-4 mb-6">
+<img alt="Client portrait" class="w-16 h-16 rounded-full object-cover border-2 border-electric-blue p-1" src="https://lh3.googleusercontent.com/aida/AP1WRLtz8L5KrnL_gvu2G5wZpyJ1CrVrYMAdhwZ9FLTfnrGCTo_L7Fzuh5JnhEfolVxQB1lLWT-vQC6C0Fc3NPZPI4z3LFrJqYilz1ISeWMo1xEXDByUv01Uf0uETrWgL8tAeJKz1YiKgP6wV8MyI1aXkvkSro_4pnbWQBLtENZWyQBusWEoxUmQqPvccQeN1JeAVo2jU6PaMMPOF0OGX8CRdY7nrb8-nLPzdnfcStVvJomEhscWir2BdnbnqoX0"/>
+<div>
+<h4 class="font-headline-md text-[20px] text-on-surface m-0 leading-tight">Sarah Jenkins</h4>
+<p class="font-label-md text-label-md text-outline">CTO, Nexus Corp</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Enteglow didn't just build our application; they re-architected our entire digital approach. Their technical rigor is unmatched."</p>
+</div>
+<!-- Testimonial 2 (Placeholder Data-Alt) -->
+<div class="glass-card p-8 rounded-2xl relative">
+<span class="material-symbols-outlined text-4xl text-outline-variant/30 absolute top-8 right-8" data-weight="fill">format_quote</span>
+<div class="flex items-center gap-4 mb-6">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-electric-blue p-1" data-alt="A professional headshot of a middle-aged male executive wearing a tailored dark suit. He has a confident, warm smile. The lighting is soft and corporate, set against a bright, minimalist glass office background in a light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-DQScKjWy9Zdc-wJ8UDahasNMHWpw89lZezxofteBSXlSdJx4Tcm8wtlqcfKvBc0ZYMlkIlcXi8mI50-xebwSWVbsHi_HdG7KlJYZaFKiTr9oPaAXtrJ1z5bh12-kHXamPjtkAR1EYCaeVIuY6ixwaU0Y8ABa-jAgpbW7pW1iOMCLpaZ8x6NVZG3ownkS_Dl9lHWfMtTKMSdJTus3fm_0EDECeMaBXTcCwUBAv7buQBQ64NNbyCdVlA"/>
+<div>
+<h4 class="font-headline-md text-[20px] text-on-surface m-0 leading-tight">Marcus Thorne</h4>
+<p class="font-label-md text-label-md text-outline">VP Engineering</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"The transition to a custom cloud infrastructure handled by Enteglow reduced our latency by 40% globally. Exceptional execution."</p>
+</div>
+<!-- Testimonial 3 (Placeholder Data-Alt) -->
+<div class="glass-card p-8 rounded-2xl relative hidden lg:block">
+<span class="material-symbols-outlined text-4xl text-outline-variant/30 absolute top-8 right-8" data-weight="fill">format_quote</span>
+<div class="flex items-center gap-4 mb-6">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-electric-blue p-1" data-alt="A bright, modern corporate portrait of a female startup founder in her early 30s. She is wearing a smart-casual blazer. The setting is a luminous tech incubator space with abundant natural white light, conveying a fresh, innovative mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDefoQI0_Y3nAGclNmiqUVoz_lEYcch2L-LM0H_xPSuOzjOU5d6XS537hFNDTvBLBQvNc92ARBGr6j_ht3AQF26ShaAhLcarXPhZ0lmWhND9kmhcZJrzpt5KFjM_GopuPUXV9HjfhgCHMcu3wZ4D3HvGPcwu30sPRRRSi4z2Lrr-5Jvcg9RXTy7rSzyH_w6gRj8pib4I2F3iDFL7iPFYmbYGWfAdP8qDHDeEaSjhuJCtcqF2OO7_9_dWQ"/>
+<div>
+<h4 class="font-headline-md text-[20px] text-on-surface m-0 leading-tight">Elena Rostova</h4>
+<p class="font-label-md text-label-md text-outline">Founder, DataStream</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Their AI integration team seamlessly embedded predictive models into our legacy systems without disrupting daily operations."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full rounded-t-[32px] border-t border-surface-variant dark:border-outline-variant bg-surface-container-lowest dark:bg-deep-slate transition-all duration-200 flat no shadows mt-24">
+<div class="max-w-container-max mx-auto px-gutter py-section-padding-desktop grid grid-cols-1 md:grid-cols-4 gap-base">
+<div class="md:col-span-1 mb-8 md:mb-0">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Enteglow Logo" class="h-8 w-auto object-contain grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLuSl1wksfHbxl-SjNQycyf8pz9gS_hPn8Me6Vdo-7ySZBvIY_3If95ZpVbhdyCLF30fVMjHycV3V99zXHdOxNz2pcp8WKM6l6iscFcodw0NFh0IbJ7I1ZxKWAWBbIRXGsLao_NgjkQEBzklSBoK4htPoZPWkZFsnBJef9fPF6tZ2X1xg7-CIjvf0Gd5PFy3VLBtlmrL1exA7-hIqfqfTdy-VqIfgUp6KHgq7o8ZvZ0se1cE-MBK3B4M6pka"/>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-electric-blue">Enteglow</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 pr-8">
+                    High-performance engineering for the modern enterprise.
+                </p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary dark:text-electric-blue uppercase tracking-wider mb-6">Services</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">AI Development</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">Web Apps</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">Cloud Hosting</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary dark:text-electric-blue uppercase tracking-wider mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">About Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">Case Studies</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary dark:text-electric-blue uppercase tracking-wider mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">Cookie Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:opacity-80" href="#">Sitemap</a></li>
+</ul>
+</div>
+<div class="md:col-span-4 mt-12 pt-8 border-t border-surface-variant flex flex-col md:flex-row justify-between items-center">
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 md:mb-0">
+                    © 2024 Enteglow Technology Consultancy. All rights reserved.
+                </p>
+<div class="flex gap-4 text-outline-variant">
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">language</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">mail</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

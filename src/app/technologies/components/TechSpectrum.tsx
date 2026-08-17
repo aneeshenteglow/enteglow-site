@@ -1,104 +1,174 @@
 'use client';
 
 import React, { useState } from 'react';
+import {
+  Code,
+  Server,
+  Smartphone,
+  Cloud,
+  Brain,
+  Database,
+  ShieldCheck,
+  CheckCircle2,
+  Lock,
+} from 'lucide-react';
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { Card } from '@/components/common/Card';
-import { Badge } from '@/components/common/Badge';
-import { technologiesData } from '../services/technologiesData';
-import { Code2, CheckCircle2, ShieldCheck, Cpu, Lock } from 'lucide-react';
+
+interface TechCategory {
+  id: string;
+  name: string;
+  icon: React.ReactNode;
+  stacks: string[];
+  purpose: string;
+}
+
+const TECH_CATEGORIES: TechCategory[] = [
+  {
+    id: 'frontend',
+    name: 'Frontend & UI',
+    icon: <Code size={20} className="text-blue-600" />,
+    stacks: ['Next.js App Router', 'React 18', 'TypeScript', 'Tailwind CSS', 'Three.js / WebGL'],
+    purpose: 'Sub-400ms page loads, ergonomic accessibility, and crisp multi-device responsive interfaces.',
+  },
+  {
+    id: 'backend',
+    name: 'Backend & APIs',
+    icon: <Server size={20} className="text-emerald-600" />,
+    stacks: ['Node.js / Express', 'Go (Golang)', 'Rust Native Core', 'PostgreSQL', 'GraphQL / REST'],
+    purpose: 'High-concurrency API throughput, strict database ACID compliance, and zero data race conditions.',
+  },
+  {
+    id: 'mobile',
+    name: 'Mobile Engineering',
+    icon: <Smartphone size={20} className="text-cyan-600" />,
+    stacks: ['React Native', 'Flutter', 'SQLite Delta Sync', 'Native iOS/Android'],
+    purpose: '60 FPS cross-platform mobile apps with offline delta sync queues and biometric authentication.',
+  },
+  {
+    id: 'cloud',
+    name: 'Cloud & DevOps',
+    icon: <Cloud size={20} className="text-indigo-600" />,
+    stacks: ['Docker / Kubernetes', 'Google Cloud (GCP)', 'AWS Enterprise', 'Terraform IaC', 'GitHub Actions CI/CD'],
+    purpose: 'Automated zero-downtime deployment pipelines with auto-scaling container clusters.',
+  },
+  {
+    id: 'ai-data',
+    name: 'AI & Data Engineering',
+    icon: <Brain size={20} className="text-violet-600" />,
+    stacks: ['PyTorch', 'Vector DBs (Qdrant)', 'LangChain / LlamaIndex', 'Kafka Streams'],
+    purpose: 'Autonomous agentic workflows, semantic vector RAG search, and real-time data ingestion pipelines.',
+  },
+  {
+    id: 'database',
+    name: 'Databases & Telemetry',
+    icon: <Database size={20} className="text-amber-600" />,
+    stacks: ['PostgreSQL', 'Redis In-Memory', 'InfluxDB Time-Series', 'MQTT Brokers'],
+    purpose: 'Sub-50ms query responses, persistent time-series logging, and distributed caching layers.',
+  },
+];
 
 export const TechSpectrum: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState(technologiesData[0].category);
-
-  const activeGroup = technologiesData.find((t) => t.category === activeCategory) || technologiesData[0];
+  const [activeCat, setActiveCat] = useState<TechCategory>(TECH_CATEGORIES[0]);
 
   return (
     <section className="py-20 lg:py-28 bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <SectionHeader
-          badge="Technical Credibility & Architecture"
-          title="Battle-Tested Technology Matrix"
-          description="We select proven languages, frameworks, databases, and cloud infrastructure aligned with enterprise security, code maintainability, and high-concurrency execution."
+          badge="Battle-Tested Infrastructure"
+          title="Modern Technology Selected for Performance & Longevity"
+          description="We select battle-tested software frameworks and enterprise cloud infrastructure that guarantee high maintainability, security, and long-term business value."
         />
 
-        {/* Enterprise Compliance Readiness Ribbon */}
-        <div className="p-4 rounded-2xl bg-navy-950 text-white border border-slate-800 flex flex-wrap items-center justify-between gap-4">
+        {/* Security Readiness Banner */}
+        <div className="p-4 sm:p-5 rounded-2xl bg-navy-950 text-white border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl">
           <div className="flex items-center gap-3">
-            <ShieldCheck size={20} className="text-gold-400 shrink-0" />
-            <div className="text-xs">
-              <span className="font-bold text-white block">Enterprise Compliance & Security Standards</span>
-              <span className="text-slate-400 font-mono">SOC 2 Type II Ready • OWASP Top 10 • Zero-Trust Access Control</span>
+            <div className="p-2.5 rounded-xl bg-gold-500/20 border border-gold-500/40 text-gold-400">
+              <ShieldCheck size={22} />
+            </div>
+            <div>
+              <span className="text-xs font-mono font-bold text-gold-400 uppercase tracking-wider block">
+                Enterprise Compliance & Security Standards
+              </span>
+              <p className="text-xs text-slate-300 font-medium">
+                SOC 2 Type II readiness, OWASP Top 10 security audits, static code analysis, and encrypted data at rest.
+              </p>
             </div>
           </div>
-          <div className="flex items-center gap-4 text-[11px] font-mono text-emerald-400">
-            <span className="flex items-center gap-1.5"><Lock size={12} /> End-to-End Encryption</span>
-            <span className="flex items-center gap-1.5"><Cpu size={12} /> Docker Containerized</span>
+          <div className="flex items-center gap-4 text-xs font-mono text-slate-400 shrink-0">
+            <span className="flex items-center gap-1">
+              <Lock size={12} className="text-gold-400" /> AES-256 Encryption
+            </span>
+            <span className="flex items-center gap-1">
+              <CheckCircle2 size={12} className="text-emerald-400" /> TLS 1.3
+            </span>
           </div>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex items-center justify-start overflow-x-auto pb-2 gap-2 no-scrollbar scroll-smooth border-b border-slate-200">
-          {technologiesData.map((tech) => {
-            const isActive = activeCategory === tech.category;
-            return (
-              <button
-                key={tech.category}
-                onClick={() => setActiveCategory(tech.category)}
-                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center gap-2 ${
-                  isActive
-                    ? 'bg-navy-950 text-gold-400 border border-gold-500/50 shadow-md font-bold'
-                    : 'bg-slate-50 text-slate-700 hover:text-navy-900 hover:bg-slate-100 border border-slate-200'
-                }`}
-              >
-                <span>{tech.category}</span>
-                <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${isActive ? 'bg-gold-500 text-slate-950 font-bold' : 'bg-slate-200 text-slate-700'}`}>
-                  {tech.items.length}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        {/* Interactive Tech Categories & Matrix */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="lg:col-span-4 space-y-2">
+            <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block px-2">
+              Technology Stack Layers:
+            </span>
+            {TECH_CATEGORIES.map((cat) => {
+              const isActive = activeCat.id === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCat(cat)}
+                  className={`w-full text-left p-3.5 rounded-2xl transition-all flex items-center justify-between border ${
+                    isActive
+                      ? 'bg-navy-950 text-white border-gold-500 shadow-md font-bold'
+                      : 'bg-slate-50 text-slate-700 hover:bg-slate-100 border-slate-200'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className={`p-2 rounded-xl ${isActive ? 'bg-navy-900 border border-slate-800' : 'bg-white border border-slate-200'}`}>
+                      {cat.icon}
+                    </div>
+                    <span className="text-sm font-bold">{cat.name}</span>
+                  </div>
+                  {isActive && <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />}
+                </button>
+              );
+            })}
+          </div>
 
-        <div className="flex items-center justify-between text-xs text-slate-500 font-mono">
-          <span>{activeGroup.description}</span>
-        </div>
+          <div className="lg:col-span-8 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-6 shadow-md">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-gold-500" />
+                <h3 className="text-lg font-bold text-navy-900">{activeCat.name} Engineering Layer</h3>
+              </div>
+              <span className="text-xs font-mono text-slate-500 font-semibold">Production Ready</span>
+            </div>
 
-        {/* Tech Stack Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {activeGroup.items.map((item, idx) => (
-            <Card key={idx} hoverEffect={true} className="flex flex-col justify-between p-6 border-slate-200/80">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-base font-bold text-navy-900 flex items-center gap-2">
-                    <Code2 size={16} className="text-gold-600 shrink-0" />
-                    <span>{item.name}</span>
-                  </h4>
-                  <Badge
-                    variant={
-                      item.level === 'Primary Stack'
-                        ? 'primary'
-                        : item.level === 'Production'
-                        ? 'cyan'
-                        : 'neutral'
-                    }
+            <p className="text-sm text-slate-600 leading-relaxed font-normal">
+              {activeCat.purpose}
+            </p>
+
+            <div className="space-y-3">
+              <span className="text-xs font-mono text-slate-500 uppercase font-bold block">
+                Primary Frameworks & Tools:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {activeCat.stacks.map((st, i) => (
+                  <div
+                    key={i}
+                    className="px-4 py-2 rounded-xl bg-white border border-slate-300 text-navy-900 font-mono text-xs font-bold shadow-xs hover:border-gold-500 transition-colors flex items-center gap-2"
                   >
-                    {item.level}
-                  </Badge>
-                </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {item.description}
-                </p>
+                    <CheckCircle2 size={13} className="text-gold-500" />
+                    <span>{st}</span>
+                  </div>
+                ))}
               </div>
-
-              <div className="pt-3 mt-4 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono text-emerald-600 font-semibold">
-                <CheckCircle2 size={13} />
-                <span>Production Verified Benchmark</span>
-              </div>
-            </Card>
-          ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
+
+
 

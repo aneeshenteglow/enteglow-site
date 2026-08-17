@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CheckCircle2, ArrowRight, Sparkles, Zap, ChevronRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Sparkles, Zap, ChevronRight, ArrowDownRight, ShieldCheck } from 'lucide-react';
 import { ProjectPlannerModal } from '@/components/common/ProjectPlannerModal';
-
 
 interface Scenario {
   id: string;
@@ -22,10 +21,10 @@ const SCENARIOS: Scenario[] = [
     id: 'automate',
     problem: 'Siloed spreadsheets, manual data entry, and slow processing times',
     category: 'Operational Automation',
-    title: 'Custom Workflow Automation & ERP Systems',
-    challenge: 'Operations teams lose hundreds of hours every month copying data across disconnected systems, resulting in human errors and customer delays.',
+    title: 'Custom Workflow Automation & Unified Portals',
+    challenge: 'Operations teams lose hundreds of hours every month copying data across disconnected systems, resulting in human errors and processing delays.',
     solution: 'We engineer unified business portals and automated event pipelines that connect inventory, customer records, and financial accounting into a single real-time system.',
-    outcome: 'Eliminates repetitive manual entry, speeds up cross-system throughput by 10x, and provides executive dashboards.',
+    outcome: 'Eliminates repetitive manual entry, speeds up cross-system throughput by 10x, and provides real-time executive dashboards.',
     roiMetric: '70% Reduction in Admin Overhead',
     deliverables: ['Custom Operations Portal', 'Automated REST/gRPC API Bridges', 'Real-time Analytics Dashboard', 'Role-Based Access Control'],
   },
@@ -34,7 +33,7 @@ const SCENARIOS: Scenario[] = [
     problem: 'Long development timelines delaying new software product launches',
     category: 'Product Engineering',
     title: 'Enterprise Multi-Tenant SaaS Platforms',
-    challenge: 'Founders and product managers need to launch new digital products quickly with scalable security, tenant isolation, and modern UX.',
+    challenge: 'Founders and product leaders need to launch new digital software products quickly with scalable security, tenant isolation, and modern UX.',
     solution: 'We build production-ready multi-tenant SaaS products with Next.js, PostgreSQL RLS, white-label branding, and sub-second page performance.',
     outcome: 'Accelerates time-to-market while giving enterprise clients confidence in SOC2-level tenant data security.',
     roiMetric: '3-Month Launch Velocity',
@@ -42,7 +41,7 @@ const SCENARIOS: Scenario[] = [
   },
   {
     id: 'field',
-    problem: 'Incomplete inspection data & paper logs from subterranean or remote field sites',
+    problem: 'Incomplete inspection data & paper logs from remote job sites',
     category: 'Mobile Workforce',
     title: 'Offline-First Mobile Operations Applications',
     challenge: 'Field technicians operating in low-signal environments cannot sync inspection checklists, photo evidence, or signatures back to headquarters.',
@@ -81,27 +80,34 @@ export const SolutionsSection: React.FC = () => {
 
   return (
     <>
-      <section className="py-20 lg:py-28 bg-white border-b border-slate-100 relative">
+      <section className="py-20 lg:py-28 bg-white border-b border-slate-200/80 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-50 border border-gold-200 text-gold-700 text-xs font-semibold">
               <Sparkles size={14} className="text-gold-600" />
-              <span>Business Scenarios & Solutions</span>
+              <span>BUSINESS PROBLEMS → ENGINEERED SOLUTIONS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
-              Solving Complex Business Problems Through Engineered Software
+              Turn Operational Friction Into Scalable Software
             </h2>
-            <p className="text-base text-slate-600 leading-relaxed">
-              Select your current business bottleneck below to see how our engineering team turns operational friction into measurable software outcomes.
+            <p className="text-base text-slate-600 leading-relaxed font-normal">
+              Select your current operational bottleneck below to see how our engineering team turns business problems into high-performing software systems.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: Problem Scenarios List */}
             <div className="lg:col-span-5 space-y-3">
-              <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block px-2">
-                Select Your Business Challenge:
-              </span>
+              <div className="flex items-center justify-between px-2 pb-1">
+                <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
+                  Select Operational Bottleneck:
+                </span>
+                <span className="text-[11px] font-mono text-gold-600 font-semibold flex items-center gap-1">
+                  <ArrowDownRight size={13} />
+                  Transformation Matrix
+                </span>
+              </div>
+
               {SCENARIOS.map((scenario) => {
                 const isSelected = activeScenario.id === scenario.id;
                 return (
@@ -141,7 +147,7 @@ export const SolutionsSection: React.FC = () => {
 
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
                   <span className="px-3 py-1 rounded-full bg-gold-500/20 border border-gold-500/40 text-gold-400 text-xs font-mono font-bold">
-                    {activeScenario.category}
+                    {activeScenario.category} Transformation
                   </span>
                   <span className="text-xs font-mono text-emerald-400 font-bold flex items-center gap-1.5">
                     <Zap size={14} />
@@ -154,7 +160,9 @@ export const SolutionsSection: React.FC = () => {
                     {activeScenario.title}
                   </h3>
                   <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                    <span className="text-[11px] font-mono text-slate-400 uppercase font-bold">Business Challenge:</span>
+                    <span className="text-[11px] font-mono text-slate-400 uppercase font-bold flex items-center gap-1.5">
+                      <ShieldCheck size={13} className="text-red-400" /> Business Friction:
+                    </span>
                     <p className="text-xs sm:text-sm text-slate-300">{activeScenario.challenge}</p>
                   </div>
                 </div>
@@ -180,7 +188,7 @@ export const SolutionsSection: React.FC = () => {
 
                 <div className="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
                   <p className="text-xs text-slate-400">
-                    Expected Outcome: <span className="text-white font-medium">{activeScenario.outcome}</span>
+                    Target Outcome: <span className="text-white font-medium">{activeScenario.outcome}</span>
                   </p>
                   <button
                     onClick={() => setPlannerOpen(true)}
@@ -200,3 +208,4 @@ export const SolutionsSection: React.FC = () => {
     </>
   );
 };
+

@@ -1,27 +1,35 @@
 import React from 'react';
 import { HeroSection } from '@/components/sections/HeroSection';
-import { SolutionsSection } from './solutions/components/SolutionsSection';
-import { InteractiveServices } from './services/components/InteractiveServices';
-import { CaseStudyShowcase } from './projects/components/CaseStudyShowcase';
-import { TechSpectrum } from './technologies/components/TechSpectrum';
-import { InteractiveProcess } from './process/components/InteractiveProcess';
-import { IndustriesGrid } from './industries/components/IndustriesGrid';
+import { ServicesBentoSection } from '@/components/sections/ServicesBentoSection';
+import { ArchitectsAboutSection } from '@/components/sections/ArchitectsAboutSection';
+import { ProblemIntroSection } from '@/components/sections/ProblemIntroSection';
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { WhyEntelgowSection } from '@/components/sections/WhyEntelgowSection';
 import { CinematicCTA } from '@/components/sections/CinematicCTA';
 
 export default function Home() {
   return (
-    <div className="space-y-0 overflow-x-hidden">
+    <div className="space-y-0 overflow-x-hidden bg-background">
+      {/* 1. Lumina Hero & 3D Interactive WebGL Mesh Background */}
       <HeroSection />
-      <SolutionsSection />
-      <InteractiveServices />
-      <CaseStudyShowcase />
-      <TechSpectrum />
-      <InteractiveProcess />
-      <IndustriesGrid />
+
+      {/* 2. Bento Grid Expertise (AI, Web Apps, Website Dev, Hosting) */}
+      <ServicesBentoSection />
+
+      {/* 3. Architects of the Digital Enterprise & Asymmetric Composition */}
+      <ArchitectsAboutSection />
+
+      {/* 4. Operational Friction vs Enteglow Solution Matrix */}
+      <ProblemIntroSection />
+
+      {/* 5. Trusted by Industry Leaders / Executive Testimonials Grid */}
+      <TestimonialsSection />
+
+      {/* 6. Enterprise Reliability, Security & IP Ownership Guarantees */}
       <WhyEntelgowSection />
+
+      {/* 7. Final Cinematic Call-to-Action */}
       <CinematicCTA />
     </div>
   );
 }
-
