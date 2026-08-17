@@ -3,86 +3,84 @@
 import React from 'react';
 import Link from 'next/link';
 
+const TEAM_IMAGE_URL =
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuBJHIC90k-5sfIvEgn1IactLa26iFt8NSLyN780lGcVjv-ZXBAPMj4v09qKBygBcT6HpZyNi27YeG6koe79WrhnaDVT3e7WbA1xqAh9VpuQLVDycURwpI-b2REy6hzeMQt_ufXGB_4HDr-Rl5cSxrjs7E0jdclY_jEcR7qOdjYz-5_gBFzxX2I4ayLO5TpJBpsLSkpfgojs_94CXHeD5iDDqFii9mZ7JL5uHebQhvn1lb6EyfwBYbiHlw';
+
+const DASHBOARD_IMAGE_URL =
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuCtNuzeblCiSCeV0LtzSQAME3bD1xPxUtd9-pRmdjtvUS0aKAoF-LuI7Boko0IVqzZpJCkiJ5M6zHa-xTMFgY3E_QhEf2XCbnIY80YApqFZB4crN4ddzMAR_FOe3HT2apXSIjSgOwVgmkLTT_OpMNJ8QA1R7kZrpghdgDyfFuvvCmMq0KmMJYBKxJhWY0JEatkLbeCn1PnGyRt4-KHyxiaYpeNse8ns7m9lwPApK9T_jTz8DswIiXy_6A';
+
 export const ArchitectsAboutSection: React.FC = () => {
   return (
-    <section className="py-section-padding-desktop bg-surface-container-lowest relative">
+    <section className="py-section-padding-lg bg-surface border-y border-glass-border">
       <div className="max-w-container-max mx-auto px-gutter">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          {/* Text Content Column */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="mb-6 inline-block">
-              <span className="font-label-md text-label-md uppercase tracking-widest text-outline">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column */}
+          <div>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <span className="material-symbols-outlined text-primary text-[14px]">info</span>
+              <span className="text-label-sm font-label-sm text-primary uppercase tracking-widest">
                 Who We Are
               </span>
             </div>
-            <h2 className="font-headline font-bold text-headline-lg text-on-surface mb-8">
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6 text-on-surface">
               Architects of the Digital Enterprise
             </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mb-6">
-              We are a collective of senior engineers, product designers, and strategic thinkers. We approach technology not just as code, but as a critical lever for business growth.
+            <p className="text-on-surface-variant font-body-lg text-body-lg mb-4">
+              We are a collective of senior engineers, product designers, and systems architects dedicated to solving complex operational challenges. Our methodology bridges the gap between ambitious business goals and technical reality.
             </p>
-            <p className="font-body-md text-body-md text-on-surface-variant mb-10">
-              Our methodology is rooted in rigorous technical standards and agile delivery, ensuring that complex challenges are met with elegant, sustainable solutions.
+            <p className="text-on-surface-variant font-body-lg text-body-lg mb-8">
+              By combining deep domain expertise with modern software development practices, we deliver solutions that are robust, scalable, and beautifully designed.
             </p>
             <ul className="space-y-4 mb-10">
-              <li className="flex items-start gap-4">
-                <span className="material-symbols-outlined text-electric-blue mt-1">check_circle</span>
-                <span className="font-body-md text-body-md text-on-surface">
-                  Enterprise-grade architecture design.
-                </span>
+              <li className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary">check_circle</span>
+                <span className="text-on-surface font-medium">Enterprise-grade architecture design</span>
               </li>
-              <li className="flex items-start gap-4">
-                <span className="material-symbols-outlined text-electric-blue mt-1">check_circle</span>
-                <span className="font-body-md text-body-md text-on-surface">
-                  Agile, transparent development cycles.
-                </span>
+              <li className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary">check_circle</span>
+                <span className="text-on-surface font-medium">Agile development methodologies</span>
               </li>
-              <li className="flex items-start gap-4">
-                <span className="material-symbols-outlined text-electric-blue mt-1">check_circle</span>
-                <span className="font-body-md text-body-md text-on-surface">
-                  Post-deployment scaling and optimization.
-                </span>
+              <li className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary">check_circle</span>
+                <span className="text-on-surface font-medium">Continuous post-deployment scaling</span>
               </li>
             </ul>
             <Link
               href="/about"
-              className="btn-primary font-label-md text-label-md px-8 py-4 uppercase tracking-wider font-semibold inline-block text-center"
+              className="bg-primary-container text-on-primary-container font-headline-md text-[16px] uppercase px-8 py-4 rounded font-bold hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all transform hover:-translate-y-1 inline-flex items-center gap-2"
             >
-              Meet The Team
+              Meet the Team
+              <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </div>
 
-          {/* Layered Visual Column */}
-          <div className="lg:col-span-7 order-1 lg:order-2 relative">
-            <div className="relative w-full aspect-[4/3] max-w-2xl mx-auto lg:ml-auto">
-              {/* Main Image */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10" />
-                <img
-                  alt="Team working in modern office"
-                  className="w-full h-full object-cover grayscale-[20%]"
-                  src="https://lh3.googleusercontent.com/aida/AP1WRLsflLpDiAR4CXjEHXOkGIEdFoiv1NLejryUBM7vQy_xdgBXOD5J1zr74BgFsF2o-R_83969ZxsajiA0bnXvKbTnE7R8-9kXgT7qT31M--NKADNCkqcr6ukSoyuvYyUl4I0LYhniCyUY94vXRg1CIsRMC69oecTamqJovWa2a1KRdVafyUO7U9-ZvGSpHkbvU3n4axCdierBJTaldzZjOw-bye1uwOksSiHK5Pz5TmDkqLj7pPzHb4RnCCKl"
-                />
-              </div>
-
-              {/* Foreground Offset Secondary Image */}
-              <div className="absolute -bottom-12 -left-12 w-64 h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-surface-container-lowest hidden md:block">
-                <img
-                  alt="Developer coding"
-                  className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida/AP1WRLtHciTK-a0abNyRuN6fYU7J_D6VcTVfuqcv0KZqLGmJJMgEIq4BBvHgfcN592xATmWhBkA7fwPLJwh5ZMRvO9TBHGr920JY1Za7u7_JksfeGyg31AQVJiVEdplfpgdDSRdFIiNk7H_wFFGqFiK3jhpJfmex0J95MfKiGsN2Pkq3WXDNAMSJO1exqUVdMzPIq6LIaA4Y8YAFMb13XNpOq41K9GFgx1Juf17eaFDU672w5uF-xYG0W-hhCBU"
-                />
-              </div>
-
-              {/* Floating Stat Card */}
-              <div className="absolute top-12 -right-4 md:-right-8 glass-panel rounded-xl p-6 shadow-2xl">
-                <div className="font-headline font-bold text-display-lg text-electric-blue leading-none mb-2">
-                  15+
-                </div>
-                <div className="font-label-md text-label-md text-on-surface uppercase tracking-wider">
-                  Years Experience
-                </div>
-              </div>
+          {/* Right Column */}
+          <div className="relative">
+            {/* Main Image */}
+            <div className="rounded-xl overflow-hidden border border-glass-border shadow-2xl relative z-10">
+              <img
+                alt="Engineering Team"
+                className="w-full h-auto object-cover aspect-square md:aspect-[4/3]"
+                src={TEAM_IMAGE_URL}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+            </div>
+            {/* Secondary Image */}
+            <div className="absolute -bottom-8 -left-8 w-1/2 rounded-xl overflow-hidden border border-glass-border shadow-2xl z-20 hidden md:block">
+              <img
+                alt="Mobile Dashboard"
+                className="w-full h-auto object-cover aspect-[4/3]"
+                src={DASHBOARD_IMAGE_URL}
+              />
+            </div>
+            {/* Floating Badge */}
+            <div className="absolute -top-6 -right-6 glass-panel rounded-lg p-4 hidden md:flex flex-col items-center justify-center z-20 shadow-[0_0_30px_rgba(227,30,36,0.15)]">
+              <span className="text-primary font-headline-lg text-[32px] font-bold leading-none mb-1">
+                15+
+              </span>
+              <span className="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest text-center w-20">
+                Years Experience
+              </span>
             </div>
           </div>
         </div>

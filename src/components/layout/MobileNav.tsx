@@ -11,7 +11,7 @@ interface MobileNavProps {
 }
 
 const ENTEGLOW_LOGO_URL =
-  'https://lh3.googleusercontent.com/aida/AP1WRLuSl1wksfHbxl-SjNQycyf8pz9gS_hPn8Me6Vdo-7ySZBvIY_3If95ZpVbhdyCLF30fVMjHycV3V99zXHdOxNz2pcp8WKM6l6iscFcodw0NFh0IbJ7I1ZxKWAWBbIRXGsLao_NgjkQEBzklSBoK4htPoZPWkZFsnBJef9fPF6tZ2X1xg7-CIjvf0Gd5PFy3VLBtlmrL1exA7-hIqfqfTdy-VqIfgUp6KHgq7o8ZvZ0se1cE-MBK3B4M6pka';
+  'https://lh3.googleusercontent.com/aida/AP1WRLuw0xLnjBYNiRdgRTHg_Xnx7s3668S0IvyT8RVwnv7bXUGX9qYOzX9JXqb8HC0okibDP_r453hJUXl3_P4K_hPtCSPagq2aqXWKkZWW0aolMCtBMJ8uv2lXXEJsDezt7tN5bqgFtS_KSXCvxa6nrmMXb746kBzBscfff4zsH2vxN2mVg1BIKIcGBVFqD6G-ZWnypuFnKFbVNPbD0_PkURah0NeLbptJuN3sMm_o79oAjN091oxZ6ijSQnXw';
 
 export const MobileNav: React.FC<MobileNavProps> = ({
   isOpen,
@@ -25,27 +25,24 @@ export const MobileNav: React.FC<MobileNavProps> = ({
     <div className="fixed inset-0 z-50 md:hidden">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-deep-slate/60 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-background/80 backdrop-blur-md transition-opacity"
         onClick={onClose}
       />
 
       {/* Drawer */}
-      <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-surface-container-lowest/95 backdrop-blur-2xl shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l border-glass-stroke">
+      <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-surface-deep/95 backdrop-blur-2xl shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l border-glass-border">
         <div className="space-y-6">
-          <div className="flex items-center justify-between border-b border-surface-container-high pb-4">
+          <div className="flex items-center justify-between border-b border-glass-border pb-4">
             <Link href="/" onClick={onClose} className="flex items-center gap-3">
               <img
                 src={ENTEGLOW_LOGO_URL}
                 alt="Enteglow Logo"
                 className="h-7 w-auto object-contain"
               />
-              <span className="font-headline font-bold text-headline-md text-primary">
-                Enteglow
-              </span>
             </Link>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors"
+              className="p-2 rounded text-on-surface-variant hover:text-primary transition-colors"
               aria-label="Close menu"
             >
               <span className="material-symbols-outlined text-2xl">close</span>
@@ -58,7 +55,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
                 key={link.href}
                 href={link.href}
                 onClick={onClose}
-                className="px-4 py-3 rounded-xl font-label-md text-label-md font-semibold text-on-surface hover:text-electric-blue hover:bg-surface-container-low transition-colors"
+                className="px-4 py-3 rounded font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface hover:text-primary hover:bg-surface-container transition-colors"
               >
                 {link.label}
               </Link>
@@ -66,16 +63,17 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           </nav>
         </div>
 
-        <div className="pt-6 border-t border-surface-container-high space-y-3">
+        <div className="pt-6 border-t border-glass-border space-y-3">
           <button
             type="button"
             onClick={() => {
               onClose();
               onOpenPlanner?.();
             }}
-            className="btn-primary font-label-md text-label-md w-full py-4 uppercase tracking-wider font-semibold cursor-pointer"
+            className="bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase w-full py-3.5 rounded font-bold hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             Book a Meeting
+            <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
           </button>
         </div>
       </div>

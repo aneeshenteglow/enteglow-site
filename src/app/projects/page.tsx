@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
 import { CinematicCTA } from '@/components/sections/CinematicCTA';
 import { projectsData } from './services/projectsData';
@@ -19,16 +18,16 @@ export default function ProjectsPage() {
       : projectsData.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="space-y-16 pb-12">
-      <section className="pt-8 pb-12 bg-radial-gold border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="cyan" className="mb-4">
+    <div className="space-y-16 pb-12 pt-32 bg-background">
+      <section className="py-12 bg-surface-deep border-b border-glass-border">
+        <div className="max-w-container-max mx-auto px-gutter text-center">
+          <Badge className="mb-4">
             Software Portfolio
           </Badge>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">
+          <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
             Engineering Case Studies
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
             Detailed technical breakdowns of software product solutions engineered for technical performance, reliability, and business impact.
           </p>
 
@@ -37,10 +36,10 @@ export default function ProjectsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                className={`px-4 py-2 rounded font-label-sm text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                   activeCategory === cat
-                    ? 'bg-gold-500 text-white shadow-md'
-                    : 'bg-white text-slate-600 hover:text-navy-900 hover:bg-slate-100 border border-slate-200'
+                    ? 'bg-primary-container text-on-primary-container shadow-[0_0_15px_rgba(227,30,36,0.3)]'
+                    : 'glass-panel text-on-surface-variant hover:text-on-surface border-glass-border'
                 }`}
               >
                 {cat} Projects
@@ -50,57 +49,57 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-container-max mx-auto px-gutter">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
-            <Card key={project.id} className="flex flex-col justify-between p-8 group">
+            <div key={project.id} className="glass-panel rounded-xl p-8 flex flex-col justify-between group glow-hover space-y-6">
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <Badge variant="primary">{project.category}</Badge>
-                  <span className="text-xs font-mono text-slate-500">
+                  <Badge>{project.category}</Badge>
+                  <span className="font-label-sm text-xs text-on-surface-variant uppercase">
                     {project.techStack.slice(0, 3).join(' • ')}
                   </span>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-navy-900 group-hover:text-gold-600 transition-colors">
+                  <h2 className="font-headline-md text-2xl text-on-surface group-hover:text-primary transition-colors">
                     {project.title}
                   </h2>
-                  <p className="text-sm font-semibold text-gold-600 mt-1">
+                  <p className="font-body-md text-primary mt-1 font-semibold text-sm">
                     {project.tagline}
                   </p>
-                  <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                  <p className="font-body-md text-on-surface-variant text-sm mt-3 leading-relaxed">
                     {project.overview}
                   </p>
                 </div>
 
-                <div className="space-y-3 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <div className="space-y-3 p-4 rounded bg-surface-container border border-glass-border">
                   <div>
-                    <span className="text-xs font-mono font-semibold uppercase text-gold-600 block">
+                    <span className="font-label-sm text-xs font-semibold uppercase text-primary block">
                       Problem Domain
                     </span>
-                    <p className="text-xs text-slate-700 mt-1 leading-relaxed">
+                    <p className="font-body-md text-xs text-on-surface-variant mt-1 leading-relaxed">
                       {project.problem}
                     </p>
                   </div>
-                  <div className="pt-2 border-t border-slate-200">
-                    <span className="text-xs font-mono font-semibold uppercase text-techBlue-600 block">
+                  <div className="pt-2 border-t border-glass-border">
+                    <span className="font-label-sm text-xs font-semibold uppercase text-primary block">
                       Architected Solution
                     </span>
-                    <p className="text-xs text-slate-700 mt-1 leading-relaxed">
+                    <p className="font-body-md text-xs text-on-surface mt-1 leading-relaxed font-medium">
                       {project.solution}
                     </p>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <span className="text-xs font-mono font-semibold uppercase text-slate-500 block">
+                  <span className="font-label-sm text-xs font-semibold uppercase text-on-surface-variant block">
                     Key Features
                   </span>
-                  <ul className="space-y-1.5 text-xs text-slate-700 font-medium">
+                  <ul className="space-y-1.5 text-xs text-on-surface font-medium">
                     {project.keyFeatures.map((feat, i) => (
                       <li key={i} className="flex items-center gap-2">
-                        <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
+                        <CheckCircle2 size={14} className="text-primary shrink-0" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -108,10 +107,10 @@ export default function ProjectsPage() {
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+              <div className="pt-6 mt-6 border-t border-glass-border flex items-center justify-between">
                 <div className="flex flex-wrap gap-1">
                   {project.techStack.slice(0, 4).map((tech, i) => (
-                    <span key={i} className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200 text-navy-800">
+                    <span key={i} className="text-[10px] font-label-sm px-2 py-0.5 rounded bg-surface-container-high border border-glass-border text-on-surface uppercase">
                       {tech}
                     </span>
                   ))}
@@ -119,13 +118,13 @@ export default function ProjectsPage() {
 
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="text-xs font-bold text-gold-600 hover:text-gold-700 flex items-center gap-1 group-hover:translate-x-1 transition-all"
+                  className="text-xs font-bold text-primary hover:text-primary flex items-center gap-1 group-hover:translate-x-1 transition-all uppercase font-label-sm"
                 >
                   <span>Detailed Case Study</span>
                   <ArrowRight size={14} />
                 </Link>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>

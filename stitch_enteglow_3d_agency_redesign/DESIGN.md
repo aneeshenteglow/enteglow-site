@@ -1,189 +1,162 @@
 ---
-name: Lumina Tech System
+name: Crimson Precision
 colors:
-  surface: '#f7f9fb'
-  surface-dim: '#d8dadc'
-  surface-bright: '#f7f9fb'
-  surface-container-lowest: '#ffffff'
-  surface-container-low: '#f2f4f6'
-  surface-container: '#eceef0'
-  surface-container-high: '#e6e8ea'
-  surface-container-highest: '#e0e3e5'
-  on-surface: '#191c1e'
-  on-surface-variant: '#3e4851'
-  inverse-surface: '#2d3133'
-  inverse-on-surface: '#eff1f3'
-  outline: '#6e7882'
-  outline-variant: '#bdc8d2'
-  surface-tint: '#006492'
-  primary: '#006492'
-  on-primary: '#ffffff'
-  primary-container: '#00b2ff'
-  on-primary-container: '#004161'
-  inverse-primary: '#8bceff'
-  secondary: '#6b38d4'
-  on-secondary: '#ffffff'
-  secondary-container: '#8455ef'
-  on-secondary-container: '#fffbff'
-  tertiary: '#895100'
-  on-tertiary: '#ffffff'
-  tertiary-container: '#ef9206'
-  on-tertiary-container: '#5a3400'
-  error: '#ba1a1a'
-  on-error: '#ffffff'
-  error-container: '#ffdad6'
-  on-error-container: '#93000a'
-  primary-fixed: '#c9e6ff'
-  primary-fixed-dim: '#8bceff'
-  on-primary-fixed: '#001e2f'
-  on-primary-fixed-variant: '#004b6f'
-  secondary-fixed: '#e9ddff'
-  secondary-fixed-dim: '#d0bcff'
-  on-secondary-fixed: '#23005c'
-  on-secondary-fixed-variant: '#5516be'
-  tertiary-fixed: '#ffdcbc'
-  tertiary-fixed-dim: '#ffb86b'
-  on-tertiary-fixed: '#2c1700'
-  on-tertiary-fixed-variant: '#683d00'
-  background: '#f7f9fb'
-  on-background: '#191c1e'
-  surface-variant: '#e0e3e5'
-  electric-blue: '#00B2FF'
-  vibrant-purple: '#8B5CF6'
-  soft-pink: '#FFA4FB'
-  deep-slate: '#0F172A'
-  glass-stroke: rgba(255, 255, 255, 0.4)
+  surface: '#131315'
+  surface-dim: '#131315'
+  surface-bright: '#39393B'
+  surface-container-lowest: '#0e0e10'
+  surface-container-low: '#1b1b1d'
+  surface-container: '#201F21'
+  surface-container-high: '#2A2A2C'
+  surface-container-highest: '#353437'
+  on-surface: '#E5E1E4'
+  on-surface-variant: '#e7bdb8'
+  inverse-surface: '#e5e1e4'
+  inverse-on-surface: '#303032'
+  outline: '#ae8883'
+  outline-variant: '#5d3f3c'
+  surface-tint: '#ffb4ab'
+  primary: '#ffb4ab'
+  on-primary: '#690006'
+  primary-container: '#e31e24'
+  on-primary-container: '#fffafa'
+  inverse-primary: '#c00014'
+  secondary: '#ffb3ac'
+  on-secondary: '#680008'
+  secondary-container: '#911719'
+  on-secondary-container: '#ff9e96'
+  tertiary: '#8ecdff'
+  on-tertiary: '#00344f'
+  tertiary-container: '#007bb5'
+  on-tertiary-container: '#fbfcff'
+  error: '#ffb4ab'
+  on-error: '#690005'
+  error-container: '#93000a'
+  on-error-container: '#ffdad6'
+  primary-fixed: '#ffdad6'
+  primary-fixed-dim: '#ffb4ab'
+  on-primary-fixed: '#410002'
+  on-primary-fixed-variant: '#93000d'
+  secondary-fixed: '#ffdad6'
+  secondary-fixed-dim: '#ffb3ac'
+  on-secondary-fixed: '#410003'
+  on-secondary-fixed-variant: '#8d1417'
+  tertiary-fixed: '#cbe6ff'
+  tertiary-fixed-dim: '#8ecdff'
+  on-tertiary-fixed: '#001e30'
+  on-tertiary-fixed-variant: '#004b71'
+  background: '#131315'
+  on-background: '#e5e1e4'
+  surface-variant: '#353437'
+  accent-glow: rgba(227, 30, 36, 0.12)
+  technical-outline: rgba(255, 255, 255, 0.1)
 typography:
   display-lg:
     fontFamily: Oswald
-    fontSize: 72px
+    fontSize: 80px
     fontWeight: '700'
-    lineHeight: '1.1'
-    letterSpacing: -0.02em
+    lineHeight: 88px
+    letterSpacing: 0.02em
   headline-lg:
     fontFamily: Oswald
     fontSize: 48px
-    fontWeight: '700'
-    lineHeight: '1.2'
-    letterSpacing: -0.01em
+    fontWeight: '600'
+    lineHeight: 56px
   headline-lg-mobile:
     fontFamily: Oswald
     fontSize: 32px
-    fontWeight: '700'
-    lineHeight: '1.2'
-    letterSpacing: -0.01em
+    fontWeight: '600'
+    lineHeight: 40px
   headline-md:
     fontFamily: Oswald
-    fontSize: 32px
-    fontWeight: '600'
-    lineHeight: '1.3'
-    letterSpacing: 0em
+    fontSize: 24px
+    fontWeight: '500'
+    lineHeight: 32px
+    letterSpacing: 0.05em
   body-lg:
     fontFamily: Inter
     fontSize: 18px
     fontWeight: '400'
-    lineHeight: '1.6'
+    lineHeight: 30px
   body-md:
     fontFamily: Inter
     fontSize: 16px
     fontWeight: '400'
-    lineHeight: '1.6'
-  label-md:
+    lineHeight: 26px
+  label-sm:
     fontFamily: Inter
-    fontSize: 14px
+    fontSize: 12px
     fontWeight: '600'
-    lineHeight: '1.2'
-    letterSpacing: 0.05em
+    lineHeight: 12px
+    letterSpacing: 0.1em
 rounded:
-  sm: 0.25rem
-  DEFAULT: 0.5rem
-  md: 0.75rem
-  lg: 1rem
-  xl: 1.5rem
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
   full: 9999px
 spacing:
-  base: 8px
-  container-max: 1280px
+  unit: 4px
   gutter: 24px
-  section-padding-desktop: 120px
-  section-padding-mobile: 64px
+  margin-sm: 16px
+  margin-lg: 48px
+  section-padding: 80px
+  container-max: 1440px
 ---
 
 ## Brand & Style
 
-The design system is built for a forward-thinking technology consultancy, emphasizing innovation, clarity, and high-performance engineering. It targets enterprise clients and startups looking for cutting-edge digital transformation.
+The brand personality is authoritative, sophisticated, and engineering-driven, tailored for enterprise-level decision-makers and technical directors. This design system departs from common "gamer" red aesthetics, instead embracing a **Corporate Minimalist-Techno** style that prioritizes legibility, structural integrity, and industrial quality.
 
-The aesthetic follows a **Modern Corporate Glassmorphism** style. It balances the professional reliability of a traditional tech firm with the vibrant, energetic visual language of the Web3 and AI era. Key characteristics include:
-- **Luminosity:** High-contrast accents against pristine white surfaces.
-- **Depth:** Multi-layered layouts using blurred translucent panels rather than heavy lines.
-- **Precision:** Tight typography and geometric alignment that suggests technical expertise.
-- **Breathability:** Excessive whitespace to allow complex technical information to remain digestible.
+The emotional response should be one of "command and control"—evoking the feeling of high-end automotive engineering or aerospace instrumentation. The visual language relies on a deep charcoal foundation, accented by a mature, professional red that signals importance without aggression. The style is characterized by thin, technical borders, subtle light-emission (glows), and high-density information layouts.
 
 ## Colors
 
-The palette is anchored by "Electric Blue," symbolizing connectivity and intelligence. A secondary "Vibrant Purple" is used to create gradients, adding a sense of modern depth and energy. 
+The palette is centered on a high-contrast relationship between a deep charcoal "Obsidian" background and a sophisticated "Command Red."
 
-**Color Usage:**
-- **Primary:** Action items, active states, and brand-defining icons.
-- **Secondary:** Used primarily in linear gradients (45° or 135°) transitioning from Primary to Secondary to create focal points.
-- **Backgrounds:** Use `#FFFFFF` for the main canvas. Use `#F8FAFC` for section differentiation and subtle bento-grid backgrounds.
-- **Text:** Use `Deep Slate` (#0F172A) for high-contrast body text to maintain accessibility against the bright background.
+- **Primary Red (#E31E24):** A strong, professional red used for primary calls to action, critical status indicators, and branding. It is calibrated for maximum visibility against dark neutrals.
+- **Secondary Red (#8B1216):** A deeper, blood-red used for low-opacity backgrounds, hover states, and to provide depth in gradients.
+- **Surface Strategy:** The system uses a hierarchy of dark neutrals. The background stays fixed at `#131315`, while elevated components use progressively lighter shades (e.g., `#201F21`) to simulate physical layers.
+- **Accents:** Red is used sparingly as a "technical glow" rather than a fill color to maintain the professional, understated aesthetic.
 
 ## Typography
 
-This design system utilizes a high-contrast typographic pairing. **Oswald** provides a bold, condensed, and architectural feel for headlines, while **Inter** ensures maximum readability for functional interface elements and long-form content.
+This design system utilizes a high-contrast pairing of **Oswald** and **Inter** to balance industrial character with technical legibility.
 
-**Key Rules:**
-- Headlines should utilize tight tracking (letter spacing) to enhance the "tech" aesthetic.
-- Use `display-lg` exclusively for hero sections or major impact statements.
-- Body text should maintain a generous line height (1.6) to support the "breathable" brand attribute.
-- All-caps styling is reserved for `display`, `headline-lg`, and `labels` to provide a structured, authoritative tone.
+- **Oswald** is the display typeface, reserved for headlines and primary data points. Its condensed, geometric structure evokes blueprints and precision machinery. It should always be used in White or Off-white (`#E5E1E4`) to maintain peak contrast.
+- **Inter** provides a clean, neutral balance for body copy, documentation, and UI labels. It ensures that complex information remains readable against dark backgrounds.
+- **Formatting:** UI labels and secondary headers often utilize `uppercase` with tracking set between 0.05em and 0.1em to reinforce the "engineered" feel.
 
 ## Layout & Spacing
 
-The layout philosophy follows a **Bento-style Grid** model, where content is organized into distinct, rounded containers of varying sizes.
+The design system employs a **Fixed Grid** philosophy for desktop layouts (centered, max-width 1440px) and a fluid, single-column approach for mobile. 
 
-**Grid System:**
-- **Desktop:** 12-column fluid grid with 24px gutters and a 1280px max-width container.
-- **Tablet:** 8-column grid with 20px gutters.
-- **Mobile:** 4-column grid with 16px gutters and 16px side margins.
-
-**Rhythm:**
-- Use a 120px vertical rhythm between major sections to emphasize the "clean and breathable" nature of the brand.
-- Internal component spacing should follow an 8px base unit (8, 16, 24, 32, 48, 64).
+- **Grid:** A 12-column grid is used for desktop with 24px gutters. Content should align to the grid to maintain a structured, "blueprinted" appearance.
+- **Rhythm:** All spacing (padding, margins, component heights) must be multiples of the 4px base unit. 
+- **Responsive Behavior:** At the 768px (Tablet) breakpoint, section padding reduces by 40%. At the 480px (Mobile) breakpoint, margins are fixed at 16px and all grid elements stack vertically.
 
 ## Elevation & Depth
 
-Hierarchy is achieved through **Glassmorphism** and soft, ambient shadows.
+Hierarchy is established through **Tonal Layering** and **Technical Glows** rather than traditional drop shadows.
 
-- **Surface 0 (Base):** White or Light Gray (#F8FAFC) background.
-- **Surface 1 (Floating Cards):** White background with a 15% opacity blur effect and a very subtle 1px border (`glass-stroke`).
-- **Surface 2 (Interactive):** Elements that are hovered or active use a "Deep Ambient Shadow": `0 20px 40px rgba(0, 178, 255, 0.08)`.
-- **Blur Effect:** Use a standard `backdrop-filter: blur(12px)` for all floating navigation and glass panels to maintain legibility over photography.
+- **Surface Tiers:** Background elements are at the lowest level (`#131315`). Floating cards and modals are elevated using the `surface-container` (`#201F21`) color with a 1px `technical-outline`.
+- **The Glow:** Active states or high-priority elements use a subtle outer glow: `box-shadow: 0 0 15px rgba(227, 30, 36, 0.12)`. This creates a sense of "powered-on" hardware.
+- **Borders:** Depth is reinforced by thin (1px), low-opacity borders. This defines edges clearly without adding visual weight.
 
 ## Shapes
 
-The shape language is modern and friendly, using significant rounding to soften the "high-tech" edge.
+The shape language is **Soft-Technical**. We avoid perfectly sharp corners to ensure the UI feels modern and premium, but keep the radii tight to maintain an "industrial" edge.
 
-- **Primary Radius:** 12px for standard cards, inputs, and buttons.
-- **Large Radius:** 24px-32px for large section containers or "Bento" blocks.
-- **Buttons:** Use `rounded-lg` (16px) or pill-shapes for a more approachable feel.
-- **Gradients:** Apply 45-degree linear gradients to primary buttons and iconography to suggest movement and progress.
+- **Standard Radius:** 4px (`0.25rem`) is the default for most buttons, inputs, and small containers.
+- **Component Large:** Cards and larger panels use 8px (`0.5rem`) to provide a subtle distinction from the background.
+- **Technical Accents:** Pill shapes are reserved exclusively for status indicators and small informational badges.
 
 ## Components
 
-### Buttons
-- **Primary:** Gradient fill (Electric Blue to Vibrant Purple), white text, 16px radius.
-- **Secondary:** Transparent background with an Electric Blue 2px border or "Ghost" style with a glass background.
-
-### Navigation
-- **Floating Header:** A "Glassmorphism" bar anchored to the top with 24px margins from the screen edges. It uses a `backdrop-filter` and a subtle 1px white border.
-
-### Bento Cards
-- Used for service listings. Each card has a white background, 24px internal padding, and 16px-24px corner radius. Icons within these cards should use the Electric Blue color or gradients.
-
-### Input Fields
-- Subtle gray background (#F1F5F9) with a 1px border that glows Electric Blue on focus. Labels should be small, uppercase, and bold Inter.
-
-### Imagery & Overlays
-- Use high-resolution tech photography. Apply a 20% opacity Electric Blue gradient overlay to keep photography consistent with the brand palette. Cutout subjects (e.g., people or hardware) should sit on top of subtle geometric blue/purple glow effects.
+- **Primary Buttons:** Solid Command Red (`#E31E24`) background with white text. They feature a sharp 4px radius and a subtle red glow on hover.
+- **Technical Inputs:** Backgrounds should be `surface-container-high` with a 1px `technical-outline`. On focus, the border transitions to Primary Red with a subtle inner glow.
+- **Engineering Cards:** Dark surfaces (`#201F21`) with a 1px border. They utilize the "Glow Hover" effect, where the border opacity increases and a faint red ambient shadow appears.
+- **Chips & Badges:** Small, semi-transparent red backgrounds (10-15% opacity) with Primary Red text. These are used for technical categorization and status.
+- **Lists:** High-density lists with 1px dividers in `technical-outline` color. Each list item should have a subtle hover highlight using a 5% white overlay.
+- **Icons:** Use linear, technical icon sets (e.g., Material Symbols Outlined). Default icon color is `#E5E1E4`, switching to Primary Red only for interactive or "Alert" states.

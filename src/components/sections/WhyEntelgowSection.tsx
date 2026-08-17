@@ -4,24 +4,24 @@ import React, { useState } from 'react';
 import { ProjectPlannerModal } from '@/components/common/ProjectPlannerModal';
 
 const TEAM_IMAGE_1 =
-  'https://lh3.googleusercontent.com/aida/AP1WRLsflLpDiAR4CXjEHXOkGIEdFoiv1NLejryUBM7vQy_xdgBXOD5J1zr74BgFsF2o-R_83969ZxsajiA0bnXvKbTnE7R8-9kXgT7qT31M--NKADNCkqcr6ukSoyuvYyUl4I0LYhniCyUY94vXRg1CIsRMC69oecTamqJovWa2a1KRdVafyUO7U9-ZvGSpHkbvU3n4axCdierBJTaldzZjOw-bye1uwOksSiHK5Pz5TmDkqLj7pPzHb4RnCCKl';
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuBJHIC90k-5sfIvEgn1IactLa26iFt8NSLyN780lGcVjv-ZXBAPMj4v09qKBygBcT6HpZyNi27YeG6koe79WrhnaDVT3e7WbA1xqAh9VpuQLVDycURwpI-b2REy6hzeMQt_ufXGB_4HDr-Rl5cSxrjs7E0jdclY_jEcR7qOdjYz-5_gBFzxX2I4ayLO5TpJBpsLSkpfgojs_94CXHeD5iDDqFii9mZ7JL5uHebQhvn1lb6EyfwBYbiHlw';
 
 const DEV_IMAGE_2 =
-  'https://lh3.googleusercontent.com/aida/AP1WRLtHciTK-a0abNyRuN6fYU7J_D6VcTVfuqcv0KZqLGmJJMgEIq4BBvHgfcN592xATmWhBkA7fwPLJwh5ZMRvO9TBHGr920JY1Za7u7_JksfeGyg31AQVJiVEdplfpgdDSRdFIiNk7H_wFFGqFiK3jhpJfmex0J95MfKiGsN2Pkq3WXDNAMSJO1exqUVdMzPIq6LIaA4Y8YAFMb13XNpOq41K9GFgx1Juf17eaFDU672w5uF-xYG0W-hhCBU';
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuCtNuzeblCiSCeV0LtzSQAME3bD1xPxUtd9-pRmdjtvUS0aKAoF-LuI7Boko0IVqzZpJCkiJ5M6zHa-xTMFgY3E_QhEf2XCbnIY80YApqFZB4crN4ddzMAR_FOe3HT2apXSIjSgOwVgmkLTT_OpMNJ8QA1R7kZrpghdgDyfFuvvCmMq0KmMJYBKxJhWY0JEatkLbeCn1PnGyRt4-KHyxiaYpeNse8ns7m9lwPApK9T_jTz8DswIiXy_6A';
 
 export const WhyEntelgowSection: React.FC = () => {
   const [plannerOpen, setPlannerOpen] = useState(false);
 
   return (
     <>
-      <section className="py-section-padding-desktop bg-background border-t border-surface-variant relative">
+      <section className="py-section-padding-lg bg-surface border-t border-glass-border relative">
         <div className="max-w-container-max mx-auto px-gutter space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="font-label-md text-label-md uppercase tracking-widest text-outline">
+            <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary">
               ENGINEERING GUARANTEES
             </span>
-            <h2 className="font-headline font-bold text-headline-lg text-on-surface">
-              Built for Enterprise Reliability & IP Ownership
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+              Built for Enterprise Reliability &amp; IP Ownership
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant">
               We engineer software to handle scaling milestones effortlessly—with zero vendor lock-in and complete IP source code ownership.
@@ -31,24 +31,24 @@ export const WhyEntelgowSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="lg:col-span-6 space-y-6">
-              <h3 className="font-headline font-bold text-headline-lg text-on-surface text-3xl sm:text-4xl leading-tight">
-                Rigorous Technical Standards & Agile Delivery
+              <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface text-3xl sm:text-4xl leading-tight">
+                Rigorous Technical Standards &amp; Agile Delivery
               </h3>
-              <p className="font-body-md text-body-md text-on-surface-variant">
+              <p className="font-body-lg text-on-surface-variant">
                 Our engineering methodology is rooted in strict technical standards, zero mock fallbacks, and feature-isolated architecture—ensuring complex operational challenges are met with sustainable, scalable software solutions.
               </p>
 
               <ul className="space-y-4 pt-2">
-                <li className="flex items-start gap-4 font-body-md text-body-md text-on-surface">
-                  <span className="material-symbols-outlined text-electric-blue mt-1">check_circle</span>
-                  <span>Enterprise-grade system architecture & 100% IP source ownership.</span>
+                <li className="flex items-start gap-4 font-body-md text-on-surface">
+                  <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
+                  <span>Enterprise-grade system architecture &amp; 100% IP source ownership.</span>
                 </li>
-                <li className="flex items-start gap-4 font-body-md text-body-md text-on-surface">
-                  <span className="material-symbols-outlined text-electric-blue mt-1">check_circle</span>
+                <li className="flex items-start gap-4 font-body-md text-on-surface">
+                  <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
                   <span>Agile, transparent development cycles with direct senior engineer access.</span>
                 </li>
-                <li className="flex items-start gap-4 font-body-md text-body-md text-on-surface">
-                  <span className="material-symbols-outlined text-electric-blue mt-1">check_circle</span>
+                <li className="flex items-start gap-4 font-body-md text-on-surface">
+                  <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
                   <span>Post-deployment scaling, SOC 2 readiness, and zero-downtime CI/CD.</span>
                 </li>
               </ul>
@@ -57,7 +57,7 @@ export const WhyEntelgowSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setPlannerOpen(true)}
-                  className="btn-primary font-label-md text-label-md px-8 py-4 uppercase tracking-wider font-semibold cursor-pointer"
+                  className="bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-8 py-4 rounded font-bold hover:shadow-[0_0_20px_rgba(227,30,36,0.3)] transition-all cursor-pointer"
                 >
                   Schedule Architecture Audit
                 </button>
@@ -67,7 +67,7 @@ export const WhyEntelgowSection: React.FC = () => {
             {/* Right Asymmetric Composition */}
             <div className="lg:col-span-6 relative">
               <div className="relative w-full aspect-[4/3] max-w-xl mx-auto lg:ml-auto">
-                <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 rounded-xl overflow-hidden shadow-2xl border border-glass-border">
                   <img
                     src={TEAM_IMAGE_1}
                     alt="Enteglow engineering team collaborating"
@@ -75,7 +75,7 @@ export const WhyEntelgowSection: React.FC = () => {
                   />
                 </div>
 
-                <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-surface-container-lowest hidden sm:block">
+                <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-xl overflow-hidden shadow-2xl border border-glass-border hidden sm:block">
                   <img
                     src={DEV_IMAGE_2}
                     alt="Senior developer coding"
@@ -83,11 +83,11 @@ export const WhyEntelgowSection: React.FC = () => {
                   />
                 </div>
 
-                <div className="absolute top-6 -right-4 glass-panel rounded-xl p-5 shadow-2xl">
-                  <div className="font-headline font-bold text-display-lg text-electric-blue leading-none mb-1 text-4xl">
+                <div className="absolute top-6 -right-4 glass-panel rounded-lg p-5 shadow-2xl border border-glass-border">
+                  <div className="font-headline-lg text-primary leading-none mb-1 text-4xl font-bold">
                     100+
                   </div>
-                  <div className="font-label-md text-label-md text-on-surface uppercase tracking-wider">
+                  <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
                     Products Delivered
                   </div>
                 </div>
@@ -96,33 +96,33 @@ export const WhyEntelgowSection: React.FC = () => {
           </div>
 
           {/* Guarantees Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="glass-card p-8 rounded-2xl space-y-3">
-              <div className="flex items-center gap-3 text-electric-blue font-headline font-bold text-xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="glass-panel p-8 rounded-xl glow-hover space-y-3">
+              <div className="flex items-center gap-3 text-primary font-headline-md text-xl">
                 <span className="material-symbols-outlined text-3xl">code</span>
                 <span>Strict Code Quality</span>
               </div>
-              <p className="font-body-md text-body-md text-on-surface-variant">
+              <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
                 Every pull request undergoes peer review, static type checking (`tsc --noEmit`), and automated test suite verification.
               </p>
             </div>
 
-            <div className="glass-card p-8 rounded-2xl space-y-3">
-              <div className="flex items-center gap-3 text-vibrant-purple font-headline font-bold text-xl">
+            <div className="glass-panel p-8 rounded-xl glow-hover space-y-3">
+              <div className="flex items-center gap-3 text-primary font-headline-md text-xl">
                 <span className="material-symbols-outlined text-3xl">lock</span>
-                <span>100% IP & Data Ownership</span>
+                <span>100% IP &amp; Data Ownership</span>
               </div>
-              <p className="font-body-md text-body-md text-on-surface-variant">
+              <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
                 All source code, Docker configs, and architecture blueprints belong entirely to your organization upon project delivery.
               </p>
             </div>
 
-            <div className="glass-card p-8 rounded-2xl space-y-3">
-              <div className="flex items-center gap-3 text-primary font-headline font-bold text-xl">
+            <div className="glass-panel p-8 rounded-xl glow-hover space-y-3">
+              <div className="flex items-center gap-3 text-primary font-headline-md text-xl">
                 <span className="material-symbols-outlined text-3xl">speed</span>
                 <span>Architectural Longevity</span>
               </div>
-              <p className="font-body-md text-body-md text-on-surface-variant">
+              <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
                 We design software to handle scaling milestones effortlessly—whether serving 100 or 100,000 concurrent users.
               </p>
             </div>

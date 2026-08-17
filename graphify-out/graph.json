@@ -9,7 +9,7 @@
       "source_file": "next-env.d.ts",
       "source_location": "L1",
       "id": "next_env_d",
-      "community": 8
+      "community": 15
     },
     {
       "label": "tailwind.config.ts",
@@ -17,7 +17,7 @@
       "source_file": "tailwind.config.ts",
       "source_location": "L1",
       "id": "tailwind_config",
-      "community": 9
+      "community": 16
     },
     {
       "label": "page.tsx",
@@ -25,15 +25,15 @@
       "source_file": "src/app/contact/page.tsx",
       "source_location": "L1",
       "id": "page",
-      "community": 0
+      "community": 1
     },
     {
       "label": "Home()",
       "file_type": "code",
       "source_file": "src/app/page.tsx",
-      "source_location": "L12",
+      "source_location": "L10",
       "id": "page_home",
-      "community": 0
+      "community": 1
     },
     {
       "label": "robots.ts",
@@ -41,7 +41,7 @@
       "source_file": "src/app/robots.ts",
       "source_location": "L1",
       "id": "robots",
-      "community": 7
+      "community": 13
     },
     {
       "label": "robots()",
@@ -49,7 +49,7 @@
       "source_file": "src/app/robots.ts",
       "source_location": "L3",
       "id": "robots_robots",
-      "community": 7
+      "community": 13
     },
     {
       "label": "sitemap.ts",
@@ -57,7 +57,7 @@
       "source_file": "src/app/sitemap.ts",
       "source_location": "L1",
       "id": "sitemap",
-      "community": 6
+      "community": 3
     },
     {
       "label": "sitemap()",
@@ -65,7 +65,7 @@
       "source_file": "src/app/sitemap.ts",
       "source_location": "L5",
       "id": "sitemap_sitemap",
-      "community": 6
+      "community": 3
     },
     {
       "label": "layout.tsx",
@@ -73,15 +73,15 @@
       "source_file": "src/app/layout.tsx",
       "source_location": "L1",
       "id": "layout",
-      "community": 3
+      "community": 4
     },
     {
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L49",
+      "source_location": "L48",
       "id": "layout_rootlayout",
-      "community": 3
+      "community": 4
     },
     {
       "label": "TechnologiesPage()",
@@ -89,7 +89,7 @@
       "source_file": "src/app/technologies/page.tsx",
       "source_location": "L15",
       "id": "page_technologiespage",
-      "community": 0
+      "community": 1
     },
     {
       "label": "index.ts",
@@ -97,7 +97,7 @@
       "source_file": "src/app/industries/index.ts",
       "source_location": "L1",
       "id": "index",
-      "community": 10
+      "community": 17
     },
     {
       "label": "technologiesData.ts",
@@ -105,7 +105,7 @@
       "source_file": "src/app/technologies/services/technologiesData.ts",
       "source_location": "L1",
       "id": "technologiesdata",
-      "community": 5
+      "community": 11
     },
     {
       "label": "TechSpectrum.tsx",
@@ -113,7 +113,7 @@
       "source_file": "src/app/technologies/components/TechSpectrum.tsx",
       "source_location": "L1",
       "id": "techspectrum",
-      "community": 5
+      "community": 2
     },
     {
       "label": "technology.ts",
@@ -121,7 +121,7 @@
       "source_file": "src/app/technologies/types/technology.ts",
       "source_location": "L1",
       "id": "technology",
-      "community": 5
+      "community": 11
     },
     {
       "label": "solutionsData.ts",
@@ -129,7 +129,7 @@
       "source_file": "src/app/solutions/services/solutionsData.ts",
       "source_location": "L1",
       "id": "solutionsdata",
-      "community": 0
+      "community": 7
     },
     {
       "label": "SolutionsSection.tsx",
@@ -137,7 +137,7 @@
       "source_file": "src/app/solutions/components/SolutionsSection.tsx",
       "source_location": "L1",
       "id": "solutionssection",
-      "community": 1
+      "community": 0
     },
     {
       "label": "solution.ts",
@@ -145,7 +145,7 @@
       "source_file": "src/app/solutions/types/solution.ts",
       "source_location": "L1",
       "id": "solution",
-      "community": 0
+      "community": 7
     },
     {
       "label": "servicesData.ts",
@@ -153,7 +153,7 @@
       "source_file": "src/app/services/services/servicesData.ts",
       "source_location": "L1",
       "id": "servicesdata",
-      "community": 4
+      "community": 5
     },
     {
       "label": "InteractiveServices.tsx",
@@ -161,7 +161,7 @@
       "source_file": "src/app/services/components/InteractiveServices.tsx",
       "source_location": "L1",
       "id": "interactiveservices",
-      "community": 4
+      "community": 5
     },
     {
       "label": "service.ts",
@@ -169,7 +169,7 @@
       "source_file": "src/app/services/types/service.ts",
       "source_location": "L1",
       "id": "service",
-      "community": 4
+      "community": 5
     },
     {
       "label": "ProcessPage()",
@@ -177,7 +177,7 @@
       "source_file": "src/app/process/page.tsx",
       "source_location": "L14",
       "id": "page_processpage",
-      "community": 0
+      "community": 1
     },
     {
       "label": "processData.ts",
@@ -185,7 +185,7 @@
       "source_file": "src/app/process/services/processData.ts",
       "source_location": "L1",
       "id": "processdata",
-      "community": 2
+      "community": 14
     },
     {
       "label": "InteractiveProcess.tsx",
@@ -201,15 +201,15 @@
       "source_file": "src/app/process/types/process.ts",
       "source_location": "L1",
       "id": "process",
-      "community": 2
+      "community": 14
     },
     {
       "label": "AboutPage()",
       "file_type": "code",
       "source_file": "src/app/about/page.tsx",
-      "source_location": "L17",
+      "source_location": "L16",
       "id": "page_aboutpage",
-      "community": 0
+      "community": 1
     },
     {
       "label": "projectsData.ts",
@@ -217,7 +217,7 @@
       "source_file": "src/app/projects/services/projectsData.ts",
       "source_location": "L1",
       "id": "projectsdata",
-      "community": 6
+      "community": 3
     },
     {
       "label": "generateStaticParams()",
@@ -225,7 +225,7 @@
       "source_file": "src/app/projects/[id]/page.tsx",
       "source_location": "L16",
       "id": "page_generatestaticparams",
-      "community": 0
+      "community": 1
     },
     {
       "label": "generateMetadata()",
@@ -233,7 +233,7 @@
       "source_file": "src/app/projects/[id]/page.tsx",
       "source_location": "L22",
       "id": "page_generatemetadata",
-      "community": 0
+      "community": 1
     },
     {
       "label": "ProjectDetailPage()",
@@ -241,7 +241,7 @@
       "source_file": "src/app/projects/[id]/page.tsx",
       "source_location": "L33",
       "id": "page_projectdetailpage",
-      "community": 0
+      "community": 1
     },
     {
       "label": "CaseStudyShowcase.tsx",
@@ -249,7 +249,7 @@
       "source_file": "src/app/projects/components/CaseStudyShowcase.tsx",
       "source_location": "L1",
       "id": "casestudyshowcase",
-      "community": 6
+      "community": 3
     },
     {
       "label": "project.ts",
@@ -257,7 +257,7 @@
       "source_file": "src/app/projects/types/project.ts",
       "source_location": "L1",
       "id": "project",
-      "community": 6
+      "community": 3
     },
     {
       "label": "IndustriesPage()",
@@ -265,7 +265,7 @@
       "source_file": "src/app/industries/page.tsx",
       "source_location": "L16",
       "id": "page_industriespage",
-      "community": 0
+      "community": 1
     },
     {
       "label": "industriesData.ts",
@@ -273,7 +273,7 @@
       "source_file": "src/app/industries/services/industriesData.ts",
       "source_location": "L1",
       "id": "industriesdata",
-      "community": 4
+      "community": 8
     },
     {
       "label": "IndustriesGrid.tsx",
@@ -281,7 +281,7 @@
       "source_file": "src/app/industries/components/IndustriesGrid.tsx",
       "source_location": "L1",
       "id": "industriesgrid",
-      "community": 4
+      "community": 2
     },
     {
       "label": "industry.ts",
@@ -289,15 +289,15 @@
       "source_file": "src/app/industries/types/industry.ts",
       "source_location": "L1",
       "id": "industry",
-      "community": 4
+      "community": 8
     },
     {
       "label": "handleSubmit()",
       "file_type": "code",
       "source_file": "src/app/contact/page.tsx",
-      "source_location": "L21",
+      "source_location": "L18",
       "id": "page_handlesubmit",
-      "community": 0
+      "community": 1
     },
     {
       "label": "WhyEntelgowSection.tsx",
@@ -305,7 +305,15 @@
       "source_file": "src/components/sections/WhyEntelgowSection.tsx",
       "source_location": "L1",
       "id": "whyentelgowsection",
-      "community": 5
+      "community": 0
+    },
+    {
+      "label": "WhyEntelgowSection()",
+      "file_type": "code",
+      "source_file": "src/components/sections/WhyEntelgowSection.tsx",
+      "source_location": "L12",
+      "id": "whyentelgowsection_whyentelgowsection",
+      "community": 0
     },
     {
       "label": "HeroSection.tsx",
@@ -313,7 +321,15 @@
       "source_file": "src/components/sections/HeroSection.tsx",
       "source_location": "L1",
       "id": "herosection",
-      "community": 1
+      "community": 6
+    },
+    {
+      "label": "HeroSection()",
+      "file_type": "code",
+      "source_file": "src/components/sections/HeroSection.tsx",
+      "source_location": "L8",
+      "id": "herosection_herosection",
+      "community": 6
     },
     {
       "label": "IoTDataFlow.tsx",
@@ -322,6 +338,54 @@
       "source_location": "L1",
       "id": "iotdataflow",
       "community": 2
+    },
+    {
+      "label": "TestimonialsSection.tsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/TestimonialsSection.tsx",
+      "source_location": "L1",
+      "id": "testimonialssection",
+      "community": 9
+    },
+    {
+      "label": "TestimonialsSection()",
+      "file_type": "code",
+      "source_file": "src/components/sections/TestimonialsSection.tsx",
+      "source_location": "L5",
+      "id": "testimonialssection_testimonialssection",
+      "community": 9
+    },
+    {
+      "label": "ProblemIntroSection.tsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/ProblemIntroSection.tsx",
+      "source_location": "L1",
+      "id": "problemintrosection",
+      "community": 0
+    },
+    {
+      "label": "ProblemIntroSection()",
+      "file_type": "code",
+      "source_file": "src/components/sections/ProblemIntroSection.tsx",
+      "source_location": "L64",
+      "id": "problemintrosection_problemintrosection",
+      "community": 0
+    },
+    {
+      "label": "ArchitectsAboutSection.tsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/ArchitectsAboutSection.tsx",
+      "source_location": "L1",
+      "id": "architectsaboutsection",
+      "community": 12
+    },
+    {
+      "label": "ArchitectsAboutSection()",
+      "file_type": "code",
+      "source_file": "src/components/sections/ArchitectsAboutSection.tsx",
+      "source_location": "L6",
+      "id": "architectsaboutsection_architectsaboutsection",
+      "community": 12
     },
     {
       "label": "ProductEcosystem.tsx",
@@ -345,7 +409,15 @@
       "source_file": "src/components/sections/CinematicCTA.tsx",
       "source_location": "L1",
       "id": "cinematiccta",
-      "community": 1
+      "community": 0
+    },
+    {
+      "label": "CinematicCTA()",
+      "file_type": "code",
+      "source_file": "src/components/sections/CinematicCTA.tsx",
+      "source_location": "L6",
+      "id": "cinematiccta_cinematiccta",
+      "community": 0
     },
     {
       "label": "PlatformStorytelling.tsx",
@@ -364,20 +436,36 @@
       "community": 2
     },
     {
+      "label": "ServicesBentoSection.tsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/ServicesBentoSection.tsx",
+      "source_location": "L1",
+      "id": "servicesbentosection",
+      "community": 10
+    },
+    {
+      "label": "ServicesBentoSection()",
+      "file_type": "code",
+      "source_file": "src/components/sections/ServicesBentoSection.tsx",
+      "source_location": "L6",
+      "id": "servicesbentosection_servicesbentosection",
+      "community": 10
+    },
+    {
       "label": "Footer.tsx",
       "file_type": "code",
       "source_file": "src/components/layout/Footer.tsx",
       "source_location": "L1",
       "id": "footer",
-      "community": 3
+      "community": 4
     },
     {
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/components/layout/Footer.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "id": "footer_footer",
-      "community": 3
+      "community": 4
     },
     {
       "label": "Header.tsx",
@@ -385,15 +473,15 @@
       "source_file": "src/components/layout/Header.tsx",
       "source_location": "L1",
       "id": "header",
-      "community": 3
+      "community": 4
     },
     {
-      "label": "handleScroll()",
+      "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.tsx",
-      "source_location": "L30",
-      "id": "header_handlescroll",
-      "community": 3
+      "source_location": "L20",
+      "id": "header_header",
+      "community": 4
     },
     {
       "label": "MobileNav.tsx",
@@ -401,7 +489,7 @@
       "source_file": "src/components/layout/MobileNav.tsx",
       "source_location": "L1",
       "id": "mobilenav",
-      "community": 3
+      "community": 4
     },
     {
       "label": "DynamicIcon.tsx",
@@ -409,7 +497,7 @@
       "source_file": "src/components/common/DynamicIcon.tsx",
       "source_location": "L1",
       "id": "dynamicicon",
-      "community": 4
+      "community": 5
     },
     {
       "label": "DynamicIcon()",
@@ -417,7 +505,7 @@
       "source_file": "src/components/common/DynamicIcon.tsx",
       "source_location": "L10",
       "id": "dynamicicon_dynamicicon",
-      "community": 4
+      "community": 5
     },
     {
       "label": "SectionHeader.tsx",
@@ -433,7 +521,7 @@
       "source_file": "src/components/common/ProjectPlannerModal.tsx",
       "source_location": "L1",
       "id": "projectplannermodal",
-      "community": 1
+      "community": 0
     },
     {
       "label": "toggleService()",
@@ -441,7 +529,7 @@
       "source_file": "src/components/common/ProjectPlannerModal.tsx",
       "source_location": "L47",
       "id": "projectplannermodal_toggleservice",
-      "community": 1
+      "community": 0
     },
     {
       "label": "handleSubmit()",
@@ -449,7 +537,7 @@
       "source_file": "src/components/common/ProjectPlannerModal.tsx",
       "source_location": "L57",
       "id": "projectplannermodal_handlesubmit",
-      "community": 1
+      "community": 0
     },
     {
       "label": "handleReset()",
@@ -457,7 +545,7 @@
       "source_file": "src/components/common/ProjectPlannerModal.tsx",
       "source_location": "L62",
       "id": "projectplannermodal_handlereset",
-      "community": 1
+      "community": 0
     },
     {
       "label": "ThreeEcosystemCanvas.tsx",
@@ -465,15 +553,15 @@
       "source_file": "src/components/common/ThreeEcosystemCanvas.tsx",
       "source_location": "L1",
       "id": "threeecosystemcanvas",
-      "community": 1
+      "community": 6
     },
     {
       "label": "ThreeEcosystemCanvas()",
       "file_type": "code",
       "source_file": "src/components/common/ThreeEcosystemCanvas.tsx",
-      "source_location": "L69",
+      "source_location": "L78",
       "id": "threeecosystemcanvas_threeecosystemcanvas",
-      "community": 1
+      "community": 6
     },
     {
       "label": "Button.tsx",
@@ -481,7 +569,7 @@
       "source_file": "src/components/common/Button.tsx",
       "source_location": "L1",
       "id": "button",
-      "community": 1
+      "community": 0
     },
     {
       "label": "Button()",
@@ -489,7 +577,7 @@
       "source_file": "src/components/common/Button.tsx",
       "source_location": "L14",
       "id": "button_button",
-      "community": 1
+      "community": 0
     },
     {
       "label": "Badge.tsx",
@@ -503,7 +591,7 @@
       "label": "Badge()",
       "file_type": "code",
       "source_file": "src/components/common/Badge.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "id": "badge_badge",
       "community": 2
     },
@@ -513,7 +601,7 @@
       "source_file": "src/components/common/Card.tsx",
       "source_location": "L1",
       "id": "card",
-      "community": 5
+      "community": 3
     },
     {
       "label": "Card()",
@@ -521,7 +609,7 @@
       "source_file": "src/components/common/Card.tsx",
       "source_location": "L9",
       "id": "card_card",
-      "community": 5
+      "community": 3
     },
     {
       "label": "company.ts",
@@ -529,7 +617,7 @@
       "source_file": "src/data/company.ts",
       "source_location": "L1",
       "id": "company",
-      "community": 3
+      "community": 1
     },
     {
       "label": "post-commit.ps1",
@@ -537,7 +625,7 @@
       "source_file": "automation/git/post-commit.ps1",
       "source_location": "L1",
       "id": "post_commit",
-      "community": 11
+      "community": 18
     },
     {
       "label": "pre-commit.ps1",
@@ -545,7 +633,7 @@
       "source_file": "automation/git/pre-commit.ps1",
       "source_location": "L1",
       "id": "pre_commit",
-      "community": 12
+      "community": 19
     }
   ],
   "links": [
@@ -568,21 +656,21 @@
       "source_location": "L3",
       "weight": 1.0,
       "_src": "page",
-      "_tgt": "solutionssection",
+      "_tgt": "servicesbentosection",
       "source": "page",
-      "target": "solutionssection",
+      "target": "servicesbentosection",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/page.tsx",
+      "source_file": "src/app/about/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
       "_src": "page",
-      "_tgt": "interactiveservices",
+      "_tgt": "architectsaboutsection",
       "source": "page",
-      "target": "interactiveservices",
+      "target": "architectsaboutsection",
       "confidence_score": 1.0
     },
     {
@@ -592,45 +680,21 @@
       "source_location": "L5",
       "weight": 1.0,
       "_src": "page",
-      "_tgt": "casestudyshowcase",
+      "_tgt": "problemintrosection",
       "source": "page",
-      "target": "casestudyshowcase",
+      "target": "problemintrosection",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/technologies/page.tsx",
-      "source_location": "L3",
+      "source_file": "src/app/about/page.tsx",
+      "source_location": "L5",
       "weight": 1.0,
       "_src": "page",
-      "_tgt": "techspectrum",
+      "_tgt": "testimonialssection",
       "source": "page",
-      "target": "techspectrum",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/process/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "page",
-      "_tgt": "interactiveprocess",
-      "source": "page",
-      "target": "interactiveprocess",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/industries/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "page",
-      "_tgt": "industriesgrid",
-      "source": "page",
-      "target": "industriesgrid",
+      "target": "testimonialssection",
       "confidence_score": 1.0
     },
     {
@@ -661,7 +725,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/page.tsx",
-      "source_location": "L12",
+      "source_location": "L10",
       "weight": 1.0,
       "_src": "page",
       "_tgt": "page_home",
@@ -672,8 +736,20 @@
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
+      "source_file": "src/app/technologies/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "techspectrum",
+      "source": "page",
+      "target": "techspectrum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
       "source_file": "src/app/contact/page.tsx",
-      "source_location": "L6",
+      "source_location": "L4",
       "weight": 1.0,
       "_src": "page",
       "_tgt": "badge",
@@ -708,8 +784,8 @@
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/contact/page.tsx",
-      "source_location": "L5",
+      "source_file": "src/app/projects/page.tsx",
+      "source_location": "L6",
       "weight": 1.0,
       "_src": "page",
       "_tgt": "card",
@@ -720,8 +796,8 @@
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/contact/page.tsx",
-      "source_location": "L7",
+      "source_file": "src/app/solutions/page.tsx",
+      "source_location": "L6",
       "weight": 1.0,
       "_src": "page",
       "_tgt": "button",
@@ -757,12 +833,24 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/app/services/page.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "_src": "page",
       "_tgt": "servicesdata",
       "source": "page",
       "target": "servicesdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/process/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "interactiveprocess",
+      "source": "page",
+      "target": "interactiveprocess",
       "confidence_score": 1.0
     },
     {
@@ -780,20 +868,8 @@
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/about/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "page",
-      "_tgt": "sectionheader",
-      "source": "page",
-      "target": "sectionheader",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
       "source_file": "src/app/contact/page.tsx",
-      "source_location": "L8",
+      "source_location": "L5",
       "weight": 1.0,
       "_src": "page",
       "_tgt": "company",
@@ -805,7 +881,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/about/page.tsx",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0,
       "_src": "page",
       "_tgt": "page_aboutpage",
@@ -865,6 +941,18 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/app/industries/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "page",
+      "_tgt": "industriesgrid",
+      "source": "page",
+      "target": "industriesgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/industries/page.tsx",
       "source_location": "L6",
       "weight": 1.0,
       "_src": "page",
@@ -889,7 +977,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/contact/page.tsx",
-      "source_location": "L21",
+      "source_location": "L18",
       "weight": 1.0,
       "_src": "page",
       "_tgt": "page_handlesubmit",
@@ -973,7 +1061,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L49",
+      "source_location": "L48",
       "weight": 1.0,
       "_src": "layout",
       "_tgt": "layout_rootlayout",
@@ -997,48 +1085,12 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/app/technologies/components/TechSpectrum.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "techspectrum",
-      "_tgt": "technologiesdata",
-      "source": "technologiesdata",
-      "target": "techspectrum",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/technologies/components/TechSpectrum.tsx",
-      "source_location": "L4",
+      "source_location": "L15",
       "weight": 1.0,
       "_src": "techspectrum",
       "_tgt": "sectionheader",
       "source": "techspectrum",
       "target": "sectionheader",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/technologies/components/TechSpectrum.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "techspectrum",
-      "_tgt": "card",
-      "source": "techspectrum",
-      "target": "card",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/technologies/components/TechSpectrum.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "techspectrum",
-      "_tgt": "badge",
-      "source": "techspectrum",
-      "target": "badge",
       "confidence_score": 1.0
     },
     {
@@ -1153,24 +1205,24 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/app/process/components/InteractiveProcess.tsx",
-      "source_location": "L6",
+      "source_location": "L16",
       "weight": 1.0,
       "_src": "interactiveprocess",
-      "_tgt": "processdata",
-      "source": "processdata",
-      "target": "interactiveprocess",
+      "_tgt": "sectionheader",
+      "source": "interactiveprocess",
+      "target": "sectionheader",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/app/process/components/InteractiveProcess.tsx",
-      "source_location": "L4",
+      "source_location": "L17",
       "weight": 1.0,
       "_src": "interactiveprocess",
-      "_tgt": "sectionheader",
+      "_tgt": "projectplannermodal",
       "source": "interactiveprocess",
-      "target": "sectionheader",
+      "target": "projectplannermodal",
       "confidence_score": 1.0
     },
     {
@@ -1273,19 +1325,7 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/app/industries/components/IndustriesGrid.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_src": "industriesgrid",
-      "_tgt": "industriesdata",
-      "source": "industriesdata",
-      "target": "industriesgrid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/industries/components/IndustriesGrid.tsx",
-      "source_location": "L4",
+      "source_location": "L15",
       "weight": 1.0,
       "_src": "industriesgrid",
       "_tgt": "sectionheader",
@@ -1297,43 +1337,7 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/app/industries/components/IndustriesGrid.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "industriesgrid",
-      "_tgt": "card",
-      "source": "industriesgrid",
-      "target": "card",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/industries/components/IndustriesGrid.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "industriesgrid",
-      "_tgt": "badge",
-      "source": "industriesgrid",
-      "target": "badge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/industries/components/IndustriesGrid.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "industriesgrid",
-      "_tgt": "dynamicicon",
-      "source": "industriesgrid",
-      "target": "dynamicicon",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/industries/components/IndustriesGrid.tsx",
-      "source_location": "L8",
+      "source_location": "L16",
       "weight": 1.0,
       "_src": "industriesgrid",
       "_tgt": "projectplannermodal",
@@ -1348,64 +1352,28 @@
       "source_location": "L4",
       "weight": 1.0,
       "_src": "whyentelgowsection",
-      "_tgt": "sectionheader",
-      "source": "whyentelgowsection",
-      "target": "sectionheader",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/sections/WhyEntelgowSection.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "whyentelgowsection",
-      "_tgt": "card",
-      "source": "whyentelgowsection",
-      "target": "card",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/sections/WhyEntelgowSection.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "whyentelgowsection",
       "_tgt": "projectplannermodal",
       "source": "whyentelgowsection",
       "target": "projectplannermodal",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
+      "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/WhyEntelgowSection.tsx",
-      "source_location": "L8",
+      "source_location": "L12",
       "weight": 1.0,
       "_src": "whyentelgowsection",
-      "_tgt": "company",
+      "_tgt": "whyentelgowsection_whyentelgowsection",
       "source": "whyentelgowsection",
-      "target": "company",
+      "target": "whyentelgowsection_whyentelgowsection",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/HeroSection.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_src": "herosection",
-      "_tgt": "button",
-      "source": "herosection",
-      "target": "button",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/sections/HeroSection.tsx",
-      "source_location": "L18",
+      "source_location": "L5",
       "weight": 1.0,
       "_src": "herosection",
       "_tgt": "threeecosystemcanvas",
@@ -1417,12 +1385,24 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/HeroSection.tsx",
-      "source_location": "L19",
+      "source_location": "L6",
       "weight": 1.0,
       "_src": "herosection",
       "_tgt": "projectplannermodal",
       "source": "herosection",
       "target": "projectplannermodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/HeroSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "herosection",
+      "_tgt": "herosection_herosection",
+      "source": "herosection",
+      "target": "herosection_herosection",
       "confidence_score": 1.0
     },
     {
@@ -1447,6 +1427,54 @@
       "_tgt": "badge",
       "source": "iotdataflow",
       "target": "badge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TestimonialsSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "testimonialssection",
+      "_tgt": "testimonialssection_testimonialssection",
+      "source": "testimonialssection",
+      "target": "testimonialssection_testimonialssection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/ProblemIntroSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "problemintrosection",
+      "_tgt": "projectplannermodal",
+      "source": "problemintrosection",
+      "target": "projectplannermodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/ProblemIntroSection.tsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "problemintrosection",
+      "_tgt": "problemintrosection_problemintrosection",
+      "source": "problemintrosection",
+      "target": "problemintrosection_problemintrosection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/ArchitectsAboutSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "architectsaboutsection",
+      "_tgt": "architectsaboutsection_architectsaboutsection",
+      "source": "architectsaboutsection",
+      "target": "architectsaboutsection_architectsaboutsection",
       "confidence_score": 1.0
     },
     {
@@ -1489,24 +1517,24 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/CinematicCTA.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "cinematiccta",
-      "_tgt": "button",
-      "source": "cinematiccta",
-      "target": "button",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/sections/CinematicCTA.tsx",
-      "source_location": "L6",
+      "source_location": "L4",
       "weight": 1.0,
       "_src": "cinematiccta",
       "_tgt": "projectplannermodal",
       "source": "cinematiccta",
       "target": "projectplannermodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/CinematicCTA.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "cinematiccta",
+      "_tgt": "cinematiccta_cinematiccta",
+      "source": "cinematiccta",
+      "target": "cinematiccta_cinematiccta",
       "confidence_score": 1.0
     },
     {
@@ -1546,22 +1574,22 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/Footer.tsx",
-      "source_location": "L4",
+      "source_file": "src/components/sections/ServicesBentoSection.tsx",
+      "source_location": "L6",
       "weight": 1.0,
-      "_src": "footer",
-      "_tgt": "company",
-      "source": "footer",
-      "target": "company",
+      "_src": "servicesbentosection",
+      "_tgt": "servicesbentosection_servicesbentosection",
+      "source": "servicesbentosection",
+      "target": "servicesbentosection_servicesbentosection",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Footer.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_src": "footer",
       "_tgt": "footer_footer",
@@ -1573,19 +1601,7 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Header.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "header",
-      "_tgt": "button",
-      "source": "header",
-      "target": "button",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/Header.tsx",
-      "source_location": "L8",
+      "source_location": "L6",
       "weight": 1.0,
       "_src": "header",
       "_tgt": "mobilenav",
@@ -1597,7 +1613,7 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Header.tsx",
-      "source_location": "L9",
+      "source_location": "L7",
       "weight": 1.0,
       "_src": "header",
       "_tgt": "projectplannermodal",
@@ -1606,39 +1622,15 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/Header.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_src": "header",
-      "_tgt": "company",
-      "source": "header",
-      "target": "company",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Header.tsx",
-      "source_location": "L30",
+      "source_location": "L20",
       "weight": 1.0,
       "_src": "header",
-      "_tgt": "header_handlescroll",
+      "_tgt": "header_header",
       "source": "header",
-      "target": "header_handlescroll",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/MobileNav.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "mobilenav",
-      "_tgt": "button",
-      "source": "mobilenav",
-      "target": "button",
+      "target": "header_header",
       "confidence_score": 1.0
     },
     {
@@ -1717,7 +1709,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/common/ThreeEcosystemCanvas.tsx",
-      "source_location": "L69",
+      "source_location": "L78",
       "weight": 1.0,
       "_src": "threeecosystemcanvas",
       "_tgt": "threeecosystemcanvas_threeecosystemcanvas",
@@ -1741,7 +1733,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/common/Badge.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "weight": 1.0,
       "_src": "badge",
       "_tgt": "badge_badge",

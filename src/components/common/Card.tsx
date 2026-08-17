@@ -13,8 +13,8 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`glass-card rounded-2xl p-8 relative overflow-hidden ${
-        hoverEffect ? 'hover:-translate-y-1 hover:shadow-glass-hover' : ''
+      className={`glass-panel rounded-xl p-8 relative overflow-hidden ${
+        hoverEffect ? 'glow-hover' : ''
       } ${className}`}
     >
       {children}
