@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, memo } from 'react';
 import { useInView } from 'framer-motion';
 
 interface AnimatedCounterProps {
@@ -9,7 +9,7 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
+export const AnimatedCounter: React.FC<AnimatedCounterProps> = memo(({
   value,
   duration = 2,
   className = '',
@@ -55,4 +55,6 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
       {suffix}
     </span>
   );
-};
+});
+
+AnimatedCounter.displayName = 'AnimatedCounter';
