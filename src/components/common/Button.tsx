@@ -22,7 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-label-sm text-label-sm uppercase tracking-wider font-bold transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer rounded';
+    'group relative inline-flex items-center justify-center font-label-sm text-label-sm uppercase tracking-wider font-bold transition-all duration-300 active:scale-[0.97] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer rounded overflow-hidden';
 
   const sizeStyles = {
     sm: 'px-4 py-2 gap-1.5 text-xs',
@@ -31,9 +31,12 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantStyles = {
-    primary: 'bg-primary-container text-on-primary-container hover:shadow-[0_0_20px_rgba(227,30,36,0.3)] hover:-translate-y-px',
-    secondary: 'glass-panel text-on-surface hover:border-primary hover:text-primary glow-hover',
-    outline: 'border border-primary/40 text-primary hover:bg-primary-container/10 hover:border-primary rounded',
+    primary:
+      'bg-primary-container text-on-primary-container shimmer-btn hover:shadow-[0_0_25px_rgba(227,30,36,0.45)] hover:-translate-y-0.5',
+    secondary:
+      'glass-panel text-on-surface hover:border-primary hover:text-primary glow-hover hover:-translate-y-0.5',
+    outline:
+      'border border-primary/40 text-primary hover:bg-primary-container/10 hover:border-primary rounded hover:-translate-y-0.5',
     ghost: 'text-on-surface-variant hover:text-primary transition-colors',
   };
 
@@ -41,9 +44,17 @@ export const Button: React.FC<ButtonProps> = ({
 
   const content = (
     <>
-      {icon && iconPosition === 'left' && <span className="inline-flex items-center">{icon}</span>}
-      <span>{children}</span>
-      {icon && iconPosition === 'right' && <span className="inline-flex items-center">{icon}</span>}
+      {icon && iconPosition === 'left' && (
+        <span className="inline-flex items-center group-hover:-translate-x-0.5 transition-transform duration-300">
+          {icon}
+        </span>
+      )}
+      <span className="relative z-10">{children}</span>
+      {icon && iconPosition === 'right' && (
+        <span className="inline-flex items-center group-hover:translate-x-1 transition-transform duration-300">
+          {icon}
+        </span>
+      )}
     </>
   );
 

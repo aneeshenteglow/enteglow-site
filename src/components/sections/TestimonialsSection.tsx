@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
+import { ScrollReveal } from '@/components/common/motion/ScrollReveal';
 
 interface Testimonial {
   quote: string;
@@ -38,45 +40,56 @@ const testimonials: Testimonial[] = [
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section className="py-section-padding-lg bg-background">
-      <div className="max-w-container-max mx-auto px-gutter">
-        <div className="text-center mb-16">
-          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface">
-            Trusted by Industry Leaders
-          </h2>
-          <p className="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">
-            Delivering high-impact technology solutions that drive real-world business results.
-          </p>
-        </div>
+    <section className="py-section-padding-lg bg-background relative overflow-hidden border-b border-glass-border">
+      <div className="max-w-container-max mx-auto px-gutter relative z-10">
+        <ScrollReveal direction="up" delay={0.1}>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-primary/20 text-primary text-xs uppercase tracking-widest font-semibold mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              Executive Endorsements
+            </div>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface">
+              Trusted by Industry Leaders
+            </h2>
+            <p className="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">
+              Delivering high-impact technology solutions that drive real-world business results.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((item, idx) => (
-            <div
-              key={item.name}
-              className={`glass-panel p-8 rounded-xl glow-hover flex flex-col stagger-${idx + 1}`}
-            >
-              <span className="material-symbols-outlined text-primary text-[32px] mb-6 opacity-50">
-                format_quote
-              </span>
-              <p className="text-on-surface-variant font-body-md italic mb-8 flex-grow leading-relaxed">
-                &quot;{item.quote}&quot;
-              </p>
-              <div className="flex items-center gap-4">
-                <img
-                  alt={item.name}
-                  className="w-12 h-12 rounded-full object-cover border border-glass-border"
-                  src={item.avatar}
-                />
-                <div>
-                  <h4 className="text-on-surface font-headline-md text-[16px] font-bold">
-                    {item.name}
-                  </h4>
-                  <p className="text-on-surface-variant text-xs uppercase tracking-wider">
-                    {item.role}
-                  </p>
+            <ScrollReveal key={item.name} direction="up" delay={0.15 * (idx + 1)}>
+              <motion.div
+                whileHover={{ y: -8, scale: 1.01 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="group glass-panel p-8 rounded-2xl flex flex-col h-full border border-glass-border hover:border-primary/40 transition-all duration-300 hover:shadow-[0_15px_30px_-10px_rgba(227,30,36,0.2)] relative overflow-hidden"
+              >
+                <div className="w-10 h-10 rounded-full bg-primary-container/10 border border-primary/30 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="material-symbols-outlined text-[24px]">format_quote</span>
                 </div>
-              </div>
-            </div>
+
+                <p className="text-on-surface-variant font-body-md italic mb-8 flex-grow leading-relaxed">
+                  &quot;{item.quote}&quot;
+                </p>
+
+                <div className="flex items-center gap-4 pt-4 border-t border-glass-border/60">
+                  <img
+                    alt={item.name}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-primary/30 group-hover:border-primary transition-colors duration-300"
+                    src={item.avatar}
+                  />
+                  <div>
+                    <h4 className="text-on-surface font-headline-md text-[16px] font-bold group-hover:text-primary transition-colors duration-300">
+                      {item.name}
+                    </h4>
+                    <p className="text-on-surface-variant text-xs uppercase tracking-wider font-medium">
+                      {item.role}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

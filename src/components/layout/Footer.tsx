@@ -152,12 +152,14 @@ export const Footer: React.FC = () => {
               <li className="mt-6">
                 <p className="text-xs text-on-surface-variant mb-4">Ready to take the next step?</p>
                 <Link
-                  className="bg-primary-container text-on-primary-container px-6 py-2 rounded font-bold text-label-sm uppercase inline-flex items-center gap-2 hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all"
+                  className="group bg-primary-container text-on-primary-container px-6 py-2.5 rounded font-bold text-label-sm uppercase inline-flex items-center gap-2 shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all hover:-translate-y-0.5"
                   href="/contact"
                   prefetch={true}
                 >
-                  Enquire Now
-                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  <span>Enquire Now</span>
+                  <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform duration-300">
+                    arrow_forward
+                  </span>
                 </Link>
               </li>
             </ul>

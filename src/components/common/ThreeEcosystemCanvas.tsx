@@ -69,7 +69,6 @@ export const ThreeEcosystemCanvas: React.FC<Props> = ({ onSelectNode }) => {
     let scene: THREE.Scene;
     let renderer: THREE.WebGLRenderer;
 
-    // Defer WebGL setup to requestAnimationFrame so component mount does not block DOM navigation
     const initFrameId = requestAnimationFrame(() => {
       try {
         const testCanvas = document.createElement('canvas');
@@ -90,56 +89,82 @@ export const ThreeEcosystemCanvas: React.FC<Props> = ({ onSelectNode }) => {
 
       scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-      camera.position.z = 5;
+      camera.position.z = 5.5;
 
-      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
       container.appendChild(renderer.domElement);
 
       const brandColor = new THREE.Color(0xe31e24);
-      const particleCount = 120; // Reduced from 250 to 120 for instant rendering (cuts loop iterations by 77%)
+
+      // --- 1. Abstract Tech Ring Wireframe Geometry ---
+      const torusGeo = new THREE.TorusGeometry(3.2, 0.015, 12, 60);
+      const torusMat = new THREE.MeshBasicMaterial({
+        color: brandColor,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.12,
+      });
+      const torusMesh = new THREE.Mesh(torusGeo, torusMat);
+      torusMesh.rotation.x = Math.PI / 3;
+      scene.add(torusMesh);
+
+      const icoGeo = new THREE.IcosahedronGeometry(2.4, 1);
+      const icoMat = new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.04,
+      });
+      const icoMesh = new THREE.Mesh(icoGeo, icoMat);
+      scene.add(icoMesh);
+
+      // --- 2. Interactive Digital Network Particles ---
+      const particleCount = 130;
       const positions = new Float32Array(particleCount * 3);
       const velocities = new Float32Array(particleCount * 3);
       const particles = new THREE.BufferGeometry();
 
       for (let i = 0; i < particleCount; i++) {
-        positions[i * 3] = (Math.random() - 0.5) * 12;
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 12;
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 12;
+        positions[i * 3] = (Math.random() - 0.5) * 11;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 11;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 11;
 
-        velocities[i * 3] = (Math.random() - 0.5) * 0.005;
-        velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.005;
-        velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.005;
+        velocities[i * 3] = (Math.random() - 0.5) * 0.004;
+        velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.004;
+        velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.004;
       }
 
       particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
       const particleMaterial = new THREE.PointsMaterial({
         color: brandColor,
-        size: 0.05,
+        size: 0.06,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.75,
         blending: THREE.AdditiveBlending,
       });
 
       const particleSystem = new THREE.Points(particles, particleMaterial);
       scene.add(particleSystem);
 
+      // --- 3. Dynamic Node Lines ---
       const lineMaterial = new THREE.LineBasicMaterial({
         color: brandColor,
         transparent: true,
-        opacity: 0.15,
+        opacity: 0.18,
         blending: THREE.AdditiveBlending,
       });
 
       const lineGeometry = new THREE.BufferGeometry();
-      const maxLineSegments = particleCount * 12;
+      const maxLineSegments = particleCount * 10;
       const linePositions = new Float32Array(maxLineSegments * 6);
       lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
       const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
       scene.add(lines);
 
+      // Mouse tracking
       const mouse = new THREE.Vector2(0, 0);
       const targetMouse = new THREE.Vector2(0, 0);
 
@@ -150,11 +175,21 @@ export const ThreeEcosystemCanvas: React.FC<Props> = ({ onSelectNode }) => {
 
       window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
+      const clock = new THREE.Clock();
+
       const animate = () => {
         animId = requestAnimationFrame(animate);
 
+        const elapsedTime = clock.getElapsedTime();
+
         mouse.x += (targetMouse.x - mouse.x) * 0.05;
         mouse.y += (targetMouse.y - mouse.y) * 0.05;
+
+        // Rotate wireframe shapes
+        torusMesh.rotation.z = elapsedTime * 0.08;
+        torusMesh.rotation.y = elapsedTime * 0.05 + mouse.x * 0.2;
+        icoMesh.rotation.x = elapsedTime * 0.04;
+        icoMesh.rotation.y = elapsedTime * 0.06 + mouse.y * 0.2;
 
         const posArr = particleSystem.geometry.attributes.position.array as Float32Array;
 
@@ -163,20 +198,19 @@ export const ThreeEcosystemCanvas: React.FC<Props> = ({ onSelectNode }) => {
           posArr[i * 3 + 1] += velocities[i * 3 + 1];
           posArr[i * 3 + 2] += velocities[i * 3 + 2];
 
-          if (Math.abs(posArr[i * 3]) > 6) velocities[i * 3] *= -1;
-          if (Math.abs(posArr[i * 3 + 1]) > 6) velocities[i * 3 + 1] *= -1;
-          if (Math.abs(posArr[i * 3 + 2]) > 6) velocities[i * 3 + 2] *= -1;
+          if (Math.abs(posArr[i * 3]) > 5.5) velocities[i * 3] *= -1;
+          if (Math.abs(posArr[i * 3 + 1]) > 5.5) velocities[i * 3 + 1] *= -1;
+          if (Math.abs(posArr[i * 3 + 2]) > 5.5) velocities[i * 3 + 2] *= -1;
         }
 
         particleSystem.geometry.attributes.position.needsUpdate = true;
-        particleSystem.rotation.y += 0.001 + mouse.x * 0.005;
-        particleSystem.rotation.x += mouse.y * 0.005;
+        particleSystem.rotation.y = elapsedTime * 0.03 + mouse.x * 0.15;
+        particleSystem.rotation.x = mouse.y * 0.15;
         lines.rotation.y = particleSystem.rotation.y;
         lines.rotation.x = particleSystem.rotation.x;
 
         let lineIdx = 0;
         const maxIndices = linePositions.length;
-        // Use squared distance check (6.25 = 2.5^2) to avoid expensive Math.sqrt calls per frame
         for (let i = 0; i < particleCount && lineIdx < maxIndices; i++) {
           for (let j = i + 1; j < particleCount && lineIdx < maxIndices; j++) {
             const dx = posArr[i * 3] - posArr[j * 3];
@@ -184,7 +218,7 @@ export const ThreeEcosystemCanvas: React.FC<Props> = ({ onSelectNode }) => {
             const dz = posArr[i * 3 + 2] - posArr[j * 3 + 2];
             const distSq = dx * dx + dy * dy + dz * dz;
 
-            if (distSq < 6.25) {
+            if (distSq < 5.5) {
               linePositions[lineIdx++] = posArr[i * 3];
               linePositions[lineIdx++] = posArr[i * 3 + 1];
               linePositions[lineIdx++] = posArr[i * 3 + 2];
@@ -219,8 +253,18 @@ export const ThreeEcosystemCanvas: React.FC<Props> = ({ onSelectNode }) => {
       cancelAnimationFrame(animId);
       if (scene) {
         scene.traverse((obj) => {
-          if (obj instanceof THREE.Mesh || obj instanceof THREE.Points || obj instanceof THREE.Line) {
+          if (
+            obj instanceof THREE.Mesh ||
+            obj instanceof THREE.Points ||
+            obj instanceof THREE.Line ||
+            obj instanceof THREE.LineSegments
+          ) {
             obj.geometry?.dispose();
+            if (Array.isArray(obj.material)) {
+              obj.material.forEach((m) => m.dispose());
+            } else {
+              obj.material?.dispose();
+            }
           }
         });
       }

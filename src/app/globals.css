@@ -41,25 +41,25 @@ body {
 }
 
 .glass-card:hover {
-  box-shadow: 0 0 20px rgba(227, 30, 36, 0.15);
-  border-color: rgba(227, 30, 36, 0.3);
-  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(227, 30, 36, 0.2), inset 0 0 15px rgba(227, 30, 36, 0.05);
+  border-color: rgba(227, 30, 36, 0.4);
+  transform: translateY(-4px);
 }
 
 /* Glowing Hover Micro-animation */
 .glow-hover {
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glow-hover:hover {
-  box-shadow: 0 0 20px rgba(227, 30, 36, 0.15);
-  border-color: rgba(227, 30, 36, 0.3);
-  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(227, 30, 36, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  border-color: rgba(227, 30, 36, 0.4);
+  transform: translateY(-4px);
 }
 
 /* Command Red Gradient Text */
 .text-gradient, .gradient-text {
-  background: linear-gradient(135deg, #e31e24, #ffb4ab);
+  background: linear-gradient(135deg, #e31e24 0%, #ff6b6e 50%, #ffb4ab 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -68,6 +68,7 @@ body {
 
 /* Primary Button Styles */
 .btn-primary {
+  position: relative;
   background-color: #e31e24;
   color: #fffafa;
   font-family: 'Inter', sans-serif;
@@ -75,11 +76,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   border-radius: 0.25rem;
+  overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 20px rgba(227, 30, 36, 0.3);
+  box-shadow: 0 0 25px rgba(227, 30, 36, 0.45);
   transform: translateY(-2px);
 }
 
@@ -101,32 +103,95 @@ body {
 .btn-secondary:hover {
   border-color: #e31e24;
   color: #ffb4ab;
-  box-shadow: 0 0 20px rgba(227, 30, 36, 0.15);
+  box-shadow: 0 0 20px rgba(227, 30, 36, 0.2);
   transform: translateY(-2px);
 }
 
-/* Reveal Animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+/* Shimmer Light Sweep Effect for Buttons & Cards */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 70%
+  );
+  transform: rotate(30deg) translateX(-150%);
+  transition: transform 0.8s ease-in-out;
 }
 
-.stagger-1 { transition-delay: 100ms; }
-.stagger-2 { transition-delay: 200ms; }
-.stagger-3 { transition-delay: 300ms; }
-.stagger-4 { transition-delay: 400ms; }
+.shimmer-btn:hover::after {
+  transform: rotate(30deg) translateX(150%);
+}
+
+/* Keyframes */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes linePulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-line-pulse {
+  animation: linePulse 2s ease-in-out infinite;
+}
+
+/* Ambient Crimson Glow */
+.ambient-glow-red {
+  background: radial-gradient(circle, rgba(227, 30, 36, 0.18) 0%, rgba(14, 14, 16, 0) 70%);
+}
 
 /* Structural Tech Grid Background */
 .bg-grid {
   background-size: 40px 40px;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-grid-glow {
+  background-size: 30px 30px;
+  background-image: linear-gradient(to right, rgba(227, 30, 36, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(227, 30, 36, 0.05) 1px, transparent 1px);
 }
 
 /* Custom Dark Scrollbars */
@@ -152,3 +217,4 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+

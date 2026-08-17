@@ -114,9 +114,12 @@ export const ContactForm: React.FC = () => {
 
           <button
             type="submit"
-            className="bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-8 py-4 rounded font-bold hover:shadow-[0_0_20px_rgba(227,30,36,0.3)] transition-all w-full cursor-pointer text-center"
+            className="group bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-8 py-4 rounded font-bold shimmer-btn hover:shadow-[0_0_25px_rgba(227,30,36,0.45)] transition-all transform hover:-translate-y-0.5 w-full cursor-pointer text-center flex items-center justify-center gap-2"
           >
-            Submit Technical Inquiry
+            <span>Submit Technical Inquiry</span>
+            <span className="material-symbols-outlined text-base group-hover:translate-x-1.5 transition-transform duration-300">
+              arrow_forward
+            </span>
           </button>
         </form>
       )}

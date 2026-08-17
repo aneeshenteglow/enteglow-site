@@ -5,6 +5,12 @@ export interface IndustryDetail {
   tagline: string;
   description: string;
   iconName: string;
+  category: 'industrial' | 'health' | 'finance' | 'enterprise';
+  colorAccent: string;
+  workflowSteps: string[];
+  frictionBefore: string;
+  solutionAfter: string;
+  metricROI: string;
   supportedCapabilities: string[];
   useCases: string[];
   relevantTech: string[];
