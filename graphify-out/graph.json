@@ -9,7 +9,7 @@
       "source_file": "next-env.d.ts",
       "source_location": "L1",
       "id": "next_env_d",
-      "community": 14
+      "community": 13
     },
     {
       "label": "tailwind.config.ts",
@@ -17,7 +17,7 @@
       "source_file": "tailwind.config.ts",
       "source_location": "L1",
       "id": "tailwind_config",
-      "community": 15
+      "community": 14
     },
     {
       "label": "ProjectPlannerContext.tsx",
@@ -25,7 +25,7 @@
       "source_file": "src/context/ProjectPlannerContext.tsx",
       "source_location": "L1",
       "id": "projectplannercontext",
-      "community": 1
+      "community": 3
     },
     {
       "label": "useProjectPlanner()",
@@ -33,7 +33,7 @@
       "source_file": "src/context/ProjectPlannerContext.tsx",
       "source_location": "L32",
       "id": "projectplannercontext_useprojectplanner",
-      "community": 1
+      "community": 3
     },
     {
       "label": "page.tsx",
@@ -89,7 +89,7 @@
       "source_file": "src/app/layout.tsx",
       "source_location": "L1",
       "id": "layout",
-      "community": 1
+      "community": 3
     },
     {
       "label": "RootLayout()",
@@ -97,7 +97,7 @@
       "source_file": "src/app/layout.tsx",
       "source_location": "L52",
       "id": "layout_rootlayout",
-      "community": 1
+      "community": 3
     },
     {
       "label": "TechnologiesPage()",
@@ -113,7 +113,7 @@
       "source_file": "src/app/industries/index.ts",
       "source_location": "L1",
       "id": "index",
-      "community": 16
+      "community": 15
     },
     {
       "label": "technologiesData.ts",
@@ -129,7 +129,7 @@
       "source_file": "src/app/technologies/components/TechSpectrum.tsx",
       "source_location": "L1",
       "id": "techspectrum",
-      "community": 3
+      "community": 4
     },
     {
       "label": "technology.ts",
@@ -185,7 +185,7 @@
       "source_file": "src/app/services/components/ServiceCTA.tsx",
       "source_location": "L1",
       "id": "servicecta",
-      "community": 1
+      "community": 3
     },
     {
       "label": "InteractiveServices.tsx",
@@ -233,7 +233,7 @@
       "source_file": "src/app/services/components/ServiceDeliveryTimeline.tsx",
       "source_location": "L1",
       "id": "servicedeliverytimeline",
-      "community": 4
+      "community": 1
     },
     {
       "label": "service.ts",
@@ -265,7 +265,7 @@
       "source_file": "src/app/process/components/InteractiveProcess.tsx",
       "source_location": "L1",
       "id": "interactiveprocess",
-      "community": 3
+      "community": 4
     },
     {
       "label": "process.ts",
@@ -393,7 +393,7 @@
       "source_file": "src/app/industries/components/DomainEngineeringCapability.tsx",
       "source_location": "L1",
       "id": "domainengineeringcapability",
-      "community": 4
+      "community": 1
     },
     {
       "label": "DomainEngineeringCapability()",
@@ -401,7 +401,7 @@
       "source_file": "src/app/industries/components/DomainEngineeringCapability.tsx",
       "source_location": "L6",
       "id": "domainengineeringcapability_domainengineeringcapability",
-      "community": 4
+      "community": 1
     },
     {
       "label": "IndustriesGrid.tsx",
@@ -409,7 +409,7 @@
       "source_file": "src/app/industries/components/IndustriesGrid.tsx",
       "source_location": "L1",
       "id": "industriesgrid",
-      "community": 3
+      "community": 4
     },
     {
       "label": "IndustriesPageClient.tsx",
@@ -521,7 +521,7 @@
       "source_file": "src/components/sections/WhyEntelgowSection.tsx",
       "source_location": "L1",
       "id": "whyentelgowsection",
-      "community": 4
+      "community": 1
     },
     {
       "label": "HeroSection.tsx",
@@ -529,15 +529,7 @@
       "source_file": "src/components/sections/HeroSection.tsx",
       "source_location": "L1",
       "id": "herosection",
-      "community": 1
-    },
-    {
-      "label": "HeroSection()",
-      "file_type": "code",
-      "source_file": "src/components/sections/HeroSection.tsx",
-      "source_location": "L18",
-      "id": "herosection_herosection",
-      "community": 1
+      "community": 3
     },
     {
       "label": "IoTDataFlow.tsx",
@@ -545,7 +537,7 @@
       "source_file": "src/components/sections/IoTDataFlow.tsx",
       "source_location": "L1",
       "id": "iotdataflow",
-      "community": 3
+      "community": 4
     },
     {
       "label": "TestimonialsSection.tsx",
@@ -553,7 +545,7 @@
       "source_file": "src/components/sections/TestimonialsSection.tsx",
       "source_location": "L1",
       "id": "testimonialssection",
-      "community": 4
+      "community": 1
     },
     {
       "label": "ProblemIntroSection.tsx",
@@ -561,7 +553,7 @@
       "source_file": "src/components/sections/ProblemIntroSection.tsx",
       "source_location": "L1",
       "id": "problemintrosection",
-      "community": 1
+      "community": 3
     },
     {
       "label": "ArchitectsAboutSection.tsx",
@@ -569,7 +561,7 @@
       "source_file": "src/components/sections/ArchitectsAboutSection.tsx",
       "source_location": "L1",
       "id": "architectsaboutsection",
-      "community": 4
+      "community": 1
     },
     {
       "label": "ProductEcosystem.tsx",
@@ -577,7 +569,7 @@
       "source_file": "src/components/sections/ProductEcosystem.tsx",
       "source_location": "L1",
       "id": "productecosystem",
-      "community": 3
+      "community": 4
     },
     {
       "label": "ProductEcosystem()",
@@ -585,7 +577,7 @@
       "source_file": "src/components/sections/ProductEcosystem.tsx",
       "source_location": "L6",
       "id": "productecosystem_productecosystem",
-      "community": 3
+      "community": 4
     },
     {
       "label": "CinematicCTA.tsx",
@@ -609,7 +601,7 @@
       "source_file": "src/components/sections/PlatformStorytelling.tsx",
       "source_location": "L1",
       "id": "platformstorytelling",
-      "community": 3
+      "community": 4
     },
     {
       "label": "AIAgentShowcase.tsx",
@@ -617,7 +609,7 @@
       "source_file": "src/components/sections/AIAgentShowcase.tsx",
       "source_location": "L1",
       "id": "aiagentshowcase",
-      "community": 3
+      "community": 4
     },
     {
       "label": "ServicesBentoSection.tsx",
@@ -625,7 +617,7 @@
       "source_file": "src/components/sections/ServicesBentoSection.tsx",
       "source_location": "L1",
       "id": "servicesbentosection",
-      "community": 4
+      "community": 1
     },
     {
       "label": "Footer.tsx",
@@ -633,7 +625,7 @@
       "source_file": "src/components/layout/Footer.tsx",
       "source_location": "L1",
       "id": "footer",
-      "community": 1
+      "community": 3
     },
     {
       "label": "Header.tsx",
@@ -641,7 +633,7 @@
       "source_file": "src/components/layout/Header.tsx",
       "source_location": "L1",
       "id": "header",
-      "community": 1
+      "community": 3
     },
     {
       "label": "MobileNav.tsx",
@@ -649,7 +641,7 @@
       "source_file": "src/components/layout/MobileNav.tsx",
       "source_location": "L1",
       "id": "mobilenav",
-      "community": 1
+      "community": 3
     },
     {
       "label": "DynamicIcon.tsx",
@@ -673,7 +665,7 @@
       "source_file": "src/components/common/SectionHeader.tsx",
       "source_location": "L1",
       "id": "sectionheader",
-      "community": 3
+      "community": 4
     },
     {
       "label": "ProjectPlannerModal.tsx",
@@ -713,15 +705,15 @@
       "source_file": "src/components/common/ThreeEcosystemCanvas.tsx",
       "source_location": "L1",
       "id": "threeecosystemcanvas",
-      "community": 13
+      "community": 3
     },
     {
-      "label": "ThreeEcosystemCanvas()",
+      "label": "checkResponsive()",
       "file_type": "code",
       "source_file": "src/components/common/ThreeEcosystemCanvas.tsx",
-      "source_location": "L60",
-      "id": "threeecosystemcanvas_threeecosystemcanvas",
-      "community": 13
+      "source_location": "L201",
+      "id": "threeecosystemcanvas_checkresponsive",
+      "community": 3
     },
     {
       "label": "Button.tsx",
@@ -737,7 +729,7 @@
       "source_file": "src/components/common/Badge.tsx",
       "source_location": "L1",
       "id": "badge",
-      "community": 3
+      "community": 4
     },
     {
       "label": "Badge()",
@@ -745,7 +737,7 @@
       "source_file": "src/components/common/Badge.tsx",
       "source_location": "L11",
       "id": "badge_badge",
-      "community": 3
+      "community": 4
     },
     {
       "label": "Card.tsx",
@@ -769,7 +761,7 @@
       "source_file": "src/components/common/motion/ScrollReveal.tsx",
       "source_location": "L1",
       "id": "scrollreveal",
-      "community": 4
+      "community": 1
     },
     {
       "label": "ScrollReveal()",
@@ -777,7 +769,7 @@
       "source_file": "src/components/common/motion/ScrollReveal.tsx",
       "source_location": "L16",
       "id": "scrollreveal_scrollreveal",
-      "community": 4
+      "community": 1
     },
     {
       "label": "AnimatedCounter.tsx",
@@ -785,7 +777,7 @@
       "source_file": "src/components/common/motion/AnimatedCounter.tsx",
       "source_location": "L1",
       "id": "animatedcounter",
-      "community": 4
+      "community": 1
     },
     {
       "label": "company.ts",
@@ -801,7 +793,7 @@
       "source_file": "automation/git/post-commit.ps1",
       "source_location": "L1",
       "id": "post_commit",
-      "community": 17
+      "community": 16
     },
     {
       "label": "pre-commit.ps1",
@@ -809,7 +801,7 @@
       "source_file": "automation/git/pre-commit.ps1",
       "source_location": "L1",
       "id": "pre_commit",
-      "community": 18
+      "community": 17
     }
   ],
   "links": [
@@ -2110,15 +2102,15 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/HeroSection.tsx",
-      "source_location": "L18",
+      "source_location": "L9",
       "weight": 1.0,
       "_src": "herosection",
-      "_tgt": "herosection_herosection",
+      "_tgt": "threeecosystemcanvas",
       "source": "herosection",
-      "target": "herosection_herosection",
+      "target": "threeecosystemcanvas",
       "confidence_score": 1.0
     },
     {
@@ -2389,12 +2381,12 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/common/ThreeEcosystemCanvas.tsx",
-      "source_location": "L60",
+      "source_location": "L201",
       "weight": 1.0,
       "_src": "threeecosystemcanvas",
-      "_tgt": "threeecosystemcanvas_threeecosystemcanvas",
+      "_tgt": "threeecosystemcanvas_checkresponsive",
       "source": "threeecosystemcanvas",
-      "target": "threeecosystemcanvas_threeecosystemcanvas",
+      "target": "threeecosystemcanvas_checkresponsive",
       "confidence_score": 1.0
     },
     {
