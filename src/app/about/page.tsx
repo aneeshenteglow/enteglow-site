@@ -45,7 +45,7 @@ export default function AboutPage() {
             <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg max-w-4xl mx-auto mb-6 text-on-surface font-bold leading-tight">
               Architects of the <span className="text-gradient">Digital Enterprise.</span>
             </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+            <p className="font-body-lg text-body-lg max-w-3xl mx-auto leading-relaxed">
               Enteglow is a technology consultancy dedicated to designing, building, and maintaining robust digital products for the modern enterprise.
             </p>
           </ScrollReveal>
@@ -67,7 +67,7 @@ export default function AboutPage() {
                 <h2 className="font-headline-md text-headline-md text-on-surface text-2xl font-bold">
                   Our Mission
                 </h2>
-                <p className="font-body-md text-on-surface-variant leading-relaxed">
+                <p className="font-body-md leading-relaxed">
                   {companyData.mission}
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function AboutPage() {
                 <h2 className="font-headline-md text-headline-md text-on-surface text-2xl font-bold">
                   Our Vision
                 </h2>
-                <p className="font-body-md text-on-surface-variant leading-relaxed">
+                <p className="font-body-md leading-relaxed">
                   {companyData.vision}
                 </p>
               </div>

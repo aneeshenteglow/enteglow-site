@@ -57,7 +57,7 @@ export const IoTDataFlow: React.FC = () => {
               <button
                 key={ps.step}
                 onClick={() => setActiveStage(ps.step)}
-                className={`p-4 rounded-2xl text-left border transition-all space-y-2 ${
+                className={`px-4 py-4 rounded-xl text-left border transition-all space-y-2 ${
                   isActive
                     ? 'bg-gold-500 border-gold-600 text-white shadow-md'
                     : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-navy-900 hover:bg-slate-100'

@@ -67,7 +67,7 @@ export const ServiceHeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-10 leading-relaxed"
+          className="font-body-lg text-body-lg max-w-3xl mx-auto mb-10 leading-relaxed"
         >
           Enteglow provides end-to-end software product development across specialized technical disciplines. Every service is delivered with strict technical standards, zero mock fallbacks, and 100% source code ownership.
         </motion.p>
@@ -84,7 +84,7 @@ export const ServiceHeroSection: React.FC = () => {
               key={s.id}
               type="button"
               onClick={() => scrollToService(s.id)}
-              className="text-xs font-label-sm uppercase px-4 py-2 rounded-full glass-panel text-on-surface-variant hover:text-primary hover:border-primary/40 transition-all duration-300 cursor-pointer flex items-center gap-1.5"
+              className="text-xs font-label-sm uppercase px-4 py-4 rounded-xl glass-panel hover:text-primary hover:border-primary/40 transition-all duration-300 cursor-pointer flex items-center gap-1.5"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
               <span>{s.title}</span>

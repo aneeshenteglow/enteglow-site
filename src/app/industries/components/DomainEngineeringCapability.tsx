@@ -15,7 +15,7 @@ export const DomainEngineeringCapability: React.FC = () => {
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
               Engineered for Enterprise Compliance &amp; Scalability
             </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            <p className="font-body-lg text-body-lg leading-relaxed">
               No matter your domain, every software solution we deliver adheres to production-grade security, zero-downtime deployment pipelines, and full IP source ownership.
             </p>
           </div>
@@ -28,7 +28,7 @@ export const DomainEngineeringCapability: React.FC = () => {
                 <span className="material-symbols-outlined text-2xl">verified_user</span>
               </div>
               <h3 className="font-headline-md text-xl text-on-surface font-bold">SOC 2 &amp; HIPAA Readiness</h3>
-              <p className="text-on-surface-variant text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed">
                 Encrypted data pipelines, role-based access control (RBAC), and automated audit logs engineered to satisfy stringent compliance requirements.
               </p>
             </div>
@@ -40,7 +40,7 @@ export const DomainEngineeringCapability: React.FC = () => {
                 <span className="material-symbols-outlined text-2xl">code_blocks</span>
               </div>
               <h3 className="font-headline-md text-xl text-on-surface font-bold">100% IP Source Ownership</h3>
-              <p className="text-on-surface-variant text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed">
                 Zero vendor lock-in. Full ownership of all repository code, Docker deployment scripts, and architectural blueprints upon project completion.
               </p>
             </div>
@@ -52,7 +52,7 @@ export const DomainEngineeringCapability: React.FC = () => {
                 <span className="material-symbols-outlined text-2xl">speed</span>
               </div>
               <h3 className="font-headline-md text-xl text-on-surface font-bold">Sub-Second System SLA</h3>
-              <p className="text-on-surface-variant text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed">
                 Designed to handle high concurrency, multi-tenant loads, and live WebSockets telemetry without request timeouts or database lockups.
               </p>
             </div>

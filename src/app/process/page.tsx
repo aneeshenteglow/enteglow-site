@@ -27,7 +27,7 @@ export default function ProcessPage() {
               Engineered for Velocity, <br />
               <span className="text-gradient">Built for Precision.</span>
             </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+            <p className="font-body-lg text-body-lg max-w-3xl mx-auto leading-relaxed">
               From initial discovery to continuous production support—Enteglow adheres to a transparent, 6-stage software development lifecycle that guarantees code quality and predictable delivery timelines.
             </p>
           </ScrollReveal>
@@ -46,7 +46,7 @@ export default function ProcessPage() {
                 <CheckCircle2 size={22} className="text-primary shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-headline-md text-base text-on-surface font-bold">Full Transparency</h3>
-                  <p className="font-body-md text-xs text-on-surface-variant mt-1 leading-relaxed">
+                  <p className="font-body-md text-xs mt-1 leading-relaxed">
                     Regular sprint demos, staging environment previews, and direct access to repository code commits.
                   </p>
                 </div>
@@ -56,7 +56,7 @@ export default function ProcessPage() {
                 <CheckCircle2 size={22} className="text-primary shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-headline-md text-base text-on-surface font-bold">Continuous Testing</h3>
-                  <p className="font-body-md text-xs text-on-surface-variant mt-1 leading-relaxed">
+                  <p className="font-body-md text-xs mt-1 leading-relaxed">
                     Automated unit tests, integration test suites, and static type checking (`tsc --noEmit`) integrated into every sprint.
                   </p>
                 </div>
@@ -66,7 +66,7 @@ export default function ProcessPage() {
                 <CheckCircle2 size={22} className="text-primary shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-headline-md text-base text-on-surface font-bold">Guaranteed Delivery</h3>
-                  <p className="font-body-md text-xs text-on-surface-variant mt-1 leading-relaxed">
+                  <p className="font-body-md text-xs mt-1 leading-relaxed">
                     Pre-defined acceptance criteria for every feature milestone before proceeding to production deployment.
                   </p>
                 </div>

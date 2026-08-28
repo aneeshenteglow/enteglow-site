@@ -102,7 +102,7 @@ export const InteractiveProcess: React.FC = () => {
           <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
             A 6-Stage Process Built for Quality &amp; Transparency
           </h2>
-          <p className="font-body-lg text-on-surface-variant">
+          <p className="font-body-lg">
             Our software engineering lifecycle replaces guesswork with predictable milestone delivery, automated quality gates, and 100% IP code ownership.
           </p>
         </div>
@@ -116,14 +116,14 @@ export const InteractiveProcess: React.FC = () => {
                 <button
                   key={st.step}
                   onClick={() => setActiveStage(st)}
-                  className={`p-3 rounded transition-all text-left border ${
+                  className={`px-4 py-4 rounded-xl transition-all text-left border ${
                     isActive
                       ? 'bg-primary-container text-on-primary-container border-primary shadow-[0_0_15px_rgba(227,30,36,0.3)]'
-                      : 'glass-panel text-on-surface-variant hover:text-on-surface border-glass-border'
+                      : 'glass-panel hover:text-on-surface border-glass-border'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className={`text-[10px] font-label-sm font-bold ${isActive ? 'text-on-primary-container' : 'text-on-surface-variant'}`}>
+                    <span className={`text-[10px] font-label-sm font-bold ${isActive ? 'text-on-primary-container' : ''}`}>
                       STAGE {st.step}
                     </span>
                     {isActive && <span className="w-2 h-2 rounded-full bg-on-primary-container animate-ping" />}
@@ -152,7 +152,7 @@ export const InteractiveProcess: React.FC = () => {
               </div>
             </div>
 
-            <p className="font-body-lg text-on-surface-variant text-sm sm:text-base leading-relaxed font-normal">
+            <p className="font-body-lg text-sm sm:text-base leading-relaxed font-normal">
               {activeStage.description}
             </p>
 
@@ -161,7 +161,7 @@ export const InteractiveProcess: React.FC = () => {
                 <Clock size={14} className="text-primary" />
                 <span>Estimated Timeframe: {activeStage.duration}</span>
               </div>
-              <p className="text-xs text-on-surface-variant font-medium">
+              <p className="text-xs font-medium">
                 Direct communication via dedicated Slack/Teams channel and weekly video engineering standups.
               </p>
             </div>
@@ -175,7 +175,7 @@ export const InteractiveProcess: React.FC = () => {
               </span>
               <div className="space-y-2 text-xs">
                 {activeStage.keyOutputs.map((out, i) => (
-                  <div key={i} className="flex items-center gap-2 text-on-surface-variant">
+                  <div key={i} className="flex items-center gap-2">
                     <CheckCircle2 size={14} className="text-primary shrink-0" />
                     <span className="font-label-sm text-[11px]">{out}</span>
                   </div>
@@ -197,7 +197,7 @@ export const InteractiveProcess: React.FC = () => {
             <div className="pt-2 flex justify-end">
               <button
                 onClick={openPlanner}
-                className="bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-6 py-3 rounded font-bold hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all flex items-center gap-2"
+                className="bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-4 py-4 rounded-xl font-bold hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all flex items-center gap-2"
               >
                 <span>Start Project Discovery</span>
                 <ArrowRight size={14} />

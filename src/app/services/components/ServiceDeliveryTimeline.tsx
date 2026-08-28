@@ -42,7 +42,7 @@ export const ServiceDeliveryTimeline: React.FC = () => {
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
               From System Specification to <span className="text-gradient">Production Scale.</span>
             </h2>
-            <p className="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">
+            <p className="font-body-lg text-body-lg max-w-2xl mx-auto">
               Our 4-stage software product engineering process guarantees transparency, velocity, and architectural longevity.
             </p>
           </div>
@@ -64,7 +64,7 @@ export const ServiceDeliveryTimeline: React.FC = () => {
                   <h3 className="font-headline-md text-xl text-on-surface font-bold mb-3 group-hover:text-primary transition-colors">
                     {stg.title}
                   </h3>
-                  <p className="text-on-surface-variant text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed">
                     {stg.description}
                   </p>
                 </div>

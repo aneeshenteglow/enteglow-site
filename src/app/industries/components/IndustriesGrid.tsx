@@ -101,14 +101,14 @@ export const IndustriesGrid: React.FC = () => {
           <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
             Engineered Solutions Across Specialized Industries
           </h2>
-          <p className="font-body-lg text-on-surface-variant">
+          <p className="font-body-lg">
             We build software customized for domain-specific operational challenges. Select an industry to inspect its tailored workflow pipeline.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-5 space-y-3">
-            <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block px-2">
+            <span className="font-label-sm text-label-sm uppercase tracking-wider block px-2">
               Select Industry Domain:
             </span>
 
@@ -133,7 +133,7 @@ export const IndustriesGrid: React.FC = () => {
                         <h3 className={`font-headline-md text-sm sm:text-base ${isSelected ? 'text-on-surface' : 'text-on-surface'}`}>
                           {domain.title}
                         </h3>
-                        <p className={`font-label-sm text-xs ${isSelected ? 'text-primary' : 'text-on-surface-variant'}`}>
+                        <p className={`font-label-sm text-xs ${isSelected ? 'text-primary' : ''}`}>
                           {domain.category}
                         </p>
                       </div>
@@ -159,12 +159,12 @@ export const IndustriesGrid: React.FC = () => {
                 </span>
               </div>
 
-              <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
+              <p className="font-body-md text-sm leading-relaxed">
                 {selectedDomain.description}
               </p>
 
               <div className="space-y-3">
-                <span className="font-label-sm text-xs text-on-surface-variant uppercase tracking-wider block">
+                <span className="font-label-sm text-xs uppercase tracking-wider block">
                   Domain Workflow Visualizer:
                 </span>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center font-label-sm text-xs">
@@ -178,12 +178,12 @@ export const IndustriesGrid: React.FC = () => {
               </div>
 
               <div className="space-y-3 pt-2">
-                <span className="font-label-sm text-xs text-on-surface-variant uppercase tracking-wider block">
+                <span className="font-label-sm text-xs uppercase tracking-wider block">
                   Domain Operational Friction Solved:
                 </span>
                 <div className="space-y-2 text-xs">
                   {selectedDomain.solvedProblems.map((prob, i) => (
-                    <div key={i} className="flex items-center gap-2 text-on-surface-variant font-medium">
+                    <div key={i} className="flex items-center gap-2 font-medium">
                       <CheckCircle2 size={14} className="text-primary shrink-0" />
                       <span>{prob}</span>
                     </div>
@@ -192,13 +192,13 @@ export const IndustriesGrid: React.FC = () => {
               </div>
 
               <div className="pt-4 border-t border-glass-border flex items-center justify-between">
-                <span className="font-label-sm text-xs text-on-surface-variant flex items-center gap-1">
+                <span className="font-label-sm text-xs flex items-center gap-1">
                   <Layers size={13} className="text-primary" />
                   Deep Domain Engineering Experience
                 </span>
                 <button
                   onClick={openPlanner}
-                  className="px-5 py-2.5 rounded bg-primary-container text-on-primary-container font-bold text-xs hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all flex items-center gap-2"
+                  className="px-4 py-4 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all flex items-center gap-2"
                 >
                   <span>Discuss Domain Solution</span>
                   <ArrowRight size={14} />

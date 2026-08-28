@@ -173,7 +173,7 @@ export const PlatformStorytelling: React.FC = () => {
               <button
                 key={stg.id}
                 onClick={() => setActiveStageIdx(idx)}
-                className={`p-3 rounded-xl text-xs font-mono font-semibold transition-all flex flex-col items-center gap-1.5 ${
+                className={`px-4 py-4 rounded-xl text-xs font-mono font-semibold transition-all flex flex-col items-center gap-1.5 ${
                   isActive
                     ? 'bg-gold-500 text-white shadow-md'
                     : 'text-slate-600 hover:text-navy-900 hover:bg-slate-100'

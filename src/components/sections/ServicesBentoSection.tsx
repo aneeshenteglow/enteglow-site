@@ -60,7 +60,7 @@ export const ServicesBentoSection: React.FC = () => {
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface">
               Core Competencies
             </h2>
-            <p className="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">
+            <p className="font-body-lg text-body-lg max-w-2xl mx-auto">
               Precision engineering across the modern technology stack.
             </p>
           </div>
@@ -83,7 +83,7 @@ export const ServicesBentoSection: React.FC = () => {
                       {comp.icon}
                     </span>
                   </div>
-                  <span className="text-[11px] font-label-sm uppercase tracking-wider text-on-surface-variant bg-surface-container-high px-2.5 py-1 rounded border border-glass-border">
+                  <span className="text-[11px] font-label-sm uppercase tracking-wider bg-surface-container-high px-2.5 py-1 rounded border border-glass-border">
                     {comp.badgeText}
                   </span>
                 </div>
@@ -91,7 +91,7 @@ export const ServicesBentoSection: React.FC = () => {
                 <h3 className="font-headline-md text-headline-md mb-3 text-on-surface group-hover:text-primary transition-colors duration-300">
                   {comp.title}
                 </h3>
-                <p className="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                <p className="text-sm mb-6 flex-grow leading-relaxed">
                   {comp.description}
                 </p>
 

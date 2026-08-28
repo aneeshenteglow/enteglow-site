@@ -22,7 +22,7 @@ export default function ProjectsPage() {
           <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
             Engineering Case Studies
           </h1>
-          <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+          <p className="mt-4 font-body-lg text-body-lg max-w-3xl mx-auto">
             Detailed technical breakdowns of software product solutions engineered for technical performance, reliability, and business impact.
           </p>
         </div>

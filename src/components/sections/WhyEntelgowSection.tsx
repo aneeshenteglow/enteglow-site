@@ -26,7 +26,7 @@ export const WhyEntelgowSection: React.FC = () => {
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
               Built for Enterprise Reliability &amp; IP Ownership
             </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            <p className="font-body-lg text-body-lg leading-relaxed">
               We engineer software to handle scaling milestones effortlessly—with zero vendor lock-in and complete IP source code ownership.
             </p>
           </div>
@@ -38,7 +38,7 @@ export const WhyEntelgowSection: React.FC = () => {
             <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface text-3xl sm:text-4xl leading-tight">
               Rigorous Technical Standards &amp; Agile Delivery
             </h3>
-            <p className="font-body-lg text-on-surface-variant leading-relaxed">
+            <p className="font-body-lg leading-relaxed">
               Our engineering methodology is rooted in strict technical standards, zero mock fallbacks, and feature-isolated architecture—ensuring complex operational challenges are met with sustainable, scalable software solutions.
             </p>
 
@@ -67,7 +67,7 @@ export const WhyEntelgowSection: React.FC = () => {
               <button
                 type="button"
                 onClick={openPlanner}
-                className="group bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-8 py-4 rounded font-bold shimmer-btn hover:shadow-[0_0_25px_rgba(227,30,36,0.45)] transition-all transform hover:-translate-y-1 cursor-pointer flex items-center gap-2"
+                className="group bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-4 py-4 rounded-xl font-bold shimmer-btn hover:shadow-[0_0_25px_rgba(227,30,36,0.45)] transition-all transform hover:-translate-y-1 cursor-pointer flex items-center gap-2"
               >
                 <span>Schedule Architecture Audit</span>
                 <span className="material-symbols-outlined text-base group-hover:translate-x-1.5 transition-transform duration-300">
@@ -108,7 +108,7 @@ export const WhyEntelgowSection: React.FC = () => {
                 <div className="font-headline-lg text-primary leading-none mb-1 text-4xl font-bold">
                   <AnimatedCounter value="100+" />
                 </div>
-                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">
+                <div className="font-label-sm text-label-sm uppercase tracking-wider font-semibold">
                   Products Delivered
                 </div>
               </div>
@@ -127,7 +127,7 @@ export const WhyEntelgowSection: React.FC = () => {
                 <span className="material-symbols-outlined text-3xl">code</span>
                 <span>Strict Code Quality</span>
               </div>
-              <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
+              <p className="font-body-md text-sm leading-relaxed">
                 Every pull request undergoes peer review, static type checking (<code className="text-primary font-mono text-xs">tsc --noEmit</code>), and automated test suite verification.
               </p>
             </motion.div>
@@ -142,7 +142,7 @@ export const WhyEntelgowSection: React.FC = () => {
                 <span className="material-symbols-outlined text-3xl">lock</span>
                 <span>100% IP &amp; Data Ownership</span>
               </div>
-              <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
+              <p className="font-body-md text-sm leading-relaxed">
                 All source code, Docker configs, and architecture blueprints belong entirely to your organization upon project delivery.
               </p>
             </motion.div>
@@ -157,7 +157,7 @@ export const WhyEntelgowSection: React.FC = () => {
                 <span className="material-symbols-outlined text-3xl">speed</span>
                 <span>Architectural Longevity</span>
               </div>
-              <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
+              <p className="font-body-md text-sm leading-relaxed">
                 We design software to handle scaling milestones effortlessly—whether serving 100 or 100,000 concurrent users.
               </p>
             </motion.div>

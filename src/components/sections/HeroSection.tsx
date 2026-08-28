@@ -83,7 +83,7 @@ export const HeroSection: React.FC = () => {
         {/* Priority 2 Subtitle / Description */}
         <motion.p
           variants={itemVariants}
-          className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-10 leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] pointer-events-auto font-normal"
+          className="font-body-lg text-body-lg max-w-3xl mx-auto mb-10 leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] pointer-events-auto font-normal"
         >
           We partner with business leaders, CTOs, and product managers to replace manual operational friction with production-ready software—unifying Web SaaS Platforms, Mobile Field Apps, Native Workstations, Agentic AI, and IoT Telemetry.
         </motion.p>
@@ -93,7 +93,7 @@ export const HeroSection: React.FC = () => {
           <button
             type="button"
             onClick={openPlanner}
-            className="group relative bg-primary-container text-on-primary-container font-headline-md text-[16px] uppercase px-8 py-4 rounded font-bold shimmer-btn hover:shadow-[0_0_35px_rgba(227,30,36,0.7)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2.5 cursor-pointer overflow-hidden border border-primary/50 shadow-xl"
+            className="group relative bg-primary-container text-on-primary-container font-headline-md text-[16px] uppercase px-4 py-4 rounded-xl font-bold shimmer-btn hover:shadow-[0_0_35px_rgba(227,30,36,0.7)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2.5 cursor-pointer overflow-hidden border border-primary/50 shadow-xl"
           >
             <span className="relative z-10">Start a Project</span>
             <span className="material-symbols-outlined relative z-10 group-hover:translate-x-1.5 transition-transform duration-300">
@@ -103,7 +103,7 @@ export const HeroSection: React.FC = () => {
           <Link
             href="/projects"
             prefetch={true}
-            className="group glass-panel text-on-surface font-headline-md text-[16px] uppercase px-8 py-4 rounded font-bold hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2.5 glow-hover hover:-translate-y-1 border border-glass-border/80 shadow-xl bg-surface-deep/80 backdrop-blur-md"
+            className="group glass-panel text-on-surface font-headline-md text-[16px] uppercase px-4 py-4 rounded-xl font-bold hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2.5 glow-hover hover:-translate-y-1 border border-glass-border/80 shadow-xl bg-surface-deep/80 backdrop-blur-md"
           >
             Explore Case Studies
             <span className="material-symbols-outlined group-hover:translate-x-1.5 transition-transform duration-300">
@@ -126,7 +126,7 @@ export const HeroSection: React.FC = () => {
               >
                 <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
                 <span className="font-semibold text-primary">{selectedService.label}:</span>
-                <span className="text-on-surface-variant">{selectedService.shortDesc}</span>
+                <span className="">{selectedService.shortDesc}</span>
               </motion.div>
             )}
           </AnimatePresence>
@@ -145,7 +145,7 @@ export const HeroSection: React.FC = () => {
               <div className="text-primary font-headline-lg text-3xl font-bold tracking-tight mb-1">
                 <AnimatedCounter value="45+" />
               </div>
-              <p className="text-on-surface-variant text-sm font-medium">Software Products Built</p>
+              <p className="text-sm font-medium">Software Products Built</p>
             </div>
           </div>
 
@@ -157,7 +157,7 @@ export const HeroSection: React.FC = () => {
               <div className="text-primary font-headline-lg text-3xl font-bold tracking-tight mb-1">
                 <AnimatedCounter value="95%+" />
               </div>
-              <p className="text-on-surface-variant text-sm font-medium">Code Test Coverage</p>
+              <p className="text-sm font-medium">Code Test Coverage</p>
             </div>
           </div>
 
@@ -169,7 +169,7 @@ export const HeroSection: React.FC = () => {
               <div className="text-primary font-headline-lg text-3xl font-bold tracking-tight mb-1">
                 <AnimatedCounter value="100%" />
               </div>
-              <p className="text-on-surface-variant text-sm font-medium">IP Source Ownership</p>
+              <p className="text-sm font-medium">IP Source Ownership</p>
             </div>
           </div>
         </motion.div>

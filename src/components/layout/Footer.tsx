@@ -20,16 +20,16 @@ export const Footer: React.FC = () => {
                 height={32}
                 src={LOCAL_LOGO_URL}
               />
-              <span className="font-headline-md text-xl tracking-wider font-bold text-on-surface">
+              {/* <span className="font-headline-md text-xl tracking-wider font-bold text-on-surface">
                 ENTE<span className="text-primary">GLOW</span>
-              </span>
+              </span> */}
             </Link>
-            <p className="text-on-surface-variant text-body-md max-w-xs">
+            <p className="text-body-md max-w-xs">
               Precision product engineering for the modern enterprise. We transform business ideas into scalable digital realities.
             </p>
             <div className="flex gap-4">
               <a
-                className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all"
+                className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary transition-all"
                 href="https://www.facebook.com/enteglow"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
                 <span className="material-symbols-outlined text-[20px]">public</span>
               </a>
               <a
-                className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all"
+                className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary transition-all"
                 href="https://x.com/enteglow"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
                 <span className="material-symbols-outlined text-[20px]">share</span>
               </a>
               <a
-                className="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all"
+                className="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary transition-all"
                 href="https://www.linkedin.com/company/enteglow/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -65,32 +65,32 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4">
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
                   AI Application Development
                 </Link>
               </li>
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
                   Web Application Development
                 </Link>
               </li>
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
                   Website Development
                 </Link>
               </li>
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
                   Web Maintenance &amp; Hosting
                 </Link>
               </li>
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
                   Mobile Application Development
                 </Link>
               </li>
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
                   IoT Application Development
                 </Link>
               </li>
@@ -104,27 +104,27 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4">
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/services" prefetch={true}>
                   Services
                 </Link>
               </li>
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/about" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/about" prefetch={true}>
                   Company
                 </Link>
               </li>
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/contact" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/contact" prefetch={true}>
                   Legal
                 </Link>
               </li>
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/contact" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/contact" prefetch={true}>
                   Contact
                 </Link>
               </li>
               <li>
-                <Link className="text-on-surface-variant hover:text-primary transition-colors text-sm" href="/contact" prefetch={true}>
+                <Link className="hover:text-primary transition-colors text-sm" href="/contact" prefetch={true}>
                   Privacy Policy
                 </Link>
               </li>
@@ -137,20 +137,20 @@ export const Footer: React.FC = () => {
               Connect
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-on-surface-variant text-sm">
+              <li className="flex items-center gap-3 text-sm">
                 <span className="material-symbols-outlined text-primary text-[18px]">call</span>
                 <a className="hover:text-primary transition-colors" href="tel:+919495634648">
                   +91 9495634648
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-on-surface-variant text-sm">
+              <li className="flex items-center gap-3 text-sm">
                 <span className="material-symbols-outlined text-primary text-[18px]">mail</span>
                 <a className="hover:text-primary transition-colors" href="mailto:info@enteglow.com">
                   info@enteglow.com
                 </a>
               </li>
               <li className="mt-6">
-                <p className="text-xs text-on-surface-variant mb-4">Ready to take the next step?</p>
+                <p className="text-xs mb-4">Ready to take the next step?</p>
                 <Link
                   className="group bg-primary-container text-on-primary-container px-6 py-2.5 rounded font-bold text-label-sm uppercase inline-flex items-center gap-2 shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all hover:-translate-y-0.5"
                   href="/contact"
@@ -168,14 +168,14 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-glass-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">
+          <p className="font-label-sm text-label-sm uppercase tracking-widest">
             © {new Date().getFullYear()} ENTEGLOW. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-8">
-            <Link className="text-on-surface-variant hover:text-primary text-xs uppercase tracking-widest transition-colors" href="/contact" prefetch={true}>
+            <Link className="hover:text-primary text-xs uppercase tracking-widest transition-colors" href="/contact" prefetch={true}>
               Terms
             </Link>
-            <Link className="text-on-surface-variant hover:text-primary text-xs uppercase tracking-widest transition-colors" href="/contact" prefetch={true}>
+            <Link className="hover:text-primary text-xs uppercase tracking-widest transition-colors" href="/contact" prefetch={true}>
               Cookies
             </Link>
           </div>

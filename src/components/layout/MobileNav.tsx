@@ -42,7 +42,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             </Link>
             <button
               onClick={onClose}
-              className="p-2 rounded text-on-surface-variant hover:text-primary transition-colors"
+              className="px-4 py-4 rounded-xl hover:text-primary transition-colors"
               aria-label="Close menu"
             >
               <span className="material-symbols-outlined text-2xl">close</span>
@@ -70,7 +70,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
               onClose();
               onOpenPlanner?.();
             }}
-            className="bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase w-full py-3.5 rounded font-bold hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase w-full px-4 py-4 rounded-xl font-bold hover:shadow-[0_0_15px_rgba(227,30,36,0.3)] transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             Book a Meeting
             <span className="material-symbols-outlined text-[16px]">arrow_forward</span>

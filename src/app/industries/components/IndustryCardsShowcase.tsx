@@ -44,7 +44,7 @@ export const IndustryCardsShowcase: React.FC<IndustryCardsShowcaseProps> = ({
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
               Explore All <span className="text-gradient">Domain Solutions</span>
             </h2>
-            <p className="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">
+            <p className="font-body-lg text-body-lg max-w-2xl mx-auto">
               Filter software product capabilities across specialized enterprise sectors.
             </p>
           </div>
@@ -59,10 +59,10 @@ export const IndustryCardsShowcase: React.FC<IndustryCardsShowcaseProps> = ({
                 key={cat.id}
                 type="button"
                 onClick={() => setActiveCategory(cat.id)}
-                className={`relative px-4 py-2 rounded-full font-label-sm text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                className={`relative px-4 py-4 rounded-xl font-label-sm text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                   isSelected
                     ? 'text-on-primary-container font-bold shadow-md'
-                    : 'glass-panel text-on-surface-variant hover:text-on-surface hover:border-primary/30'
+                    : 'glass-panel hover:text-on-surface hover:border-primary/30'
                 }`}
               >
                 {isSelected && (
@@ -115,7 +115,7 @@ export const IndustryCardsShowcase: React.FC<IndustryCardsShowcaseProps> = ({
                   <h3 className="font-headline-md text-xl text-on-surface mb-2 font-bold group-hover:text-primary transition-colors">
                     {ind.name}
                   </h3>
-                  <p className="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                  <p className="text-sm mb-6 leading-relaxed">
                     {ind.tagline}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export const IndustryCardsShowcase: React.FC<IndustryCardsShowcaseProps> = ({
                       arrow_forward
                     </span>
                   </span>
-                  <span className="text-on-surface-variant font-mono">{ind.relevantTech.length} Tech Stack</span>
+                  <span className="font-mono">{ind.relevantTech.length} Tech Stack</span>
                 </div>
               </motion.div>
             ))}

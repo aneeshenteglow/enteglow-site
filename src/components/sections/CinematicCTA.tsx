@@ -32,7 +32,7 @@ export const CinematicCTA: React.FC = () => {
         </ScrollReveal>
 
         <ScrollReveal direction="up" delay={0.25}>
-          <p className="text-on-surface-variant font-body-lg text-body-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto leading-relaxed">
             Stop wrestling with fragile legacy systems. Partner with senior software architects to engineer scalable, high-performance systems for your enterprise.
           </p>
 
@@ -40,7 +40,7 @@ export const CinematicCTA: React.FC = () => {
             <button
               type="button"
               onClick={openPlanner}
-              className="group bg-primary-container text-on-primary-container font-headline-md text-[16px] uppercase px-8 py-4 rounded font-bold shimmer-btn hover:shadow-[0_0_30px_rgba(227,30,36,0.5)] transition-all transform hover:-translate-y-1 cursor-pointer w-full sm:w-auto flex items-center justify-center gap-2.5"
+              className="group bg-primary-container text-on-primary-container font-headline-md text-[16px] uppercase px-4 py-4 rounded-xl font-bold shimmer-btn hover:shadow-[0_0_30px_rgba(227,30,36,0.5)] transition-all transform hover:-translate-y-1 cursor-pointer w-full sm:w-auto flex items-center justify-center gap-2.5"
             >
               <span>Start a Project</span>
               <span className="material-symbols-outlined group-hover:translate-x-1.5 transition-transform duration-300">
@@ -50,7 +50,7 @@ export const CinematicCTA: React.FC = () => {
             <Link
               href="/contact"
               prefetch={true}
-              className="group glass-panel text-on-surface font-headline-md text-[16px] uppercase px-8 py-4 rounded font-bold hover:border-primary hover:text-primary transition-all glow-hover hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2.5"
+              className="group glass-panel text-on-surface font-headline-md text-[16px] uppercase px-4 py-4 rounded-xl font-bold hover:border-primary hover:text-primary transition-all glow-hover hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2.5"
             >
               <span>Talk to an Engineer</span>
               <span className="material-symbols-outlined group-hover:translate-x-1.5 transition-transform duration-300 text-primary">

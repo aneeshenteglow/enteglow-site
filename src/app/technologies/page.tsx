@@ -23,7 +23,7 @@ export default function TechnologiesPage() {
           <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
             Engineering Expertise Across Tech Domains
           </h1>
-          <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+          <p className="mt-4 font-body-lg text-body-lg max-w-3xl mx-auto">
             We prioritize technologies that communicate genuine engineering capability—focusing on memory efficiency, static typing, low latency, and operational stability.
           </p>
         </div>
@@ -34,7 +34,7 @@ export default function TechnologiesPage() {
       <div className="max-w-container-max mx-auto px-gutter space-y-12">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="font-headline-lg text-headline-lg-mobile text-on-surface">Full Ecosystem Matrix</h2>
-          <p className="font-body-md text-on-surface-variant mt-2">
+          <p className="font-body-md mt-2">
             Overview of all technologies integrated into Enteglow software engineering solutions.
           </p>
         </div>
@@ -49,9 +49,9 @@ export default function TechnologiesPage() {
                   </div>
                   <h3 className="font-headline-md text-lg text-on-surface">{cat.category}</h3>
                 </div>
-                <span className="font-label-sm text-xs text-on-surface-variant uppercase">{cat.items.length} Frameworks</span>
+                <span className="font-label-sm text-xs uppercase">{cat.items.length} Frameworks</span>
               </div>
-              <p className="font-body-md text-xs text-on-surface-variant leading-relaxed">{cat.description}</p>
+              <p className="font-body-md text-xs leading-relaxed">{cat.description}</p>
               <div className="space-y-2 pt-2">
                 {cat.items.map((item, i) => (
                   <div key={i} className="flex items-center justify-between text-xs p-2.5 rounded bg-surface-container border border-glass-border">
@@ -59,7 +59,7 @@ export default function TechnologiesPage() {
                       <CheckCircle size={14} className="text-primary shrink-0" />
                       <span className="font-semibold text-on-surface">{item.name}</span>
                     </div>
-                    <span className="font-label-sm text-[10px] text-on-surface-variant uppercase">{item.level}</span>
+                    <span className="font-label-sm text-[10px] uppercase">{item.level}</span>
                   </div>
                 ))}
               </div>

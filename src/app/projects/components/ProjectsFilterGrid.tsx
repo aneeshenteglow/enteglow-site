@@ -32,10 +32,10 @@ export const ProjectsFilterGrid: React.FC<Props> = ({ projects }) => {
               key={cat}
               type="button"
               onClick={() => setActiveCategory(cat)}
-              className={`relative px-5 py-2.5 rounded-full font-label-sm text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+              className={`relative px-4 py-4 rounded-xl font-label-sm text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                 isSelected
                   ? 'text-on-primary-container font-bold shadow-md'
-                  : 'glass-panel text-on-surface-variant hover:text-on-surface hover:border-primary/30'
+                  : 'glass-panel hover:text-on-surface hover:border-primary/30'
               }`}
             >
               {isSelected && (
@@ -80,7 +80,7 @@ export const ProjectsFilterGrid: React.FC<Props> = ({ projects }) => {
                   <p className="font-body-md text-primary mt-1 font-semibold text-sm">
                     {project.tagline}
                   </p>
-                  <p className="font-body-md text-on-surface-variant text-sm mt-3 leading-relaxed">
+                  <p className="font-body-md text-sm mt-3 leading-relaxed">
                     {project.overview}
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export const ProjectsFilterGrid: React.FC<Props> = ({ projects }) => {
                     <span className="font-label-sm text-xs font-semibold uppercase text-primary block">
                       Problem Domain
                     </span>
-                    <p className="font-body-md text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    <p className="font-body-md text-xs mt-1 leading-relaxed">
                       {project.problem}
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export const ProjectsFilterGrid: React.FC<Props> = ({ projects }) => {
                 </div>
 
                 <div className="space-y-2">
-                  <span className="font-label-sm text-xs font-semibold uppercase text-on-surface-variant block">
+                  <span className="font-label-sm text-xs font-semibold uppercase block">
                     Key Features
                   </span>
                   <ul className="space-y-1.5 text-xs text-on-surface font-medium">

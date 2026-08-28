@@ -75,7 +75,7 @@ export const AIAgentShowcase: React.FC = () => {
               <button
                 key={st.id}
                 onClick={() => setActiveStep(st.id)}
-                className={`p-3 rounded-xl text-xs font-mono font-semibold transition-all flex flex-col items-center gap-1 text-center ${
+                className={`px-4 py-4 rounded-xl text-xs font-mono font-semibold transition-all flex flex-col items-center gap-1 text-center ${
                   isActive
                     ? 'bg-gold-500 text-white shadow-md'
                     : 'text-slate-600 hover:text-navy-900 hover:bg-slate-100'
@@ -109,14 +109,14 @@ export const AIAgentShowcase: React.FC = () => {
               <button
                 disabled={activeStep === 1}
                 onClick={() => setActiveStep((prev) => Math.max(1, prev - 1))}
-                className="px-3 py-1.5 rounded-lg bg-slate-100 text-navy-800 disabled:opacity-40 text-xs font-mono"
+                className="px-4 py-4 rounded-xl bg-slate-100 text-navy-800 disabled:opacity-40 text-xs font-mono"
               >
                 Previous Step
               </button>
               <button
                 disabled={activeStep === 5}
                 onClick={() => setActiveStep((prev) => Math.min(5, prev + 1))}
-                className="px-3.5 py-1.5 rounded-lg bg-gold-500 text-white disabled:opacity-40 text-xs font-mono flex items-center gap-1 shadow-sm"
+                className="px-4 py-4 rounded-xl bg-gold-500 text-white disabled:opacity-40 text-xs font-mono flex items-center gap-1 shadow-sm"
               >
                 <span>Next Step</span>
                 <ArrowRight size={14} />

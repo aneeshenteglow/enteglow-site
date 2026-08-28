@@ -22,7 +22,7 @@ export default function ContactPage() {
           <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
             Start Your Software Project
           </h1>
-          <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+          <p className="mt-4 font-body-lg text-body-lg max-w-3xl mx-auto">
             Schedule a consultation with our senior engineering team to discuss your project requirements, architecture constraints, and product roadmap.
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function ContactPage() {
               <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface text-3xl">
                 Get in Touch
               </h2>
-              <p className="font-body-lg text-on-surface-variant leading-relaxed">
+              <p className="font-body-lg leading-relaxed">
                 Whether you need AI Agent integration, Web App engineering, high-performance Corporate Websites, or Cloud Hosting—our senior team is ready to assist.
               </p>
             </div>
@@ -48,7 +48,7 @@ export default function ContactPage() {
                   <span className="material-symbols-outlined text-2xl">mail</span>
                 </div>
                 <div>
-                  <span className="font-label-sm text-label-sm text-on-surface-variant uppercase block">Email Engineering Team</span>
+                  <span className="font-label-sm text-label-sm uppercase block">Email Engineering Team</span>
                   <a href={`mailto:${companyData.contact.email}`} className="font-body-md font-bold text-on-surface hover:text-primary transition-colors">
                     {companyData.contact.email}
                   </a>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                   <span className="material-symbols-outlined text-2xl">call</span>
                 </div>
                 <div>
-                  <span className="font-label-sm text-label-sm text-on-surface-variant uppercase block">Direct Phone Contact</span>
+                  <span className="font-label-sm text-label-sm uppercase block">Direct Phone Contact</span>
                   <a href={`tel:${companyData.contact.phone}`} className="font-body-md font-bold text-on-surface hover:text-primary transition-colors">
                     {companyData.contact.phone}
                   </a>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                   <span className="material-symbols-outlined text-2xl">location_on</span>
                 </div>
                 <div>
-                  <span className="font-label-sm text-label-sm text-on-surface-variant uppercase block">Headquarters Office</span>
+                  <span className="font-label-sm text-label-sm uppercase block">Headquarters Office</span>
                   <p className="font-body-md font-bold text-on-surface">
                     {companyData.contact.address}
                   </p>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                   <span className="material-symbols-outlined text-2xl">schedule</span>
                 </div>
                 <div>
-                  <span className="font-label-sm text-label-sm text-on-surface-variant uppercase block">Support Hours</span>
+                  <span className="font-label-sm text-label-sm uppercase block">Support Hours</span>
                   <p className="font-body-md font-bold text-on-surface">
                     {companyData.contact.supportHours}
                   </p>

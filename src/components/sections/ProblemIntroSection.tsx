@@ -82,7 +82,7 @@ export const ProblemIntroSection: React.FC = () => {
               Your Business Problem Is <span className="text-gradient">Where We Start.</span>
             </h2>
 
-            <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            <p className="font-body-lg text-body-lg leading-relaxed">
               Manual processes, disconnected software tools, legacy databases, and human error bottlenecks slow business growth. We engineer software that unifies your entire business into one connected system.
             </p>
           </div>
@@ -92,7 +92,7 @@ export const ProblemIntroSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Friction Selection */}
           <ScrollReveal direction="left" delay={0.2} className="lg:col-span-5 space-y-3">
-            <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block px-2 mb-2">
+            <span className="font-label-sm text-label-sm uppercase tracking-wider block px-2 mb-2">
               Identify Your Operational Friction:
             </span>
 
@@ -124,7 +124,7 @@ export const ProblemIntroSection: React.FC = () => {
                         className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
                           isSelected
                             ? 'bg-primary-container text-on-primary-container shadow-md'
-                            : 'bg-surface-container-high text-on-surface-variant'
+                            : 'bg-surface-container-high'
                         }`}
                       >
                         <span className="material-symbols-outlined text-2xl">
@@ -135,7 +135,7 @@ export const ProblemIntroSection: React.FC = () => {
                         <h3 className="font-headline-md text-[18px] text-on-surface font-bold">
                           {friction.title}
                         </h3>
-                        <p className="font-body-md text-on-surface-variant text-xs">
+                        <p className="font-body-md text-xs">
                           {friction.subtitle}
                         </p>
                       </div>
@@ -186,7 +186,7 @@ export const ProblemIntroSection: React.FC = () => {
                         <span className="w-2 h-2 rounded-full bg-error" />
                         <span>Current Friction</span>
                       </div>
-                      <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
+                      <p className="font-body-md text-sm leading-relaxed">
                         {selectedFriction.before}
                       </p>
                     </div>
@@ -205,7 +205,7 @@ export const ProblemIntroSection: React.FC = () => {
 
                   {/* Pipeline Flow Diagram */}
                   <div className="p-6 rounded-xl bg-surface-deep border border-glass-border space-y-4">
-                    <div className="flex items-center justify-between text-xs font-label-sm text-on-surface-variant">
+                    <div className="flex items-center justify-between text-xs font-label-sm">
                       <span className="font-bold text-primary flex items-center gap-1.5 uppercase tracking-wider">
                         <span className="material-symbols-outlined text-sm">auto_graph</span> Digital Transformation Pipeline
                       </span>
@@ -214,7 +214,7 @@ export const ProblemIntroSection: React.FC = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center font-label-sm">
                       <div className="p-4 rounded-xl bg-surface-container border border-glass-border hover:border-primary/30 transition-colors">
-                        <span className="text-[10px] text-on-surface-variant block font-semibold">STEP 1</span>
+                        <span className="text-[10px] block font-semibold">STEP 1</span>
                         <span className="font-bold text-on-surface text-sm">Audit &amp; Spec</span>
                       </div>
                       <div className="p-4 rounded-xl bg-primary-container/20 border border-primary/50 text-primary shadow-sm animate-line-pulse">
@@ -222,7 +222,7 @@ export const ProblemIntroSection: React.FC = () => {
                         <span className="font-bold text-on-surface text-sm">Agile Build</span>
                       </div>
                       <div className="p-4 rounded-xl bg-surface-container-high border border-glass-border hover:border-primary/30 transition-colors">
-                        <span className="text-[10px] text-on-surface-variant block font-semibold">STEP 3</span>
+                        <span className="text-[10px] block font-semibold">STEP 3</span>
                         <span className="font-bold text-on-surface text-sm">Continuous Scale</span>
                       </div>
                     </div>
@@ -230,13 +230,13 @@ export const ProblemIntroSection: React.FC = () => {
 
                   {/* Footer action trigger */}
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <span className="font-body-md text-on-surface-variant text-sm font-medium">
+                    <span className="font-body-md text-sm font-medium">
                       Ready to eliminate this operational friction?
                     </span>
                     <button
                       type="button"
                       onClick={openPlanner}
-                      className="group bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-6 py-3 rounded font-bold shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all cursor-pointer w-full sm:w-auto text-center flex items-center justify-center gap-2"
+                      className="group bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-4 py-4 rounded-xl font-bold shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all cursor-pointer w-full sm:w-auto text-center flex items-center justify-center gap-2"
                     >
                       <span>Scope Transformation</span>
                       <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform duration-300">

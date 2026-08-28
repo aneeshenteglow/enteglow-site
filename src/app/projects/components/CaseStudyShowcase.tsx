@@ -90,7 +90,7 @@ export const CaseStudyShowcase: React.FC = () => {
                   </div>
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="font-bold text-gold-600 hover:text-gold-700 flex items-center gap-1 shrink-0 ml-2"
+                    className="px-4 py-4 rounded-xl font-bold text-gold-600 hover:text-gold-700 flex items-center gap-1 shrink-0 ml-2"
                   >
                     <span>Inspect Architecture</span>
                     <ArrowRight size={14} />
@@ -103,7 +103,7 @@ export const CaseStudyShowcase: React.FC = () => {
           <div className="text-center pt-4">
             <button
               onClick={() => setPlannerOpen(true)}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gold-500 hover:bg-gold-400 text-slate-950 font-bold text-sm shadow-lg shadow-gold-500/25 transition-all"
+              className="inline-flex items-center gap-2 px-4 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-slate-950 font-bold text-sm shadow-lg shadow-gold-500/25 transition-all"
             >
               <Sparkles size={16} />
               <span>Discuss Similar Solution Scope</span>
@@ -126,7 +126,7 @@ export const CaseStudyShowcase: React.FC = () => {
               </div>
               <button
                 onClick={() => setSelectedProject(null)}
-                className="p-2 rounded-full hover:bg-slate-100 text-slate-500 font-bold"
+                className="px-4 py-4 rounded-xl hover:bg-slate-100 text-slate-500 font-bold"
               >
                 <X size={18} />
               </button>
@@ -165,7 +165,7 @@ export const CaseStudyShowcase: React.FC = () => {
             <div className="pt-4 border-t border-slate-100 flex justify-end gap-3">
               <button
                 onClick={() => setSelectedProject(null)}
-                className="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-bold text-xs hover:bg-slate-50"
+                className="px-4 py-4 rounded-xl border border-slate-300 text-slate-700 font-bold text-xs hover:bg-slate-50"
               >
                 Close Spec
               </button>
@@ -174,7 +174,7 @@ export const CaseStudyShowcase: React.FC = () => {
                   setSelectedProject(null);
                   setPlannerOpen(true);
                 }}
-                className="px-5 py-2.5 rounded-xl bg-gold-500 text-slate-950 font-bold text-xs hover:bg-gold-400 shadow-md shadow-gold-500/20"
+                className="px-4 py-4 rounded-xl bg-gold-500 text-slate-950 font-bold text-xs hover:bg-gold-400 shadow-md shadow-gold-500/20"
               >
                 Build Similar Solution →
               </button>

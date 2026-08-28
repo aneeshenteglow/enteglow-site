@@ -63,10 +63,10 @@ export const InteractiveServices: React.FC = () => {
                   });
                   if (matched) setSelectedServiceId(matched.id);
                 }}
-                className={`relative px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-label-sm transition-all duration-300 whitespace-nowrap cursor-pointer ${
+                className={`relative px-4 py-4 rounded-xl text-xs uppercase tracking-wider font-label-sm transition-all duration-300 whitespace-nowrap cursor-pointer ${
                   isActive
                     ? 'text-on-primary-container font-bold shadow-md'
-                    : 'glass-panel text-on-surface-variant hover:text-on-surface hover:border-primary/30'
+                    : 'glass-panel hover:text-on-surface hover:border-primary/30'
                 }`}
               >
                 {isActive && (
@@ -93,7 +93,7 @@ export const InteractiveServices: React.FC = () => {
                   key={service.id}
                   type="button"
                   onClick={() => setSelectedServiceId(service.id)}
-                  className={`w-full text-left p-4.5 rounded-xl transition-all duration-300 flex items-center justify-between border cursor-pointer ${
+                  className={`w-full text-left px-4 py-4 rounded-xl transition-all duration-300 flex items-center justify-between border cursor-pointer ${
                     isSelected
                       ? 'glass-panel border-primary shadow-[0_0_20px_rgba(227,30,36,0.25)] bg-surface-container'
                       : 'glass-panel border-glass-border hover:border-primary/40'
@@ -104,7 +104,7 @@ export const InteractiveServices: React.FC = () => {
                       className={`w-11 h-11 rounded-xl flex items-center justify-center transition-colors duration-300 ${
                         isSelected
                           ? 'bg-primary-container text-on-primary-container shadow-md'
-                          : 'bg-surface-container-high text-on-surface-variant'
+                          : 'bg-surface-container-high'
                       }`}
                     >
                       <DynamicIcon name={service.iconName} size={20} />
@@ -159,7 +159,7 @@ export const InteractiveServices: React.FC = () => {
                   <button
                     type="button"
                     onClick={openPlanner}
-                    className="group bg-primary-container text-on-primary-container font-headline-md text-xs uppercase px-6 py-3 rounded-lg font-bold shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all cursor-pointer flex items-center gap-2 shrink-0"
+                    className="group bg-primary-container text-on-primary-container font-headline-md text-xs uppercase px-4 py-4 rounded-xl font-bold shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all cursor-pointer flex items-center gap-2 shrink-0"
                   >
                     <span>Scope Discipline</span>
                     <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform duration-300">
@@ -168,13 +168,13 @@ export const InteractiveServices: React.FC = () => {
                   </button>
                 </div>
 
-                <p className="font-body-lg text-on-surface-variant text-body-lg leading-relaxed">
+                <p className="font-body-lg text-body-lg leading-relaxed">
                   {selectedService.description}
                 </p>
 
                 {/* Microservice Architecture Flow */}
                 <div className="p-5 rounded-xl bg-surface-deep border border-glass-border space-y-3">
-                  <div className="flex items-center justify-between text-xs font-label-sm text-on-surface-variant">
+                  <div className="flex items-center justify-between text-xs font-label-sm">
                     <span className="font-bold text-primary flex items-center gap-1.5 uppercase tracking-wider">
                       <span className="material-symbols-outlined text-sm">auto_graph</span> Architecture Topology Pipeline
                     </span>
@@ -196,7 +196,7 @@ export const InteractiveServices: React.FC = () => {
                       <span className="material-symbols-outlined text-sm">warning</span>
                       <span>Problems Solved</span>
                     </div>
-                    <ul className="space-y-1.5 text-on-surface-variant">
+                    <ul className="space-y-1.5">
                       {selectedService.problemsSolved.map((p, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-error shrink-0 mt-1.5" />
@@ -240,7 +240,7 @@ export const InteractiveServices: React.FC = () => {
                 {/* Tech Stack Tags */}
                 <div className="pt-4 border-t border-glass-border flex flex-wrap items-center justify-between gap-3 text-xs">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-label-sm text-on-surface-variant uppercase font-semibold">
+                    <span className="font-label-sm uppercase font-semibold">
                       Tech Stack:
                     </span>
                     {selectedService.technologies.map((t, i) => (

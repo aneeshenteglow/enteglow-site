@@ -24,7 +24,7 @@ export default function SolutionsPage() {
           <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
             Complete Business Solutions
           </h1>
-          <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+          <p className="mt-4 font-body-lg text-body-lg max-w-3xl mx-auto">
             We structure solutions around tangible business goals—eliminating operational bottlenecks, automating manual workflows, and delivering high-concurrency enterprise applications.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function SolutionsPage() {
                   <p className="font-body-md text-primary mt-1 font-semibold text-sm">
                     {solution.tagline}
                   </p>
-                  <p className="font-body-md text-on-surface-variant text-sm mt-3 leading-relaxed">
+                  <p className="font-body-md text-sm mt-3 leading-relaxed">
                     {solution.description}
                   </p>
                 </div>
@@ -59,13 +59,13 @@ export default function SolutionsPage() {
                     <TrendingUp size={14} />
                     <span>Business Impact &amp; Value</span>
                   </div>
-                  <p className="font-body-md text-xs text-on-surface-variant leading-relaxed">
+                  <p className="font-body-md text-xs leading-relaxed">
                     {solution.businessOutcome}
                   </p>
                 </div>
 
                 <div className="space-y-2">
-                  <span className="font-label-sm text-xs font-semibold uppercase text-on-surface-variant block">
+                  <span className="font-label-sm text-xs font-semibold uppercase block">
                     Core Functionality Highlights
                   </span>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-on-surface">

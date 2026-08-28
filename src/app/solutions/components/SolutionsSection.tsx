@@ -192,7 +192,7 @@ export const SolutionsSection: React.FC = () => {
                   </p>
                   <button
                     onClick={() => setPlannerOpen(true)}
-                    className="px-5 py-2.5 rounded-xl bg-gold-500 text-slate-950 font-bold text-xs hover:bg-gold-400 transition-colors flex items-center gap-2 shadow-glow-gold"
+                    className="px-4 py-4 rounded-xl bg-gold-500 text-slate-950 font-bold text-xs hover:bg-gold-400 transition-colors flex items-center gap-2 shadow-glow-gold"
                   >
                     <span>Scope This Solution</span>
                     <ArrowRight size={14} />

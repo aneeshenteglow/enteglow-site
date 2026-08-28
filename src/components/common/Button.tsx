@@ -22,12 +22,12 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    'group relative inline-flex items-center justify-center font-label-sm text-label-sm uppercase tracking-wider font-bold transition-all duration-300 active:scale-[0.97] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer rounded overflow-hidden';
+    'group relative inline-flex items-center justify-center font-label-sm text-label-sm uppercase tracking-wider font-bold transition-all duration-300 active:scale-[0.97] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer rounded-xl overflow-hidden';
 
   const sizeStyles = {
-    sm: 'px-4 py-2 gap-1.5 text-xs',
-    md: 'px-6 py-3 gap-2 text-sm',
-    lg: 'px-8 py-4 gap-2.5 text-base',
+    sm: 'px-4 py-4 gap-1.5 text-xs',
+    md: 'px-4 py-4 gap-2 text-sm',
+    lg: 'px-4 py-4 gap-2.5 text-base',
   };
 
   const variantStyles = {
@@ -36,8 +36,8 @@ export const Button: React.FC<ButtonProps> = ({
     secondary:
       'glass-panel text-on-surface hover:border-primary hover:text-primary glow-hover hover:-translate-y-0.5',
     outline:
-      'border border-primary/40 text-primary hover:bg-primary-container/10 hover:border-primary rounded hover:-translate-y-0.5',
-    ghost: 'text-on-surface-variant hover:text-primary transition-colors',
+      'border border-primary/40 text-primary hover:bg-primary-container/10 hover:border-primary rounded-xl hover:-translate-y-0.5',
+    ghost: 'hover:text-primary transition-colors',
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;

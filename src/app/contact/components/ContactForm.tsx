@@ -26,13 +26,13 @@ export const ContactForm: React.FC = () => {
             <span className="material-symbols-outlined text-4xl">check_circle</span>
           </div>
           <h3 className="font-headline-lg text-headline-lg-mobile text-on-surface text-3xl">Project Inquiry Received!</h3>
-          <p className="font-body-md text-on-surface-variant max-w-md mx-auto">
+          <p className="font-body-md max-w-md mx-auto">
             Thank you for reaching out. A senior software architect from Enteglow will review your submission and contact you within 24 business hours.
           </p>
           <button
             type="button"
             onClick={() => setSubmitted(false)}
-            className="glass-panel text-on-surface font-headline-md text-[14px] uppercase px-6 py-3 rounded font-bold hover:border-primary hover:text-primary transition-all glow-hover"
+            className="glass-panel text-on-surface font-headline-md text-[14px] uppercase px-4 py-4 rounded-xl font-bold hover:border-primary hover:text-primary transition-all glow-hover"
           >
             Submit Another Inquiry
           </button>
@@ -41,7 +41,7 @@ export const ContactForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <h3 className="font-headline-md text-headline-md text-on-surface text-2xl">Project Discovery Inquiry</h3>
-            <p className="font-body-md text-on-surface-variant text-sm mt-1">
+            <p className="font-body-md text-sm mt-1">
               Fill out your technical requirements below to initiate project evaluation.
             </p>
           </div>
@@ -114,7 +114,7 @@ export const ContactForm: React.FC = () => {
 
           <button
             type="submit"
-            className="group bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-8 py-4 rounded font-bold shimmer-btn hover:shadow-[0_0_25px_rgba(227,30,36,0.45)] transition-all transform hover:-translate-y-0.5 w-full cursor-pointer text-center flex items-center justify-center gap-2"
+            className="group bg-primary-container text-on-primary-container font-headline-md text-[14px] uppercase px-4 py-4 rounded-xl font-bold shimmer-btn hover:shadow-[0_0_25px_rgba(227,30,36,0.45)] transition-all transform hover:-translate-y-0.5 w-full cursor-pointer text-center flex items-center justify-center gap-2"
           >
             <span>Submit Technical Inquiry</span>
             <span className="material-symbols-outlined text-base group-hover:translate-x-1.5 transition-transform duration-300">

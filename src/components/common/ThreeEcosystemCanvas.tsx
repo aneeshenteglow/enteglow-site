@@ -613,8 +613,8 @@ export const ThreeEcosystemCanvas: React.FC<Props> = ({ onSelectNode }) => {
                   isHovered
                     ? 'bg-primary/25 border border-primary text-on-surface scale-110 shadow-[0_0_20px_rgba(227,30,36,0.5)] opacity-100'
                     : isProtected
-                    ? 'bg-surface-deep/30 border border-glass-border/20 text-on-surface-variant/40 scale-85 opacity-15 blur-[0.5px]'
-                    : 'bg-surface-deep/50 border border-glass-border/40 text-on-surface-variant/70 hover:border-primary/50 hover:text-on-surface hover:scale-105 hover:opacity-100 opacity-45'
+                    ? 'bg-surface-deep/30 border border-glass-border/20/40 scale-85 opacity-15 blur-[0.5px]'
+                    : 'bg-surface-deep/50 border border-glass-border/40/70 hover:border-primary/50 hover:text-on-surface hover:scale-105 hover:opacity-100 opacity-45'
                 }`}
               >
                 {/* Node Icon */}
@@ -623,8 +623,8 @@ export const ThreeEcosystemCanvas: React.FC<Props> = ({ onSelectNode }) => {
                     isHovered
                       ? 'text-primary'
                       : isProtected
-                      ? 'text-on-surface-variant/30'
-                      : 'text-on-surface-variant/70 group-hover:text-primary'
+                      ? '/30'
+                      : '/70 group-hover:text-primary'
                   }`}
                 >
                   {node.icon}
@@ -656,12 +656,12 @@ export const ThreeEcosystemCanvas: React.FC<Props> = ({ onSelectNode }) => {
                 <p className="text-xs font-medium text-on-surface mb-2 leading-snug">
                   {node.shortDesc}
                 </p>
-                <div className="pt-2 border-t border-glass-border/40 text-[11px] text-on-surface-variant space-y-1">
+                <div className="pt-2 border-t border-glass-border/40 text-[11px] space-y-1">
                   <div className="flex justify-between">
-                    <span className="text-on-surface-variant/70">Key Metric:</span>
+                    <span className="/70">Key Metric:</span>
                     <span className="font-semibold text-primary">{node.metrics}</span>
                   </div>
-                  <div className="text-[10px] font-mono text-on-surface-variant/80 truncate">
+                  <div className="text-[10px] font-mono/80 truncate">
                     {node.techHighlight}
                   </div>
                 </div>

@@ -29,10 +29,10 @@ export const ArchitectsAboutSection: React.FC = () => {
               <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6 text-on-surface">
                 Architects of the Digital Enterprise
               </h2>
-              <p className="text-on-surface-variant font-body-lg text-body-lg mb-4 leading-relaxed">
+              <p className="font-body-lg text-body-lg mb-4 leading-relaxed">
                 We are a collective of senior engineers, product designers, and systems architects dedicated to solving complex operational challenges. Our methodology bridges the gap between ambitious business goals and technical reality.
               </p>
-              <p className="text-on-surface-variant font-body-lg text-body-lg mb-8 leading-relaxed">
+              <p className="font-body-lg text-body-lg mb-8 leading-relaxed">
                 By combining deep domain expertise with modern software development practices, we deliver solutions that are robust, scalable, and beautifully designed.
               </p>
               <ul className="space-y-4 mb-10">
@@ -57,7 +57,7 @@ export const ArchitectsAboutSection: React.FC = () => {
               </ul>
               <Link
                 href="/about"
-                className="group bg-primary-container text-on-primary-container font-headline-md text-[16px] uppercase px-8 py-4 rounded font-bold shimmer-btn hover:shadow-[0_0_25px_rgba(227,30,36,0.45)] transition-all transform hover:-translate-y-1 inline-flex items-center gap-2.5 cursor-pointer"
+                className="group bg-primary-container text-on-primary-container font-headline-md text-[16px] uppercase px-4 py-4 rounded-xl font-bold shimmer-btn hover:shadow-[0_0_25px_rgba(227,30,36,0.45)] transition-all transform hover:-translate-y-1 inline-flex items-center gap-2.5 cursor-pointer"
               >
                 <span>Meet the Team</span>
                 <span className="material-symbols-outlined group-hover:translate-x-1.5 transition-transform duration-300">
@@ -102,7 +102,7 @@ export const ArchitectsAboutSection: React.FC = () => {
                 <span className="text-primary font-headline-lg text-[34px] font-bold leading-none mb-1">
                   <AnimatedCounter value="15+" />
                 </span>
-                <span className="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest text-center w-24 leading-tight">
+                <span className="text-label-sm font-label-sm uppercase tracking-widest text-center w-24 leading-tight">
                   Years Experience
                 </span>
               </div>

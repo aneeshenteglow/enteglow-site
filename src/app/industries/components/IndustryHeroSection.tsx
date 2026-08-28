@@ -77,7 +77,7 @@ export const IndustryHeroSection: React.FC<IndustryHeroSectionProps> = ({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-10 leading-relaxed"
+          className="font-body-lg text-body-lg max-w-3xl mx-auto mb-10 leading-relaxed"
         >
           We don&apos;t build generic web templates. We engineer mission-critical software tailored to complex operational environments—from IIoT factory floors and fleet telemetry to HIPAA medical workflows and high-speed financial calculations.
         </motion.p>
@@ -89,7 +89,7 @@ export const IndustryHeroSection: React.FC<IndustryHeroSectionProps> = ({
           transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto"
         >
-          <span className="text-xs text-on-surface-variant font-label-sm uppercase tracking-wider mr-2 hidden sm:inline-block">
+          <span className="text-xs font-label-sm uppercase tracking-wider mr-2 hidden sm:inline-block">
             Select Domain:
           </span>
           {industriesData.map((ind) => {
@@ -99,10 +99,10 @@ export const IndustryHeroSection: React.FC<IndustryHeroSectionProps> = ({
                 key={ind.id}
                 type="button"
                 onClick={() => scrollToExplorer(ind.id)}
-                className={`text-xs font-label-sm uppercase px-3.5 py-1.5 rounded-full transition-all duration-300 cursor-pointer flex items-center gap-1.5 ${
+                className={`text-xs font-label-sm uppercase px-4 py-4 rounded-xl transition-all duration-300 cursor-pointer flex items-center gap-1.5 ${
                   isSelected
                     ? 'bg-primary-container text-on-primary-container font-bold shadow-[0_0_15px_rgba(227,30,36,0.4)] scale-105'
-                    : 'glass-panel text-on-surface-variant hover:text-primary hover:border-primary/40'
+                    : 'glass-panel hover:text-primary hover:border-primary/40'
                 }`}
               >
                 <span

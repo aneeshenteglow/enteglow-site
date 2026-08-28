@@ -41,7 +41,7 @@ export const InteractiveDomainExplorer: React.FC<InteractiveDomainExplorerProps>
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
               Explore Industry <span className="text-gradient">Workflows &amp; Transformations.</span>
             </h2>
-            <p className="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="font-body-lg text-body-lg max-w-2xl mx-auto leading-relaxed">
               Select an enterprise domain below to inspect real-world operational bottlenecks, animated software workflow pipelines, and quantified engineering ROI.
             </p>
           </div>
@@ -56,10 +56,10 @@ export const InteractiveDomainExplorer: React.FC<InteractiveDomainExplorerProps>
                 key={ind.id}
                 type="button"
                 onClick={() => onSelectIndustry(ind.id)}
-                className={`relative px-5 py-3 rounded-xl font-label-sm text-xs uppercase tracking-wider transition-all duration-300 shrink-0 cursor-pointer flex items-center gap-2.5 ${
+                className={`relative px-4 py-4 rounded-xl font-label-sm text-xs uppercase tracking-wider transition-all duration-300 shrink-0 cursor-pointer flex items-center gap-2.5 ${
                   isSelected
                     ? 'text-on-primary-container font-bold shadow-lg'
-                    : 'glass-panel text-on-surface-variant hover:text-on-surface hover:border-primary/30'
+                    : 'glass-panel hover:text-on-surface hover:border-primary/30'
                 }`}
               >
                 {isSelected && (
@@ -99,7 +99,7 @@ export const InteractiveDomainExplorer: React.FC<InteractiveDomainExplorerProps>
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
+                    <span className="text-xs font-label-sm uppercase tracking-wider font-semibold">
                       Enterprise Domain
                     </span>
                     <span className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -121,7 +121,7 @@ export const InteractiveDomainExplorer: React.FC<InteractiveDomainExplorerProps>
                 <button
                   type="button"
                   onClick={openPlanner}
-                  className="group bg-primary-container text-on-primary-container font-headline-md text-xs uppercase px-6 py-3 rounded-lg font-bold shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all cursor-pointer flex items-center gap-2"
+                  className="group bg-primary-container text-on-primary-container font-headline-md text-xs uppercase px-4 py-4 rounded-xl font-bold shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all cursor-pointer flex items-center gap-2"
                 >
                   <span>Scope Solution</span>
                   <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform duration-300">
@@ -138,7 +138,7 @@ export const InteractiveDomainExplorer: React.FC<InteractiveDomainExplorerProps>
                   <span className="material-symbols-outlined text-sm">schema</span>
                   Industry Workflow Pipeline
                 </span>
-                <span className="text-xs text-on-surface-variant font-label-sm uppercase">
+                <span className="text-xs font-label-sm uppercase">
                   5-Stage Architecture Stream
                 </span>
               </div>
@@ -154,7 +154,7 @@ export const InteractiveDomainExplorer: React.FC<InteractiveDomainExplorerProps>
                         0{idx + 1}
                       </span>
                       {idx < activeIndustry.workflowSteps.length - 1 && (
-                        <span className="material-symbols-outlined text-xs text-on-surface-variant hidden sm:inline-block group-hover:translate-x-1 group-hover:text-primary transition-all">
+                        <span className="material-symbols-outlined text-xs hidden sm:inline-block group-hover:translate-x-1 group-hover:text-primary transition-all">
                           chevron_right
                         </span>
                       )}
@@ -174,7 +174,7 @@ export const InteractiveDomainExplorer: React.FC<InteractiveDomainExplorerProps>
                   <span className="w-2 h-2 rounded-full bg-error" />
                   <span>Legacy Friction</span>
                 </div>
-                <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
+                <p className="font-body-md text-sm leading-relaxed">
                   {activeIndustry.frictionBefore}
                 </p>
               </div>
@@ -193,7 +193,7 @@ export const InteractiveDomainExplorer: React.FC<InteractiveDomainExplorerProps>
             {/* Capabilities & Tech Tags */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-glass-border">
               <div>
-                <span className="text-xs font-label-sm uppercase tracking-wider text-on-surface-variant block mb-3 font-semibold">
+                <span className="text-xs font-label-sm uppercase tracking-wider block mb-3 font-semibold">
                   Representative Software Products:
                 </span>
                 <ul className="space-y-2">
@@ -207,7 +207,7 @@ export const InteractiveDomainExplorer: React.FC<InteractiveDomainExplorerProps>
               </div>
 
               <div>
-                <span className="text-xs font-label-sm uppercase tracking-wider text-on-surface-variant block mb-3 font-semibold">
+                <span className="text-xs font-label-sm uppercase tracking-wider block mb-3 font-semibold">
                   Relevant Engineering Tech Stack:
                 </span>
                 <div className="flex flex-wrap gap-2">

@@ -35,9 +35,9 @@ export const Header: React.FC = () => {
               height={32}
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-headline-md text-xl tracking-wider font-bold text-on-surface">
+            {/* <span className="font-headline-md text-xl tracking-wider font-bold text-on-surface">
               ENTE<span className="text-primary">GLOW</span>
-            </span>
+            </span> */}
           </Link>
 
           {/* Navigation Links */}
@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
                     className={`${
                       isActive
                         ? 'text-primary font-bold'
-                        : 'text-on-surface-variant font-medium group-hover:text-on-surface'
+                        : 'font-medium group-hover:text-on-surface'
                     }`}
                   >
                     {link.label}
@@ -79,7 +79,7 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={openPlanner}
-              className="group bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase px-6 py-2.5 rounded font-bold shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all transform hover:-translate-y-0.5 active:scale-95 flex items-center gap-2 cursor-pointer"
+              className="group bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase px-4 py-4 rounded-xl font-bold shimmer-btn hover:shadow-[0_0_20px_rgba(227,30,36,0.4)] transition-all transform hover:-translate-y-0.5 active:scale-95 flex items-center gap-2 cursor-pointer"
             >
               <span>Book a Meeting</span>
               <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform duration-300">
@@ -90,7 +90,7 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={() => setMobileNavOpen(true)}
-              className="md:hidden text-on-surface flex items-center justify-center p-1.5 rounded-lg border border-glass-border glass-panel"
+              className="md:hidden text-on-surface flex items-center justify-center px-4 py-4 rounded-xl border border-glass-border glass-panel"
               aria-label="Open navigation menu"
             >
               <span className="material-symbols-outlined text-2xl">menu</span>

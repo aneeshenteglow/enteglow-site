@@ -78,7 +78,7 @@ export const TechSpectrum: React.FC = () => {
           <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
             Modern Technology Selected for Performance &amp; Longevity
           </h2>
-          <p className="font-body-lg text-on-surface-variant">
+          <p className="font-body-lg">
             We select battle-tested software frameworks and enterprise cloud infrastructure that guarantee high maintainability, security, and long-term business value.
           </p>
         </div>
@@ -93,12 +93,12 @@ export const TechSpectrum: React.FC = () => {
               <span className="font-label-sm text-xs font-bold text-primary uppercase tracking-wider block">
                 Enterprise Compliance &amp; Security Standards
               </span>
-              <p className="font-body-md text-xs text-on-surface-variant font-medium">
+              <p className="font-body-md text-xs font-medium">
                 SOC 2 Type II readiness, OWASP Top 10 security audits, static code analysis, and encrypted data at rest.
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-4 font-label-sm text-xs text-on-surface-variant shrink-0 uppercase">
+          <div className="flex items-center gap-4 font-label-sm text-xs shrink-0 uppercase">
             <span className="flex items-center gap-1">
               <Lock size={12} className="text-primary" /> AES-256 Encryption
             </span>
@@ -111,7 +111,7 @@ export const TechSpectrum: React.FC = () => {
         {/* Interactive Tech Categories & Matrix */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-4 space-y-2">
-            <span className="font-label-sm text-xs text-on-surface-variant uppercase tracking-wider block px-2">
+            <span className="font-label-sm text-xs uppercase tracking-wider block px-2">
               Technology Stack Layers:
             </span>
             {TECH_CATEGORIES.map((cat) => {
@@ -120,10 +120,10 @@ export const TechSpectrum: React.FC = () => {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCat(cat)}
-                  className={`w-full text-left p-3.5 rounded-xl transition-all flex items-center justify-between border cursor-pointer ${
+                  className={`w-full text-left px-4 py-4 rounded-xl transition-all flex items-center justify-between border cursor-pointer ${
                     isActive
                       ? 'glass-panel border-primary shadow-[0_0_15px_rgba(227,30,36,0.15)] bg-surface-container font-bold text-on-surface'
-                      : 'glass-panel text-on-surface-variant hover:text-on-surface border-glass-border'
+                      : 'glass-panel hover:text-on-surface border-glass-border'
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -144,15 +144,15 @@ export const TechSpectrum: React.FC = () => {
                 <span className="w-2.5 h-2.5 rounded-full bg-primary" />
                 <h3 className="font-headline-md text-lg text-on-surface">{activeCat.name} Engineering Layer</h3>
               </div>
-              <span className="font-label-sm text-xs text-on-surface-variant font-semibold uppercase">Production Ready</span>
+              <span className="font-label-sm text-xs font-semibold uppercase">Production Ready</span>
             </div>
 
-            <p className="font-body-md text-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-md text-sm leading-relaxed">
               {activeCat.purpose}
             </p>
 
             <div className="space-y-3">
-              <span className="font-label-sm text-xs text-on-surface-variant uppercase font-bold block">
+              <span className="font-label-sm text-xs uppercase font-bold block">
                 Primary Frameworks &amp; Tools:
               </span>
               <div className="flex flex-wrap gap-2">

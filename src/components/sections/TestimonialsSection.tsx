@@ -51,7 +51,7 @@ export const TestimonialsSection: React.FC = () => {
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface">
               Trusted by Industry Leaders
             </h2>
-            <p className="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">
+            <p className="font-body-lg text-body-lg max-w-2xl mx-auto">
               Delivering high-impact technology solutions that drive real-world business results.
             </p>
           </div>
@@ -69,7 +69,7 @@ export const TestimonialsSection: React.FC = () => {
                   <span className="material-symbols-outlined text-[24px]">format_quote</span>
                 </div>
 
-                <p className="text-on-surface-variant font-body-md italic mb-8 flex-grow leading-relaxed">
+                <p className="font-body-md italic mb-8 flex-grow leading-relaxed">
                   &quot;{item.quote}&quot;
                 </p>
 
@@ -83,7 +83,7 @@ export const TestimonialsSection: React.FC = () => {
                     <h4 className="text-on-surface font-headline-md text-[16px] font-bold group-hover:text-primary transition-colors duration-300">
                       {item.name}
                     </h4>
-                    <p className="text-on-surface-variant text-xs uppercase tracking-wider font-medium">
+                    <p className="text-xs uppercase tracking-wider font-medium">
                       {item.role}
                     </p>
                   </div>
