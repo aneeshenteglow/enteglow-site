@@ -10,8 +10,7 @@ interface MobileNavProps {
   onOpenPlanner?: () => void;
 }
 
-const ENTEGLOW_LOGO_URL =
-  'https://lh3.googleusercontent.com/aida/AP1WRLuw0xLnjBYNiRdgRTHg_Xnx7s3668S0IvyT8RVwnv7bXUGX9qYOzX9JXqb8HC0okibDP_r453hJUXl3_P4K_hPtCSPagq2aqXWKkZWW0aolMCtBMJ8uv2lXXEJsDezt7tN5bqgFtS_KSXCvxa6nrmMXb746kBzBscfff4zsH2vxN2mVg1BIKIcGBVFqD6G-ZWnypuFnKFbVNPbD0_PkURah0NeLbptJuN3sMm_o79oAjN091oxZ6ijSQnXw';
+const ENTEGLOW_LOGO_URL = 'logo.png';
 
 export const MobileNav: React.FC<MobileNavProps> = ({
   isOpen,
@@ -30,7 +29,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
       />
 
       {/* Drawer */}
-      <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-surface-deep/95 backdrop-blur-2xl shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l border-glass-border">
+      <div className="fixed inset-y-0 right-0 w-full bg-surface-deep/95 backdrop-blur-2xl shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l border-glass-border">
         <div className="space-y-6">
           <div className="flex items-center justify-between border-b border-glass-border pb-4">
             <Link href="/" onClick={onClose} className="flex items-center gap-3">
