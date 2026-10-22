@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MobileNav } from './MobileNav';
 import { ProjectPlannerModal } from '@/components/common/ProjectPlannerModal';
+import { HomeHeader } from '@/app/_home/components/HomeHeader';
 
 const ENTEGLOW_LOGO_URL =
   'https://lh3.googleusercontent.com/aida/AP1WRLuSl1wksfHbxl-SjNQycyf8pz9gS_hPn8Me6Vdo-7ySZBvIY_3If95ZpVbhdyCLF30fVMjHycV3V99zXHdOxNz2pcp8WKM6l6iscFcodw0NFh0IbJ7I1ZxKWAWBbIRXGsLao_NgjkQEBzklSBoK4htPoZPWkZFsnBJef9fPF6tZ2X1xg7-CIjvf0Gd5PFy3VLBtlmrL1exA7-hIqfqfTdy-VqIfgUp6KHgq7o8ZvZ0se1cE-MBK3B4M6pka';
@@ -21,6 +22,9 @@ export const Header: React.FC = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [plannerOpen, setPlannerOpen] = useState(false);
   const pathname = usePathname();
+
+  // The homepage uses the Brand Book 2026 header; inner pages keep this one.
+  if (pathname === '/') return <HomeHeader />;
 
   return (
     <>

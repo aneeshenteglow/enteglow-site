@@ -2,11 +2,18 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { HomeFooter } from '@/app/_home/components/HomeFooter';
 
 const ENTEGLOW_LOGO_URL =
   'https://lh3.googleusercontent.com/aida/AP1WRLuSl1wksfHbxl-SjNQycyf8pz9gS_hPn8Me6Vdo-7ySZBvIY_3If95ZpVbhdyCLF30fVMjHycV3V99zXHdOxNz2pcp8WKM6l6iscFcodw0NFh0IbJ7I1ZxKWAWBbIRXGsLao_NgjkQEBzklSBoK4htPoZPWkZFsnBJef9fPF6tZ2X1xg7-CIjvf0Gd5PFy3VLBtlmrL1exA7-hIqfqfTdy-VqIfgUp6KHgq7o8ZvZ0se1cE-MBK3B4M6pka';
 
 export const Footer: React.FC = () => {
+  const pathname = usePathname();
+
+  // The homepage uses the Brand Book 2026 footer; inner pages keep this one.
+  if (pathname === '/') return <HomeFooter />;
+
   return (
     <footer className="w-full rounded-t-[32px] border-t border-surface-variant bg-surface-container-lowest transition-all duration-200 mt-24">
       <div className="max-w-container-max mx-auto px-gutter py-section-padding-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">

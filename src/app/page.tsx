@@ -1,35 +1,27 @@
 import React from 'react';
-import { HeroSection } from '@/components/sections/HeroSection';
-import { ServicesBentoSection } from '@/components/sections/ServicesBentoSection';
-import { ArchitectsAboutSection } from '@/components/sections/ArchitectsAboutSection';
-import { ProblemIntroSection } from '@/components/sections/ProblemIntroSection';
-import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
-import { WhyEntelgowSection } from '@/components/sections/WhyEntelgowSection';
-import { CinematicCTA } from '@/components/sections/CinematicCTA';
+import { HeroSlider } from './_home/components/HeroSlider';
+import { AboutSection } from './_home/components/AboutSection';
+import { ServicesSection } from './_home/components/ServicesSection';
+import { PurposeSection } from './_home/components/PurposeSection';
+import { TechStackSection } from './_home/components/TechStackSection';
+import { TestimonialsSection } from './_home/components/TestimonialsSection';
+import { InfrastructureSection } from './_home/components/InfrastructureSection';
+import { ClosingCta } from './_home/components/ClosingCta';
+import { RevealObserver } from './_home/components/RevealObserver';
+import './_home/home.css';
 
 export default function Home() {
   return (
-    <div className="space-y-0 overflow-x-hidden bg-background">
-      {/* 1. Lumina Hero & 3D Interactive WebGL Mesh Background */}
-      <HeroSection />
-
-      {/* 2. Bento Grid Expertise (AI, Web Apps, Website Dev, Hosting) */}
-      <ServicesBentoSection />
-
-      {/* 3. Architects of the Digital Enterprise & Asymmetric Composition */}
-      <ArchitectsAboutSection />
-
-      {/* 4. Operational Friction vs Enteglow Solution Matrix */}
-      <ProblemIntroSection />
-
-      {/* 5. Trusted by Industry Leaders / Executive Testimonials Grid */}
+    <div id="home-content" className="eg-home overflow-x-clip bg-ink-950 font-sans text-mist-200">
+      <HeroSlider />
+      <AboutSection />
+      <ServicesSection />
+      <PurposeSection />
+      <TechStackSection />
       <TestimonialsSection />
-
-      {/* 6. Enterprise Reliability, Security & IP Ownership Guarantees */}
-      <WhyEntelgowSection />
-
-      {/* 7. Final Cinematic Call-to-Action */}
-      <CinematicCTA />
+      <InfrastructureSection />
+      <ClosingCta />
+      <RevealObserver />
     </div>
   );
 }

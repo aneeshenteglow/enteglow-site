@@ -10,6 +10,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Enteglow Brand Book 2026 tokens (used by the homepage)
+        brand: {
+          100: "#FFE9E3",
+          400: "#F06A4F",
+          500: "#C63B22",
+          600: "#9E2F1B",
+        },
+        ink: {
+          950: "#070708",
+          900: "#0A0A0B",
+          850: "#101113",
+          800: "#17181A",
+          750: "#202226",
+          700: "#292B30",
+          600: "#3A3C42",
+          line: "#2C2E33",
+        },
+        mist: {
+          100: "#FFFFFF",
+          200: "#F5F5F5",
+          300: "#D7D8DC",
+          500: "#A5A7AD",
+          600: "#777A82",
+        },
         primary: "#006492",
         "outline-variant": "#bdc8d2",
         "vibrant-purple": "#8B5CF6",
@@ -98,6 +122,15 @@ const config: Config = {
         "headline-md": ["32px", { lineHeight: "1.3", letterSpacing: "0em", fontWeight: "600" }],
         "display-lg": ["72px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
         "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }]
+      },
+      transitionTimingFunction: {
+        standard: "cubic-bezier(.2,.8,.2,1)",
+        emphasis: "cubic-bezier(.16,1,.3,1)",
+        smooth: "cubic-bezier(.4,0,.2,1)",
+      },
+      transitionDuration: {
+        160: "160ms",
+        280: "280ms",
       },
       boxShadow: {
         glass: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",

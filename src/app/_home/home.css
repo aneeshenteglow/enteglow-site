@@ -1,0 +1,292 @@
+/* Homepage-only styles (Enteglow Brand Book 2026). Everything is prefixed `eg-` or scoped to `.eg-home`. */
+
+body:has(.eg-home) {
+  background: #0a0a0b;
+}
+
+.eg-home ::selection,
+.eg-chrome ::selection {
+  background: #c63b22;
+  color: #fff;
+}
+
+.eg-home :focus-visible,
+.eg-chrome :focus-visible {
+  outline: 2px solid #f06a4f;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Buttons */
+.eg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1.375rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 650;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-btn svg {
+  transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-btn:hover {
+  transform: translateY(-2px);
+}
+.eg-btn:hover svg {
+  transform: translateX(3px);
+}
+.eg-btn:active {
+  transform: translateY(0);
+}
+.eg-btn-primary {
+  background: #c63b22;
+  color: #fff;
+}
+.eg-btn-primary:hover {
+  box-shadow: 0 10px 30px -10px rgba(240, 106, 79, 0.65);
+}
+.eg-btn-primary:active {
+  background: #9e2f1b;
+}
+.eg-btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #3a3c42;
+}
+.eg-btn-secondary:hover {
+  border-color: #6b6e76;
+}
+
+/* Atmospheric hero background: warm glow + masked grid (brand book cover treatment). */
+.eg-atmosphere {
+  background: radial-gradient(circle at 78% 30%, rgba(198, 59, 34, 0.2), transparent 34%),
+    radial-gradient(circle at 8% 90%, rgba(198, 59, 34, 0.08), transparent 30%), #070708;
+}
+.eg-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 85%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 85%);
+}
+
+/* Hero slides are stacked in one grid cell so the hero never changes height. */
+/* Hero slider ------------------------------------------------------------ */
+
+/* Slides share one grid cell, so the hero height never changes between slides. */
+.eg-hero .eg-slide {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  transition: visibility 0s linear 450ms;
+}
+.eg-hero .eg-slide[data-active='true'] {
+  visibility: visible;
+  transition: none;
+}
+
+/* Outgoing content leaves first (380ms); incoming content enters after it, in sequence.
+   --eg-dir (1 = next, -1 = previous) sets the horizontal direction. */
+.eg-hero[data-animate='true'] .eg-slide[data-active='false'] [data-slide-item] {
+  animation: eg-slide-out 380ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.eg-hero[data-animate='true'] .eg-slide[data-active='true'] [data-slide-item] {
+  animation: eg-slide-in 750ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(320ms + var(--eg-delay, 0ms));
+}
+@keyframes eg-slide-in {
+  from {
+    opacity: 0;
+    transform: translate3d(calc(var(--eg-dir, 1) * 56px), 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes eg-slide-out {
+  to {
+    opacity: 0;
+    transform: translate3d(calc(var(--eg-dir, 1) * -56px), 0, 0);
+  }
+}
+
+/* Background visual: cross-fade plus a slow push-in while active. */
+.eg-hero-visual {
+  opacity: 0;
+  transition: opacity 900ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.eg-hero-visual[data-active='true'] {
+  opacity: 1;
+}
+.eg-hero-visual .eg-kenburns {
+  transform: scale(1);
+  transition: transform 0s linear 900ms;
+}
+.eg-hero-visual[data-active='true'] .eg-kenburns {
+  transform: scale(1.08);
+  transition: transform 7000ms cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.eg-hero-photo {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 28%, #000 74%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 28%, #000 74%, transparent 100%);
+}
+.eg-hero-svg {
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 35%, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 35%, transparent 72%);
+}
+
+.eg-ring-spin {
+  animation: eg-spin 90s linear infinite;
+}
+@keyframes eg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.eg-scroll-dot {
+  animation: eg-scroll 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes eg-scroll {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 9px);
+  }
+}
+
+.eg-hero[data-animate='true'] .eg-num {
+  animation: eg-num-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes eg-num-in {
+  from {
+    opacity: 0;
+    transform: translateY(45%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.eg-hero[data-animate='true'] .eg-rail-item {
+  animation: eg-fade 600ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+@keyframes eg-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Side labels and the large slide number need width and height; below that they would crowd
+   the headline, so the compact counter beside the controls takes over. */
+.eg-hero-rail,
+.eg-hero-num,
+.eg-hero-counter {
+  display: none;
+}
+@media (min-width: 640px) {
+  .eg-hero-counter {
+    display: inline;
+  }
+}
+@media (min-width: 1280px) and (min-height: 820px) {
+  .eg-hero-rail {
+    display: flex;
+  }
+  .eg-hero-num {
+    display: block;
+  }
+  .eg-hero-counter {
+    display: none;
+  }
+}
+
+.eg-cta-circle {
+  transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1), background-color 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-cta-circle::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 106, 79, 0.45);
+  transition: inset 280ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-cta-circle:hover {
+  transform: scale(1.05);
+}
+.eg-cta-circle:hover::after {
+  inset: -12px;
+  opacity: 0.55;
+}
+.eg-cta-circle:active {
+  background: #9e2f1b;
+}
+
+.eg-progress {
+  transform-origin: left;
+  animation: eg-progress var(--eg-duration, 7000ms) linear forwards;
+}
+.eg-progress[data-paused='true'] {
+  animation-play-state: paused;
+}
+@keyframes eg-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Section reveal: only hides content once JS has confirmed it can reveal it again. */
+.eg-reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--eg-delay, 0ms);
+}
+.eg-reveal-ready [data-reveal][data-revealed] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* The progress bar is exempt: it is the autoplay timer if the visitor presses play. */
+  .eg-hero *:not(.eg-progress),
+  .eg-hero *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .eg-hero .eg-kenburns {
+    transform: none !important;
+  }
+  .eg-btn,
+  .eg-btn svg,
+  .eg-reveal-ready [data-reveal] {
+    transition: none !important;
+    transform: none !important;
+  }
+  .eg-reveal-ready [data-reveal] {
+    opacity: 1;
+  }
+}
