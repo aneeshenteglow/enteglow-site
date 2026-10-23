@@ -1,6 +1,7 @@
 // Homepage copy from the approved "enteglow-contents-Home-Page" document.
 // Only punctuation and spelling slips were corrected; wording is unchanged.
 import type {
+  AboutCard,
   HeroSlide,
   HomeService,
   InfrastructureSolution,
@@ -97,6 +98,22 @@ export const about = {
   body: 'We are tech enthusiasts committed to leveraging cutting-edge technology to transform business concepts into successful business models. At Enteglow, we combine creativity, technical expertise, and experience to develop unique, seamless, and innovative technology solutions.',
   statements: ['Technology with purpose', 'Engineering ideas into impact', 'TechSynergy in Action'],
 };
+
+// The source document's About block has no fourth highlight, so the About cards reuse the four
+// banner services that have approved photography. Copy comes straight from `heroSlides`.
+const aboutCardCategory: Record<string, AboutCard['category']> = {
+  'ai-application-development': 'Development',
+  'web-application-development': 'Development',
+  'application-maintenance': 'Maintenance',
+  'website-maintenance': 'Maintenance',
+};
+
+export const aboutCards: AboutCard[] = heroSlides.flatMap((slide) => {
+  const category = aboutCardCategory[slide.id];
+  return category && slide.image
+    ? [{ id: slide.id, title: slide.title, subtitle: slide.subtitle, category, image: slide.image, href: slide.href }]
+    : [];
+});
 
 export const services: HomeService[] = [
   { title: 'AI Application Development', tagline: 'AI-Driven Solutions', icon: 'ai', href: SERVICE_LINKS.ai },

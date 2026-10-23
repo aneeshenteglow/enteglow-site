@@ -12,6 +12,15 @@ export interface HeroSlide {
   href?: string;
 }
 
+export interface AboutCard {
+  id: string;
+  title: string;
+  subtitle: string;
+  category: 'Development' | 'Maintenance';
+  image: { src: string; focusX: number };
+  href?: string;
+}
+
 export interface HomeService {
   title: string;
   /** Approved one-line positioning, where the source content provides one. */
