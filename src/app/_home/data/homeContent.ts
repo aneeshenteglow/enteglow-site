@@ -115,23 +115,44 @@ export const aboutCards: AboutCard[] = heroSlides.flatMap((slide) => {
     : [];
 });
 
+// Long-form service copy lives on the hero slides; reuse it rather than duplicating approved text.
+const slideDescription = (id: string) => heroSlides.find((slide) => slide.id === id)?.description;
+
 export const services: HomeService[] = [
-  { title: 'AI Application Development', tagline: 'AI-Driven Solutions', icon: 'ai', href: SERVICE_LINKS.ai },
+  {
+    title: 'AI Application Development',
+    tagline: 'AI-Driven Solutions',
+    description: slideDescription('ai-application-development'),
+    icon: 'ai',
+    href: SERVICE_LINKS.ai,
+  },
   {
     title: 'Web Application Development',
     tagline: 'Solutions for Business Processes',
+    description: slideDescription('web-application-development'),
     icon: 'web-app',
     href: SERVICE_LINKS.webApp,
   },
-  { title: 'Application Maintenance', tagline: 'Solutions for Seamless Application Performance', icon: 'app-maintenance' },
-  // Tagline from the current enteglow.com homepage banner.
+  {
+    title: 'Application Maintenance',
+    tagline: 'Solutions for Seamless Application Performance',
+    description: slideDescription('application-maintenance'),
+    icon: 'app-maintenance',
+  },
+  // Tagline from the current enteglow.com homepage banner; awaiting approved description.
   { title: 'Website Development', tagline: 'Go global, get noticed', icon: 'website', href: SERVICE_LINKS.website },
-  { title: 'Website Maintenance', tagline: 'Solutions for Smooth & Reliable Performance', icon: 'website-maintenance' },
+  {
+    title: 'Website Maintenance',
+    tagline: 'Solutions for Smooth & Reliable Performance',
+    description: slideDescription('website-maintenance'),
+    icon: 'website-maintenance',
+  },
   // Awaiting approved tagline.
   { title: 'Domain Registration & Hosting', icon: 'domain' },
   {
     title: 'Mobile App Development',
     tagline: 'Next-Gen Mobile Solutions for Business Growth',
+    description: slideDescription('mobile-app-development'),
     icon: 'mobile',
     href: SERVICE_LINKS.mobile,
   },

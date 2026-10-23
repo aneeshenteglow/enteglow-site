@@ -25,6 +25,8 @@ export interface HomeService {
   title: string;
   /** Approved one-line positioning, where the source content provides one. */
   tagline?: string;
+  /** Approved long-form description, where the source content provides one. */
+  description?: string;
   icon: 'ai' | 'web-app' | 'app-maintenance' | 'website' | 'website-maintenance' | 'domain' | 'mobile' | 'iot';
   href?: string;
 }
