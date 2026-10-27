@@ -15,7 +15,7 @@ export const ArchitectsAboutSection: React.FC = () => {
                 Who We Are
               </span>
             </div>
-            <h2 className="font-headline font-bold text-headline-lg text-on-surface mb-8">
+            <h2 className="font-display font-normal text-headline-lg text-on-surface mb-8">
               Architects of the Digital Enterprise
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-6">

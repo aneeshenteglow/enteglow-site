@@ -87,7 +87,7 @@ export const SolutionsSection: React.FC = () => {
               <Sparkles size={14} className="text-gold-600" />
               <span>BUSINESS PROBLEMS → ENGINEERED SOLUTIONS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+            <h2 className="font-display text-3xl sm:text-4xl font-normal text-navy-900 tracking-tight">
               Turn Operational Friction Into Scalable Software
             </h2>
             <p className="text-base text-slate-600 leading-relaxed font-normal">

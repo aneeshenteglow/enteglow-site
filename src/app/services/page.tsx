@@ -21,7 +21,7 @@ export default function ServicesPage() {
           <Badge className="mb-4">
             Product Engineering Disciplines
           </Badge>
-          <h1 className="font-headline font-bold text-headline-lg text-on-surface">
+          <h1 className="font-display font-normal text-headline-lg text-on-surface">
             Software Development Services
           </h1>
           <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
@@ -64,7 +64,7 @@ export default function ServicesPage() {
                       {service.technologies[0]}
                     </span>
                   </div>
-                  <h2 className="font-headline font-bold text-headline-lg text-on-surface text-2xl sm:text-3xl mt-1">
+                  <h2 className="font-display font-normal text-headline-lg text-on-surface text-2xl sm:text-3xl mt-1">
                     {service.title}
                   </h2>
                   <p className="font-body-md text-body-md text-electric-blue mt-1 font-semibold">

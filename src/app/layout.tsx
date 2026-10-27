@@ -1,7 +1,17 @@
 import type { Metadata } from 'next';
+import { Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+
+// Editorial display serif shared by every main heading (exposed as Tailwind's `font-display`).
+// Loaded as the variable font so existing bold headings get true weights, not faux bold.
+const displaySerif = Playfair_Display({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-display',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -51,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light scroll-smooth">
+    <html lang="en" className={`${displaySerif.variable} light scroll-smooth`}>
       <body className="bg-background text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col font-sans selection:bg-electric-blue selection:text-white">
         <Header />
         <main className="flex-grow">{children}</main>

@@ -13,7 +13,7 @@ export const ServicesBentoSection: React.FC = () => {
       <div className="max-w-container-max mx-auto px-gutter relative z-10">
         {/* Section Header */}
         <div className="mb-16 md:mb-24 max-w-3xl">
-          <h2 className="font-headline font-bold text-headline-lg text-on-surface mb-4">
+          <h2 className="font-display font-normal text-headline-lg text-on-surface mb-4">
             Our Expertise
           </h2>
           <p className="font-body-lg text-body-lg text-on-surface-variant">

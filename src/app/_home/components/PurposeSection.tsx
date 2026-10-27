@@ -3,7 +3,7 @@ import { purpose } from '../data/homeContent';
 import { Container } from './primitives';
 
 export const PurposeSection: React.FC = () => (
-  <section aria-labelledby="purpose-heading" className="py-24 lg:py-32">
+  <section aria-labelledby="purpose-heading" className="pb-24 lg:pb-32">
     <Container>
       <div
         data-reveal
@@ -12,7 +12,7 @@ export const PurposeSection: React.FC = () => (
         <h2 id="purpose-heading" className="text-[11px] font-bold uppercase tracking-[0.18em] text-brand-100 sm:text-xs">
           Purpose That Drives Us
         </h2>
-        <p className="mt-8 max-w-5xl text-[clamp(1.75rem,4vw,3.5rem)] font-semibold leading-[1.08] tracking-[-0.045em] text-mist-100">
+        <p className="mt-8 max-w-5xl text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.08] tracking-[-0.045em] text-mist-100 font-display">
           {purpose}
         </p>
       </div>

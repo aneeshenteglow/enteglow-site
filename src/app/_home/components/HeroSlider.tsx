@@ -3,23 +3,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Playfair_Display } from 'next/font/google';
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { contact, heroSlides } from '../data/homeContent';
 import { socialLinks } from '../data/socialLinks';
 import { HeroVisual } from './HeroVisual';
 import { cn } from '../cn';
-
-// Editorial display serif for the hero headings only (matches the approved hero reference);
-// the rest of the site stays on Inter per the brand book.
-const displaySerif = Playfair_Display({
-  subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  display: 'swap',
-  variable: '--font-hero-display',
-});
-const serif = '[font-family:var(--font-hero-display),Georgia,serif]';
 
 const SLIDE_DURATION_MS = 6000;
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -101,7 +89,7 @@ export const HeroSlider: React.FC = () => {
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFocused(false);
       }}
-      className={`${displaySerif.variable} eg-hero relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-ink-950`}
+      className="eg-hero relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-ink-950"
     >
       <h1 id="hero-heading" className="sr-only">
         Enteglow: technology with purpose
@@ -213,7 +201,7 @@ export const HeroSlider: React.FC = () => {
           <div className="flex items-start gap-3 overflow-hidden">
             <span
               key={index}
-              className={`eg-num block ${serif} text-[7.5rem] font-normal leading-none tracking-[-0.02em] text-mist-100 [font-variant-numeric:lining-nums_tabular-nums]`}
+              className="eg-num block font-display text-[7.5rem] font-normal leading-none tracking-[-0.02em] text-mist-100 [font-variant-numeric:lining-nums_tabular-nums]"
             >
               {pad(index + 1)}
             </span>
@@ -258,14 +246,14 @@ export const HeroSlider: React.FC = () => {
                     <h2
                       data-slide-item
                       style={delay(90)}
-                      className={`mt-5 max-w-[14ch] ${serif} text-[clamp(2.75rem,7.4vw,6.75rem)] font-normal leading-[0.95] tracking-[-0.02em] text-mist-100`}
+                      className="mt-5 max-w-[14ch] font-display text-[clamp(2.75rem,7.4vw,6.75rem)] font-normal leading-[0.95] tracking-[-0.02em] text-mist-100"
                     >
                       {slide.title}
                     </h2>
                     <p
                       data-slide-item
                       style={delay(180)}
-                      className={`mt-5 inline-block bg-ink-700/80 px-4 py-1.5 ${serif} text-[19px] italic text-mist-200 md:-mt-1 md:translate-x-[6%] md:self-end md:text-[26px]`}
+                      className="mt-5 inline-block bg-ink-700/80 px-4 py-1.5 font-display text-[19px] italic text-mist-200 md:-mt-1 md:translate-x-[6%] md:self-end md:text-[26px]"
                     >
                       {slide.subtitle}
                     </p>

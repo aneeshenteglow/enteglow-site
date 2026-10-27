@@ -21,7 +21,7 @@ export default function IndustriesPage() {
           <Badge variant="cyan" className="mb-4">
             Domain Software Solutions
           </Badge>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">
+          <h1 className="font-display text-3xl sm:text-5xl font-normal text-navy-900 tracking-tight">
             Industries Supported by Entelgow
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -34,7 +34,7 @@ export default function IndustriesPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-navy-900">Specific Industry Use Cases</h2>
+          <h2 className="font-display text-2xl font-normal text-navy-900">Specific Industry Use Cases</h2>
           <p className="text-sm text-slate-600 mt-2">
             Real software product applications supported by our engineering team.
           </p>

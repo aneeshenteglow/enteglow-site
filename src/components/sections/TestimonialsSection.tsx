@@ -8,7 +8,7 @@ export const TestimonialsSection: React.FC = () => {
       <div className="max-w-container-max mx-auto px-gutter">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-headline font-bold text-headline-lg text-on-surface mb-4">
+          <h2 className="font-display font-normal text-headline-lg text-on-surface mb-4">
             Trusted by Industry Leaders
           </h2>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">

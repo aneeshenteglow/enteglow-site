@@ -57,7 +57,7 @@ export default function ProjectDetailPage({ params }: Props) {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">
+            <h1 className="font-display text-3xl sm:text-5xl font-normal text-navy-900 tracking-tight">
               {project.title}
             </h1>
 
@@ -96,7 +96,7 @@ export default function ProjectDetailPage({ params }: Props) {
         </div>
 
         <div className="p-8 rounded-3xl bg-white border border-slate-200 space-y-6 shadow-xl">
-          <h2 className="text-xl font-bold text-navy-900 flex items-center gap-2.5">
+          <h2 className="font-display text-xl font-normal text-navy-900 flex items-center gap-2.5">
             <Cpu size={22} className="text-gold-600" />
             <span>Systems Architecture Highlights</span>
           </h2>

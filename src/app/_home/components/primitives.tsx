@@ -27,7 +27,7 @@ export const SectionIntro: React.FC<SectionIntroProps> = ({ id, eyebrow, title, 
     <Eyebrow>{eyebrow}</Eyebrow>
     <h2
       id={id}
-      className="mt-4 text-[clamp(2rem,4.4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.045em] text-mist-100"
+      className="font-display mt-4 text-[clamp(2rem,4.4vw,3.5rem)] font-normal leading-[1.02] tracking-[-0.045em] text-mist-100"
     >
       {title}
     </h2>

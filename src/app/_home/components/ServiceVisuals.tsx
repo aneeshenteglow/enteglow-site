@@ -117,7 +117,10 @@ const WebAppVisual = () => (
               )}
             />
             <span className="block h-1.5 rounded-full bg-ink-600" style={{ width: `${w * 45}%` }} />
-            <span className={cn('ml-auto h-1.5 w-10 rounded-full', i === 0 ? 'eg-accent-bg' : 'bg-ink-700')} />
+            <span
+              className={cn('eg-svc-grow ml-auto h-1.5 w-10 rounded-full', i === 0 ? 'eg-accent-bg' : 'bg-ink-700')}
+              style={{ animationDelay: `${i * 300}ms` }}
+            />
             <span className="hidden h-1.5 w-8 rounded-full bg-ink-700 sm:block" />
           </div>
         ))}
@@ -169,13 +172,13 @@ const WebsiteVisual = () => (
         <Bar className="eg-accent-bg h-2 w-2/5 opacity-80" />
         <Bar className="w-3/5" />
         <div className="mt-auto grid grid-cols-3 gap-1.5">
-          <span className="h-7 rounded-md bg-ink-800" />
-          <span className="h-7 rounded-md bg-ink-800" />
-          <span className="h-7 rounded-md bg-ink-800" />
+          {[0, 1, 2].map((i) => (
+            <span key={i} className="eg-svc-glow h-7 rounded-md bg-ink-800" style={{ animationDelay: `${i * 400}ms` }} />
+          ))}
         </div>
       </div>
     </div>
-    <div className="absolute bottom-3 right-4 flex h-[78%] w-[26%] max-w-[72px] flex-col gap-1.5 rounded-[12px] border border-ink-600 bg-ink-850 p-1.5">
+    <div className="eg-svc-float absolute bottom-3 right-4 flex h-[78%] w-[26%] max-w-[72px] flex-col gap-1.5 rounded-[12px] border border-ink-600 bg-ink-850 p-1.5">
       <span className="mx-auto h-1 w-4 rounded-full bg-ink-600" />
       <Bar className="eg-accent-bg h-1.5 w-3/4 opacity-80" />
       <Bar className="w-1/2" />
@@ -190,7 +193,11 @@ const WebsiteMaintenanceVisual = () => (
   <ul className="flex h-full w-full flex-col justify-center divide-y divide-ink-line px-4">
     {['Performance', 'Security', 'Reliability', 'Adaptability'].map((label, i) => (
       <li key={label} className="flex items-center gap-2.5 py-2.5 text-[13px] text-mist-300">
-        <CircleCheck className="eg-accent-text h-4 w-4 shrink-0" strokeWidth={1.75} />
+        <CircleCheck
+          className="eg-accent-text eg-svc-pop h-4 w-4 shrink-0"
+          strokeWidth={1.75}
+          style={{ animationDelay: `${i * 400}ms` }}
+        />
         {label}
         <span
           className="eg-accent-bg eg-svc-led ml-auto h-1.5 w-1.5 rounded-full"
@@ -216,7 +223,11 @@ const DomainVisual = () => (
         <span className="h-1.5 w-1.5 rounded-full bg-ink-600" />
         <span className="ml-auto flex gap-1">
           {[0, 1, 2, 3, 4].map((v) => (
-            <span key={v} className="h-2.5 w-[3px] rounded-full bg-ink-700" />
+            <span
+              key={v}
+              className="eg-svc-eq h-2.5 w-[3px] rounded-full bg-ink-700"
+              style={{ animationDelay: `${((v * 3 + i * 2) % 5) * 140}ms` }}
+            />
           ))}
         </span>
       </div>
@@ -227,11 +238,14 @@ const DomainVisual = () => (
 // A phone with an app home screen, flanked by floating cards.
 const MobileVisual = () => (
   <div className="relative flex h-full w-full items-center justify-center p-4">
-    <span className="absolute left-[8%] top-[24%] hidden h-9 w-[24%] max-w-[96px] rounded-lg border border-ink-line bg-ink-850 p-2 min-[400px]:block">
+    <span className="eg-svc-float absolute left-[8%] top-[24%] hidden h-9 w-[24%] max-w-[96px] rounded-lg border border-ink-line bg-ink-850 p-2 min-[400px]:block">
       <Bar className="eg-accent-bg w-3/5 opacity-80" />
       <Bar className="mt-1.5 w-4/5" />
     </span>
-    <span className="absolute bottom-[22%] right-[8%] hidden h-9 w-[24%] max-w-[96px] rounded-lg border border-ink-line bg-ink-850 p-2 min-[400px]:block">
+    <span
+      className="eg-svc-float absolute bottom-[22%] right-[8%] hidden h-9 w-[24%] max-w-[96px] rounded-lg border border-ink-line bg-ink-850 p-2 min-[400px]:block"
+      style={{ animationDelay: '-1.8s' }}
+    >
       <Bar className="w-4/5" />
       <Bar className="mt-1.5 w-1/2" />
     </span>
@@ -239,7 +253,7 @@ const MobileVisual = () => (
       <span className="mx-auto h-1 w-6 rounded-full bg-ink-700" />
       <Bar className="mt-1 w-1/2" />
       <div className="grid grid-cols-2 gap-1.5">
-        <span className="eg-accent-soft eg-accent-border aspect-square rounded-md border" />
+        <span className="eg-accent-soft eg-accent-border eg-svc-led aspect-square rounded-md border" />
         <span className="aspect-square rounded-md bg-ink-800" />
         <span className="aspect-square rounded-md bg-ink-800" />
         <span className="aspect-square rounded-md bg-ink-800" />

@@ -25,7 +25,7 @@ export default function ProjectsPage() {
           <Badge variant="cyan" className="mb-4">
             Software Portfolio
           </Badge>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">
+          <h1 className="font-display text-3xl sm:text-5xl font-normal text-navy-900 tracking-tight">
             Engineering Case Studies
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-navy-900 group-hover:text-gold-600 transition-colors">
+                  <h2 className="font-display text-2xl font-normal text-navy-900 group-hover:text-gold-600 transition-colors">
                     {project.title}
                   </h2>
                   <p className="text-sm font-semibold text-gold-600 mt-1">

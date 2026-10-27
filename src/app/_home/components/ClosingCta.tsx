@@ -20,7 +20,7 @@ export const ClosingCta: React.FC = () => (
           <div className="lg:col-span-8">
             <h2
               id="cta-heading"
-              className="text-[clamp(2rem,4.4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.045em] text-mist-100"
+              className="font-display text-[clamp(2rem,4.4vw,3.5rem)] font-normal leading-[1.02] tracking-[-0.045em] text-mist-100"
             >
               Looking to integrate technology into your business?
             </h2>

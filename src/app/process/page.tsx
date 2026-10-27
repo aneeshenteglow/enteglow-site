@@ -19,7 +19,7 @@ export default function ProcessPage() {
           <Badge variant="primary" className="mb-4">
             Structured SDLC Methodology
           </Badge>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">
+          <h1 className="font-display text-3xl sm:text-5xl font-normal text-navy-900 tracking-tight">
             Our Software Engineering Process
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">

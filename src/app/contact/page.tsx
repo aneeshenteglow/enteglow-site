@@ -28,7 +28,7 @@ export default function ContactPage() {
           <Badge className="mb-4">
             Technical Discovery Session
           </Badge>
-          <h1 className="font-headline font-bold text-headline-lg text-on-surface">
+          <h1 className="font-display font-normal text-headline-lg text-on-surface">
             Start Your Software Project
           </h1>
           <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
@@ -43,7 +43,7 @@ export default function ContactPage() {
           {/* Contact Details Column */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
-              <h2 className="font-headline font-bold text-headline-lg text-on-surface text-3xl">
+              <h2 className="font-display font-normal text-headline-lg text-on-surface text-3xl">
                 Get in Touch
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">

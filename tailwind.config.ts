@@ -106,6 +106,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        // Playfair Display, loaded in the root layout; used by all main headings.
+        display: ["var(--font-display)", "Georgia", "serif"],
         headline: ["Oswald", "sans-serif"],
         "display-lg": ["Oswald", "sans-serif"],
         "headline-lg": ["Oswald", "sans-serif"],

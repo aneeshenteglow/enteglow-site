@@ -22,7 +22,7 @@ export default function AboutPage() {
           <Badge className="mb-4">
             Software Product Engineers
           </Badge>
-          <h1 className="font-headline font-bold text-headline-lg text-on-surface">
+          <h1 className="font-display font-normal text-headline-lg text-on-surface">
             About Enteglow
           </h1>
           <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
@@ -41,7 +41,7 @@ export default function AboutPage() {
             <div className="w-12 h-12 rounded-xl bg-electric-blue/10 text-electric-blue flex items-center justify-center font-bold">
               <span className="material-symbols-outlined text-2xl">flag</span>
             </div>
-            <h2 className="font-headline font-bold text-headline-lg text-on-surface text-2xl">
+            <h2 className="font-display font-normal text-headline-lg text-on-surface text-2xl">
               Our Mission
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -53,7 +53,7 @@ export default function AboutPage() {
             <div className="w-12 h-12 rounded-xl bg-vibrant-purple/10 text-vibrant-purple flex items-center justify-center font-bold">
               <span className="material-symbols-outlined text-2xl">visibility</span>
             </div>
-            <h2 className="font-headline font-bold text-headline-lg text-on-surface text-2xl">
+            <h2 className="font-display font-normal text-headline-lg text-on-surface text-2xl">
               Our Vision
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">

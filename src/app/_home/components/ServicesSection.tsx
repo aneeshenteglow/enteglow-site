@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { Playfair_Display } from 'next/font/google';
 import {
   AppWindow,
   ArrowRight,
@@ -19,15 +18,6 @@ import type { HomeService } from '../types';
 import { Container, Eyebrow } from './primitives';
 import { ServiceVisual } from './ServiceVisuals';
 import { cn } from '../cn';
-
-// Same editorial serif as the hero and About headings; scoped to this section.
-const displaySerif = Playfair_Display({
-  subsets: ['latin'],
-  weight: '400',
-  display: 'swap',
-  variable: '--font-services-display',
-});
-const serif = '[font-family:var(--font-services-display),Georgia,serif]';
 
 const icons: Record<HomeService['icon'], LucideIcon> = {
   ai: BrainCircuit,
@@ -126,7 +116,7 @@ const ServiceCard: React.FC<{ service: HomeService; index: number }> = ({ servic
 export const ServicesSection: React.FC = () => (
   <section
     aria-labelledby="services-heading"
-    className={cn(displaySerif.variable, 'eg-services relative border-t border-ink-line bg-ink-950 py-24 lg:py-32')}
+    className="eg-services relative border-t border-ink-line bg-ink-950 py-24 lg:py-32"
   >
     <Container className="relative">
       {/* Section title from the current enteglow.com homepage */}
@@ -134,7 +124,7 @@ export const ServicesSection: React.FC = () => (
         <Eyebrow>What we offer</Eyebrow>
         <h2
           id="services-heading"
-          className={`mt-4 ${serif} text-[clamp(2.5rem,5.4vw,4rem)] font-normal leading-[1.04] tracking-[-0.02em] text-mist-100`}
+          className="mt-4 font-display text-[clamp(2.5rem,5.4vw,4rem)] font-normal leading-[1.04] tracking-[-0.02em] text-mist-100"
         >
           Our Services
         </h2>

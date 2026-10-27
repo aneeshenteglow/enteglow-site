@@ -1,20 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Playfair_Display } from 'next/font/google';
 import { ArrowRight } from 'lucide-react';
 import { about, aboutCards, contact } from '../data/homeContent';
 import type { AboutCard } from '../types';
 import { Container, Eyebrow } from './primitives';
-
-// Same editorial serif as the hero headings; scoped to this section so body copy stays on Inter.
-const displaySerif = Playfair_Display({
-  subsets: ['latin'],
-  weight: '400',
-  display: 'swap',
-  variable: '--font-about-display',
-});
-const serif = '[font-family:var(--font-about-display),Georgia,serif]';
 
 // "Cultivating Possibilities. Creating Innovation" reads as two statements, one per line.
 const headingLines = about.heading.split(/(?<=\.)\s+/);
@@ -45,7 +35,7 @@ const AboutCardItem: React.FC<{ card: AboutCard; index: number }> = ({ card, ind
             </span>
           </div>
           <h3
-            className={`mt-6 ${serif} text-[clamp(1.625rem,2.2vw,1.875rem)] font-normal leading-[1.12] tracking-[-0.01em] text-mist-100`}
+            className="mt-6 font-display text-[clamp(1.625rem,2.2vw,1.875rem)] font-normal leading-[1.12] tracking-[-0.01em] text-mist-100"
           >
             {card.title}
           </h3>
@@ -83,14 +73,14 @@ const AboutCardItem: React.FC<{ card: AboutCard; index: number }> = ({ card, ind
 };
 
 export const AboutSection: React.FC = () => (
-  <section aria-labelledby="about-heading" className={`${displaySerif.variable} bg-ink-950 py-24 lg:py-32`}>
+  <section aria-labelledby="about-heading" className="bg-ink-950 py-24 lg:py-32">
     <Container>
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-7" data-reveal>
           <Eyebrow>About Enteglow</Eyebrow>
           <h2
             id="about-heading"
-            className={`mt-5 ${serif} text-[clamp(2.5rem,6vw,4.75rem)] font-normal leading-[1.02] tracking-[-0.02em] text-mist-100`}
+            className="mt-5 font-display text-[clamp(2.5rem,6vw,4.75rem)] font-normal leading-[1.02] tracking-[-0.02em] text-mist-100"
           >
             {headingLines.map((line) => (
               <span key={line} className="block [text-wrap:balance]">
