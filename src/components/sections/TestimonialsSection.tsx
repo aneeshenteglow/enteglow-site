@@ -4,7 +4,7 @@ import React from 'react';
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section className="py-section-padding-desktop bg-background">
+    <section id="testimonials" className="scroll-mt-24 py-section-padding-desktop bg-background">
       <div className="max-w-container-max mx-auto px-gutter">
         {/* Section Header */}
         <div className="text-center mb-16">

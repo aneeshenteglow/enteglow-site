@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { IndustriesGrid } from './components/IndustriesGrid';
-import { CinematicCTA } from '@/components/sections/CinematicCTA';
-import { Badge } from '@/components/common/Badge';
-import { industriesData } from './services/industriesData';
+import { Container, SectionIntro } from '@/app/_home/components/primitives';
 import { DynamicIcon } from '@/components/common/DynamicIcon';
-import { Check } from 'lucide-react';
+import { InnerPage } from '@/components/inner/InnerPage';
+import { PageHero } from '@/components/inner/PageHero';
+import { ChipList, IconTile, Label, PlusList, revealDelay } from '@/components/inner/primitives';
+import { industriesData } from './services/industriesData';
 
 export const metadata: Metadata = {
   title: 'Industries & Domain Capabilities',
@@ -15,57 +15,58 @@ export const metadata: Metadata = {
 
 export default function IndustriesPage() {
   return (
-    <div className="space-y-16 pb-12">
-      <section className="pt-8 pb-12 bg-radial-gold border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="cyan" className="mb-4">
-            Domain Software Solutions
-          </Badge>
-          <h1 className="font-display text-3xl sm:text-5xl font-normal text-navy-900 tracking-tight">
-            Industries Supported by Entelgow
-          </h1>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            We build software tailored to specific domain environments—addressing operational bottlenecks in manufacturing, supply chain, healthcare, retail, finance, and enterprise operations.
-          </p>
-        </div>
-      </section>
+    <InnerPage>
+      <PageHero
+        eyebrow="Domain Software Solutions"
+        title="Industries Supported by Enteglow"
+        crumb="Industries"
+        intro="We build software tailored to specific domain environments—addressing operational bottlenecks in manufacturing, supply chain, healthcare, retail, finance, and enterprise operations."
+      />
 
-      <IndustriesGrid />
+      <section aria-labelledby="industries-heading" className="py-24 lg:py-32">
+        <Container>
+          <SectionIntro
+            id="industries-heading"
+            eyebrow="Domain Expertise"
+            title="Specific Industry Use Cases"
+          >
+            <p className="mt-5 text-[17px] leading-[1.7] text-mist-500">
+              Real software product applications supported by our engineering team.
+            </p>
+          </SectionIntro>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="font-display text-2xl font-normal text-navy-900">Specific Industry Use Cases</h2>
-          <p className="text-sm text-slate-600 mt-2">
-            Real software product applications supported by our engineering team.
-          </p>
-        </div>
+          <ul className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {industriesData.map((ind, i) => (
+              <li
+                key={ind.id}
+                id={ind.id}
+                data-reveal
+                style={revealDelay(i % 3)}
+                className="flex scroll-mt-24 flex-col rounded-[24px] border border-ink-line bg-ink-850 p-7 transition-colors duration-280 ease-standard hover:border-brand-500/45 sm:p-8"
+              >
+                <IconTile>
+                  <DynamicIcon name={ind.iconName} size={22} />
+                </IconTile>
+                <h2 className="mt-6 font-display text-[clamp(1.5rem,2.2vw,1.875rem)] font-normal leading-[1.12] text-mist-100">
+                  {ind.name}
+                </h2>
+                <p className="mt-3 text-[15px] leading-[1.6] text-brand-400">{ind.tagline}</p>
+                <p className="mt-4 text-[15px] leading-[1.65] text-mist-500">{ind.description}</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {industriesData.map((ind) => (
-            <div key={ind.id} className="p-6 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-md">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-gold-100 border border-gold-200 text-gold-600 flex items-center justify-center font-bold">
-                  <DynamicIcon name={ind.iconName} size={20} />
+                <div className="mt-7 border-t border-ink-line pt-6">
+                  <Label>Supported Capabilities</Label>
+                  <PlusList items={ind.supportedCapabilities} className="mt-4 text-[14px]" />
                 </div>
-                <h3 className="text-lg font-bold text-navy-900">{ind.name}</h3>
-              </div>
-              <div className="space-y-2 pt-2 border-t border-slate-100 text-xs">
-                <span className="font-mono text-[11px] uppercase text-slate-500 block mb-1">
-                  Example Software Products
-                </span>
-                {ind.useCases.map((uc, i) => (
-                  <div key={i} className="flex items-start gap-2 text-slate-700 font-medium">
-                    <Check size={14} className="text-gold-500 shrink-0 mt-0.5" />
-                    <span>{uc}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <CinematicCTA />
-    </div>
+                <div className="mt-7 flex-1">
+                  <Label>Example Software Products</Label>
+                  <PlusList items={ind.useCases} className="mt-4 text-[14px]" />
+                </div>
+                <ChipList items={ind.relevantTech} label="Relevant technologies" className="mt-7" />
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+    </InnerPage>
   );
 }

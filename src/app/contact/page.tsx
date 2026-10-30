@@ -1,214 +1,99 @@
-'use client';
+import React from 'react';
+import type { Metadata } from 'next';
+import { Mail, Phone } from 'lucide-react';
+import { Container } from '@/app/_home/components/primitives';
+import { contact } from '@/app/_home/data/homeContent';
+import { socialLinks } from '@/app/_home/data/socialLinks';
+import { InnerPage } from '@/components/inner/InnerPage';
+import { PageHero } from '@/components/inner/PageHero';
+import { IconTile, Label, Panel, revealDelay } from '@/components/inner/primitives';
+import { ContactForm } from './components/ContactForm';
 
-import React, { useState } from 'react';
-import { Badge } from '@/components/common/Badge';
-import { companyData } from '@/data/company';
+const intro =
+  'Schedule a consultation with our senior engineering team to discuss your project requirements, architecture constraints, and product roadmap.';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: intro,
+};
+
+// Contact details are the approved ones published on enteglow.com (shared with the header and footer).
+const channels = [
+  { label: 'Call Us', value: contact.phoneDisplay, href: contact.phoneHref, icon: Phone },
+  { label: 'Email Us', value: contact.email, href: `mailto:${contact.email}`, icon: Mail },
+];
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    service: 'AI Application Development',
-    budget: '$10k - $25k',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
-    <div className="space-y-16 pb-12 pt-32">
-      {/* Top Banner */}
-      <section className="py-12 bg-surface-container-lowest border-b border-surface-variant">
-        <div className="max-w-container-max mx-auto px-gutter text-center">
-          <Badge className="mb-4">
-            Technical Discovery Session
-          </Badge>
-          <h1 className="font-display font-normal text-headline-lg text-on-surface">
-            Start Your Software Project
-          </h1>
-          <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
-            Schedule a consultation with our senior engineering team to discuss your project requirements, architecture constraints, and product roadmap.
-          </p>
-        </div>
+    <InnerPage cta={false}>
+      <PageHero
+        eyebrow="Technical Discovery Session"
+        title="Start Your Software Project"
+        crumb="Contact"
+        intro={intro}
+      />
+
+      <section aria-label="Contact Enteglow" className="py-24 lg:py-32">
+        <Container className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5" data-reveal>
+            <h2 className="font-display text-[clamp(2rem,3.6vw,3rem)] font-normal leading-[1.06] tracking-[-0.02em] text-mist-100">
+              Get in Touch
+            </h2>
+            <p className="mt-5 text-[17px] leading-[1.75] text-mist-500">
+              Whether you need AI Agent integration, Web App engineering, high-performance Corporate Websites, or Cloud
+              Hosting—our senior team is ready to assist.
+            </p>
+
+            <ul className="mt-10 space-y-3">
+              {channels.map(({ label, value, href, icon: Icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    className="group flex items-center gap-5 rounded-[24px] border border-ink-line bg-ink-850 p-5 transition-colors duration-280 ease-standard hover:border-brand-500/45"
+                  >
+                    <IconTile>
+                      <Icon className="h-5 w-5" strokeWidth={1.75} />
+                    </IconTile>
+                    <span className="min-w-0">
+                      <Label>{label}</Label>
+                      <span className="mt-1.5 block break-words text-[17px] font-semibold text-mist-100 transition-colors duration-160 group-hover:text-brand-400">
+                        {value}
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-10">
+              <Label>Follow Enteglow</Label>
+              <ul className="mt-4 flex gap-2">
+                {socialLinks.map((s) => (
+                  <li key={s.name}>
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Enteglow on ${s.name} (opens in a new tab)`}
+                      className="grid h-11 w-11 place-items-center rounded-full border border-ink-700 text-mist-500 transition-colors duration-160 hover:border-ink-600 hover:text-mist-100"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden className="h-4 w-4 fill-current">
+                        <path d={s.path} />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7" data-reveal style={revealDelay(1, 100)}>
+            <Panel className="sm:p-10">
+              <ContactForm />
+            </Panel>
+          </div>
+        </Container>
       </section>
-
-      {/* Main Grid */}
-      <div className="max-w-container-max mx-auto px-gutter">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Contact Details Column */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="space-y-4">
-              <h2 className="font-display font-normal text-headline-lg text-on-surface text-3xl">
-                Get in Touch
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                Whether you need AI Agent integration, Web App engineering, high-performance Corporate Websites, or Cloud Hosting—our senior team is ready to assist.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="glass-card p-6 rounded-2xl flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-electric-blue/10 text-electric-blue flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-2xl">mail</span>
-                </div>
-                <div>
-                  <span className="font-label-md text-label-md text-outline uppercase block">Email Engineering Team</span>
-                  <a href={`mailto:${companyData.contact.email}`} className="font-body-md font-bold text-on-surface hover:text-electric-blue transition-colors">
-                    {companyData.contact.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="glass-card p-6 rounded-2xl flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-vibrant-purple/10 text-vibrant-purple flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-2xl">call</span>
-                </div>
-                <div>
-                  <span className="font-label-md text-label-md text-outline uppercase block">Direct Phone Contact</span>
-                  <a href={`tel:${companyData.contact.phone}`} className="font-body-md font-bold text-on-surface hover:text-electric-blue transition-colors">
-                    {companyData.contact.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="glass-card p-6 rounded-2xl flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-2xl">location_on</span>
-                </div>
-                <div>
-                  <span className="font-label-md text-label-md text-outline uppercase block">Headquarters Office</span>
-                  <p className="font-body-md font-bold text-on-surface">
-                    {companyData.contact.address}
-                  </p>
-                </div>
-              </div>
-
-              <div className="glass-card p-6 rounded-2xl flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-electric-blue/10 text-electric-blue flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-2xl">schedule</span>
-                </div>
-                <div>
-                  <span className="font-label-md text-label-md text-outline uppercase block">Support Hours</span>
-                  <p className="font-body-md font-bold text-on-surface">
-                    {companyData.contact.supportHours}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Form Column */}
-          <div className="lg:col-span-7">
-            <div className="glass-card p-8 sm:p-10 rounded-2xl">
-              {submitted ? (
-                <div className="text-center py-12 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-electric-blue/10 text-electric-blue flex items-center justify-center mx-auto">
-                    <span className="material-symbols-outlined text-4xl">check_circle</span>
-                  </div>
-                  <h3 className="font-headline font-bold text-headline-lg text-on-surface text-3xl">Project Inquiry Received!</h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
-                    Thank you for reaching out. A senior software architect from Enteglow will review your submission and contact you within 24 business hours.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setSubmitted(false)}
-                    className="btn-secondary font-label-md text-label-md px-6 py-3 uppercase tracking-wider font-semibold"
-                  >
-                    Submit Another Inquiry
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <h3 className="font-headline font-bold text-headline-lg text-on-surface text-2xl">Project Discovery Inquiry</h3>
-                    <p className="font-body-md text-body-md text-on-surface-variant text-sm mt-1">
-                      Fill out your technical requirements below to initiate project evaluation.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="font-label-md text-label-md text-on-surface uppercase block font-semibold">Your Full Name *</label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low border border-surface-container-high text-on-surface text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue transition-colors"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="font-label-md text-label-md text-on-surface uppercase block font-semibold">Work Email Address *</label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="john@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low border border-surface-container-high text-on-surface text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="font-label-md text-label-md text-on-surface uppercase block font-semibold">Company Name</label>
-                      <input
-                        type="text"
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="Acme Corp"
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low border border-surface-container-high text-on-surface text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue transition-colors"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="font-label-md text-label-md text-on-surface uppercase block font-semibold">Target Software Discipline</label>
-                      <select
-                        value={formData.service}
-                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low border border-surface-container-high text-on-surface text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue transition-colors"
-                      >
-                        <option value="AI Application Development">AI Application Development</option>
-                        <option value="Web App Development">Web App Development</option>
-                        <option value="Website Development">Website Development</option>
-                        <option value="Web Maintenance & Hosting">Web Maintenance & Hosting</option>
-                        <option value="Custom Enterprise Software">Custom Enterprise Software</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="font-label-md text-label-md text-on-surface uppercase block font-semibold">Project Requirements & Details *</label>
-                    <textarea
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Describe your project vision, key technical features, desired target launch date, and existing systems to integrate..."
-                      className="w-full px-4 py-3 rounded-xl bg-surface-container-low border border-surface-container-high text-on-surface text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue transition-colors"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="btn-primary font-label-md text-label-md px-8 py-4 uppercase tracking-wider font-semibold w-full cursor-pointer text-center"
-                  >
-                    Submit Technical Inquiry
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </InnerPage>
   );
 }

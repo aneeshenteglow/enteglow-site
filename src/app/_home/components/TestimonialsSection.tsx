@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { Quote } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowUpRight, Quote } from 'lucide-react';
 import { testimonials } from '../data/homeContent';
 import { Container, SectionIntro } from './primitives';
 
@@ -35,6 +36,13 @@ export const TestimonialsSection: React.FC = () => (
             </figcaption>
           </figure>
         ))}
+      </div>
+
+      {/* The full testimonials list lives on the About page. */}
+      <div className="mt-12 flex justify-center" data-reveal>
+        <Link href="/about#testimonials" className="eg-btn eg-btn-secondary">
+          View all testimonials <ArrowUpRight aria-hidden className="h-4 w-4" />
+        </Link>
       </div>
     </Container>
   </section>

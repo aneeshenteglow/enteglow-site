@@ -8,7 +8,6 @@ import { TestimonialsSection } from './_home/components/TestimonialsSection';
 import { InfrastructureSection } from './_home/components/InfrastructureSection';
 import { ClosingCta } from './_home/components/ClosingCta';
 import { RevealObserver } from './_home/components/RevealObserver';
-import './_home/home.css';
 
 export default function Home() {
   return (

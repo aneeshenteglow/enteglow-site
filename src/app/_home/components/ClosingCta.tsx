@@ -4,45 +4,54 @@ import { ArrowRight, Mail, Phone } from 'lucide-react';
 import { contact } from '../data/homeContent';
 import { Container } from './primitives';
 
-// Copy from the current enteglow.com homepage CTA band.
+// Copy from the current enteglow.com homepage CTA band. Full-bleed "horizon" treatment per the
+// approved reference: starfield, faint vertical rules, brand glow and a planet arc (see .eg-cta-* in home.css).
 export const ClosingCta: React.FC = () => (
-  <section aria-labelledby="cta-heading" className="py-24 lg:py-32">
-    <Container>
-      <div
-        data-reveal
-        className="relative overflow-hidden rounded-[28px] border border-ink-line bg-ink-800 px-6 py-14 sm:px-12 lg:px-16 lg:py-20"
-      >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-brand-500/20 blur-3xl"
-        />
-        <div className="relative grid grid-cols-1 items-end gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-8">
-            <h2
-              id="cta-heading"
-              className="font-display text-[clamp(2rem,4.4vw,3.5rem)] font-normal leading-[1.02] tracking-[-0.045em] text-mist-100"
-            >
-              Looking to integrate technology into your business?
-            </h2>
-            <p className="mt-5 text-lg text-mist-500">We&apos;re here to help.</p>
-          </div>
-          <div className="flex flex-col gap-4 lg:col-span-4 lg:items-end">
-            <Link href={contact.contactPage} className="eg-btn eg-btn-primary w-full sm:w-auto">
-              Enquire Now <ArrowRight aria-hidden className="h-4 w-4" />
-            </Link>
-            <div className="flex flex-col gap-2 text-[15px] text-mist-300 sm:flex-row sm:gap-6 lg:flex-col lg:items-end lg:gap-2">
-              <a href={contact.phoneHref} className="inline-flex items-center gap-2 hover:text-mist-100">
-                <Phone aria-hidden className="h-4 w-4 text-brand-400" strokeWidth={1.75} />
-                {contact.phoneDisplay}
-              </a>
-              <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-2 hover:text-mist-100">
-                <Mail aria-hidden className="h-4 w-4 text-brand-400" strokeWidth={1.75} />
-                {contact.email}
-              </a>
-            </div>
-          </div>
+  <section
+    aria-labelledby="cta-heading"
+    className="eg-cta relative isolate flex min-h-[560px] flex-col overflow-hidden bg-black lg:min-h-[600px]"
+  >
+    <span aria-hidden className="eg-cta-stars" />
+    <span aria-hidden className="eg-cta-rules" />
+    <span aria-hidden className="eg-cta-glow" />
+    <span aria-hidden className="eg-cta-planet" />
+
+    <Container className="relative flex flex-1 flex-col items-center pb-10 pt-20 text-center sm:pt-24">
+      <div data-reveal className="flex flex-col items-center">
+        <h2
+          id="cta-heading"
+          className="eg-cta-title max-w-[22ch] font-display text-[clamp(2.25rem,5vw,3.75rem)] font-normal leading-[1.08] tracking-[-0.02em]"
+        >
+          Looking to integrate technology into your business?
+        </h2>
+        <p className="mt-5 text-[clamp(1rem,1.5vw,1.125rem)] leading-[1.55] text-[#B9B5B2]">We&apos;re here to help.</p>
+
+        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+          <a
+            href={contact.phoneHref}
+            className="inline-flex h-12 items-center gap-2.5 rounded-full border border-white/20 bg-black/30 pl-2.5 pr-5 text-[15px] font-medium text-white backdrop-blur-sm transition-colors duration-160 hover:border-white/40 hover:bg-white/5"
+          >
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-white text-black">
+              <Phone aria-hidden className="h-3.5 w-3.5" strokeWidth={2} />
+            </span>
+            {contact.phoneDisplay}
+          </a>
+          <Link
+            href={contact.contactPage}
+            className="eg-cta-primary inline-flex h-12 items-center gap-2 rounded-full px-6 text-[15px] font-medium text-white transition-[filter,transform] duration-160 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400"
+          >
+            Enquire Now <ArrowRight aria-hidden className="h-4 w-4" />
+          </Link>
         </div>
       </div>
+
+      <a
+        href={`mailto:${contact.email}`}
+        className="mt-auto inline-flex items-center gap-2 pt-40 text-[13px] text-mist-600 transition-colors duration-160 hover:text-mist-300 sm:pt-48"
+      >
+        <Mail aria-hidden className="h-3.5 w-3.5" strokeWidth={1.75} />
+        {contact.email}
+      </a>
     </Container>
   </section>
 );

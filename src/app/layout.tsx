@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Playfair_Display } from 'next/font/google';
 import './globals.css';
+// Brand Book 2026 styles (eg-*), shared by the header, footer and every page.
+import './_home/home.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
@@ -64,7 +66,9 @@ export default function RootLayout({
     <html lang="en" className={`${displaySerif.variable} light scroll-smooth`}>
       <body className="bg-background text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col font-sans selection:bg-electric-blue selection:text-white">
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main id="main-content" className="flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

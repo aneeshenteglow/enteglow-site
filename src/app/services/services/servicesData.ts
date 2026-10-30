@@ -7,7 +7,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Desktop Application Development",
     tagline: "Low-latency, memory-efficient native workstations for Windows, macOS, and Linux.",
     description:
-      "When web browsers hit performance caps, memory limits, or offline constraints, Entelgow builds high-frequency desktop applications. Using Tauri, Rust, Electron, and C#/.NET, we deliver software capable of direct hardware communication, local file encryption, and multi-monitor data visualization.",
+      "When web browsers hit performance caps, memory limits, or offline constraints, Enteglow builds high-frequency desktop applications. Using Tauri, Rust, Electron, and C#/.NET, we deliver software capable of direct hardware communication, local file encryption, and multi-monitor data visualization.",
     iconName: "Monitor",
     problemsSolved: [
       "Browser memory limitations during high-density data rendering",
@@ -65,7 +65,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Web Platform & SaaS Engineering",
     tagline: "Scalable B2B SaaS applications, internal portals, and real-time web dashboards.",
     description:
-      "Entelgow designs and develops Next.js App Router web applications engineered for high tenant concurrency. We implement strict Row-Level Security (RLS), Server Component data fetching, responsive accessible UI design systems, and real-time WebSocket feeds.",
+      "Enteglow designs and develops Next.js App Router web applications engineered for high tenant concurrency. We implement strict Row-Level Security (RLS), Server Component data fetching, responsive accessible UI design systems, and real-time WebSocket feeds.",
     iconName: "Globe",
     problemsSolved: [
       "Slow initial page loading waterfalls and unoptimized client bundles",
@@ -123,7 +123,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Autonomous AI Agents & RAG Systems",
     tagline: "Domain artificial intelligence embedded directly into enterprise software.",
     description:
-      "Entelgow builds functional AI agents capable of autonomous reasoning, semantic vector document search (RAG), and executing API tool actions. We replace simple chatbots with structured agentic workflows that integrate into your existing ERP, CRM, or database systems.",
+      "Enteglow builds functional AI agents capable of autonomous reasoning, semantic vector document search (RAG), and executing API tool actions. We replace simple chatbots with structured agentic workflows that integrate into your existing ERP, CRM, or database systems.",
     iconName: "Bot",
     problemsSolved: [
       "Manual repetitive document audit and data extraction tasks",
@@ -152,7 +152,7 @@ export const servicesData: ServiceDetail[] = [
     title: "IoT Systems & Hardware Telemetry",
     tagline: "End-to-end telemetry ingestion, MQTT brokers, and edge device monitoring.",
     description:
-      "We bridge physical hardware devices with cloud platforms. Entelgow engineers high-concurrency MQTT telemetry ingestion pipelines, edge gateway parsers, time-series database storage, and real-time supervisory web control portals.",
+      "We bridge physical hardware devices with cloud platforms. Enteglow engineers high-concurrency MQTT telemetry ingestion pipelines, edge gateway parsers, time-series database storage, and real-time supervisory web control portals.",
     iconName: "Cpu",
     problemsSolved: [
       "High message loss during hardware telemetry spikes",
@@ -181,7 +181,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Custom Software Engineering",
     tagline: "Tailored enterprise software designed for unique operational requirements.",
     description:
-      "When commercial off-the-shelf software falls short of complex business requirements, Entelgow builds custom software products. We handle the full product lifecycle: discovery, system architecture, database modeling, agile development, testing, and cloud deployment.",
+      "When commercial off-the-shelf software falls short of complex business requirements, Enteglow builds custom software products. We handle the full product lifecycle: discovery, system architecture, database modeling, agile development, testing, and cloud deployment.",
     iconName: "Code",
     problemsSolved: [
       "Inflexible COTS software forcing inefficient workarounds",
@@ -239,7 +239,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Cloud Infrastructure & DevOps",
     tagline: "Automated CI/CD pipelines, Docker containerization, and cloud orchestration.",
     description:
-      "Entelgow provisions resilient, secure cloud infrastructure on AWS, Google Cloud, and Azure. We automate build pipelines, containerize applications, configure SSL/DNS, and monitor uptime telemetry so your engineering team can release code with confidence.",
+      "Enteglow provisions resilient, secure cloud infrastructure on AWS, Google Cloud, and Azure. We automate build pipelines, containerize applications, configure SSL/DNS, and monitor uptime telemetry so your engineering team can release code with confidence.",
     iconName: "Cloud",
     problemsSolved: [
       "Manual deployment errors causing unexpected downtime",
@@ -268,7 +268,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Product UI/UX & Design Systems",
     tagline: "Ergonomic user interfaces and scalable component design systems.",
     description:
-      "Great software requires intuitive interface ergonomics. Entelgow designs clean UI wireframes, interactive Figma prototypes, and Tailwind CSS component libraries that streamline complex multi-step workflows for enterprise operators.",
+      "Great software requires intuitive interface ergonomics. Enteglow designs clean UI wireframes, interactive Figma prototypes, and Tailwind CSS component libraries that streamline complex multi-step workflows for enterprise operators.",
     iconName: "PenTool",
     problemsSolved: [
       "High user error rates due to confusing navigation menus",

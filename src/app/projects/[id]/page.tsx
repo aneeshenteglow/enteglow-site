@@ -2,9 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, CheckCircle2, AlertTriangle, Cpu, Code2 } from 'lucide-react';
-import { Badge } from '@/components/common/Badge';
-import { CinematicCTA } from '@/components/sections/CinematicCTA';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { Container, SectionIntro } from '@/app/_home/components/primitives';
+import { InnerPage } from '@/components/inner/InnerPage';
+import { PageHero } from '@/components/inner/PageHero';
+import { Chip, ChipList, Label, Panel, PlusList, indexLabel, revealDelay } from '@/components/inner/primitives';
 import { projectsData } from '../services/projectsData';
 
 interface Props {
@@ -13,6 +15,8 @@ interface Props {
   };
 }
 
+const findProject = (id: string) => projectsData.find((p) => p.slug === id || p.id === id);
+
 export async function generateStaticParams() {
   return projectsData.map((project) => ({
     id: project.slug,
@@ -20,7 +24,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = projectsData.find((p) => p.slug === params.id || p.id === params.id);
+  const project = findProject(params.id);
   if (!project) {
     return { title: 'Project Not Found' };
   }
@@ -31,129 +35,102 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function ProjectDetailPage({ params }: Props) {
-  const project = projectsData.find((p) => p.slug === params.id || p.id === params.id);
+  const project = findProject(params.id);
 
   if (!project) {
     notFound();
   }
 
+  const index = projectsData.indexOf(project);
+  const next = projectsData[(index + 1) % projectsData.length];
+
   return (
-    <div className="space-y-16 pb-12">
-      <section className="pt-8 pb-12 bg-radial-gold border-b border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold text-slate-500 hover:text-navy-900 transition-colors mb-6"
-          >
-            <ArrowLeft size={14} />
-            <span>Back to All Projects</span>
-          </Link>
+    <InnerPage>
+      <PageHero
+        eyebrow={`${project.category} Case Study`}
+        title={project.title}
+        parents={[{ href: '/projects', label: 'Case Studies' }]}
+        intro={project.overview}
+      >
+        <p className="max-w-3xl text-[17px] leading-[1.6] text-brand-400">{project.tagline}</p>
+      </PageHero>
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <Badge variant="cyan">{project.category}</Badge>
-              <span className="text-xs font-mono text-slate-500">
-                Case Study ID: {project.id}
-              </span>
+      <section aria-label="Problem and solution" className="pt-24 lg:pt-32">
+        <Container className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {[
+            { label: 'Technical Problem & Context', body: project.problem },
+            { label: 'Architected Solution', body: project.solution },
+          ].map((item, i) => (
+            <div key={item.label} data-reveal style={revealDelay(i)} className="flex">
+              <Panel className="w-full sm:p-10">
+                <Label>{item.label}</Label>
+                <p className="mt-5 text-[17px] leading-[1.7] text-mist-300">{item.body}</p>
+              </Panel>
             </div>
-
-            <h1 className="font-display text-3xl sm:text-5xl font-normal text-navy-900 tracking-tight">
-              {project.title}
-            </h1>
-
-            <p className="text-lg text-gold-600 font-semibold">
-              {project.tagline}
-            </p>
-
-            <p className="text-base text-slate-600 leading-relaxed max-w-3xl">
-              {project.overview}
-            </p>
-          </div>
-        </div>
+          ))}
+        </Container>
       </section>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-md space-y-3">
-            <div className="flex items-center gap-2 text-sm font-mono font-semibold uppercase text-gold-600">
-              <AlertTriangle size={18} />
-              <span>Technical Problem & Context</span>
-            </div>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              {project.problem}
-            </p>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-md space-y-3">
-            <div className="flex items-center gap-2 text-sm font-mono font-semibold uppercase text-techBlue-600">
-              <Code2 size={18} />
-              <span>Architected Solution</span>
-            </div>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              {project.solution}
-            </p>
-          </div>
-        </div>
-
-        <div className="p-8 rounded-3xl bg-white border border-slate-200 space-y-6 shadow-xl">
-          <h2 className="font-display text-xl font-normal text-navy-900 flex items-center gap-2.5">
-            <Cpu size={22} className="text-gold-600" />
-            <span>Systems Architecture Highlights</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section aria-labelledby="architecture-heading" className="py-24 lg:py-32">
+        <Container>
+          <SectionIntro id="architecture-heading" eyebrow="Architecture" title="Systems Architecture Highlights" />
+          <ol className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
             {project.architectureHighlights.map((arch, i) => (
-              <div key={i} className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed font-medium">
-                <span className="font-mono text-gold-600 font-bold block mb-1">Pattern 0{i + 1}</span>
-                {arch}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-md space-y-4">
-            <h3 className="text-lg font-bold text-navy-900">Core Platform Functionality</h3>
-            <ul className="space-y-2.5 text-xs text-slate-700 font-medium">
-              {project.keyFeatures.map((feat, idx) => (
-                <li key={idx} className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-gold-500 shrink-0 mt-0.5" />
-                  <span>{feat}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-md space-y-4">
-            <h3 className="text-lg font-bold text-navy-900">Measurable Results</h3>
-            <ul className="space-y-2.5 text-xs text-slate-700 font-medium">
-              {project.outcomes.map((out, idx) => (
-                <li key={idx} className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                  <span>{out}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-md">
-          <h3 className="text-base font-mono font-semibold uppercase text-slate-500">
-            Complete Technology Stack
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {project.techStack.map((tech, i) => (
-              <span
-                key={i}
-                className="px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-navy-900 text-xs font-mono font-semibold"
+              <li
+                key={arch}
+                data-reveal
+                style={revealDelay(i)}
+                className="rounded-[24px] border border-ink-line bg-ink-850 p-7"
               >
-                {tech}
-              </span>
+                <span className="text-[13px] font-medium tabular-nums text-brand-400">Pattern {indexLabel(i)}</span>
+                <p className="mt-4 text-[16px] leading-[1.65] text-mist-200">{arch}</p>
+              </li>
             ))}
-          </div>
-        </div>
-      </div>
+          </ol>
+        </Container>
+      </section>
 
-      <CinematicCTA />
-    </div>
+      <section aria-label="Functionality and results" className="border-t border-ink-line bg-ink-900 py-24 lg:py-32">
+        <Container className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div data-reveal>
+            <Panel className="h-full sm:p-10">
+              <h2 className="font-display text-[clamp(1.5rem,2.4vw,2rem)] font-normal text-mist-100">
+                Core Platform Functionality
+              </h2>
+              <PlusList items={project.keyFeatures} className="mt-6" />
+            </Panel>
+          </div>
+          <div data-reveal style={revealDelay(1)}>
+            <Panel className="h-full sm:p-10">
+              <h2 className="font-display text-[clamp(1.5rem,2.4vw,2rem)] font-normal text-mist-100">Measurable Results</h2>
+              <PlusList items={project.outcomes} className="mt-6" />
+            </Panel>
+          </div>
+          <div data-reveal className="md:col-span-2">
+            <Panel>
+              <Label>Complete Technology Stack</Label>
+              <ChipList items={project.techStack} label="Technology stack" className="mt-5" />
+            </Panel>
+          </div>
+        </Container>
+      </section>
+
+      <nav aria-label="More case studies" className="border-t border-ink-line">
+        <Container className="flex flex-col gap-6 py-12 sm:flex-row sm:items-center sm:justify-between">
+          <Link href="/projects" className="eg-btn eg-btn-secondary self-start">
+            <ArrowLeft aria-hidden className="h-4 w-4" /> Back to All Projects
+          </Link>
+          {next.id !== project.id && (
+            <Link href={`/projects/${next.slug}`} className="group text-left sm:max-w-md sm:text-right">
+              <Chip>Next case study</Chip>
+              <span className="mt-3 flex items-center gap-3 font-display text-xl leading-snug text-mist-100 transition-colors duration-160 group-hover:text-brand-400 sm:justify-end">
+                {next.title}
+                <ArrowRight aria-hidden className="h-5 w-5 shrink-0" />
+              </span>
+            </Link>
+          )}
+        </Container>
+      </nav>
+    </InnerPage>
   );
 }

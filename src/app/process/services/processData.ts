@@ -91,7 +91,7 @@ export const processData: ProcessStage[] = [
     short: "Scale",
     tagline: "Continuous 24/7 system health monitoring, telemetry alerts, and SLA maintenance.",
     description:
-      "Post-launch, Entelgow provides SLA-backed engineering support. We monitor cloud server telemetry, track time-series error logs, execute security patch updates, and optimize database indexing as your user base scales.",
+      "Post-launch, Enteglow provides SLA-backed engineering support. We monitor cloud server telemetry, track time-series error logs, execute security patch updates, and optimize database indexing as your user base scales.",
     deliverables: [
       "24/7 Prometheus & Grafana Telemetry Dashboard",
       "SLA Technical Support Coverage",

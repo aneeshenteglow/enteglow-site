@@ -25,7 +25,7 @@ export const solutionsData: SolutionDetail[] = [
     title: "Enterprise Multi-Tenant SaaS Platforms",
     tagline: "Scalable B2B cloud architectures engineered for high enterprise concurrency.",
     description:
-      "Entelgow designs multi-tenant B2B SaaS web platforms. Utilizing PostgreSQL Row-Level Security (RLS), isolated database schema patterns, and Next.js App Router, our enterprise software provides strict tenant data isolation, custom white-label branding, and sub-second page performance.",
+      "Enteglow designs multi-tenant B2B SaaS web platforms. Utilizing PostgreSQL Row-Level Security (RLS), isolated database schema patterns, and Next.js App Router, our enterprise software provides strict tenant data isolation, custom white-label branding, and sub-second page performance.",
     iconName: "Building2",
     businessOutcome:
       "Enables technology companies to onboard enterprise B2B customers seamlessly with zero risk of cross-tenant data leakage.",
@@ -61,7 +61,7 @@ export const solutionsData: SolutionDetail[] = [
     title: "Industrial IoT Telemetry & Control Suites",
     tagline: "Sub-second supervisory control and data acquisition (SCADA) for shop-floor hardware.",
     description:
-      "Entelgow develops end-to-end industrial telemetry platforms. From edge gateway parsers to time-series database storage and WebSocket dashboards, our IoT software monitors hardware sensors, detects anomalies, and sends real-time threshold alerts.",
+      "Enteglow develops end-to-end industrial telemetry platforms. From edge gateway parsers to time-series database storage and WebSocket dashboards, our IoT software monitors hardware sensors, detects anomalies, and sends real-time threshold alerts.",
     iconName: "Cpu",
     businessOutcome:
       "Prevents costly unplanned hardware downtime by detecting sensor telemetry anomalies prior to equipment failure.",
@@ -115,7 +115,7 @@ export const solutionsData: SolutionDetail[] = [
     title: "Custom Digital Software Products",
     tagline: "Turnkey software engineering for high-growth tech startups and innovators.",
     description:
-      "Entelgow partners with tech founders and product leaders to design, architect, and build new digital software products from scratch. We deliver clean TypeScript/Go codebases ready for venture scaling or enterprise deployment.",
+      "Enteglow partners with tech founders and product leaders to design, architect, and build new digital software products from scratch. We deliver clean TypeScript/Go codebases ready for venture scaling or enterprise deployment.",
     iconName: "Sparkles",
     businessOutcome:
       "Accelerates time-to-market for new technology products with a scalable, production-grade software architecture.",

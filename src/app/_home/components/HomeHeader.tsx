@@ -2,16 +2,24 @@
 
 import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 import { contact, homeNav, servicesMenu } from '../data/homeContent';
 import { LogoLockup } from './primitives';
 import { cn } from '../cn';
 
 const navLinkClass =
-  'rounded-full px-3 py-2 text-sm font-medium text-mist-300 transition-colors duration-160 ease-standard hover:text-mist-100';
+  'rounded-full px-3 py-2 text-sm font-medium text-mist-300 transition-colors duration-160 ease-standard hover:text-mist-100 aria-[current=page]:text-mist-100';
+
+/** Marks the nav item for the current section (e.g. /projects for /projects/some-case-study). */
+const useCurrent = () => {
+  const pathname = usePathname();
+  return (href: string) => (pathname === href || pathname.startsWith(`${href}/`) ? ('page' as const) : undefined);
+};
 
 const ServicesDropdown: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const current = useCurrent();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuId = useId();
 
@@ -31,7 +39,7 @@ const ServicesDropdown: React.FC = () => {
       }}
     >
       <div className="flex items-center">
-        <Link href="/services" className={cn(navLinkClass, 'pr-1')}>
+        <Link href="/services" aria-current={current('/services')} className={cn(navLinkClass, 'pr-1')}>
           Services
         </Link>
         <button
@@ -80,6 +88,7 @@ const ServicesDropdown: React.FC = () => {
 const MobileMenu: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const closeRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const current = useCurrent();
 
   useEffect(() => {
     closeRef.current?.focus();
@@ -135,7 +144,8 @@ const MobileMenu: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               <Link
                 href={item.href}
                 onClick={onClose}
-                className="block rounded-xl px-3 py-3 text-2xl font-semibold tracking-[-0.03em] text-mist-100"
+                aria-current={current(item.href)}
+                className="block rounded-xl px-3 py-3 text-2xl font-semibold tracking-[-0.03em] text-mist-100 aria-[current=page]:text-brand-400"
               >
                 {item.label}
               </Link>
@@ -164,6 +174,7 @@ const MobileMenu: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 };
 
 export const HomeHeader: React.FC = () => {
+  const current = useCurrent();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -183,7 +194,7 @@ export const HomeHeader: React.FC = () => {
   return (
     <>
       <a
-        href="#home-content"
+        href="#main-content"
         className="eg-chrome sr-only z-[70] rounded-full bg-brand-500 px-4 py-2 text-sm font-semibold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
       >
         Skip to content
@@ -204,7 +215,7 @@ export const HomeHeader: React.FC = () => {
                   <ServicesDropdown key={item.href} />
                 ) : (
                   <li key={item.href}>
-                    <Link href={item.href} className={navLinkClass}>
+                    <Link href={item.href} aria-current={current(item.href)} className={navLinkClass}>
                       {item.label}
                     </Link>
                   </li>

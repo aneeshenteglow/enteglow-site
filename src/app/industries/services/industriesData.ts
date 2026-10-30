@@ -28,7 +28,7 @@ export const industriesData: IndustryDetail[] = [
     name: "Logistics & Supply Chain",
     tagline: "Fleet telemetry, warehouse automation, and supply chain visibility applications.",
     description:
-      "Entelgow builds software products that optimize cargo routing, track fleet telemetry in real time, and manage complex warehouse inventory operations.",
+      "Enteglow builds software products that optimize cargo routing, track fleet telemetry in real time, and manage complex warehouse inventory operations.",
     iconName: "Truck",
     supportedCapabilities: [
       "GPS fleet tracking & driver telemetry mobile apps",
@@ -70,7 +70,7 @@ export const industriesData: IndustryDetail[] = [
     name: "Healthcare & Life Sciences",
     tagline: "Secure medical data workflows, laboratory telemetry, and HIPAA-compliant portals.",
     description:
-      "Entelgow develops healthcare software designed around strict data security, encrypted records handling, laboratory device integration, and patient management.",
+      "Enteglow develops healthcare software designed around strict data security, encrypted records handling, laboratory device integration, and patient management.",
     iconName: "HeartPulse",
     supportedCapabilities: [
       "Encrypted patient records management portals",
@@ -154,7 +154,7 @@ export const industriesData: IndustryDetail[] = [
     name: "Agriculture & AgTech",
     tagline: "Soil sensor telemetry, automated irrigation controls, and crop yield forecasting.",
     description:
-      "Entelgow creates AgTech software connecting field sensors with cloud analytics, empowering farm managers to optimize water usage, monitor weather, and track yields.",
+      "Enteglow creates AgTech software connecting field sensors with cloud analytics, empowering farm managers to optimize water usage, monitor weather, and track yields.",
     iconName: "Sprout",
     supportedCapabilities: [
       "Remote soil moisture & weather sensor IoT monitoring",
