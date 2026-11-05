@@ -43,6 +43,5 @@ export const LogoLockup: React.FC<{ onClick?: () => void; className?: string }> 
     aria-label="Enteglow home"
   >
     <Image src="/images/home/enteglow-logo.png" alt="" width={36} height={31} className="h-[31px] w-9" />
-    <span className="text-[22px] font-bold leading-none tracking-[-0.06em] text-mist-100">enteglow</span>
   </Link>
 );

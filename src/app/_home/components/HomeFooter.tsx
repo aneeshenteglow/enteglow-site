@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { Mail, Phone } from 'lucide-react';
-import { contact, homeNav, servicesMenu } from '../data/homeContent';
+import { contact, homeNav, secondaryNav, servicesMenu } from '../data/homeContent';
 import { socialLinks } from '../data/socialLinks';
 import { Container, LogoLockup } from './primitives';
 
-const companyLinks = [...homeNav, { href: contact.contactPage, label: 'Contact' }];
+const companyLinks = [...homeNav, ...secondaryNav];
 
 const linkClass = 'text-[15px] text-mist-500 transition-colors duration-160 hover:text-mist-100';
 
@@ -21,8 +21,9 @@ export const HomeFooter: React.FC = () => (
     <Container className="grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-20">
       <div className="sm:col-span-2 lg:col-span-4">
         <LogoLockup />
-        <p className="mt-6 max-w-xs text-[15px] leading-relaxed text-mist-500">
-          Ready to take the next step? Let&apos;s connect today.
+        <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-mist-500">
+          At Enteglow, we combine creativity, technical expertise, and experience to develop unique, seamless, and
+          innovative technology solutions.
         </p>
         <ul className="mt-6 flex gap-2" aria-label="Enteglow on social media">
           {socialLinks.map((s) => (

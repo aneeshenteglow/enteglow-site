@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { projectsData } from '@/app/projects/services/projectsData';
 import { ProjectDetail } from '@/app/projects/types/project';
+import { servicesData } from '@/app/services/services/servicesData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://entelgow.com';
@@ -29,5 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...routes, ...projectRoutes];
+  const serviceRoutes = servicesData.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...routes, ...serviceRoutes, ...projectRoutes];
 }

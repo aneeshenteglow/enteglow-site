@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Mail, Phone } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import { contact } from '../data/homeContent';
 import { Container } from './primitives';
 
@@ -44,14 +44,6 @@ export const ClosingCta: React.FC = () => (
           </Link>
         </div>
       </div>
-
-      <a
-        href={`mailto:${contact.email}`}
-        className="mt-auto inline-flex items-center gap-2 pt-40 text-[13px] text-mist-600 transition-colors duration-160 hover:text-mist-300 sm:pt-48"
-      >
-        <Mail aria-hidden className="h-3.5 w-3.5" strokeWidth={1.75} />
-        {contact.email}
-      </a>
     </Container>
   </section>
 );

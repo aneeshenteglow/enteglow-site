@@ -12,30 +12,16 @@ interface PageHeroProps {
   parents?: NavItem[];
   /** Breadcrumb label for the current page; defaults to the title. */
   crumb?: string;
+  /** Optional visual shown beside the copy from the `lg` breakpoint (below it, under the copy). */
+  aside?: React.ReactNode;
   children?: React.ReactNode;
 }
 
 // Inner-page banner: the homepage hero's atmosphere (warm glow + masked grid) at a calmer height.
-export const PageHero: React.FC<PageHeroProps> = ({ eyebrow, title, intro, parents = [], crumb, children }) => (
-  <section className="eg-atmosphere eg-grid relative isolate overflow-hidden pb-16 pt-[136px] sm:pb-20 lg:pb-24 lg:pt-[168px]">
-    <Container className="relative">
-      <nav aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-1.5 text-[13px] text-mist-600">
-          {[{ href: '/', label: 'Home' }, ...parents].map((item) => (
-            <li key={item.href} className="inline-flex items-center gap-1.5">
-              <Link href={item.href} className="transition-colors duration-160 hover:text-mist-100">
-                {item.label}
-              </Link>
-              <ChevronRight aria-hidden className="h-3.5 w-3.5" />
-            </li>
-          ))}
-          <li aria-current="page" className="text-mist-300">
-            {crumb ?? title}
-          </li>
-        </ol>
-      </nav>
-
-      <div className="mt-10 max-w-4xl">
+export const PageHero: React.FC<PageHeroProps> = ({ eyebrow, title, intro, parents = [], crumb, aside, children }) => {
+  const copy = (
+    <>
+      <div className="max-w-4xl">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-5 font-display text-[clamp(2.5rem,6vw,4.75rem)] font-normal leading-[1.02] tracking-[-0.02em] text-mist-100 [text-wrap:balance]">
           {title}
@@ -45,6 +31,37 @@ export const PageHero: React.FC<PageHeroProps> = ({ eyebrow, title, intro, paren
         )}
       </div>
       {children && <div className="mt-10">{children}</div>}
-    </Container>
-  </section>
-);
+    </>
+  );
+
+  return (
+    <section className="eg-atmosphere eg-grid relative isolate overflow-hidden pb-16 pt-[136px] sm:pb-20 lg:pb-24 lg:pt-[168px]">
+      <Container className="relative">
+        <nav aria-label="Breadcrumb">
+          <ol className="flex flex-wrap items-center gap-1.5 text-[13px] text-mist-600">
+            {[{ href: '/', label: 'Home' }, ...parents].map((item) => (
+              <li key={item.href} className="inline-flex items-center gap-1.5">
+                <Link href={item.href} className="transition-colors duration-160 hover:text-mist-100">
+                  {item.label}
+                </Link>
+                <ChevronRight aria-hidden className="h-3.5 w-3.5" />
+              </li>
+            ))}
+            <li aria-current="page" className="text-mist-300">
+              {crumb ?? title}
+            </li>
+          </ol>
+        </nav>
+
+        {aside ? (
+          <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-14">
+            <div className="lg:col-span-7">{copy}</div>
+            <div className="lg:col-span-5">{aside}</div>
+          </div>
+        ) : (
+          <div className="mt-10">{copy}</div>
+        )}
+      </Container>
+    </section>
+  );
+};

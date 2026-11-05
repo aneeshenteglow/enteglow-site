@@ -1,7 +1,6 @@
 // Homepage copy from the approved "enteglow-contents-Home-Page" document.
 // Only punctuation and spelling slips were corrected; wording is unchanged.
 import type {
-  AboutCard,
   HeroSlide,
   HomeService,
   InfrastructureSolution,
@@ -9,13 +8,18 @@ import type {
   Testimonial,
 } from '../types';
 
-// Existing /services page anchors (src/app/services/services/servicesData.ts ids).
+// Service detail pages (src/app/services/[slug]); slugs match src/app/services/services/servicesData.ts.
+export const serviceHref = (slug: string) => `/services/${slug}`;
+
 const SERVICE_LINKS = {
-  ai: '/services#ai-agents',
-  webApp: '/services#web-applications',
-  website: '/services#websites',
-  mobile: '/services#mobile-applications',
-  iot: '/services#iot-solutions',
+  ai: serviceHref('ai-application-development'),
+  webApp: serviceHref('web-application-development'),
+  appMaintenance: serviceHref('application-maintenance'),
+  website: serviceHref('website-development'),
+  websiteMaintenance: serviceHref('website-maintenance'),
+  domain: serviceHref('domain-registration-hosting'),
+  mobile: serviceHref('mobile-app-development'),
+  iot: serviceHref('iot-application-development'),
 } as const;
 
 export const contact = {
@@ -26,12 +30,18 @@ export const contact = {
   contactPage: '/contact',
 };
 
-// Same destinations as the shared Header; the Services entry gains a dropdown.
+// Main navigation, in the approved order. The Services entry gains a dropdown.
 export const homeNav: NavItem[] = [
-  { href: '/about', label: 'Company' },
+  { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Portfolio' },
+  { href: '/contact', label: 'Contact Us' },
+];
+
+// Existing pages that left the main navigation stay reachable from the footer.
+export const secondaryNav: NavItem[] = [
   { href: '/industries', label: 'Industries' },
-  { href: '/projects', label: 'Case Studies' },
   { href: '/process', label: 'Resources' },
 ];
 
@@ -72,6 +82,7 @@ export const heroSlides: HeroSlide[] = [
       'We ensure software applications remain secure, stable, efficient, and aligned with evolving business requirements. Our team proactively addresses emerging challenges, optimizes application performance.',
     visual: 'app-maintenance',
     image: { src: '/images/home/hero-app-maintenance.png', focusX: 0.74 },
+    href: SERVICE_LINKS.appMaintenance,
   },
   {
     id: 'website-maintenance',
@@ -81,6 +92,7 @@ export const heroSlides: HeroSlide[] = [
       'Don’t have an in-house technical team to manage your website? We’ve got you covered. We ensure continuous performance, security, reliability, and adaptability through proactive monitoring.',
     visual: 'website-maintenance',
     image: { src: '/images/home/hero-website-maintenance.png', focusX: 0.7 },
+    href: SERVICE_LINKS.websiteMaintenance,
   },
   {
     id: 'mobile-app-development',
@@ -98,22 +110,6 @@ export const about = {
   body: 'We are tech enthusiasts committed to leveraging cutting-edge technology to transform business concepts into successful business models. At Enteglow, we combine creativity, technical expertise, and experience to develop unique, seamless, and innovative technology solutions.',
   statements: ['Technology with purpose', 'Engineering ideas into impact', 'TechSynergy in Action'],
 };
-
-// The source document's About block has no fourth highlight, so the About cards reuse the four
-// banner services that have approved photography. Copy comes straight from `heroSlides`.
-const aboutCardCategory: Record<string, AboutCard['category']> = {
-  'ai-application-development': 'Development',
-  'web-application-development': 'Development',
-  'application-maintenance': 'Maintenance',
-  'website-maintenance': 'Maintenance',
-};
-
-export const aboutCards: AboutCard[] = heroSlides.flatMap((slide) => {
-  const category = aboutCardCategory[slide.id];
-  return category && slide.image
-    ? [{ id: slide.id, title: slide.title, subtitle: slide.subtitle, category, image: slide.image, href: slide.href }]
-    : [];
-});
 
 // Long-form service copy lives on the hero slides; reuse it rather than duplicating approved text.
 const slideDescription = (id: string) => heroSlides.find((slide) => slide.id === id)?.description;
@@ -138,6 +134,7 @@ export const services: HomeService[] = [
     tagline: 'Solutions for Seamless Application Performance',
     description: slideDescription('application-maintenance'),
     icon: 'app-maintenance',
+    href: SERVICE_LINKS.appMaintenance,
   },
   // Tagline from the current enteglow.com homepage banner; awaiting approved description.
   { title: 'Website Development', tagline: 'Go global, get noticed', icon: 'website', href: SERVICE_LINKS.website },
@@ -146,9 +143,10 @@ export const services: HomeService[] = [
     tagline: 'Solutions for Smooth & Reliable Performance',
     description: slideDescription('website-maintenance'),
     icon: 'website-maintenance',
+    href: SERVICE_LINKS.websiteMaintenance,
   },
   // Awaiting approved tagline.
-  { title: 'Domain Registration & Hosting', icon: 'domain' },
+  { title: 'Domain Registration & Hosting', icon: 'domain', href: SERVICE_LINKS.domain },
   {
     title: 'Mobile App Development',
     tagline: 'Next-Gen Mobile Solutions for Business Growth',

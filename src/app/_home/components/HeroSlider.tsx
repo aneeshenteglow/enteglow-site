@@ -218,7 +218,6 @@ export const HeroSlider: React.FC = () => {
         <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 px-4 sm:px-6 md:px-16 xl:px-[180px]">
           {heroSlides.map((slide, i) => {
             const active = i === index;
-            const primaryHref = slide.href ?? contact.contactPage;
             return (
               <div
                 key={slide.id}
@@ -266,27 +265,29 @@ export const HeroSlider: React.FC = () => {
                     <p className="text-[15px] leading-[1.7] text-mist-300">{slide.description}</p>
                     {slide.href && (
                       <Link
-                        href={contact.contactPage}
+                        href={slide.href}
                         className="mt-4 hidden items-center gap-1.5 text-sm font-semibold text-mist-100 transition-colors duration-160 hover:text-brand-400 md:inline-flex"
                       >
-                        Let&apos;s Talk <ArrowRight aria-hidden className="h-4 w-4" />
+                        Know More <ArrowRight aria-hidden className="h-4 w-4" />
+                        <span className="sr-only">: {slide.title}</span>
                       </Link>
                     )}
                   </div>
                   <div data-slide-item style={delay(360)} className="flex items-center gap-5">
                     <Link
-                      href={primaryHref}
+                      href={contact.contactPage}
                       className="eg-cta-circle relative grid h-[76px] w-[76px] shrink-0 place-items-center rounded-full bg-brand-500 text-[13px] font-semibold text-white"
                     >
-                      {slide.href ? 'Explore' : 'Enquire'}
-                      <span className="sr-only">: {slide.href ? slide.title : 'contact Enteglow'}</span>
+                      Enquire
+                      <span className="sr-only">: contact Enteglow about {slide.title}</span>
                     </Link>
                     {slide.href && (
                       <Link
-                        href={contact.contactPage}
+                        href={slide.href}
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-mist-100 md:hidden"
                       >
-                        Let&apos;s Talk <ArrowRight aria-hidden className="h-4 w-4" />
+                        Know More <ArrowRight aria-hidden className="h-4 w-4" />
+                        <span className="sr-only">: {slide.title}</span>
                       </Link>
                     )}
                   </div>

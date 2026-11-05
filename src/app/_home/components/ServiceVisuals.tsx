@@ -331,7 +331,164 @@ const IotVisual = () => {
   );
 };
 
-const visuals: Record<HomeService['icon'], React.FC> = {
+// A native desktop workstation: window chrome, side panel and a live chart.
+const DesktopVisual = () => (
+  <div className="flex h-full w-full items-center justify-center p-4">
+    <div className="flex h-full w-full max-w-[300px] flex-col items-center">
+      <div className="flex w-full flex-1 flex-col overflow-hidden rounded-lg border border-ink-600 bg-ink-900">
+        <div className="flex items-center justify-between border-b border-ink-line px-2.5 py-1.5">
+          <Dots />
+          <span className="flex gap-1">
+            <span className="h-1.5 w-3 rounded-sm bg-ink-700" />
+            <span className="h-1.5 w-3 rounded-sm bg-ink-700" />
+          </span>
+        </div>
+        <div className="flex flex-1 gap-2 p-2">
+          <div className="flex w-1/4 flex-col gap-1.5 rounded-md bg-ink-850 p-1.5">
+            <Bar className="eg-accent-bg w-4/5 opacity-80" />
+            <Bar className="w-3/5" />
+            <Bar className="w-2/3" />
+          </div>
+          <svg viewBox="0 0 120 50" className="flex-1 rounded-md bg-ink-850" preserveAspectRatio="none">
+            <polyline
+              className="eg-svc-pulse-line"
+              points="0,40 18,32 34,36 52,20 70,26 88,12 104,18 120,8"
+              fill="none"
+              stroke="var(--eg-accent)"
+              strokeWidth="2"
+              strokeLinejoin="round"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
+      </div>
+      <span className="h-3 w-3 bg-ink-700" />
+      <span className="h-1.5 w-16 rounded-full bg-ink-700" />
+    </div>
+  </div>
+);
+
+// Purpose-built modules wired together into one system.
+const CustomSoftwareVisual = () => {
+  const modules = [
+    { x: 30, y: 22, w: 70 },
+    { x: 30, y: 98, w: 70 },
+    { x: 200, y: 22, w: 70 },
+    { x: 200, y: 98, w: 70 },
+  ];
+  const core = { x: 150, y: 80 };
+  return (
+    <svg viewBox="0 0 300 160" className="h-full w-full" preserveAspectRatio="xMidYMid meet">
+      {modules.map((m) => {
+        const mx = m.x < core.x ? m.x + m.w : m.x;
+        const my = m.y + 20;
+        const d = `M${mx} ${my} C ${(mx + core.x) / 2} ${my}, ${(mx + core.x) / 2} ${core.y}, ${core.x} ${core.y}`;
+        return (
+          <g key={`${m.x}-${m.y}`}>
+            <path d={d} fill="none" stroke={LINE} strokeWidth="1.5" />
+            <path className="eg-svc-flow" d={d} fill="none" stroke="var(--eg-accent)" strokeOpacity="0.55" strokeWidth="1.5" />
+            <rect x={m.x} y={m.y} width={m.w} height="40" rx="9" fill="#17181A" stroke={LINE} strokeWidth="1.5" />
+            <rect x={m.x + 10} y={m.y + 12} width={m.w * 0.5} height="5" rx="2.5" fill={NODE} />
+            <rect x={m.x + 10} y={m.y + 23} width={m.w * 0.32} height="5" rx="2.5" fill={NODE} />
+          </g>
+        );
+      })}
+      <rect x={core.x - 20} y={core.y - 20} width="40" height="40" rx="11" fill="#17181A" stroke="var(--eg-accent)" strokeOpacity="0.6" />
+      <circle className="eg-svc-halo" cx={core.x} cy={core.y} r="28" fill="none" stroke="var(--eg-accent)" />
+      <path
+        d={`M${core.x - 6} ${core.y - 6} l-5 6 l5 6 M${core.x + 6} ${core.y - 6} l5 6 l-5 6`}
+        fill="none"
+        stroke="var(--eg-accent)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+// Client requests pass through an API gateway to backend services. Labels quote the service's
+// listed API styles (REST, gRPC, GraphQL).
+const ApiVisual = () => (
+  <div className="flex h-full w-full items-center gap-3 p-4">
+    <div className="flex flex-1 flex-col gap-2">
+      {['REST', 'gRPC', 'GraphQL'].map((label, i) => (
+        <span
+          key={label}
+          className="flex items-center gap-2 rounded-lg border border-ink-line bg-ink-850 px-2.5 py-1.5 font-mono text-[11px] text-mist-300"
+        >
+          <span className="eg-accent-bg eg-svc-led h-1.5 w-1.5 shrink-0 rounded-full" style={{ animationDelay: `${i * 400}ms` }} />
+          {label}
+        </span>
+      ))}
+    </div>
+    <svg viewBox="0 0 40 100" className="h-[70%] w-8 shrink-0" preserveAspectRatio="none" aria-hidden>
+      {[18, 50, 82].map((y) => (
+        <path key={y} className="eg-svc-flow" d={`M0 ${y} C 20 ${y}, 20 50, 40 50`} fill="none" stroke="var(--eg-accent)" strokeOpacity="0.6" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+      ))}
+    </svg>
+    <div className="eg-accent-border flex h-[78%] w-[34%] max-w-[110px] flex-col gap-1.5 rounded-xl border bg-ink-900 p-2">
+      <span className="eg-accent-soft h-2 w-3/5 rounded-full" />
+      {[0, 1, 2, 3].map((i) => (
+        <span key={i} className="flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-ink-600" />
+          <span className="eg-svc-grow h-1.5 flex-1 rounded-full bg-ink-700" style={{ animationDelay: `${i * 250}ms` }} />
+        </span>
+      ))}
+    </div>
+  </div>
+);
+
+// A delivery pipeline above a row of containers.
+const CloudVisual = () => (
+  <div className="flex h-full w-full flex-col justify-center gap-4 p-4">
+    <div className="flex items-center">
+      {['Build', 'Test', 'Deploy'].map((label, i) => (
+        <React.Fragment key={label}>
+          {i > 0 && <span className="eg-svc-grow eg-accent-bg h-[2px] flex-1 opacity-60" style={{ animationDelay: `${i * 300}ms` }} />}
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-line bg-ink-850 px-2.5 py-1 text-[12px] font-medium text-mist-300">
+            <CircleCheck className="eg-accent-text eg-svc-pop h-3.5 w-3.5" strokeWidth={1.75} style={{ animationDelay: `${i * 400}ms` }} />
+            {label}
+          </span>
+        </React.Fragment>
+      ))}
+    </div>
+    <div className="grid grid-cols-4 gap-2">
+      {[0, 1, 2, 3].map((i) => (
+        <div key={i} className="flex flex-col gap-1 rounded-lg border border-ink-line bg-ink-900 p-2">
+          <span className={cn('h-1.5 w-1.5 rounded-full', i === 0 ? 'eg-accent-bg eg-svc-led' : 'bg-ink-600')} />
+          <span className="h-1.5 w-full rounded-full bg-ink-700" />
+          <span className="h-1.5 w-2/3 rounded-full bg-ink-700" />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+// A design canvas: component frames, colour tokens and a cursor.
+const DesignVisual = () => (
+  <div className="relative flex h-full w-full gap-3 p-4">
+    <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-2">
+      <span className="eg-accent-border eg-accent-soft col-span-2 rounded-lg border border-dashed" />
+      <span className="rounded-lg border border-ink-line bg-ink-850" />
+      <span className="rounded-lg border border-ink-line bg-ink-850" />
+    </div>
+    <div className="flex w-10 flex-col items-center justify-center gap-2 rounded-lg border border-ink-line bg-ink-900 py-2">
+      <span className="eg-accent-bg h-4 w-4 rounded-full" />
+      <span className="h-4 w-4 rounded-full bg-mist-300" />
+      <span className="h-4 w-4 rounded-full bg-ink-600" />
+      <span className="h-4 w-4 rounded-full bg-ink-750" />
+    </div>
+    <svg viewBox="0 0 24 24" className="eg-svc-float absolute left-[46%] top-[38%] h-5 w-5" aria-hidden>
+      <path d="M4 3l15 7-6.5 2L10 19z" fill="var(--eg-accent)" stroke="#0c0d0e" strokeWidth="1.2" strokeLinejoin="round" />
+    </svg>
+  </div>
+);
+
+/** Every illustrated service: the homepage service icons plus the services only on /services. */
+export type ServiceVisualKind = HomeService['icon'] | 'desktop' | 'custom-software' | 'api' | 'cloud' | 'design';
+
+const visuals: Record<ServiceVisualKind, React.FC> = {
   ai: AiVisual,
   'web-app': WebAppVisual,
   'app-maintenance': AppMaintenanceVisual,
@@ -340,9 +497,14 @@ const visuals: Record<HomeService['icon'], React.FC> = {
   domain: DomainVisual,
   mobile: MobileVisual,
   iot: IotVisual,
+  desktop: DesktopVisual,
+  'custom-software': CustomSoftwareVisual,
+  api: ApiVisual,
+  cloud: CloudVisual,
+  design: DesignVisual,
 };
 
-export const ServiceVisual: React.FC<{ kind: HomeService['icon'] }> = ({ kind }) => {
+export const ServiceVisual: React.FC<{ kind: ServiceVisualKind }> = ({ kind }) => {
   const Visual = visuals[kind];
   return <Visual />;
 };
