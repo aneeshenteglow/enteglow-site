@@ -1,0 +1,580 @@
+/* Homepage-only styles (Enteglow Brand Book 2026). Everything is prefixed `eg-` or scoped to `.eg-home`. */
+
+body:has(.eg-home) {
+  background: #0a0a0b;
+}
+
+.eg-home ::selection,
+.eg-chrome ::selection {
+  background: #c63b22;
+  color: #fff;
+}
+
+.eg-home :focus-visible,
+.eg-chrome :focus-visible {
+  outline: 2px solid #f06a4f;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Buttons */
+.eg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1.375rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 650;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-btn svg {
+  transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-btn:hover {
+  transform: translateY(-2px);
+}
+.eg-btn:hover svg {
+  transform: translateX(3px);
+}
+.eg-btn:active {
+  transform: translateY(0);
+}
+.eg-btn-primary {
+  background: #c63b22;
+  color: #fff;
+}
+.eg-btn-primary:hover {
+  box-shadow: 0 10px 30px -10px rgba(240, 106, 79, 0.65);
+}
+.eg-btn-primary:active {
+  background: #9e2f1b;
+}
+.eg-btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #3a3c42;
+}
+.eg-btn-secondary:hover {
+  border-color: #6b6e76;
+}
+
+/* Atmospheric hero background: warm glow + masked grid (brand book cover treatment). */
+.eg-atmosphere {
+  background: radial-gradient(circle at 78% 30%, rgba(198, 59, 34, 0.2), transparent 34%),
+    radial-gradient(circle at 8% 90%, rgba(198, 59, 34, 0.08), transparent 30%), #070708;
+}
+.eg-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 85%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 85%);
+}
+
+/* Hero slides are stacked in one grid cell so the hero never changes height. */
+/* Hero slider ------------------------------------------------------------ */
+
+/* Slides share one grid cell, so the hero height never changes between slides. */
+.eg-hero .eg-slide {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  transition: visibility 0s linear 450ms;
+}
+.eg-hero .eg-slide[data-active='true'] {
+  visibility: visible;
+  transition: none;
+}
+
+/* Outgoing content leaves first (380ms); incoming content enters after it, in sequence.
+   --eg-dir (1 = next, -1 = previous) sets the horizontal direction. */
+.eg-hero[data-animate='true'] .eg-slide[data-active='false'] [data-slide-item] {
+  animation: eg-slide-out 380ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.eg-hero[data-animate='true'] .eg-slide[data-active='true'] [data-slide-item] {
+  animation: eg-slide-in 750ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(320ms + var(--eg-delay, 0ms));
+}
+@keyframes eg-slide-in {
+  from {
+    opacity: 0;
+    transform: translate3d(calc(var(--eg-dir, 1) * 56px), 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes eg-slide-out {
+  to {
+    opacity: 0;
+    transform: translate3d(calc(var(--eg-dir, 1) * -56px), 0, 0);
+  }
+}
+
+/* Background visual: cross-fade plus a slow push-in while active. */
+.eg-hero-visual {
+  opacity: 0;
+  transition: opacity 900ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.eg-hero-visual[data-active='true'] {
+  opacity: 1;
+}
+.eg-hero-visual .eg-kenburns {
+  transform: scale(1);
+  transition: transform 0s linear 900ms;
+}
+.eg-hero-visual[data-active='true'] .eg-kenburns {
+  transform: scale(1.08);
+  transition: transform 7000ms cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.eg-hero-photo {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 28%, #000 74%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 28%, #000 74%, transparent 100%);
+}
+.eg-hero-svg {
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 35%, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 35%, transparent 72%);
+}
+
+.eg-ring-spin {
+  animation: eg-spin 90s linear infinite;
+}
+@keyframes eg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.eg-scroll-dot {
+  animation: eg-scroll 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes eg-scroll {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 9px);
+  }
+}
+
+.eg-hero[data-animate='true'] .eg-num {
+  animation: eg-num-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes eg-num-in {
+  from {
+    opacity: 0;
+    transform: translateY(45%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.eg-hero[data-animate='true'] .eg-rail-item {
+  animation: eg-fade 600ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+@keyframes eg-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Side labels and the large slide number need width and height; below that they would crowd
+   the headline, so the compact counter beside the controls takes over. */
+.eg-hero-rail,
+.eg-hero-num,
+.eg-hero-counter {
+  display: none;
+}
+@media (min-width: 640px) {
+  .eg-hero-counter {
+    display: inline;
+  }
+}
+@media (min-width: 1280px) and (min-height: 820px) {
+  .eg-hero-rail {
+    display: flex;
+  }
+  .eg-hero-num {
+    display: block;
+  }
+  .eg-hero-counter {
+    display: none;
+  }
+}
+
+.eg-cta-circle {
+  transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1), background-color 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-cta-circle::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 106, 79, 0.45);
+  transition: inset 280ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-cta-circle:hover {
+  transform: scale(1.05);
+}
+.eg-cta-circle:hover::after {
+  inset: -12px;
+  opacity: 0.55;
+}
+.eg-cta-circle:active {
+  background: #9e2f1b;
+}
+
+.eg-progress {
+  transform-origin: left;
+  animation: eg-progress var(--eg-duration, 7000ms) linear forwards;
+}
+.eg-progress[data-paused='true'] {
+  animation-play-state: paused;
+}
+@keyframes eg-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Services section ------------------------------------------------------- */
+
+/* Faint warm glow behind the heading, matching the hero atmosphere. */
+.eg-services::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 520px;
+  pointer-events: none;
+  background: radial-gradient(ellipse 50% 60% at 50% 0%, rgba(198, 59, 34, 0.1), transparent 70%);
+}
+
+/* Each card sets --eg-accent inline; these helpers tint with it. */
+.eg-accent-text {
+  color: var(--eg-accent);
+}
+.eg-accent-bg {
+  background-color: var(--eg-accent);
+}
+.eg-accent-soft {
+  background-color: color-mix(in srgb, var(--eg-accent) 16%, transparent);
+}
+.eg-accent-border {
+  border-color: color-mix(in srgb, var(--eg-accent) 55%, transparent);
+}
+
+.eg-svc-card {
+  background: linear-gradient(180deg, #131416 0%, #0f1012 100%);
+  transition: border-color 280ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-svc-card:hover,
+.eg-svc-card:focus-within {
+  border-color: color-mix(in srgb, var(--eg-accent) 40%, #2c2e33);
+}
+.eg-svc-card.is-linked:hover {
+  transform: translateY(-4px);
+}
+
+.eg-svc-icon {
+  color: var(--eg-accent);
+  border: 1px solid color-mix(in srgb, var(--eg-accent) 45%, transparent);
+  background: color-mix(in srgb, var(--eg-accent) 8%, #151618);
+  transition: background-color 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eg-svc-card:hover .eg-svc-icon {
+  background: color-mix(in srgb, var(--eg-accent) 15%, #151618);
+}
+
+.eg-svc-panel {
+  background: #0c0d0e;
+}
+
+/* Visual motion: data flows, halos ripple and traces redraw continuously; status lights pulse slowly. */
+.eg-svc-flow {
+  stroke-dasharray: 6 10;
+  animation: eg-svc-dash 1.2s linear infinite;
+}
+@keyframes eg-svc-dash {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+.eg-svc-halo {
+  stroke-opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: eg-svc-halo 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes eg-svc-halo {
+  from {
+    stroke-opacity: 0.5;
+    transform: scale(0.8);
+  }
+  to {
+    stroke-opacity: 0;
+    transform: scale(1.25);
+  }
+}
+
+.eg-svc-pulse-line {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 0;
+  animation: eg-svc-trace 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+/* Draw the trace over the first half, then hold it fully drawn before looping. */
+@keyframes eg-svc-trace {
+  0% {
+    stroke-dashoffset: 1200;
+  }
+  50%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.eg-svc-led {
+  animation: eg-svc-led 2.4s ease-in-out infinite;
+}
+@keyframes eg-svc-led {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Web app status bars fill and settle. */
+.eg-svc-grow {
+  transform-origin: left center;
+  animation: eg-svc-grow 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+@keyframes eg-svc-grow {
+  0%,
+  100% {
+    transform: scaleX(0.35);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+}
+
+/* Website content tiles light up in turn with the card accent. */
+.eg-svc-glow {
+  animation: eg-svc-glow 2.4s ease-in-out infinite both;
+}
+@keyframes eg-svc-glow {
+  50% {
+    background-color: color-mix(in srgb, var(--eg-accent) 22%, #17181a);
+  }
+}
+
+/* Device mockups drift gently. */
+.eg-svc-float {
+  animation: eg-svc-float 3.6s ease-in-out infinite;
+}
+@keyframes eg-svc-float {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Maintenance checks tick through the list in order. */
+.eg-svc-pop {
+  animation: eg-svc-pop 3.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite both;
+}
+@keyframes eg-svc-pop {
+  0% {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+  14% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  24%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Server activity meters. */
+.eg-svc-eq {
+  transform-origin: center bottom;
+  animation: eg-svc-eq 1.1s ease-in-out infinite both;
+}
+@keyframes eg-svc-eq {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eg-svc-card,
+  .eg-svc-card * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .eg-svc-card.is-linked:hover {
+    transform: none;
+  }
+}
+
+/* Section reveal: only hides content once JS has confirmed it can reveal it again. */
+.eg-reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--eg-delay, 0ms);
+}
+.eg-reveal-ready [data-reveal][data-revealed] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* The progress bar is exempt: it is the autoplay timer if the visitor presses play. */
+  .eg-hero *:not(.eg-progress),
+  .eg-hero *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .eg-hero .eg-kenburns {
+    transform: none !important;
+  }
+  .eg-btn,
+  .eg-btn svg,
+  .eg-reveal-ready [data-reveal] {
+    transition: none !important;
+    transform: none !important;
+  }
+  .eg-reveal-ready [data-reveal] {
+    opacity: 1;
+  }
+}
+
+/* Infrastructure solutions panel: a photo per tab (see InfrastructureSection) under a scrim
+   that darkens toward the bottom-left copy so the white text stays readable on any image. */
+.eg-infra-panel {
+  background: #101113;
+}
+.eg-infra-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(7, 7, 8, 0.92) 0%, rgba(7, 7, 8, 0.6) 42%, rgba(7, 7, 8, 0.18) 75%, rgba(7, 7, 8, 0.32) 100%),
+    linear-gradient(to right, rgba(7, 7, 8, 0.45) 0%, transparent 65%);
+}
+.eg-infra-fade {
+  animation: eg-infra-fade 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes eg-infra-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eg-infra-fade {
+    animation: none;
+  }
+  .eg-infra-photo {
+    transition: none;
+  }
+}
+
+/* Closing CTA "horizon": starfield, faint vertical rules, a brand glow rising from a planet arc. */
+.eg-cta-stars,
+.eg-cta-rules,
+.eg-cta-glow,
+.eg-cta-planet {
+  position: absolute;
+  pointer-events: none;
+}
+.eg-cta-stars {
+  inset: 0;
+  z-index: -4;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 27% 9%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 41% 26%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1px 1px at 63% 12%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 78% 22%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 89% 7%, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1px 1px at 6% 38%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 94% 34%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 55% 4%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 19% 30%, rgba(255, 255, 255, 0.6), transparent);
+  background-size: 520px 420px;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 60%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 60%);
+}
+.eg-cta-rules {
+  inset: 0;
+  z-index: -3;
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 11px);
+  mask-image: radial-gradient(60% 55% at 50% 45%, #000 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(60% 55% at 50% 45%, #000 0%, transparent 100%);
+}
+.eg-cta-glow {
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(70% 55% at 50% 72%, rgba(198, 59, 34, 0.55) 0%, rgba(158, 47, 27, 0.25) 45%, transparent 75%),
+    radial-gradient(40% 40% at 50% 30%, rgba(240, 106, 79, 0.08) 0%, transparent 100%);
+}
+/* A huge circle whose top edge forms the horizon; the inset shadow is the lit rim. */
+.eg-cta-planet {
+  z-index: -1;
+  left: 50%;
+  top: calc(100% - 220px);
+  width: max(250%, 1400px);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #000;
+  box-shadow:
+    0 -24px 90px rgba(198, 59, 34, 0.45),
+    inset 0 2px 0 rgba(240, 106, 79, 0.55),
+    inset 0 46px 70px -18px rgba(198, 59, 34, 0.95),
+    inset 0 110px 120px -40px rgba(158, 47, 27, 0.5);
+}
+.eg-cta-title {
+  background: linear-gradient(90deg, #ffffff 0%, #f1f1f1 40%, #a9a9ab 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.eg-cta-primary {
+  background: linear-gradient(180deg, #f6794f 0%, #f06a4f 45%, #e1552f 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 10px 30px -8px rgba(240, 106, 79, 0.55);
+}

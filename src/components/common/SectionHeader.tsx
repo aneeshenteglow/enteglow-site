@@ -27,7 +27,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
           <Badge variant={badgeVariant}>{badge}</Badge>
         </div>
       )}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy-900 leading-tight">
+      <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-navy-900 leading-tight">
         {title}
       </h2>
       {description && (

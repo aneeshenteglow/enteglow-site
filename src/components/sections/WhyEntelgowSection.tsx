@@ -20,7 +20,7 @@ export const WhyEntelgowSection: React.FC = () => {
             <span className="font-label-md text-label-md uppercase tracking-widest text-outline">
               ENGINEERING GUARANTEES
             </span>
-            <h2 className="font-headline font-bold text-headline-lg text-on-surface">
+            <h2 className="font-display font-normal text-headline-lg text-on-surface">
               Built for Enterprise Reliability & IP Ownership
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant">

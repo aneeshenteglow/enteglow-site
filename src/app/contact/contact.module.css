@@ -1,0 +1,202 @@
+/* Contact page only. Enteglow Brand Book 2026 palette (ink + brand coral/red). */
+
+/* Section atmosphere: warm brand glow behind the shape, a deeper red wash behind the form, dark vignette. */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 42% at 50% 64%, rgba(198, 59, 34, 0.26), transparent 70%),
+    radial-gradient(ellipse 38% 48% at 90% 72%, rgba(158, 47, 27, 0.22), transparent 70%),
+    radial-gradient(ellipse 55% 30% at 50% 0%, rgba(240, 106, 79, 0.1), transparent 70%),
+    #070708;
+}
+.backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 85% 75% at 50% 55%, transparent 55%, rgba(0, 0, 0, 0.55));
+}
+
+/* Soft halo directly behind the shape. */
+.halo {
+  position: absolute;
+  inset: 14%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(198, 59, 34, 0.55), rgba(198, 59, 34, 0.12) 55%, transparent 72%);
+  filter: blur(40px);
+  animation: haloPulse 9s ease-in-out infinite;
+}
+@keyframes haloPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
+}
+
+/* Small brand hexagon marker (the reference's eyebrow dot). */
+.hex {
+  filter: drop-shadow(0 0 6px rgba(240, 106, 79, 0.65));
+}
+
+/* Frosted form panel. */
+.panel {
+  background: linear-gradient(160deg, rgba(198, 59, 34, 0.18), rgba(16, 17, 19, 0.7) 46%, rgba(16, 17, 19, 0.86));
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 40px 90px -45px rgba(198, 59, 34, 0.5);
+}
+/* Keep browser autofill from painting a light box over the transparent underline fields. */
+.panel input:-webkit-autofill,
+.panel input:-webkit-autofill:hover,
+.panel input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  caret-color: #fff;
+  transition: background-color 9999s ease-out 0s;
+}
+
+/* Shown only if WebGL is unavailable: a slowly morphing gradient blob in brand colours. */
+.fallback {
+  position: absolute;
+  inset: 18%;
+  background: conic-gradient(from 200deg, #3a0f08, #c63b22, #f06a4f, #ffb59e, #c63b22, #3a0f08);
+  border-radius: 42% 58% 62% 38% / 45% 40% 60% 55%;
+  filter: blur(1px) saturate(1.1);
+  box-shadow: inset 0 0 60px rgba(7, 7, 8, 0.65);
+  animation: blobMorph 14s ease-in-out infinite;
+}
+@keyframes blobMorph {
+  0%,
+  100% {
+    border-radius: 42% 58% 62% 38% / 45% 40% 60% 55%;
+    transform: rotate(0deg);
+  }
+  50% {
+    border-radius: 58% 42% 40% 60% / 55% 60% 40% 45%;
+    transform: rotate(18deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .halo,
+  .fallback {
+    animation: none;
+  }
+}
+
+/* ---------- Logo visual (replaces the old 3D shape) ---------- */
+.logoStage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  width: 100%;
+}
+.logoGlow {
+  position: absolute;
+  inset: 12%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(198, 59, 34, 0.5), rgba(198, 59, 34, 0.1) 55%, transparent 72%);
+  filter: blur(36px);
+  animation: haloPulse 7s ease-in-out infinite;
+}
+.ring {
+  position: absolute;
+  border-radius: 9999px;
+  border: 1px solid rgba(240, 106, 79, 0.28);
+}
+.ring1 {
+  inset: 18%;
+  animation: ringBreathe 8s ease-in-out infinite;
+}
+.ring2 {
+  inset: 6%;
+  border-color: rgba(240, 106, 79, 0.14);
+  animation: ringBreathe 8s ease-in-out -4s infinite;
+}
+.orbit {
+  position: absolute;
+  inset: 12%;
+  animation: orbitSpin 28s linear infinite;
+}
+.orbit::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  border-radius: 9999px;
+  background: #f06a4f;
+  box-shadow: 0 0 14px 3px rgba(240, 106, 79, 0.7);
+}
+.logoWrap {
+  position: relative;
+  width: 42%;
+  animation: logoFloat 6s ease-in-out infinite;
+}
+.logoImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(198, 59, 34, 0.45));
+}
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(-6px) scale(1);
+  }
+  50% {
+    transform: translateY(6px) scale(1.04);
+  }
+}
+@keyframes ringBreathe {
+  0%,
+  100% {
+    transform: scale(0.97);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+@keyframes orbitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logoGlow,
+  .ring,
+  .orbit,
+  .logoWrap {
+    animation: none;
+  }
+}
+
+/* Map frame */
+.mapFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #101113;
+}
+.mapFrame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  /* Dark-theme the light map tiles so it sits in the Enteglow palette. */
+  filter: invert(0.92) hue-rotate(180deg) saturate(0.7) brightness(0.9) contrast(0.95);
+}

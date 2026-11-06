@@ -19,7 +19,7 @@ export const CinematicCTA: React.FC = () => {
               START A CONVERSATION
             </div>
 
-            <h2 className="font-headline font-bold text-headline-lg md:text-[56px] text-white tracking-tight leading-tight">
+            <h2 className="font-display font-normal text-headline-lg md:text-[56px] text-white tracking-tight leading-tight">
               Let&apos;s Build Software That{' '}
               <span className="gradient-text">Moves Your Business Forward</span>
             </h2>

@@ -76,7 +76,7 @@ export const ProblemIntroSection: React.FC = () => {
               Operational Efficiency
             </div>
 
-            <h2 className="font-headline font-bold text-headline-lg text-on-surface tracking-tight">
+            <h2 className="font-display font-normal text-headline-lg text-on-surface tracking-tight">
               Your Business Problem Is{' '}
               <span className="gradient-text">Where We Start.</span>
             </h2>

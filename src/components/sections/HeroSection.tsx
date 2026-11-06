@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Display Headline */}
-            <h1 className="font-headline font-bold text-display-lg md:text-[84px] leading-tight text-on-surface mb-8 tracking-tight">
+            <h1 className="font-display font-normal text-display-lg md:text-[84px] leading-tight text-on-surface mb-8 tracking-tight">
               We Build Software That <br />
               <span className="gradient-text">Moves Your Business Forward</span>
             </h1>
