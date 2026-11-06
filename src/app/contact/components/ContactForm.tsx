@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronDown } from 'lucide-react';
 import { contact } from '@/app/_home/data/homeContent';
+import { HexDot } from './HexDot';
 
 const services = [
   'AI Application Development',
@@ -12,9 +13,12 @@ const services = [
   'Custom Enterprise Software',
 ];
 
+// Underline fields on the frosted contact panel. Focus shows as a thicker brand-coloured underline.
 const fieldClass =
-  'w-full rounded-2xl border border-ink-700 bg-ink-900 px-4 py-3.5 text-[15px] text-mist-100 placeholder:text-mist-600 transition-colors duration-160 hover:border-ink-600 focus:border-brand-400';
-const labelClass = 'mb-2 block text-[13px] font-semibold text-mist-300';
+  'block w-full rounded-none border-0 border-b border-white/20 bg-transparent px-0 py-2.5 text-[15px] text-mist-100 placeholder:text-mist-600 transition-[border-color,box-shadow] duration-160 hover:border-white/40 focus:border-brand-400 focus:shadow-[0_1px_0_0_#F06A4F] focus:outline-none focus-visible:outline-none';
+const labelClass = 'block text-[13px] text-mist-500';
+// Two per row when the form is wide (sm to md, and xl+); one per row in the half-width column at lg.
+const rowClass = 'grid grid-cols-1 gap-7 sm:grid-cols-2 sm:gap-8 lg:grid-cols-1 lg:gap-7 xl:grid-cols-2 xl:gap-8';
 
 export const ContactForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -51,9 +55,9 @@ export const ContactForm: React.FC = () => {
 
   if (submitted) {
     return (
-      <div className="py-10 text-center" role="status">
+      <div className="py-8 text-center" role="status">
         <CheckCircle2 aria-hidden className="mx-auto h-12 w-12 text-brand-400" strokeWidth={1.5} />
-        <h3 className="mt-6 font-display text-[2rem] font-normal leading-tight text-mist-100">Your email is ready to send</h3>
+        <h3 className="mt-6 font-display text-[1.75rem] font-normal leading-tight text-mist-100">Your email is ready to send</h3>
         <p className="mx-auto mt-4 max-w-md text-[15px] leading-[1.7] text-mist-500">
           We opened your email app with your enquiry addressed to{' '}
           <a href={`mailto:${contact.email}`} className="text-mist-100 underline underline-offset-4">
@@ -69,15 +73,18 @@ export const ContactForm: React.FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-7">
       <div>
-        <h3 className="font-display text-[2rem] font-normal leading-tight text-mist-100">Project Discovery Inquiry</h3>
-        <p className="mt-2 text-[15px] text-mist-500">
+        <HexDot className="mb-5" />
+        <h3 className="font-display text-[clamp(1.5rem,2.2vw,1.875rem)] font-normal leading-tight text-mist-100">
+          Project Discovery Inquiry
+        </h3>
+        <p className="mt-2 text-[14px] leading-[1.6] text-mist-500">
           Fill out your technical requirements below to initiate project evaluation.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className={rowClass}>
         <div>
           <label htmlFor="cf-name" className={labelClass}>
             Your Full Name *
@@ -100,7 +107,7 @@ export const ContactForm: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className={rowClass}>
         <div>
           <label htmlFor="cf-company" className={labelClass}>
             Company Name
@@ -118,13 +125,24 @@ export const ContactForm: React.FC = () => {
           <label htmlFor="cf-service" className={labelClass}>
             Target Software Discipline
           </label>
-          <select id="cf-service" value={formData.service} onChange={update('service')} className={fieldClass}>
-            {services.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
+          <div className="relative">
+            <select
+              id="cf-service"
+              value={formData.service}
+              onChange={update('service')}
+              className={`${fieldClass} cursor-pointer appearance-none pr-8`}
+            >
+              {services.map((s) => (
+                <option key={s} value={s} className="bg-ink-850 text-mist-100">
+                  {s}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              aria-hidden
+              className="pointer-events-none absolute right-0 top-1/2 h-4 w-4 -translate-y-1/2 text-mist-500"
+            />
+          </div>
         </div>
       </div>
 
@@ -135,15 +153,15 @@ export const ContactForm: React.FC = () => {
         <textarea
           id="cf-message"
           required
-          rows={6}
+          rows={5}
           value={formData.message}
           onChange={update('message')}
           placeholder="Describe your project vision, key technical features, desired target launch date, and existing systems to integrate..."
-          className={fieldClass}
+          className={`${fieldClass} resize-y leading-[1.6]`}
         />
       </div>
 
-      <button type="submit" className="eg-btn eg-btn-primary w-full">
+      <button type="submit" className="eg-btn eg-btn-primary !mt-9 w-full">
         Submit Technical Inquiry <ArrowRight aria-hidden className="h-4 w-4" />
       </button>
     </form>
