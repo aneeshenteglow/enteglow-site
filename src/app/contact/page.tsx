@@ -151,7 +151,7 @@ export default function ContactPage() {
               >
                 Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
               </a>
-              <div className={cn(styles.mapFrame, 'mt-8 h-[300px] sm:h-[380px] lg:h-[424px]')}>
+              <div className={cn(styles.mapFrame, 'mt-8 h-[300px] sm:h-[380px] lg:h-[423px]')}>
                 <iframe
                   title="Map showing the Enteglow office location"
                   src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
