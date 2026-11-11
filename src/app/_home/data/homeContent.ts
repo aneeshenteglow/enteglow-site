@@ -19,7 +19,6 @@ const SERVICE_LINKS = {
   websiteMaintenance: serviceHref('website-maintenance'),
   domain: serviceHref('domain-registration-hosting'),
   mobile: serviceHref('mobile-app-development'),
-  iot: serviceHref('iot-application-development'),
 } as const;
 
 export const contact = {
@@ -50,7 +49,6 @@ export const servicesMenu: NavItem[] = [
   { href: SERVICE_LINKS.webApp, label: 'Web Application Development' },
   { href: SERVICE_LINKS.website, label: 'Website Development' },
   { href: SERVICE_LINKS.mobile, label: 'Mobile App Development' },
-  { href: SERVICE_LINKS.iot, label: 'IoT Application Development' },
 ];
 
 export const heroSlides: HeroSlide[] = [
@@ -154,8 +152,6 @@ export const services: HomeService[] = [
     icon: 'mobile',
     href: SERVICE_LINKS.mobile,
   },
-  // Awaiting approved tagline.
-  { title: 'IoT Application Development', icon: 'iot', href: SERVICE_LINKS.iot },
 ];
 
 // The source document strikes through the first purpose sentence; only the second remains approved.

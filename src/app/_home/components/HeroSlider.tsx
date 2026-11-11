@@ -143,7 +143,7 @@ export const HeroSlider: React.FC = () => {
       </div>
 
       {/* Left rail: scroll cue and social links */}
-      <div className="absolute bottom-0 left-0 top-24 z-10 hidden w-[72px] flex-col items-center border-r border-white/[0.06] pb-8 pt-6 xl:flex">
+      <div className="absolute bottom-0 left-0 top-24 z-30 hidden w-[72px] flex-col items-center border-r border-white/[0.06] pb-8 pt-6 xl:flex">
         <div aria-hidden className="flex flex-col items-center">
           <span className="relative h-7 w-[18px] rounded-full border border-mist-500">
             <span className="eg-scroll-dot absolute left-1/2 top-1.5 h-1.5 w-[2px] -translate-x-1/2 rounded-full bg-mist-300" />
