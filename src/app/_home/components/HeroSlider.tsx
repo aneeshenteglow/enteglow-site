@@ -173,7 +173,7 @@ export const HeroSlider: React.FC = () => {
       </div>
 
       {/* Rotated service labels: previous, current, next */}
-      <div aria-hidden className="eg-hero-rail absolute bottom-36 left-[100px] top-40 z-10 flex-col justify-between">
+      <div aria-hidden className="eg-hero-rail absolute bottom-36 left-[100px] top-40 z-10 flex-col justify-between gap-6 overflow-hidden">
         {[prevSlide, current, nextSlide].map((slide, i) => (
           <div key={`${slide.id}-${i}-${index}`} className="eg-rail-item flex items-end gap-3">
             <span className={cn('bg-brand-500', i === 1 ? 'h-10 w-[5px]' : 'h-5 w-[3px] opacity-60')} />
@@ -181,13 +181,13 @@ export const HeroSlider: React.FC = () => {
             <span className="flex rotate-180 flex-col gap-1.5 [writing-mode:vertical-rl]">
               <span
                 className={cn(
-                  'max-h-[190px] overflow-hidden text-ellipsis whitespace-nowrap text-[13px] font-semibold',
+                  'max-h-[min(190px,15vh)] overflow-hidden text-ellipsis whitespace-nowrap text-[13px] font-semibold',
                   i === 1 ? 'text-mist-100' : 'text-mist-500'
                 )}
               >
                 {slide.title}
               </span>
-              <span className="max-h-[170px] overflow-hidden text-ellipsis whitespace-nowrap text-[11px] text-mist-600">
+              <span className="max-h-[min(170px,13vh)] overflow-hidden text-ellipsis whitespace-nowrap text-[11px] text-mist-600">
                 {slide.subtitle}
               </span>
             </span>
