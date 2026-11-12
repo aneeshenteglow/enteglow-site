@@ -1,5 +1,5 @@
-// Homepage copy from the approved "enteglow-contents-Home-Page" document.
-// Only punctuation and spelling slips were corrected; wording is unchanged.
+// Homepage copy. Service titles, taglines and descriptions follow the "enteglow-contents-Services" document
+// (short descriptions are its first sentences, matching the /services cards); the rest is from the Home-Page document.
 import type {
   HeroSlide,
   HomeService,
@@ -57,7 +57,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'AI Application Development',
     subtitle: 'AI-Driven Solutions',
     description:
-      'We develop Artificial Intelligence (AI)-powered applications that help businesses streamline operations, boost efficiency, and solve complex challenges to drive sustainable growth.',
+      'We develop AI-powered applications that help businesses streamline operations, improve efficiency, and solve complex business challenges.',
     visual: 'ai',
     image: { src: '/images/home/hero-ai.jpg', focusX: 0.78 },
     href: SERVICE_LINKS.ai,
@@ -67,7 +67,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'Web Application Development',
     subtitle: 'Solutions for Business Processes',
     description:
-      'We offer solutions to enhance and streamline diverse processes within an organisation, promoting efficiency and optimization. We specialise in creating innovative custom software applications that meet unique business needs.',
+      'We offer solutions to enhance and streamline diverse processes within an organisation, promoting efficiency and optimization.',
     visual: 'web-app',
     image: { src: '/images/home/hero-web-app.png', focusX: 0.68 },
     href: SERVICE_LINKS.webApp,
@@ -77,7 +77,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'Application Maintenance',
     subtitle: 'Solutions for Seamless Application Performance',
     description:
-      'We ensure software applications remain secure, stable, efficient, and aligned with evolving business requirements. Our team proactively addresses emerging challenges, optimizes application performance.',
+      'We ensure software applications remain secure, stable, efficient, and aligned with evolving business requirements.',
     visual: 'app-maintenance',
     image: { src: '/images/home/hero-app-maintenance.png', focusX: 0.74 },
     href: SERVICE_LINKS.appMaintenance,
@@ -87,7 +87,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'Website Maintenance',
     subtitle: 'Solutions for Smooth & Reliable Performance',
     description:
-      'Don’t have an in-house technical team to manage your website? We’ve got you covered. We ensure continuous performance, security, reliability, and adaptability through proactive monitoring.',
+      'We ensure continuous performance, security, reliability, and adaptability through proactive monitoring, timely updates, issue resolution, and ongoing enhancements.',
     visual: 'website-maintenance',
     image: { src: '/images/home/hero-website-maintenance.png', focusX: 0.7 },
     href: SERVICE_LINKS.websiteMaintenance,
@@ -97,7 +97,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'Mobile App Development',
     subtitle: 'Next-Gen Mobile Solutions for Business Growth',
     description:
-      'We engineer custom mobile apps built for effortless user experiences, efficient operations, and long-term business growth.',
+      'Transform business ideas into innovative mobile applications that enhance customer engagement, streamline operations, and drive business growth through seamless digital experiences.',
     visual: 'mobile',
     href: SERVICE_LINKS.mobile,
   },
@@ -134,8 +134,15 @@ export const services: HomeService[] = [
     icon: 'app-maintenance',
     href: SERVICE_LINKS.appMaintenance,
   },
-  // Tagline from the current enteglow.com homepage banner; awaiting approved description.
-  { title: 'Website Development', tagline: 'Go global, get noticed', icon: 'website', href: SERVICE_LINKS.website },
+  // Tagline (not in the services document) kept from the current enteglow.com homepage banner.
+  {
+    title: 'Website Development',
+    tagline: 'Go global, get noticed',
+    description:
+      'We develop websites with optimized structure that elevates brand visibility, deepens customer engagement, and extends market reach.',
+    icon: 'website',
+    href: SERVICE_LINKS.website,
+  },
   {
     title: 'Website Maintenance',
     tagline: 'Solutions for Smooth & Reliable Performance',
@@ -143,8 +150,14 @@ export const services: HomeService[] = [
     icon: 'website-maintenance',
     href: SERVICE_LINKS.websiteMaintenance,
   },
-  // Awaiting approved tagline.
-  { title: 'Domain Registration & Hosting', icon: 'domain', href: SERVICE_LINKS.domain },
+  // The services document gives no tagline for this service.
+  {
+    title: 'Domain Registration & Hosting',
+    description:
+      'Domain name is more than just a web address; it is a key part of digital identity and brand presence.',
+    icon: 'domain',
+    href: SERVICE_LINKS.domain,
+  },
   {
     title: 'Mobile App Development',
     tagline: 'Next-Gen Mobile Solutions for Business Growth',

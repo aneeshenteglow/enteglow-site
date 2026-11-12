@@ -2,25 +2,25 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Phone } from 'lucide-react';
 import { contact } from '../data/homeContent';
+import { HorizonArt } from '@/components/visuals/HorizonArt';
 import { Container } from './primitives';
 
-// Copy from the current enteglow.com homepage CTA band. Full-bleed "horizon" treatment per the
-// approved reference: starfield, faint vertical rules, brand glow and a planet arc (see .eg-cta-* in home.css).
+// Copy from the current enteglow.com homepage CTA band. Background is the approved horizon artwork,
+// redrawn procedurally on a canvas (HorizonArt) so it stays sharp; on desktop the band keeps its proportions.
 export const ClosingCta: React.FC = () => (
   <section
     aria-labelledby="cta-heading"
-    className="eg-cta relative isolate flex min-h-[560px] flex-col overflow-hidden bg-black lg:min-h-[600px]"
+    className="eg-cta relative isolate flex min-h-[460px] flex-col overflow-hidden bg-black lg:aspect-[1312/416]"
   >
-    <span aria-hidden className="eg-cta-stars" />
-    <span aria-hidden className="eg-cta-rules" />
-    <span aria-hidden className="eg-cta-glow" />
-    <span aria-hidden className="eg-cta-planet" />
+    <div aria-hidden className="eg-cta-bg">
+      <HorizonArt className="h-full w-full" />
+    </div>
 
-    <Container className="relative flex flex-1 flex-col items-center pb-10 pt-20 text-center sm:pt-24">
+    <Container className="relative flex flex-1 flex-col items-center pb-10 pt-20 text-center sm:pt-24 lg:pt-[5vw]">
       <div data-reveal className="flex flex-col items-center">
         <h2
           id="cta-heading"
-          className="eg-cta-title max-w-[22ch] font-display text-[clamp(2.25rem,5vw,3.75rem)] font-normal leading-[1.08] tracking-[-0.02em]"
+          className="eg-cta-title max-w-[22ch] font-display text-[clamp(2.25rem,3.7vw,4.5rem)] font-normal leading-[1.08] tracking-[-0.02em]"
         >
           Looking to integrate technology into your business?
         </h2>

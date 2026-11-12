@@ -3,198 +3,310 @@ import type { ServiceDetail } from '../types/service';
 
 // One list for the /services grid and every /services/[slug] page.
 //
-// Sources, in order of preference:
-//  1. Approved homepage copy (titles, taglines, descriptions, banner photos) — read from `heroSlides`
-//     so the wording stays identical to the homepage.
-//  2. The previous /services page content (descriptions, capabilities, challenges, deliverables,
-//     approach and technologies), reused verbatim.
-// Services with no content in either source keep only what exists; gaps are noted inline.
+// Copy source: the "Enteglow contents – Services" document (latest revision). Wording is kept as
+// written there. Only the banner photos are read from the homepage `heroSlides`; the homepage copy
+// itself is managed separately.
+//  - `overview`        → the service's introductory paragraph(s)
+//  - `keyCapabilities` → the service's numbered list
+//  - `sections`        → the titled copy blocks that follow
+// Taglines for Website Development, Domain Registration & Hosting and Mobile App Development are
+// not given in the document, so they keep their previous values (or none).
 
 // Homepage service palette (see ServicesSection).
 const CORAL = '#F06A4F';
 const AMBER = '#FFB86B';
 const GREEN = '#38B67A';
 
-const slide = (id: string) => {
+const image = (id: string) => {
   const found = heroSlides.find((s) => s.id === id);
   if (!found) throw new Error(`Missing hero slide: ${id}`);
-  return found;
+  return found.image;
 };
-/** First sentence of an approved description, for the short card copy. */
+
+/** First sentence of the intro, for the short card / hero copy. */
 const firstSentence = (text: string) => text.match(/^.*?[.!?](?=\s|$)/)?.[0] ?? text;
 
-const ai = slide('ai-application-development');
-const webApp = slide('web-application-development');
-const appMaintenance = slide('application-maintenance');
-const websiteMaintenance = slide('website-maintenance');
-const mobile = slide('mobile-app-development');
+const aiIntro =
+  'We develop AI-powered applications that help businesses streamline operations, improve efficiency, and solve complex business challenges. By combining artificial intelligence with innovative technologies, we create smart, scalable, and practical solutions tailored to emerging business needs, enabling organizations to optimize processes.';
+const webAppIntro =
+  'We offer solutions to enhance and streamline diverse processes within an organisation, promoting efficiency and optimization. We specialise in creating innovative custom software applications that meet unique business needs and support long-term growth and scalability.';
+const appMaintenanceIntro =
+  'We ensure software applications remain secure, stable, efficient, and aligned with evolving business requirements. Our team proactively addresses emerging challenges, optimizes application performance, and adapts systems to changing operational needs and ensuring business continuity without disrupting critical processes.';
+const websiteDevIntro =
+  'We develop websites with optimized structure that elevates brand visibility, deepens customer engagement, and extends market reach. A strategically designed website delivers 24/7 accessibility, optimizes business processes, drives qualified leads, and provides scalable digital solutions designed to support sustained business growth.';
+const websiteMaintenanceIntro =
+  'We ensure continuous performance, security, reliability, and adaptability through proactive monitoring, timely updates, issue resolution, and ongoing enhancements.';
+const domainIntro =
+  'Domain name is more than just a web address; it is a key part of digital identity and brand presence. We provide reliable domain registration services to help businesses, organisations, and individuals secure the right domain name for their online presence.';
+const mobileIntro =
+  'Transform business ideas into innovative mobile applications that enhance customer engagement, streamline operations, and drive business growth through seamless digital experiences. Custom-built mobile applications enhance customer engagement, simplify business operations, improve accessibility, and deliver seamless user experiences across devices.';
 
 export const servicesData: ServiceDetail[] = [
   {
     slug: 'ai-application-development',
-    title: ai.title,
-    tagline: ai.subtitle,
-    summary: 'Domain artificial intelligence embedded directly into enterprise software.',
-    overview: [
-      ai.description,
-      'Enteglow builds functional AI agents capable of autonomous reasoning, semantic vector document search (RAG), and executing API tool actions. We replace simple chatbots with structured agentic workflows that integrate into your existing ERP, CRM, or database systems.',
-    ],
+    title: 'AI Application Development',
+    tagline: 'AI-Driven Solutions',
+    summary: firstSentence(aiIntro),
+    overview: [aiIntro],
     visual: 'ai',
     accent: CORAL,
-    image: ai.image,
-    problemsSolved: [
-      'Manual repetitive document audit and data extraction tasks',
-      'Unstructured enterprise document search across thousands of PDFs',
-      'LLM hallucination risks in compliance-critical workflows',
-      'Lack of real API action execution in standard chat interfaces',
+    image: image('ai-application-development'),
+    // Content-corrections doc (AI Application Development): custom header banner, retitled sections, no challenges block.
+    heroIntro: 'AI That Thinks. Acts. Gets Results',
+    banner: { art: 'brain', ctaLabel: 'Explore More' },
+    overviewTitle: 'AI - Driven solutions',
+    sectionsHeading: { eyebrow: 'What We Build', title: 'Capabilities' },
+    sections: [
+      {
+        title: 'AI That Thinks. Acts. Gets Results',
+        body: [
+          'We build Agentic AI solutions that go beyond traditional AI by enabling intelligent systems to understand goals, make decisions, plan actions, and execute tasks with minimal human intervention.',
+          'Our solutions help businesses automate complex workflows, improve productivity, and create smarter, more responsive digital experiences.',
+        ],
+      },
+      {
+        title: 'Transform Complex Workflows into Intelligent Actions',
+        body: ['Agentic AI can help organizations move from manual processes to intelligent, goal-driven automation.'],
+      },
+      {
+        title: 'Built for Emerging Business Needs',
+        body: [
+          'Empowering businesses with intelligent AI agents that think, act, automate, and adapt - turning complex business processes into efficient, actionable workflows.',
+        ],
+      },
     ],
-    keyCapabilities: [
-      'Retrieval-Augmented Generation (RAG) using Qdrant vector databases',
-      'LangChain & LlamaIndex multi-agent orchestration frameworks',
-      'Autonomous tool-calling agents executing REST/gRPC actions',
-      'Strict prompt guardrails and output schema verification',
-    ],
-    deliverables: [
-      'Deployed AI Agent microservice API',
-      'Vector database indexing pipelines',
-      'Token usage & cost auditing dashboard',
-    ],
-    technologies: ['Python', 'LangChain', 'LlamaIndex', 'Qdrant', 'OpenAI / Claude API', 'FastAPI'],
     approach:
-      'We apply strict output schema validation on all LLM responses, ensuring AI agents only trigger external API tools when payload parameters meet exact validation rules.',
+      'We transform advanced AI into practical business solutions through intelligent automation, custom AI applications, autonomous agents, and seamless integrations.',
+    technologies: ['Python', 'FastAPI', 'Django', 'Node.js', 'REST API', 'PostgreSQL', 'MongoDB', 'MySQL', 'Redis'],
     related: ['web-application-development', 'mobile-app-development', 'application-maintenance'],
   },
   {
     slug: 'web-application-development',
-    title: webApp.title,
-    tagline: webApp.subtitle,
-    summary: 'We specialise in creating innovative custom software applications that meet unique business needs.',
-    overview: [
-      webApp.description,
-      'Enteglow designs and develops Next.js App Router web applications engineered for high tenant concurrency. We implement strict Row-Level Security (RLS), Server Component data fetching, responsive accessible UI design systems, and real-time WebSocket feeds.',
-    ],
+    title: 'Web Application Development',
+    tagline: 'Solutions for Business Processes',
+    summary: firstSentence(webAppIntro),
+    overview: [webAppIntro],
     visual: 'web-app',
+    banner: { art: 'web-app', ctaLabel: 'Explore More' },
     accent: AMBER,
-    image: webApp.image,
-    problemsSolved: [
-      'Slow initial page loading waterfalls and unoptimized client bundles',
-      'Insecure multi-tenant data leakage across enterprise accounts',
-      'Complex state management bugs in large React codebases',
-      'Inconsistent UI design across disparate web portals',
-    ],
+    image: image('web-application-development'),
     keyCapabilities: [
-      'Next.js Server Components (RSC) for zero-waterfall initial page loads',
-      'PostgreSQL Row-Level Security (RLS) multi-tenant authorization',
-      'Real-time bi-directional WebSockets and Server-Sent Events (SSE)',
-      'Tailwind CSS custom design systems with full WCAG accessibility',
+      'Strategic Business Applications',
+      'E-Commerce Applications',
+      'Industry-Specific Cloud Solution',
+      'Next-Generation Enterprise Solutions',
     ],
-    deliverables: [
-      'Production Next.js application codebase',
-      'Dockerized container builds with Kubernetes deployment manifests',
-      'OpenAPI / Swagger API documentation',
+    sections: [
+      {
+        title: 'Flexible Solutions for Business Needs',
+        body: [
+          'Every feature and workflow is strategically designed around specific business requirements, delivering adaptable solutions that evolve with changing needs, enhance operational efficiency, support sustainable growth, and enable businesses to the next level.',
+        ],
+      },
+      {
+        title: 'Technology Aligned with Business Goals',
+        body: [
+          'Leverage the right technologies to support business development, streamline operations, enhance efficiency, and enable sustainable growth.',
+        ],
+      },
+      {
+        title: 'Streamline Business Processes',
+        body: [
+          'Custom application development provides businesses with software built around their specific needs and workflows. It helps improve operational efficiency, automate processes, integrate existing systems, manage data effectively, and provide greater flexibility as the business evolves.',
+        ],
+      },
+      {
+        title: 'Digital Platform - Web Portals',
+        body: [
+          'Provide a centralized digital platform that connects users, services, information, and business processes through a single, accessible interface.',
+        ],
+      },
     ],
-    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
-    approach:
-      'We leverage Next.js Server Components to fetch data directly on the server, drastically reducing client JS bundle size and delivering sub-second page loads.',
     related: ['application-maintenance', 'website-development', 'mobile-app-development'],
   },
   {
-    // Content gap: only the approved homepage description exists for this service.
     slug: 'application-maintenance',
-    title: appMaintenance.title,
-    tagline: appMaintenance.subtitle,
-    summary: firstSentence(appMaintenance.description),
-    overview: [appMaintenance.description],
+    title: 'Application Maintenance',
+    tagline: 'Solutions for Seamless Application Performance',
+    summary: firstSentence(appMaintenanceIntro),
+    overview: [appMaintenanceIntro],
     visual: 'app-maintenance',
+    banner: { art: 'app-maintenance', ctaLabel: 'Explore More' },
     accent: GREEN,
-    image: appMaintenance.image,
+    image: image('application-maintenance'),
+    keyCapabilities: [
+      'Scalability & Flexibility',
+      'Continuous Improvement',
+      'Application Performance',
+      'Strategic Technology Integration',
+    ],
+    sections: [
+      {
+        title: 'Maintain consistent performance',
+        body: [
+          'We take responsibility for keeping software applications secure, stable, efficient, and aligned with evolving business requirements. Our strategic approach ensures consistent performance, addresses emerging challenges, and enables applications for long-term business growth.',
+        ],
+      },
+      {
+        title: 'Adapt changing business requirements',
+        body: [
+          'When evolving business requirements demand new workflows or process enhancements, we enable applications to adapt seamlessly, integrating new business processes while maintaining operational efficiency, scalability, and continuity.',
+        ],
+      },
+      {
+        title: 'Improve system efficiency and scalability',
+        body: ['Enhance and scale the application processes with advanced technology designed to accommodate evolving business demands.'],
+      },
+    ],
     related: ['web-application-development', 'website-maintenance', 'mobile-app-development'],
   },
   {
     slug: 'website-development',
     title: 'Website Development',
-    // Tagline from the current enteglow.com homepage banner.
+    // Not in the content document; kept from the current enteglow.com homepage banner.
     tagline: 'Go global, get noticed',
-    summary: 'High-performance company websites built for speed, SEO, and visual excellence.',
-    overview: [
-      'We build marketing and corporate websites that communicate technical credibility. Structured using Next.js static generation (SSG) with dynamic CMS hooks, our websites achieve 95+ Lighthouse performance scores, perfect mobile responsiveness, and strong SEO foundations.',
-    ],
+    summary: firstSentence(websiteDevIntro),
+    overview: [websiteDevIntro],
     visual: 'website',
+    banner: { art: 'website', ctaLabel: 'Explore More' },
     accent: CORAL,
-    problemsSolved: [
-      'Slow page speeds hurting conversion and Google search rankings',
-      'Fragile template themes vulnerable to security exploits',
-      'Poor mobile viewport responsiveness and layout shift (CLS)',
-      'Inflexible static sites that cannot scale to dynamic portals later',
+    keyCapabilities: ['Single Web Websites', 'Corporate Websites', 'Business Website', 'Educational Website'],
+    sections: [
+      {
+        title: 'User-friendly website',
+        body: [
+          'A user-friendly website delivers a seamless and intuitive digital experience, enabling visitors to navigate effortlessly, access information quickly, and interact with services or content with minimal effort. It combines clear navigation, responsive design, accessible content, and streamlined interactions to create a smooth and engaging user experience across all devices.',
+        ],
+      },
+      {
+        title: 'AI-friendly website',
+        body: [
+          'Website designed for AI systems such as ChatGPT, Google AI, Microsoft Copilot, and other AI-powered search engines can easily understand, interpret, and retrieve its content.',
+        ],
+      },
+      {
+        title: 'SEO-friendly website',
+        body: [
+          'A search-engine-friendly website is more than an attractive online presence. It is strategically designed to help search engines understand your content while providing a seamless experience for your visitors.',
+        ],
+      },
+      {
+        title: 'E-Commerce Website',
+        body: [
+          'Expand customer base beyond geographical and physical store boundaries and allow customers to browse and purchase products anytime, without being limited by business hours.',
+        ],
+      },
     ],
-    keyCapabilities: [
-      'Static Site Generation (SSG) with Incremental Static Regeneration (ISR)',
-      'Lighthouse 95+ performance optimization across mobile and desktop',
-      'Structured SEO JSON-LD schema markup and XML sitemap generation',
-      'Headless CMS integration (Strapi, Sanity, Contentful)',
-    ],
-    deliverables: [
-      'Static production website bundle ready for CDN deployment',
-      'SEO metadata implementation report',
-      'Content editing documentation',
-    ],
-    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel / Cloudflare'],
-    approach:
-      'We compile marketing pages ahead of time into static HTML on the edge, guaranteeing instant page delivery and zero server maintenance overhead.',
     related: ['website-maintenance', 'domain-registration-hosting', 'web-application-development'],
   },
   {
-    // Content gap: only the approved homepage description exists for this service.
     slug: 'website-maintenance',
-    title: websiteMaintenance.title,
-    tagline: websiteMaintenance.subtitle,
-    summary: 'We ensure continuous performance, security, reliability, and adaptability through proactive monitoring.',
-    overview: [websiteMaintenance.description],
+    title: 'Website Maintenance',
+    tagline: 'Solutions for Smooth & Reliable Performance',
+    summary: websiteMaintenanceIntro,
+    overview: [
+      websiteMaintenanceIntro,
+      'If your organization does not have a dedicated technical team, our dedicated website maintenance and support services ensure your website stays secure, updated, reliable, and available without interruption - giving you complete peace of mind while you focus on your business.',
+    ],
     visual: 'website-maintenance',
+    banner: { art: 'website-maintenance', ctaLabel: 'Explore More' },
     accent: GREEN,
-    image: websiteMaintenance.image,
+    image: image('website-maintenance'),
+    keyCapabilities: [
+      'Seamless Website Management',
+      'Delivering a seamless digital experience',
+      'Stress-Free Online Presence',
+      'Business Continuity',
+    ],
+    sections: [
+      {
+        title: 'No Need for an In-House Team',
+        body: [
+          'Our website maintenance services provide ongoing technical expertise, updates, security monitoring, performance optimisation, and issue resolution - helping you reduce operational overhead while ensuring your website remains secure, reliable, and up to date.',
+        ],
+      },
+      {
+        title: 'Optimize Hiring and Training Costs',
+        body: [
+          'No need to hire, train, or manage a technical team. Our flexible approach allows you to access the right level of support when required, without the need to maintain a dedicated in-house technical team.',
+        ],
+      },
+    ],
     related: ['website-development', 'domain-registration-hosting', 'application-maintenance'],
   },
   {
-    // Content gap: no approved tagline or description exists yet. The summary only restates the
-    // service name; replace it once copy is approved.
     slug: 'domain-registration-hosting',
     title: 'Domain Registration & Hosting',
-    summary: 'Domain registration and hosting for your business website.',
+    summary: firstSentence(domainIntro),
+    overview: [domainIntro],
     visual: 'domain',
+    banner: { art: 'domain', ctaLabel: 'Explore More' },
     accent: AMBER,
+    keyCapabilities: ['Digital Identity', 'Brand Visibility', 'Build Trust & Credibility', 'Enable Business Growth'],
+    sections: [
+      {
+        title: 'Establish Online Presence',
+        body: [
+          'Registering a unique domain name provides the business with a professional and recognizable digital identity. It serves as the foundation for the global identity.',
+        ],
+      },
+      {
+        title: 'Generate Business Opportunities',
+        body: [
+          'Enables businesses to professionally showcase their profile, products, and services, expand their market reach, build brand credibility, engage with potential customers, and unlock new opportunities for sustainable business growth.',
+        ],
+      },
+      {
+        title: 'Expand Market Reach',
+        body: [
+          'A relevant domain name and establish the business identity online, creating the foundation for a professional and scalable digital presence.',
+        ],
+      },
+      {
+        title: 'Enable Business Growth',
+        body: [
+          'Transform traditional business into a strong digital presence with a professional website, expand your reach beyond local and geographical boundaries, and connect with customers across wider markets.',
+        ],
+      },
+    ],
     related: ['website-development', 'website-maintenance', 'web-application-development'],
   },
   {
     slug: 'mobile-app-development',
-    title: mobile.title,
-    tagline: mobile.subtitle,
-    summary: mobile.description,
-    overview: [
-      'We engineer mobile applications for field technicians, enterprise operations, and consumer platforms. Built with React Native, Flutter, Swift, and Kotlin, our mobile products feature background synchronization queues, biometric security, camera/sensor capture, and fluid 60 FPS interfaces.',
-    ],
+    title: 'Mobile App Development',
+    // Not in the content document; kept from the homepage copy.
+    tagline: 'Next-Gen Mobile Solutions for Business Growth',
+    summary: firstSentence(mobileIntro),
+    overview: [mobileIntro],
     visual: 'mobile',
+    banner: { art: 'mobile', ctaLabel: 'Explore More' },
     accent: CORAL,
-    problemsSolved: [
-      'Intermittent cellular connection causing data loss during field inspections',
-      'Sluggish UI performance on enterprise-issued rugged devices',
-      'Complex cross-platform code drift between iOS and Android',
-      'Security vulnerabilities in local token and file storage',
-    ],
     keyCapabilities: [
-      'Bi-directional offline delta synchronization queues',
-      'Biometric login (FaceID/TouchID) and secure hardware enclave storage',
-      'Real-time GPS tracking and background location telemetry',
-      'Custom camera image processing and barcode/QR scanning engines',
+      'Custom Mobile App Development',
+      'Android App Development',
+      'iOS App Development',
+      'Hybrid Mobile App Development',
     ],
-    deliverables: [
-      'App Store & Google Play production release builds',
-      'Private Enterprise MDM distribution packages (.ipa, .apk)',
-      'Automated E2E mobile testing suites',
+    sections: [
+      {
+        title: 'Business Scalability',
+        body: [
+          'Mobile apps help improve operational efficiency and customer engagement. With scalable features and flexible integrations, businesses can expand their services, accommodate growing customer demands, and unlock new revenue opportunities without significantly increasing operational complexity.',
+        ],
+      },
+      {
+        title: 'Next Gen Mobile Application',
+        body: [
+          'Turn innovative ideas into practical mobile solutions that create meaningful business value. Our development team combines technology, user-focused design, and scalable architecture to build mobile applications aligned with business goals.',
+        ],
+      },
+      {
+        title: 'Anytime, Anywhere Access',
+        body: [
+          'Enable customers and teams to access essential services, information, and features anytime, anywhere. A seamless mobile experience keeps the business connected and accessible, delivering faster interactions, greater convenience, and stronger engagement across every digital touchpoint.',
+        ],
+      },
     ],
-    technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'TypeScript', 'SQLite'],
-    approach:
-      'Our mobile architecture isolates network operations inside persistent background tasks, ensuring user interactions remain instant regardless of network latency.',
     related: ['web-application-development', 'ai-application-development', 'application-maintenance'],
   },
 ];
