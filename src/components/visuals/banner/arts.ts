@@ -129,7 +129,7 @@ const drawBrain: DrawFn = (ctx, w, h, dpr) => {
   hotNodes(f, pts, 46);
   ctx.restore();
   neon(f, brain);
-  endFrame(f);
+  return endFrame(f);
 };
 
 // ═══ Web Application Development — dashboard in a browser ═════════════════════════════════════
@@ -234,7 +234,7 @@ const drawWebApp: DrawFn = (ctx, w, h, dpr) => {
     [312, 284, 372],
     [304, 296, 354],
   ].forEach(([x1, y, x2], i) => trace(f, line(x1, y, x2, y), 0.75, 1.6, i === 1 ? `rgba(${COOL},1)` : `rgba(${WARM},1)`));
-  endFrame(f);
+  return endFrame(f);
 };
 
 // ═══ Application Maintenance — gears, health pulse and a continuous-improvement loop ═══════════
@@ -331,7 +331,7 @@ const drawAppMaintenance: DrawFn = (ctx, w, h, dpr) => {
     hb.lineTo(x, 302 + beat);
   }
   trace(f, hb, 0.55, 1.2);
-  endFrame(f);
+  return endFrame(f);
 };
 
 // ═══ Website Development & Domain — wireframe globe ═══════════════════════════════════════════
@@ -448,7 +448,7 @@ const drawWebsite: DrawFn = (ctx, w, h, dpr) => {
   ctx.shadowBlur = f.glow(10);
   ctx.fill(cur);
   ctx.restore();
-  endFrame(f);
+  return endFrame(f);
 };
 
 // ═══ Website Maintenance — shield, monitoring and upkeep ══════════════════════════════════════
@@ -530,7 +530,7 @@ const drawWebsiteMaintenance: DrawFn = (ctx, w, h, dpr) => {
   trace(f, line(46, 262, 120, 262), 0.5);
   trace(f, line(46, 272, 100, 272), 0.4);
   neon(f, gearPath(124, 262, 12, 9.5, 8), 0.8, `rgba(${WARM},1)`, 1.2);
-  endFrame(f);
+  return endFrame(f);
 };
 
 // ═══ Domain Registration & Hosting — address bar, globe and servers ═══════════════════════════
@@ -624,7 +624,7 @@ const drawDomain: DrawFn = (ctx, w, h, dpr) => {
     trace(f, link, 0.7, 1.2);
     ctx.restore();
   }
-  endFrame(f);
+  return endFrame(f);
 };
 
 // ═══ Mobile App Development — phones and app UI ══════════════════════════════════════════════
@@ -737,7 +737,7 @@ const drawMobile: DrawFn = (ctx, w, h, dpr) => {
   ctx.beginPath();
   ctx.arc(351, 243, 7, 0, Math.PI * 2);
   ctx.fill();
-  endFrame(f);
+  return endFrame(f);
 };
 
 export const BANNER_DRAW: Record<BannerArtKind, DrawFn> = {

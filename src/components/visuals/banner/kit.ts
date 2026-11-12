@@ -1,4 +1,5 @@
 import { mulberry32 } from '../rng';
+import type { Scene } from '../scene';
 
 /**
  * Shared toolkit for the service-page banner artworks. Every banner is drawn in the same 400 × 320
@@ -23,13 +24,17 @@ export interface Frame {
   glow: (cssPx: number) => number;
   /** Warm (frontal/left) → cool (right) gradient across the artwork. */
   grad: CanvasGradient;
+  /** Animation hints, returned by endFrame for the overlay layer. */
+  anim: Scene;
 }
 
 /** Opens a frame (ctx.save + transform). Pair with `endFrame`. */
 export const beginFrame = (ctx: Ctx, w: number, h: number, dpr: number, seed: number): Frame => {
   const s = Math.min((w * 0.7) / 400, (h * 0.8) / 320);
+  const ox = w * 0.54 - 200 * s;
+  const oy = h * 0.56 - 160 * s;
   ctx.save();
-  ctx.translate(w * 0.54 - 200 * s, h * 0.56 - 160 * s);
+  ctx.translate(ox, oy);
   ctx.scale(s, s);
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
@@ -42,10 +47,14 @@ export const beginFrame = (ctx: Ctx, w: number, h: number, dpr: number, seed: nu
     [1, '#3f9cff'],
   ] as const)
     grad.addColorStop(o, c);
-  return { ctx, s, px: 1 / s, dpr, rnd: mulberry32(seed), glow: (n) => n * dpr * s, grad };
+  return { ctx, s, px: 1 / s, dpr, rnd: mulberry32(seed), glow: (n) => n * dpr * s, grad, anim: { s, ox, oy, wires: [], nodes: [], twinkles: [] } };
 };
 
-export const endFrame = (f: Frame) => f.ctx.restore();
+/** Closes the frame and returns the recorded animation hints. */
+export const endFrame = (f: Frame): Scene => {
+  f.ctx.restore();
+  return f.anim;
+};
 
 // ── Geometry ──────────────────────────────────────────────────────────────────────────────────
 export const rr = (x: number, y: number, w: number, h: number, r: number) => {
@@ -215,6 +224,7 @@ export const hotNodes = (f: Frame, pts: Pt[], count: number) => {
   for (let i = 0; i < count && pts.length; i++) {
     const p = pts[Math.floor(f.rnd() * pts.length)];
     const hot = p.x < 230;
+    f.anim.twinkles.push({ x: p.x, y: p.y, cool: !hot });
     ctx.fillStyle = hot ? 'rgba(255,150,70,1)' : 'rgba(150,210,255,1)';
     ctx.shadowColor = hot ? 'rgba(255,120,50,1)' : 'rgba(90,180,255,1)';
     ctx.shadowBlur = f.glow(8);
@@ -263,6 +273,7 @@ export const network = (f: Frame, sats: Sat[], anchors: Pt[], bus: [number, numb
   ctx.lineWidth = px;
   for (const sat of sats) {
     const q = nearest(sat);
+    f.anim.wires.push({ ax: q.x, ay: q.y, bx: sat.x, by: sat.y, cool: !!sat.cool });
     ctx.strokeStyle = sat.cool ? `rgba(${COOL},0.5)` : `rgba(${WARM},0.5)`;
     ctx.beginPath();
     ctx.moveTo(sat.x, sat.y);
@@ -281,6 +292,7 @@ export const network = (f: Frame, sats: Sat[], anchors: Pt[], bus: [number, numb
   for (const sat of sats) {
     const col = sat.cool ? COOL : WARM;
     const { x, y, r } = sat;
+    f.anim.nodes.push({ x, y, r, cool: !!sat.cool });
     ctx.save();
     ctx.shadowColor = `rgba(${col},0.9)`;
     ctx.shadowBlur = f.glow(10);

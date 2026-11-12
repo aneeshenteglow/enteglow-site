@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import type { Scene } from './scene';
 
-export type DrawFn = (ctx: CanvasRenderingContext2D, width: number, height: number, dpr: number) => void;
+export type DrawFn = (ctx: CanvasRenderingContext2D, width: number, height: number, dpr: number) => Scene | void;
 
 interface CanvasArtProps {
   /** Must be a stable reference (module-level function). Coordinates are CSS pixels. */

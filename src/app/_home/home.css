@@ -532,3 +532,32 @@ body:has(.eg-home) {
     inset 0 1px 0 rgba(255, 255, 255, 0.25),
     0 10px 30px -8px rgba(240, 106, 79, 0.55);
 }
+
+/* Service banner artwork (AnimatedArt): soft fade-in, then a slow GPU-composited float. */
+@keyframes eg-art-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes eg-art-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+.eg-art-float {
+  animation:
+    eg-art-in 0.9s ease-out both,
+    eg-art-float 9s ease-in-out 0.9s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .eg-art-float {
+    animation: none;
+  }
+}
