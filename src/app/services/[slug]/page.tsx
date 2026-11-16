@@ -10,6 +10,7 @@ import { contact } from '@/app/_home/data/homeContent';
 import { InnerPage } from '@/components/inner/InnerPage';
 import { PageHero } from '@/components/inner/PageHero';
 import { ChipList, Label, Panel, PlusList, indexLabel, revealDelay } from '@/components/inner/primitives';
+import { BannerArt, type BannerArtKind } from '@/components/visuals/BannerArt';
 import { ServiceGrid } from '../components/ServiceCard';
 import { getService, servicesData } from '../services/servicesData';
 import type { ServiceDetail } from '../types/service';
@@ -36,6 +37,19 @@ export function generateMetadata({ params }: ServicePageProps): Metadata {
 }
 
 const sectionClass = 'border-t border-ink-line py-20 lg:py-28';
+
+/** Full-width banner artwork: service artwork on the right, fading into the page background on the left. */
+const BannerBackdrop: React.FC<{ art: BannerArtKind }> = ({ art }) => (
+  <div
+    className="absolute inset-y-0 right-0 w-full opacity-30 sm:opacity-35 lg:w-[64%] lg:opacity-100"
+    style={{
+      maskImage: 'linear-gradient(to right, transparent 0%, #000 38%)',
+      WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #000 38%)',
+    }}
+  >
+    <BannerArt art={art} className="h-full w-full" />
+  </div>
+);
 
 const HeroVisual: React.FC<{ service: ServiceDetail }> = ({ service }) => (
   <div
@@ -76,24 +90,31 @@ export default function ServicePage({ params }: ServicePageProps) {
       <PageHero
         eyebrow={service.tagline ?? 'Our Services'}
         title={service.title}
-        intro={service.summary}
+        intro={service.heroIntro ?? service.summary}
         parents={[{ href: '/services', label: 'Services' }]}
-        aside={<HeroVisual service={service} />}
+        aside={service.banner ? undefined : <HeroVisual service={service} />}
+        backdrop={service.banner ? <BannerBackdrop art={service.banner.art} /> : undefined}
       >
-        <div className="flex flex-wrap gap-3">
-          <Link href={contact.contactPage} className="eg-btn eg-btn-primary">
-            Enquire Now <ArrowRight aria-hidden className="h-4 w-4" />
+        {service.banner ? (
+          <Link href="#service-overview" className="eg-btn eg-btn-primary">
+            {service.banner.ctaLabel} <ArrowRight aria-hidden className="h-4 w-4" />
           </Link>
-          <Link href="/services" className="eg-btn eg-btn-secondary">
-            All Services
-          </Link>
-        </div>
+        ) : (
+          <div className="flex flex-wrap gap-3">
+            <Link href={contact.contactPage} className="eg-btn eg-btn-primary">
+              Enquire Now <ArrowRight aria-hidden className="h-4 w-4" />
+            </Link>
+            <Link href="/services" className="eg-btn eg-btn-secondary">
+              All Services
+            </Link>
+          </div>
+        )}
       </PageHero>
 
       {service.overview && (
-        <section aria-labelledby="about-service-heading" className={sectionClass}>
+        <section id="service-overview" aria-labelledby="about-service-heading" className={sectionClass}>
           <Container className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
-            <SectionIntro id="about-service-heading" eyebrow={service.title} title="About the Service" className="lg:col-span-5" />
+            <SectionIntro id="about-service-heading" eyebrow={service.title} title={service.overviewTitle ?? "About the Service"} className="lg:col-span-5" />
             <div className="space-y-6 lg:col-span-7" data-reveal style={revealDelay(1, 100)}>
               {service.overview.map((paragraph) => (
                 <p key={paragraph} className="text-[17px] leading-[1.75] text-mist-300 sm:text-lg">
@@ -122,6 +143,34 @@ export default function ServicePage({ params }: ServicePageProps) {
                 </Panel>
               ))}
             </ul>
+          </Container>
+        </section>
+      )}
+
+      {service.sections && service.sections.length > 0 && (
+        <section aria-labelledby="highlights-heading" className={sectionClass}>
+          <Container>
+            <SectionIntro
+              id="highlights-heading"
+              eyebrow={service.sectionsHeading?.eyebrow ?? "Why It Matters"}
+              title={service.sectionsHeading?.title ?? "How We Help"}
+            />
+            <div className="mt-12 grid grid-cols-1 gap-5 lg:mt-14 lg:grid-cols-2">
+              {service.sections.map((block, i) => (
+                <div key={block.title} data-reveal style={revealDelay(i, 80)} className="flex">
+                  <Panel className="w-full">
+                    <h3 className="font-display text-xl leading-snug text-white">{block.title}</h3>
+                    <div className="mt-4 space-y-4">
+                      {block.body.map((paragraph) => (
+                        <p key={paragraph} className="text-[16px] leading-[1.7] text-mist-300">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </Panel>
+                </div>
+              ))}
+            </div>
           </Container>
         </section>
       )}
@@ -167,8 +216,8 @@ export default function ServicePage({ params }: ServicePageProps) {
             {service.technologies && (
               <div className="lg:col-span-5 lg:pt-4" data-reveal style={revealDelay(2, 100)}>
                 <Panel>
-                  <Label>Related Technologies</Label>
-                  <ChipList items={service.technologies} label="Technologies" className="mt-5" />
+                  <Label>Our Tech Stack</Label>
+                  <ChipList items={service.technologies} label="Our Tech Stack" className="mt-5" />
                 </Panel>
               </div>
             )}

@@ -29,10 +29,10 @@ export default function AboutPage() {
   return (
     <InnerPage>
       <PageHero
-        eyebrow="Software Product Engineers"
+        eyebrow="Story"
         title="About Enteglow"
         crumb="About"
-        intro="Enteglow is a technology consultancy dedicated to designing, building, and maintaining robust digital products for the modern enterprise."
+        intro="Building trust from the ground up, we combine purposeful implementation with forward-thinking strategies to turn every milestone into a foundation for greater possibilities and sustainable growth."
       />
 
       {/* Approved homepage About copy */}
@@ -105,13 +105,12 @@ export default function AboutPage() {
           <SectionIntro
             id="approach-heading"
             eyebrow="How We Work"
-            title="Architects of the Digital Enterprise"
+            title="Team Strength"
             className="lg:col-span-6"
           />
           <div className="lg:col-span-6 lg:pt-10" data-reveal style={revealDelay(1, 100)}>
             <p className="text-[17px] leading-[1.75] text-mist-300 sm:text-lg">
-              We are a collective of senior engineers, product designers, and strategic thinkers. We approach technology
-              not just as code, but as a critical lever for business growth.
+              We grow through trust, innovate with purpose, and turn every milestone into momentum for what comes next.
             </p>
             <p className="mt-5 text-[16px] leading-[1.7] text-mist-500">
               Our methodology is rooted in rigorous technical standards and agile delivery, ensuring that complex

@@ -5,9 +5,9 @@ export const companyData = {
     "Entelgow is a software development company that designs, builds, and maintains technology products and digital solutions across Desktop Applications, Mobile Apps, Web Applications, Static/Dynamic Websites, AI Agents, and IoT Solutions.",
   foundingYear: 2024,
   mission:
-    "To build software products with long-term code quality, modern performance architecture, and full IP ownership for our clients.",
+    "To become a trusted technology partner, shaping possibilities through strategic solutions and meaningful impact.",
   vision:
-    "To be the premier engineering partner for companies building complete software product ecosystems across desktop, mobile, web, AI, and IoT.",
+    "To empower businesses through purposeful innovation, intelligent technology, and effective implementation.",
   contact: {
     email: "contact@entelgow.com",
     phone: "+1 (800) 555-0199",
