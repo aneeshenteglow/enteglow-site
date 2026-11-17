@@ -16,10 +16,10 @@ export default function ServicesPage() {
   return (
     <InnerPage>
       <PageHero
-        eyebrow="Product Engineering Disciplines"
-        title="Software Development Services"
+        eyebrow="Intelligent Technology Solutions"
+        title="Our Services"
         crumb="Services"
-        intro="Enteglow provides end-to-end software product development across specialized technical disciplines. Every service is delivered with production-grade engineering standards and full source code ownership."
+        intro="Enteglow transforms possibilities into intelligent technology solutions that build trust, drive innovation, and create lasting real-world impact."
       />
 
       <section aria-label="All services" className="pb-24 lg:pb-32">

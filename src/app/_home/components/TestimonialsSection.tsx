@@ -6,7 +6,7 @@ import { testimonials } from '../data/homeContent';
 import { Container, SectionIntro } from './primitives';
 
 export const TestimonialsSection: React.FC = () => (
-  <section aria-labelledby="testimonials-heading" className="py-24 lg:py-32">
+  <section id="testimonials" aria-labelledby="testimonials-heading" className="py-24 lg:py-32">
     <Container>
       <SectionIntro id="testimonials-heading" eyebrow="Testimonials" title="What our clients say" />
       <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-2">

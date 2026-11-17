@@ -49,7 +49,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, headin
             {service.title}
           </Link>
         </Heading>
-        <p className="mt-2.5 line-clamp-3 text-[14.5px] leading-[1.65] text-mist-500">{service.summary}</p>
+        <p className="mt-2.5 line-clamp-3 text-[14.5px] leading-[1.65] text-mist-500">{service.cardSummary ?? service.summary}</p>
         <span
           aria-hidden
           className="mt-auto inline-flex items-center gap-1.5 pt-6 text-[13px] font-semibold text-mist-300 transition-colors duration-160 group-hover:text-[color:var(--eg-accent)]"

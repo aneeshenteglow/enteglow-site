@@ -14,14 +14,16 @@ interface PageHeroProps {
   crumb?: string;
   /** Optional visual shown beside the copy from the `lg` breakpoint (below it, under the copy). */
   aside?: React.ReactNode;
+  /** Optional artwork behind the banner (absolutely positioned by the caller). Narrows the copy column. */
+  backdrop?: React.ReactNode;
   children?: React.ReactNode;
 }
 
 // Inner-page banner: the homepage hero's atmosphere (warm glow + masked grid) at a calmer height.
-export const PageHero: React.FC<PageHeroProps> = ({ eyebrow, title, intro, parents = [], crumb, aside, children }) => {
+export const PageHero: React.FC<PageHeroProps> = ({ eyebrow, title, intro, parents = [], crumb, aside, backdrop, children }) => {
   const copy = (
     <>
-      <div className="max-w-4xl">
+      <div className={backdrop ? "max-w-xl lg:max-w-[560px]" : "max-w-4xl"}>
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-5 font-display text-[clamp(2.5rem,6vw,4.75rem)] font-normal leading-[1.02] tracking-[-0.02em] text-mist-100 [text-wrap:balance]">
           {title}
@@ -36,7 +38,8 @@ export const PageHero: React.FC<PageHeroProps> = ({ eyebrow, title, intro, paren
 
   return (
     <section className="eg-atmosphere eg-grid relative isolate overflow-hidden pb-16 pt-[136px] sm:pb-20 lg:pb-24 lg:pt-[168px]">
-      <Container className="relative">
+      {backdrop && <div aria-hidden className="pointer-events-none absolute inset-0 z-0">{backdrop}</div>}
+      <Container className="relative z-10">
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-1.5 text-[13px] text-mist-600">
             {[{ href: '/', label: 'Home' }, ...parents].map((item) => (

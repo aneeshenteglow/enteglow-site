@@ -1,5 +1,5 @@
-// Homepage copy from the approved "enteglow-contents-Home-Page" document.
-// Only punctuation and spelling slips were corrected; wording is unchanged.
+// Homepage copy. Service titles, taglines and descriptions follow the "enteglow-contents-Services" document
+// (short descriptions are its first sentences, matching the /services cards); the rest is from the Home-Page document.
 import type {
   HeroSlide,
   HomeService,
@@ -19,7 +19,6 @@ const SERVICE_LINKS = {
   websiteMaintenance: serviceHref('website-maintenance'),
   domain: serviceHref('domain-registration-hosting'),
   mobile: serviceHref('mobile-app-development'),
-  iot: serviceHref('iot-application-development'),
 } as const;
 
 export const contact = {
@@ -50,7 +49,17 @@ export const servicesMenu: NavItem[] = [
   { href: SERVICE_LINKS.webApp, label: 'Web Application Development' },
   { href: SERVICE_LINKS.website, label: 'Website Development' },
   { href: SERVICE_LINKS.mobile, label: 'Mobile App Development' },
-  { href: SERVICE_LINKS.iot, label: 'IoT Application Development' },
+];
+
+// Footer "Services" column: all seven services, independent of the header dropdown.
+export const footerServices: NavItem[] = [
+  { href: SERVICE_LINKS.ai, label: 'AI Application Development' },
+  { href: SERVICE_LINKS.webApp, label: 'Web Application Development' },
+  { href: SERVICE_LINKS.appMaintenance, label: 'Application Maintenance' },
+  { href: SERVICE_LINKS.website, label: 'Website Development' },
+  { href: SERVICE_LINKS.websiteMaintenance, label: 'Website Maintenance' },
+  { href: SERVICE_LINKS.domain, label: 'Domain Registration & Hosting' },
+  { href: SERVICE_LINKS.mobile, label: 'Mobile App Development' },
 ];
 
 export const heroSlides: HeroSlide[] = [
@@ -59,7 +68,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'AI Application Development',
     subtitle: 'AI-Driven Solutions',
     description:
-      'We develop Artificial Intelligence (AI)-powered applications that help businesses streamline operations, boost efficiency, and solve complex challenges to drive sustainable growth.',
+      'We develop Artificial Intelligence (AI) - powered applications that help businesses streamline operations, boost efficiency, and solve complex challenges to drive sustainable growth.',
     visual: 'ai',
     image: { src: '/images/home/hero-ai.jpg', focusX: 0.78 },
     href: SERVICE_LINKS.ai,
@@ -111,51 +120,66 @@ export const about = {
   statements: ['Technology with purpose', 'Engineering ideas into impact', 'TechSynergy in Action'],
 };
 
-// Long-form service copy lives on the hero slides; reuse it rather than duplicating approved text.
-const slideDescription = (id: string) => heroSlides.find((slide) => slide.id === id)?.description;
+// Services listing copy is independent of the hero slides above: editing one never changes the other.
 
 export const services: HomeService[] = [
   {
     title: 'AI Application Development',
     tagline: 'AI-Driven Solutions',
-    description: slideDescription('ai-application-development'),
+    description:
+      'We develop AI-powered applications that help businesses streamline operations, improve efficiency, and solve complex business challenges.',
     icon: 'ai',
     href: SERVICE_LINKS.ai,
   },
   {
     title: 'Web Application Development',
     tagline: 'Solutions for Business Processes',
-    description: slideDescription('web-application-development'),
+    description:
+      'We offer solutions to enhance and streamline diverse processes within an organisation, promoting efficiency and optimization.',
     icon: 'web-app',
     href: SERVICE_LINKS.webApp,
   },
   {
     title: 'Application Maintenance',
     tagline: 'Solutions for Seamless Application Performance',
-    description: slideDescription('application-maintenance'),
+    description:
+      'We ensure software applications remain secure, stable, efficient, and aligned with evolving business requirements.',
     icon: 'app-maintenance',
     href: SERVICE_LINKS.appMaintenance,
   },
-  // Tagline from the current enteglow.com homepage banner; awaiting approved description.
-  { title: 'Website Development', tagline: 'Go global, get noticed', icon: 'website', href: SERVICE_LINKS.website },
+  // Tagline (not in the services document) kept from the current enteglow.com homepage banner.
+  {
+    title: 'Website Development',
+    tagline: 'Go global, get noticed',
+    description:
+      'We develop websites with optimized structure that elevates brand visibility, deepens customer engagement, and extends market reach.',
+    icon: 'website',
+    href: SERVICE_LINKS.website,
+  },
   {
     title: 'Website Maintenance',
     tagline: 'Solutions for Smooth & Reliable Performance',
-    description: slideDescription('website-maintenance'),
+    description:
+      'We ensure continuous performance, security, reliability, and adaptability through proactive monitoring, timely updates, issue resolution, and ongoing enhancements.',
     icon: 'website-maintenance',
     href: SERVICE_LINKS.websiteMaintenance,
   },
-  // Awaiting approved tagline.
-  { title: 'Domain Registration & Hosting', icon: 'domain', href: SERVICE_LINKS.domain },
+  {
+    title: 'Domain Registration & Hosting',
+    tagline: 'Park Digital Identity',
+    description:
+      'Domain name is more than just a web address; it is a key part of digital identity and brand presence.',
+    icon: 'domain',
+    href: SERVICE_LINKS.domain,
+  },
   {
     title: 'Mobile App Development',
     tagline: 'Next-Gen Mobile Solutions for Business Growth',
-    description: slideDescription('mobile-app-development'),
+    description:
+      'We engineer custom mobile apps built for effortless user experiences, efficient operations, and long-term business growth.',
     icon: 'mobile',
     href: SERVICE_LINKS.mobile,
   },
-  // Awaiting approved tagline.
-  { title: 'IoT Application Development', icon: 'iot', href: SERVICE_LINKS.iot },
 ];
 
 // The source document strikes through the first purpose sentence; only the second remains approved.
