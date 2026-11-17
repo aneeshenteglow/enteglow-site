@@ -51,13 +51,24 @@ export const servicesMenu: NavItem[] = [
   { href: SERVICE_LINKS.mobile, label: 'Mobile App Development' },
 ];
 
+// Footer "Services" column: all seven services, independent of the header dropdown.
+export const footerServices: NavItem[] = [
+  { href: SERVICE_LINKS.ai, label: 'AI Application Development' },
+  { href: SERVICE_LINKS.webApp, label: 'Web Application Development' },
+  { href: SERVICE_LINKS.appMaintenance, label: 'Application Maintenance' },
+  { href: SERVICE_LINKS.website, label: 'Website Development' },
+  { href: SERVICE_LINKS.websiteMaintenance, label: 'Website Maintenance' },
+  { href: SERVICE_LINKS.domain, label: 'Domain Registration & Hosting' },
+  { href: SERVICE_LINKS.mobile, label: 'Mobile App Development' },
+];
+
 export const heroSlides: HeroSlide[] = [
   {
     id: 'ai-application-development',
     title: 'AI Application Development',
     subtitle: 'AI-Driven Solutions',
     description:
-      'We develop AI-powered applications that help businesses streamline operations, improve efficiency, and solve complex business challenges.',
+      'We develop Artificial Intelligence (AI) - powered applications that help businesses streamline operations, boost efficiency, and solve complex challenges to drive sustainable growth.',
     visual: 'ai',
     image: { src: '/images/home/hero-ai.jpg', focusX: 0.78 },
     href: SERVICE_LINKS.ai,
@@ -67,7 +78,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'Web Application Development',
     subtitle: 'Solutions for Business Processes',
     description:
-      'We offer solutions to enhance and streamline diverse processes within an organisation, promoting efficiency and optimization.',
+      'We offer solutions to enhance and streamline diverse processes within an organisation, promoting efficiency and optimization. We specialise in creating innovative custom software applications that meet unique business needs.',
     visual: 'web-app',
     image: { src: '/images/home/hero-web-app.png', focusX: 0.68 },
     href: SERVICE_LINKS.webApp,
@@ -77,7 +88,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'Application Maintenance',
     subtitle: 'Solutions for Seamless Application Performance',
     description:
-      'We ensure software applications remain secure, stable, efficient, and aligned with evolving business requirements.',
+      'We ensure software applications remain secure, stable, efficient, and aligned with evolving business requirements. Our team proactively addresses emerging challenges, optimizes application performance.',
     visual: 'app-maintenance',
     image: { src: '/images/home/hero-app-maintenance.png', focusX: 0.74 },
     href: SERVICE_LINKS.appMaintenance,
@@ -87,7 +98,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'Website Maintenance',
     subtitle: 'Solutions for Smooth & Reliable Performance',
     description:
-      'We ensure continuous performance, security, reliability, and adaptability through proactive monitoring, timely updates, issue resolution, and ongoing enhancements.',
+      'Don’t have an in-house technical team to manage your website? We’ve got you covered. We ensure continuous performance, security, reliability, and adaptability through proactive monitoring.',
     visual: 'website-maintenance',
     image: { src: '/images/home/hero-website-maintenance.png', focusX: 0.7 },
     href: SERVICE_LINKS.websiteMaintenance,
@@ -97,7 +108,7 @@ export const heroSlides: HeroSlide[] = [
     title: 'Mobile App Development',
     subtitle: 'Next-Gen Mobile Solutions for Business Growth',
     description:
-      'Transform business ideas into innovative mobile applications that enhance customer engagement, streamline operations, and drive business growth through seamless digital experiences.',
+      'We engineer custom mobile apps built for effortless user experiences, efficient operations, and long-term business growth.',
     visual: 'mobile',
     href: SERVICE_LINKS.mobile,
   },
@@ -109,28 +120,30 @@ export const about = {
   statements: ['Technology with purpose', 'Engineering ideas into impact', 'TechSynergy in Action'],
 };
 
-// Long-form service copy lives on the hero slides; reuse it rather than duplicating approved text.
-const slideDescription = (id: string) => heroSlides.find((slide) => slide.id === id)?.description;
+// Services listing copy is independent of the hero slides above: editing one never changes the other.
 
 export const services: HomeService[] = [
   {
     title: 'AI Application Development',
     tagline: 'AI-Driven Solutions',
-    description: slideDescription('ai-application-development'),
+    description:
+      'We develop AI-powered applications that help businesses streamline operations, improve efficiency, and solve complex business challenges.',
     icon: 'ai',
     href: SERVICE_LINKS.ai,
   },
   {
     title: 'Web Application Development',
     tagline: 'Solutions for Business Processes',
-    description: slideDescription('web-application-development'),
+    description:
+      'We offer solutions to enhance and streamline diverse processes within an organisation, promoting efficiency and optimization.',
     icon: 'web-app',
     href: SERVICE_LINKS.webApp,
   },
   {
     title: 'Application Maintenance',
     tagline: 'Solutions for Seamless Application Performance',
-    description: slideDescription('application-maintenance'),
+    description:
+      'We ensure software applications remain secure, stable, efficient, and aligned with evolving business requirements.',
     icon: 'app-maintenance',
     href: SERVICE_LINKS.appMaintenance,
   },
@@ -146,13 +159,14 @@ export const services: HomeService[] = [
   {
     title: 'Website Maintenance',
     tagline: 'Solutions for Smooth & Reliable Performance',
-    description: slideDescription('website-maintenance'),
+    description:
+      'We ensure continuous performance, security, reliability, and adaptability through proactive monitoring, timely updates, issue resolution, and ongoing enhancements.',
     icon: 'website-maintenance',
     href: SERVICE_LINKS.websiteMaintenance,
   },
-  // The services document gives no tagline for this service.
   {
     title: 'Domain Registration & Hosting',
+    tagline: 'Park Digital Identity',
     description:
       'Domain name is more than just a web address; it is a key part of digital identity and brand presence.',
     icon: 'domain',
@@ -161,7 +175,8 @@ export const services: HomeService[] = [
   {
     title: 'Mobile App Development',
     tagline: 'Next-Gen Mobile Solutions for Business Growth',
-    description: slideDescription('mobile-app-development'),
+    description:
+      'We engineer custom mobile apps built for effortless user experiences, efficient operations, and long-term business growth.',
     icon: 'mobile',
     href: SERVICE_LINKS.mobile,
   },

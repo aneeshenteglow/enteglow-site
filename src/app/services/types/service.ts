@@ -9,6 +9,8 @@ export interface ServiceDetail {
   tagline?: string;
   /** Short card copy for the /services grid (2–3 lines). */
   summary: string;
+  /** Card-only copy for the /services grid, where it must differ from `summary` (used by the detail page). */
+  cardSummary?: string;
   /** "About the service" paragraphs, where content exists. */
   overview?: string[];
   /** Illustration shown on the card (and on the detail hero when there is no photo). */

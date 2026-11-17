@@ -237,6 +237,7 @@ export const servicesData: ServiceDetail[] = [
   {
     slug: 'domain-registration-hosting',
     title: 'Domain Registration & Hosting',
+    tagline: 'Park Digital Identity',
     summary: firstSentence(domainIntro),
     overview: [domainIntro],
     visual: 'domain',
@@ -277,6 +278,8 @@ export const servicesData: ServiceDetail[] = [
     // Not in the content document; kept from the homepage copy.
     tagline: 'Next-Gen Mobile Solutions for Business Growth',
     summary: firstSentence(mobileIntro),
+    cardSummary:
+      'We engineer custom mobile apps built for effortless user experiences, efficient operations, and long-term business growth.',
     overview: [mobileIntro],
     visual: 'mobile',
     banner: { art: 'mobile', ctaLabel: 'Explore More' },

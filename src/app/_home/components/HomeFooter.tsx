@@ -1,11 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { Mail, Phone } from 'lucide-react';
-import { contact, homeNav, secondaryNav, servicesMenu } from '../data/homeContent';
+import { contact, footerServices, homeNav, secondaryNav } from '../data/homeContent';
 import { socialLinks } from '../data/socialLinks';
 import { Container, LogoLockup } from './primitives';
 
-const companyLinks = [...homeNav, ...secondaryNav];
+const companyLinks = [
+  ...homeNav.filter((l) => l.href !== '/contact'),
+  { href: '/#testimonials', label: 'Testimonials' },
+  ...homeNav.filter((l) => l.href === '/contact'),
+  ...secondaryNav,
+];
 
 const linkClass = 'text-[15px] text-mist-500 transition-colors duration-160 hover:text-mist-100';
 
@@ -61,7 +66,7 @@ export const HomeFooter: React.FC = () => (
       <div className="lg:col-span-3">
         <FooterColumn title="Services">
           <ul className="space-y-3">
-            {servicesMenu.map((l) => (
+            {footerServices.map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className={linkClass}>
                   {l.label}
