@@ -55,6 +55,20 @@ export const servicesData: ServiceDetail[] = [
     heroIntro: 'AI That Thinks. Acts. Gets Results',
     banner: { art: 'brain', ctaLabel: 'Explore More' },
     overviewTitle: 'AI - Driven solutions',
+    overviewList: [
+      'Agentic AI',
+      'AI-Powered Business Solutions',
+      'AI Automation Solutions',
+      'Custom AI Applications',
+      'RAG-Based AI Chatbots & Knowledge Assistants',
+      'Custom LLM Application Development',
+      'Autonomous AI Agents & Multi-Agent Systems',
+      'Intelligent Business Process Automation',
+      'AI-Powered Document Processing',
+      'Predictive Analytics & Machine Learning',
+      'Computer Vision & Video Intelligence',
+      'Voice AI & Conversational Systems',
+    ],
     sectionsHeading: { eyebrow: 'What We Build', title: 'Capabilities' },
     sections: [
       {

@@ -121,6 +121,24 @@ export default function ServicePage({ params }: ServicePageProps) {
                   {paragraph}
                 </p>
               ))}
+              {service.overviewList && (
+                <ul className="grid grid-cols-1 gap-3 pt-4 sm:grid-cols-2">
+                  {service.overviewList.map((item, i) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-4 rounded-xl border border-ink-line bg-ink-900/60 px-5 py-4"
+                    >
+                      <span
+                        aria-hidden
+                        className="font-display text-[20px] leading-[1.4] text-brand-400 [font-variant-numeric:lining-nums_tabular-nums]"
+                      >
+                        {indexLabel(i)}
+                      </span>
+                      <span className="text-[15px] leading-[1.6] text-mist-200">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </Container>
         </section>
