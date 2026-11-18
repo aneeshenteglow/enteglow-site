@@ -38,12 +38,6 @@ export const homeNav: NavItem[] = [
   { href: '/contact', label: 'Contact Us' },
 ];
 
-// Existing pages that left the main navigation stay reachable from the footer.
-export const secondaryNav: NavItem[] = [
-  { href: '/industries', label: 'Industries' },
-  { href: '/process', label: 'Resources' },
-];
-
 export const servicesMenu: NavItem[] = [
   { href: SERVICE_LINKS.ai, label: 'AI Application Development' },
   { href: SERVICE_LINKS.webApp, label: 'Web Application Development' },
