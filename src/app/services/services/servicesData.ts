@@ -102,6 +102,9 @@ export const servicesData: ServiceDetail[] = [
     overview: [webAppIntro],
     visual: 'web-app',
     banner: { art: 'web-app', ctaLabel: 'Explore More' },
+    heroIntro:
+      'We develop customised web application to simplify business processes, improve efficiency, optimise operations, and connect businesses through digital technology.',
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
     accent: AMBER,
     image: image('web-application-development'),
     keyCapabilities: [
