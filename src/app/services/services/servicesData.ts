@@ -149,6 +149,9 @@ export const servicesData: ServiceDetail[] = [
     overview: [appMaintenanceIntro],
     visual: 'app-maintenance',
     banner: { art: 'app-maintenance', ctaLabel: 'Explore More' },
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
+    heroIntro:
+      'Keep your business running without interruption! Our team ensures reliable application support, seamless scalability, and improved performance using advanced technologies.',
     accent: GREEN,
     image: image('application-maintenance'),
     keyCapabilities: [
@@ -186,8 +189,17 @@ export const servicesData: ServiceDetail[] = [
     overview: [websiteDevIntro],
     visual: 'website',
     banner: { art: 'website', ctaLabel: 'Explore More' },
+    heroIntro:
+      'We develop impactful websites that elevate brand identity, strengthen online presence, and connect businesses with the right customers.',
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
     accent: CORAL,
-    keyCapabilities: ['Single Web Websites', 'Corporate Websites', 'Business Website', 'Educational Website'],
+    keyCapabilities: [
+      'Single Web Websites',
+      'Corporate Websites',
+      'Business Website',
+      'Educational Website',
+      'Single Page Websites',
+    ],
     sections: [
       {
         title: 'User-friendly website',
@@ -259,6 +271,9 @@ export const servicesData: ServiceDetail[] = [
     overview: [domainIntro],
     visual: 'domain',
     banner: { art: 'domain', ctaLabel: 'Explore More' },
+    heroIntro:
+      'We build strong digital identities that enhance brand value, strengthen online visibility, and build lasting trust.',
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
     accent: AMBER,
     keyCapabilities: ['Digital Identity', 'Brand Visibility', 'Build Trust & Credibility', 'Enable Business Growth'],
     sections: [
@@ -300,6 +315,9 @@ export const servicesData: ServiceDetail[] = [
     overview: [mobileIntro],
     visual: 'mobile',
     banner: { art: 'mobile', ctaLabel: 'Explore More' },
+    heroIntro:
+      'We develop next-gen mobile apps that streamline operations, elevate user experiences, and keep you connected 24/7.',
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
     accent: CORAL,
     keyCapabilities: [
       'Custom Mobile App Development',
