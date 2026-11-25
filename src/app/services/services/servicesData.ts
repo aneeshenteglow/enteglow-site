@@ -55,6 +55,20 @@ export const servicesData: ServiceDetail[] = [
     heroIntro: 'AI That Thinks. Acts. Gets Results',
     banner: { art: 'brain', ctaLabel: 'Explore More' },
     overviewTitle: 'AI - Driven solutions',
+    overviewList: [
+      'Agentic AI',
+      'AI-Powered Business Solutions',
+      'AI Automation Solutions',
+      'Custom AI Applications',
+      'RAG-Based AI Chatbots & Knowledge Assistants',
+      'Custom LLM Application Development',
+      'Autonomous AI Agents & Multi-Agent Systems',
+      'Intelligent Business Process Automation',
+      'AI-Powered Document Processing',
+      'Predictive Analytics & Machine Learning',
+      'Computer Vision & Video Intelligence',
+      'Voice AI & Conversational Systems',
+    ],
     sectionsHeading: { eyebrow: 'What We Build', title: 'Capabilities' },
     sections: [
       {
@@ -88,6 +102,9 @@ export const servicesData: ServiceDetail[] = [
     overview: [webAppIntro],
     visual: 'web-app',
     banner: { art: 'web-app', ctaLabel: 'Explore More' },
+    heroIntro:
+      'We develop customised web application to simplify business processes, improve efficiency, optimise operations, and connect businesses through digital technology.',
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
     accent: AMBER,
     image: image('web-application-development'),
     keyCapabilities: [
@@ -132,6 +149,9 @@ export const servicesData: ServiceDetail[] = [
     overview: [appMaintenanceIntro],
     visual: 'app-maintenance',
     banner: { art: 'app-maintenance', ctaLabel: 'Explore More' },
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
+    heroIntro:
+      'Keep your business running without interruption! Our team ensures reliable application support, seamless scalability, and improved performance using advanced technologies.',
     accent: GREEN,
     image: image('application-maintenance'),
     keyCapabilities: [
@@ -169,8 +189,17 @@ export const servicesData: ServiceDetail[] = [
     overview: [websiteDevIntro],
     visual: 'website',
     banner: { art: 'website', ctaLabel: 'Explore More' },
+    heroIntro:
+      'We develop impactful websites that elevate brand identity, strengthen online presence, and connect businesses with the right customers.',
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
     accent: CORAL,
-    keyCapabilities: ['Single Web Websites', 'Corporate Websites', 'Business Website', 'Educational Website'],
+    keyCapabilities: [
+      'Single Web Websites',
+      'Corporate Websites',
+      'Business Website',
+      'Educational Website',
+      'Single Page Websites',
+    ],
     sections: [
       {
         title: 'User-friendly website',
@@ -242,6 +271,9 @@ export const servicesData: ServiceDetail[] = [
     overview: [domainIntro],
     visual: 'domain',
     banner: { art: 'domain', ctaLabel: 'Explore More' },
+    heroIntro:
+      'We build strong digital identities that enhance brand value, strengthen online visibility, and build lasting trust.',
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
     accent: AMBER,
     keyCapabilities: ['Digital Identity', 'Brand Visibility', 'Build Trust & Credibility', 'Enable Business Growth'],
     sections: [
@@ -283,6 +315,9 @@ export const servicesData: ServiceDetail[] = [
     overview: [mobileIntro],
     visual: 'mobile',
     banner: { art: 'mobile', ctaLabel: 'Explore More' },
+    heroIntro:
+      'We develop next-gen mobile apps that streamline operations, elevate user experiences, and keep you connected 24/7.',
+    sectionsHeading: { eyebrow: 'How We Work', title: 'We Make a Difference' },
     accent: CORAL,
     keyCapabilities: [
       'Custom Mobile App Development',

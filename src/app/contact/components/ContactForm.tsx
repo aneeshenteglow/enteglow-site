@@ -77,11 +77,8 @@ export const ContactForm: React.FC = () => {
       <div>
         <HexDot className="mb-5" />
         <h3 className="font-display text-[clamp(1.5rem,2.2vw,1.875rem)] font-normal leading-tight text-mist-100">
-          Project Discovery Inquiry
+          Connect with Our Team
         </h3>
-        <p className="mt-2 text-[14px] leading-[1.6] text-mist-500">
-          Fill out your technical requirements below to initiate project evaluation.
-        </p>
       </div>
 
       <div className={rowClass}>
@@ -162,7 +159,7 @@ export const ContactForm: React.FC = () => {
       </div>
 
       <button type="submit" className="eg-btn eg-btn-primary !mt-9 w-full">
-        Submit Technical Inquiry <ArrowRight aria-hidden className="h-4 w-4" />
+        Submit Enquiry <ArrowRight aria-hidden className="h-4 w-4" />
       </button>
     </form>
   );

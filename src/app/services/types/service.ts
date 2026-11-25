@@ -27,6 +27,8 @@ export interface ServiceDetail {
   overviewTitle?: string;
   /** Replaces the heading above `sections` (default: "Why It Matters" / "How We Help"). */
   sectionsHeading?: { eyebrow: string; title: string };
+  /** Numbered list shown directly under the overview paragraph (no separate section heading). */
+  overviewList?: string[];
   /** The service's numbered list from the content document. */
   keyCapabilities?: string[];
   /** Titled copy blocks from the content document (heading + one or more paragraphs). */

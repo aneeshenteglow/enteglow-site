@@ -14,7 +14,7 @@ import { HexDot } from './components/HexDot';
 import styles from './contact.module.css';
 
 const intro =
-  'Schedule a consultation with our senior engineering team to discuss your project requirements, architecture constraints, and product roadmap.';
+  'Share your ideas, requirements, or challenges, and we’ll help build the right digital solutions for your business.';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -61,13 +61,13 @@ export default function ContactPage() {
 
             <div className="mt-8 inline-flex items-center gap-3">
               <HexDot />
-              <Eyebrow>Technical Discovery Session</Eyebrow>
+              <Eyebrow>For a Digital Transformation</Eyebrow>
             </div>
             <h1
               id="contact-title"
               className="mt-5 font-display text-[clamp(2.5rem,6vw,4.75rem)] font-normal leading-[1.02] tracking-[-0.02em] text-mist-100 [text-wrap:balance]"
             >
-              Start Your Software Project
+              Let’s Connect with Our Team
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-mist-300 sm:text-[17px]">{intro}</p>
           </div>
@@ -79,8 +79,7 @@ export default function ContactPage() {
                 Get in Touch
               </h2>
               <p className="mt-4 max-w-md text-[15px] leading-[1.75] text-mist-500">
-                Whether you need AI Agent integration, Web App engineering, high-performance Corporate Websites, or Cloud
-                Hosting—our senior team is ready to assist.
+                we’ll craft tailored digital solutions to move your business forward.
               </p>
 
               <ul className="mt-10 space-y-8">

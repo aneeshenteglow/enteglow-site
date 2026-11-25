@@ -65,8 +65,8 @@ export default function AboutPage() {
           <div className="lg:col-span-6" data-reveal style={revealDelay(1, 100)}>
             <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] border border-ink-line bg-ink-800">
               <Image
-                src="/images/home/about-team.jpg"
-                alt="Enteglow team members planning a project together"
+                src="/images/about/who-we-are-backup-data.jpg"
+                alt="Person typing on a laptop with floating backup data, cloud, and security icons"
                 fill
                 sizes="(min-width: 1024px) 600px, 100vw"
                 className="object-cover"
