@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MessageCircle  } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import { contact, footerServices, homeNav } from '../data/homeContent';
 import { socialLinks } from '../data/socialLinks';
 import { Container, LogoLockup } from './primitives';
