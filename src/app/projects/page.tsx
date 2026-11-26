@@ -6,18 +6,18 @@ import { PageHero } from '@/components/inner/PageHero';
 import { ProjectsGrid } from './components/ProjectsGrid';
 
 const intro =
-  'Detailed technical breakdowns of software product solutions engineered for technical performance, reliability, and business impact.';
+  'Technology that connects the world, empowers businesses, and creates meaningful impact through innovative solutions.';
 
 export const metadata: Metadata = {
-  title: 'Engineering Case Studies',
+  title: 'Transforming Possibilities into Impact',
   description: intro,
 };
 
 export default function ProjectsPage() {
   return (
     <InnerPage>
-      <PageHero eyebrow="Software Portfolio" title="Engineering Case Studies" crumb="Case Studies" intro={intro} />
-      <section aria-label="Case studies" className="py-24 lg:py-32">
+      <PageHero eyebrow="Portfolio" title="Transforming Possibilities into Impact" crumb="Portfolio" intro={intro} />
+      <section aria-label="Portfolio" className="py-24 lg:py-32">
         <Container>
           <ProjectsGrid />
         </Container>
